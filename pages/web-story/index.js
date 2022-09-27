@@ -1,19 +1,19 @@
 import React,{useState,useEffect,Suspense}  from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../../../styles/Home.module.scss'
-import StoryPreview from '../../../components/StoryPreview'
-import { getStories } from '../../../services/stories'
+import styles from '../../styles/Home.module.scss'
+import StoryPreview from '../../components/StoryPreview'
+import { getStories } from '../../services/stories'
 import {
   FireOutlined,
   TabletOutlined
 } from '@ant-design/icons';
-import {HomeMenu as Menu} from '../../../components/Menu'
-import Loading from '../../../Loading'
+import {HomeMenu as Menu} from '../../components/Menu'
+import Loading from '../../Loading'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import * as gtag from '../../../lib/gtag'
-import Pagination from '../../../components/Pagination'
+import * as gtag from '../../lib/gtag'
+import Pagination from '../../components/Pagination'
 
 export default function Articles({stories,hasNext}) {
 
