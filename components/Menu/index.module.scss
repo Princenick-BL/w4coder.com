@@ -1,0 +1,198 @@
+.header{
+    height: 60px;
+    //background-color: greenyellow;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #f3f3f3;
+    .head{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        .button{
+            font-size: 1.7rem;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            cursor: pointer;
+            color: #253b56;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            display: none;
+            @media only screen and (max-width: 500px) {
+                display: flex;
+            }
+            .text{
+                font-size: .7rem;
+                font-weight: bold;
+                margin-top: - .3rem;
+            }
+        }
+        .content{
+            width: calc( 100% - 2rem );
+            font-size: 1rem !important;
+            //font-family: Dancing Script ,cursive;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1224px;
+            flex-direction: row;
+            a{
+                text-decoration: none;
+                color: #fff;
+            }
+            @media only screen and (max-width: 500px) {
+                justify-content: center;
+            }
+            .flexCenter{
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.5rem;         
+                color: #253022;
+                text-overflow:ellipsis;
+                min-width: max-content;
+                cursor: pointer;
+                @media only screen and (max-width: 500px) {
+                    margin-left: -40px;
+                }
+                h1 {
+                    color: #fff;
+                    overflow: hidden; /* Ensures the content is not revealed until the animation */
+                    white-space: nowrap; /* Keeps the content on a single line */
+                    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+                    //border-right: .15em solid orange; /* The typwriter cursor */
+                    font-size: 1.5rem;
+                    //animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+                }
+                /* Animation */
+                
+            }
+            ul{
+                display: flex;
+                align-items: center;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                animation: hideContent .2s ease-out forwards;
+                @media only screen and (max-width: 500px) {
+                    display: none;
+                }
+                li{
+                    margin-left: 2rem;
+                    clear: both;
+                    display: inline-block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+            }
+            .search{
+                width: 100%;
+                padding: 1rem;
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+                border-radius: 50px;
+                border: 1px solid #f3f3f3;
+                font-size: 1rem;
+                margin-left: 2rem;
+                @media only screen and (max-width: 500px) {
+                    display: none;
+                }
+            }
+        }
+        @keyframes typewriter{
+            from{width: 0;}
+            to{width: 5em;}
+        }
+        @keyframes blinkTextCursor{
+            from{
+                border-right-color: transparent;
+            }
+            to{
+                border-right-color: transparent;
+            }
+        }
+        @keyframes hideContent{
+            from{
+                display: none;
+            }
+            to{
+                display: flex;
+            }
+        }
+    }
+    .active{
+        display: flex;
+        animation: openModal 0.4s ease-out forwards;
+    }
+    .innactive{
+        display: none;
+        animation: closeModal 0.4s ease-in forwards;
+    }
+    .shadow{
+        background-color: rgba(0,0,0,0.5);
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        display: none;
+        @media only screen and (max-width: 500px) {
+            display: flex;
+        }
+        .side{
+            display: none;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            display: flex !important;
+            flex-direction: column;
+            top: 0;
+            left: 0;
+            //display: none;
+            background-color: #fff;
+            z-index: 10;
+            max-width: 300px;
+            border-right: 1px solid #f3f3f3f3;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+         
+            .text{
+    
+                h4{
+                    font-size: 2em;
+                }
+                ul{
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    li{
+                        margin: 0 0 2rem;
+                        text-transform : to-upper-case;
+                    }
+                }
+            }
+            
+        }
+    }
+    @keyframes openModal {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(0);   }
+    }
+    
+    @keyframes closeModal {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%);}
+    }
+}

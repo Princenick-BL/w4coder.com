@@ -1,0 +1,350 @@
+@use  "sass:math";
+
+.untitled{	
+	
+	width: calc( 100vw - 100px );
+	height: 100vh;
+	padding-left: 50px;
+	overflow: hidden;
+	$t: 2.5s;
+	$e1: cubic-bezier(0.8, 0.00, 0.1, 1);
+	$e2: cubic-bezier(0.600, 0.040, 0.980, 0.335);
+	$er: linear;
+
+	$color: hsl(15,75%,40%);
+	$font: 'Abril Fatface', sans-serif;
+
+	$slides: 3;
+	$images: url("/images/un.jpg") url("/images/deux.jpg") url("/images/trois.jpg");
+
+
+
+	position: absolute;
+	height: 100%;
+	width: calc( 100% - 50px );
+	// .info{
+	// 	position: absolute;
+	// 	top: 3em;
+	// 	background-color: rgba(255, 255, 255, 0.549);
+	// 	height: 40px;
+	// 	width: 100%;
+	// 	z-index: 2;
+	// 	padding: 1em;
+	// 	text-align: center;
+	// 	display: flex;
+	// 	justify-content: center;
+	// 	align-items: center;
+		
+	// }
+	@keyframes rotateHue {
+		0%{ filter: hue-rotate(0deg); }
+		20%{ filter: hue-rotate(0deg); }
+		25%{ filter: hue-rotate(90deg); }
+		45%{ filter: hue-rotate(90deg); }
+		50%{ filter: hue-rotate(180deg); }
+		70%{ filter: hue-rotate(180deg); }
+		75%{ filter: hue-rotate(270deg); }
+		95%{ filter: hue-rotate(270deg); }
+		100%{ filter: hue-rotate(360deg); }
+	}
+	animation: rotateHue infinite $t*$slides*2 linear;
+	animation-delay: math.div( $t,4);
+	
+	&__shutters{
+		position: absolute;
+		height: 150vmax;
+		width: 150vmax;
+		left: calc(50% - 75vmax);
+		top: calc(50% - 75vmax);
+		pointer-events: none;
+		z-index: 2;
+		@keyframes rotateFrame{
+			0%{ transform: rotate(0deg);}
+			100%{ transform: rotate(180deg);}
+		}
+		animation: rotateFrame $t*4 $er infinite;
+
+		&:before, &:after{
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			left: 50%;
+			transform: translate3d(-50%, 0, 0);
+			background-color: $color;
+			pointer-events: auto;
+		}
+		&:before{
+			bottom: 50%;
+			@keyframes openTop{
+				0%{ transform: translate3d(-50%, 0, 0); animation-timing-function: $e1; }
+				40%{ transform: translate3d(-50%, -65vmax, 0); animation-timing-functon: $e2; }
+				70%{ transform: translate3d(-50%, -65vmax, 0); animation-timing-functon: $e2; }
+				100%{ transform: translate3d(-50%, 0, 0); animation-timing-function: $e2; }
+			}
+			animation: openTop $t*2 infinite;
+		}
+		&:after{
+			top: 50%;
+			@keyframes openBottom{
+				0%{ transform: translate3d(-50%, 0, 0); animation-timing-function: $e1; }
+				40%{ transform: translate3d(-50%, 65vmax, 0); animation-timing-functon: $e2; }
+				70%{ transform: translate3d(-50%, 65vmax, 0); animation-timing-functon: $e2; }
+				100%{ transform: translate3d(-50%, 0, 0); animation-timing-function: $e2; }
+			}
+			animation: openBottom $t*2 infinite;
+		}
+	}
+	
+	&__slides{
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: $color;
+	}
+	&__slide{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		@keyframes showHideSlide{
+			0%{
+				opacity: 1; 
+				pointer-events: auto;
+				z-index: 1;
+			}
+			#{math.div(100%,$slides)}{
+				opacity: 0;
+				pointer-events: none;
+				z-index: -1;
+			}
+			100%{
+				opacity: 0;
+				pointer-events: none;
+				z-index: -1;
+			}
+		}
+		animation: showHideSlide infinite $t*$slides*2 steps(1);
+		@for $i from 1 through $slides{
+			&:nth-child(#{$i}){ 
+				animation-delay: $t * ($i - 1) * 2;
+				.untitled__slideBg{
+					background-image: nth($images, $i);
+				}
+			}	
+		}
+	}
+	&__slideBg{
+		position: relative;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-size: cover;
+		background-position: center;
+		background-color: $color;
+		background-blend-mode: hard-light;
+		opacity: 1;
+		z-index: -1;
+		@keyframes bgInOut{
+			0%{ transform: rotate(-45deg) scale(1.1); animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);}
+			33%{ transform: rotate(0deg);}
+			50%{ transform: rotate(0deg); }
+			66%{ transform: rotate(0deg); animation-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); }
+			100%{ transform: rotate(45deg) scale(0.9);}
+		}
+		animation: bgInOut $t*4 -$t*2 infinite; 
+	}
+	&__slideContent{
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		transform: translate3d(-50%,-50%,0);
+		color: #ffffff;
+		font-family: $font;
+		line-height: 0.8;
+		z-index: 2;
+		opacity: 1;
+		background-color: rgba(0, 0, 0, 0.322);
+		padding-top: 30vh;
+		span{
+			text-align: center;
+			display: block;
+			font-size: 5vmin;
+			font-weight: bold;
+			line-height: 2;
+			width: calc(100% - 50px );
+		}
+		.untitled__slideContent_content{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-right: 50px;
+			div{
+				display: flex;
+				width: 200px;
+				color: yellow;
+			}
+		}
+
+		p{
+			margin-top: 2em;
+			text-align: center;
+			font-weight: bold;
+			line-height: 3;
+			width: calc(100% - 50px );
+		}
+		.emojis{
+			background-blend-mode:inherit;
+			color: #fff;
+			width: calc( 100% - 50px );
+			text-align: center;
+			justify-content: center;
+			margin-top: 4rem;
+		}
+	}
+	&__slide_banner{
+		position: absolute;
+		top: 0;
+		z-index: 5;
+		width: 100vw;
+		height: 100px;
+		background-color: green;
+	}
+
+	.button{
+		font-family:'Roboto Mono', sans-serif;
+		text-decoration: none;
+		font-weight: 800;
+		text-transform: uppercase;
+		font-size: 2vmin;
+		display: inline-block;
+		position: relative;
+		border: 3px solid white;
+		box-shadow: -0.5vmin 0.5vmin 0 rgba(white, 0.5);
+		background: transparent;
+		margin-top: 5vmin;
+		mix-blend-mode: lighten;
+		color: white;
+		padding: 2vmin 2vmin 1.8vmin 2vmin;
+		letter-spacing: 0.1em;
+		text-shadow: none;
+		line-height: 1;
+		transform: translate3d(0.5vmin, -0.5vmin, 0);
+		transition: all 100ms linear;
+		&:hover{ 
+			transform: translate3d(1vmin, -1vmin, 0);
+			box-shadow: -1vmin 1vmin 0 rgba(white, 0.5);
+			background: white;
+			color: black;
+		}
+		&:active{ 
+			transform: translate3d(0px, 0px, 0);
+			box-shadow: -0px 0px 0 rgba(white, 0.5);
+		}
+	}
+
+	&__nav{
+		position: absolute;
+		bottom: 5vh;
+		right: 1rem;
+		border-radius: 5px;
+		background-color: rgba(0, 0, 0, 0.318);
+		//background-color: red;
+		display: flex;
+		justify-content: center;
+		ul{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			list-style-type: none;
+			z-index: 900000;
+			justify-content: space-around;
+			padding-right: 50px;
+			width: 100%;
+			margin: 0;
+			padding: 1rem;
+			
+			li:nth-child(1){
+				margin-top: 0;
+			}
+			li:last-child{
+				margin-bottom: 0;
+			}
+			li{
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+			a{
+				color: #fff;
+				font-size: 1vw;
+				@media screen and (max-width:1000px){
+					font-size: 1.5vw;
+
+                }
+				@media screen and (max-width:500px){
+					font-size: 3.3vw;
+                }
+			}
+			a:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	//Flèche vers le bas animée 
+	.arrow,.arrow:before{
+		position: absolute;
+		left: 50%;
+		top: 33em;
+	}
+	
+	.arrow{
+		width: 40px;
+		height: 40px;
+		margin: -20px 0 0 -45px;
+		border-left: none;
+		border-top: none;
+		border-right: 2px #fff solid;
+		border-bottom: 2px #fff solid;
+		transform: rotate(45deg);
+	}
+	
+		
+	.arrow:before{
+		content: '';
+		width: 20px;
+		height: 20px;
+		top: 50%;
+		margin: -10px 0 0 -10px;
+		border-left: none;
+		border-top: none;
+		border-right: 1px #fff solid;
+		border-bottom: 1px #fff solid;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+		animation-name: arrow;
+	}
+
+
+	@keyframes arrow{
+		0%{
+			opacity: 1;
+		}
+		100%{
+			opacity: 0;
+			transform: translate(-10px, -10px);
+		}
+	}
+
+
+	
+}
+
+

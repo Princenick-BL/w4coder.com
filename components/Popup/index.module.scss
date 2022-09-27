@@ -1,0 +1,35 @@
+.popup{
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    .content{
+        width: 80vw;
+        height: 30vh;
+        max-height: 150px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        div{
+            text-align: center;
+            padding: 1rem;
+        }
+
+        button{
+            background-color: var(--color-primary);
+            color: #fff;
+            width: 150px;
+            padding: 5px;
+            border-color: var(--color-primary);
+            border-radius: 20px;
+            margin-top: 1rem;
+        }
+    }
+}

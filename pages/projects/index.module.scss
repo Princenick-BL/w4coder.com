@@ -1,0 +1,145 @@
+
+.four {
+    width: calc(100% - 2rem );
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 1rem;
+    margin: 0;  
+    
+    .portfolio {
+
+        padding: 1em;
+        position: relative;
+        width: 100%;
+
+        @media screen and (max-width:500px) {
+            padding: 0;
+
+        }
+
+        background-color: #fff;
+
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .projets {
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            width: max-content;
+            max-width: 100%;
+            justify-content: center;
+
+            .projet {
+                margin-top: 1em;
+                width: 370px;
+                background-color: #fff;
+                // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+
+                @media screen and (max-width:500px) {
+                    flex-direction: column;
+                    width: 100%;
+                    max-height: none;
+
+                }
+
+                .description {
+                    width: 100%;
+                    height: 100%;
+                    padding: 1em;
+                    padding-top: 0em;
+                    text-align: justify;
+                    
+
+                }
+
+                .img {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    width: 370px;
+                    height: 180px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: left;
+
+                    @media screen and (max-width:500px) {
+
+                        width: calc(100vw - 40px);
+                    }
+
+                }
+
+                .my-app {
+                    background-image: url("/images/my-app.png");
+                }
+
+                .ga-eilco {
+                    background-image: url("/images/ga-eilco.png");
+
+                }
+
+                .mon-cv {
+                    background-image: url("/images/cv.png");
+                    background-position: right;
+                    background-size: cover;
+                }
+
+                .auth {
+                    background-image: url("/images/auth.png");
+                    background-position: right;
+                    background-size: cover;
+                }
+
+                .covid {
+                    background-image: url("/images/covid.png");
+                    background-position: right;
+                    background-size: cover;
+
+                }
+
+                .phenix {
+                    background-image: url("/images/phenix.jpg");
+                }
+
+                .desc {
+                    padding: 1em;
+
+                    .title {
+                        border-bottom: 3px double blue;
+                        width: fit-content;
+                        margin-bottom: 1em;
+
+                    }
+
+                    .stack {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+
+                        div {
+                            background-color: #f9f9f9;
+                            padding: 3px;
+                            margin: 2px;
+
+                        }
+                    }
+
+                    .linkzone {
+                        padding: 0.5em;
+                        color: blue;
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.navigation{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10;
+    div{
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,219 @@
+.main{
+    margin: 0 auto;
+    width: 62.5rem;
+    max-width: calc(100vw - 20px);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+    padding-top: .5rem;
+    min-height: 800px;
+
+    a{
+        text-decoration: none;
+    }
+
+
+    .head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: .5rem;
+    }
+    p {
+        padding: 0;
+        margin: 0;
+    }
+    h3{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        max-width: 100vw;
+        width: max-content;
+
+    }
+    .h3Title{
+        color: var(--color-primary);
+    }
+    .editorial{
+        display: flex;
+        height: 110vh;
+        justify-content: space-between;
+        min-height: 900px;
+        flex-wrap: wrap;
+        max-width: 100vw;
+        margin-bottom: 2rem;
+        @media only screen and (max-width: 500px) {
+            flex-direction: column;
+            height: 100%;
+        }
+        @media only screen and (min-width: 600px) {
+            margin-top: 2rem;
+        }
+        .mainSlideShow{
+            height: 100%;
+            width: 67%;
+            min-width: 67%;
+            max-width: 67%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-content: space-between;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom: .5rem;
+            @media only screen and (max-width: 950px) {
+                width: calc( 100% - 1rem );
+                min-width: calc( 100% - 1rem );
+                max-width: calc( 100% - 1rem );
+                min-height: 50vh;
+                height: max-content;
+                padding: .5rem;
+                display: flex;
+                flex-direction: row;
+            }
+            @media only screen and (max-width: 600px) {
+                flex-direction: column;
+            }
+            a{
+                @media only screen and (max-width: 500px) {
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                }
+            }
+        }
+       
+        
+        // .slide,.topArticlesArticle{
+        //     position: relative;
+        //     width: 100%;
+        //     height: 100%;
+        //     overflow: hidden;
+        //     border-radius: 5px;
+        //     @media only screen and (max-width: 500px) {
+        //             width: 100%;
+        //             min-width: 100%;
+        //             max-width: 100%;
+        //             height: 50vh;
+        //             max-height: 400px;
+        //     }
+        //     .img {
+        //         object-fit: cover;
+        //         cursor: zoom-in;
+        //         transition: all 0.5s ease;
+        //     }
+
+        //     &::after {
+        //         align-items: center;
+        //         background: rgba(black, 0.1);
+        //         color: white;
+        //         content: 'read more';
+        //         display: flex;
+        //         height: 100%;
+        //         justify-content: center;
+        //         opacity: 0;
+        //         position: absolute;
+        //         transition: all 0.5s ease;
+        //         width: 100%;
+        //     }
+
+        //     &:hover {
+        //         &::after {
+        //             opacity: 1;
+        //         }
+
+        //         .img {
+        //             transform: scale(1.3);
+        //         }
+        //     }
+
+        // }
+        // .mark_down {
+        //     background-image: url("../../public/images/down_gradient.png");
+        //     width: calc(100% - 2rem);
+        //     position: absolute;
+        //     bottom: -9px;
+        //     padding: 1rem;
+        //     background-position: bottom;
+        //     background-repeat: no-repeat;
+        //     background-size: 100% 100%;
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+
+        //     .cat {
+        //         background-color: var(--color-primary);
+        //         width: max-content;
+        //         color: #fff;
+        //         padding: 1rem;
+        //         padding-top: 5px;
+        //         padding-bottom: 5px;
+        //     }
+
+        //     p {
+        //         color: #fff;
+        //         font-size: 30px;
+        //         line-height: 1.3;
+        //         font-weight: 700;
+        //         width: 100%;
+        //         overflow: hidden;
+        //         display: -webkit-box;
+        //         -webkit-line-clamp: 2;
+        //         -webkit-box-orient: vertical;
+        //         line-height: 1.5 !important;
+        //         margin: 0 !important;
+        //     }
+        // }
+        .topArticles,.mainPlayer{
+            height: 100%;
+            width: 25%;
+            min-width: 25%;
+            max-width: 25%;
+        }
+        .topArticles{     
+            margin-left: .5rem;
+            position: relative;
+            overflow: hidden;
+            @media only screen and (max-width: 500px) {
+                   display: none;
+                }
+            .arrows {
+                position: absolute;
+                right: 0;
+                top: 0px;
+                background-color: #f3f3f3;
+                display: flex;
+                z-index: 20;
+                .arrow {
+                    background-color: #fff;
+                    width: 25px;
+                    height: 25px;
+                    margin: 4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                }
+            }
+            .topArticlesArticle{
+                height: 200px;
+                margin-bottom: 2rem;
+                .cat {
+                    font-size: .7rem;
+                }
+                p{
+                    font-size: 14px;
+                    padding: 1rem;
+                }
+                
+            }
+            .mark_down{
+                padding-bottom: 2rem;
+            }
+        }
+        
+    }
+   
+}
