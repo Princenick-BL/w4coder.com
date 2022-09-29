@@ -117,6 +117,9 @@
         overflow-y: auto;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        .template{
+            margin: .5rem;
+        }
     }
     .themes::-webkit-scrollbar{
         background: transparent;

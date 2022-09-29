@@ -54,7 +54,6 @@
         color: #fff;
         font-size: 2rem;
         margin: 0;
-        margin-right: 2rem;
     }
     .topFlex{
         display: flex;
@@ -145,7 +144,26 @@
     .checkbox{
         padding-right: 1rem;
     }
+    .container{
+        overflow-y: auto;
+        max-height: 100%;
+    }
+}
+.container::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #fff;
+
+}
+
+.container::-webkit-scrollbar{
+    width: 2px;
+    background-color: #F5F5F5;
     
+}
+
+.container::-webkit-scrollbar-thumb{
+    border-radius: 2px;
+    background-color: #555;
 }
 
 .main{

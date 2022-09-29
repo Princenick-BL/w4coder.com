@@ -66,7 +66,7 @@
         }
     }
     .allSlides{
-        width: 35%;
+        width: max-content;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -80,7 +80,23 @@
             overflow-y: auto;
             scrollbar-width: none;
             -ms-overflow-style: none;
-           
+            .addSlide{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                color: transparent;
+                transition: 0s margin-top,0s margin-bottom,0s background-color,0s color ;
+            }
+            .addSlide:hover{
+                margin-top: .5rem;
+                margin-bottom: .5rem;
+                background-color: #ccc;
+                color: #202029;
+                transition-delay:.5s;
+            }
+
         }
         .scrollBtn{
             height: 30px;
@@ -112,6 +128,8 @@
     border-radius: 5px;
     color: #ccc;
     min-width: 350px;
+    margin-left: 0;
+    margin-right: 0;
     .status{
         display: flex;
         margin: 1rem;
@@ -136,12 +154,12 @@
         display: flex;
         flex-direction: column;
         margin: 1rem;
-        margin-top: 3rem;
+        //margin-top: 3rem;
         height: calc(100% - 120px);
         max-height:  calc(100% - 80px);
         overflow-y: auto;
         scrollbar-width: none;
-            -ms-overflow-style: none;
+        -ms-overflow-style: none;
         textarea{
             margin-bottom: 1rem;
             font-size: 1rem;
@@ -170,7 +188,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
 }
 
 .fileInputForm .label {

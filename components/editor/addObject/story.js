@@ -206,16 +206,36 @@ export default function AddObject() {
                         <div className={styles.openedMenu }>
                             <div className={styles.themesTitle}>Themes</div>
                             <div className={styles.themes}>
-                                <StorySlidePreview slide={slide}/>
-                                <StorySlidePreview slide={slide2}/>
-                                <StorySlidePreview slide={slide3}/>
-                                <StorySlidePreview slide={slide}/>
-                                <StorySlidePreview slide={slide}/>
-                                <StorySlidePreview slide={slide}/>
-                                <StorySlidePreview slide={slide}/>
-                                <StorySlidePreview slide={slide}/>
-                                <StorySlidePreview slide={slide}/>
-                                <StorySlidePreview slide={slide}/>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide2}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide3}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
+                                <div className={styles.template}> 
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
                             </div>
                         </div>
                     )

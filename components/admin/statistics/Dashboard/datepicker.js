@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const CustomDatePicker = (props) => {
   return (
-    <DatepickerWrapper>
+    <DatepickerWrapper style={{display:"flex"}}>
       <DatepickerLabel>{props.placeholder}</DatepickerLabel>
       <DatePicker
         selected={props.date}

@@ -13,6 +13,7 @@ import {
   DatepickerRow,
 } from "./styles";
 import styles from '../../articles/index.module.scss'
+import currentSstyles from './index.module.scss'
 
 import { addDays } from "date-fns";
 import CustomDatePicker from "./datepicker";
@@ -33,84 +34,51 @@ export default function AllAnalytics() {
       <div className={styles.top}>
         <div className={styles.topFlex}>
           <h4> <GoogleAnalyticsIcon/> Google Analytics</h4>
+          <div className={styles.currentSstyles}>
+            <DatepickerRow>
+              <CustomDatePicker
+                placeholder={"From"}
+                date={startDate}
+                handleDateChange={(date) => setStartDate(date)}
+              />
+              <CustomDatePicker
+                placeholder={"To"}
+                date={endDate}
+                handleDateChange={(date) => setEndDate(date)}
+              />
+            </DatepickerRow>
+          </div>
         </div>
       </div>
-      <form 
-        className={styles.form}
-        style={{
-          height:"100%",
-          maxHeight:" calc( 100% - 80px )"
-        }}
-      >
-
-        {/* <div className={styles.actions}>
-          <div>
-            <input 
-              type={"checkbox"}
-              onClick={(e)=>handleSelectAll(e)}
-              checked={isCheckAll}
-            />
-            <select>
-              <option>Trash</option>
-              <option>Delete</option>
-
-            </select>
-            <input type={"submit"} value="Apply"/>
-          </div>
-          <div>
-              <input className={styles.search} type={"search"} name="search" placeholder="Search"/>
-          </div>
-          <div>
-            
-          </div>
-        </div> */}
         <div 
-          className={styles.list}
+          className={currentSstyles.list}
           style={{
-            height:"100% !important"
+            paddingRight : "1px !important"
           }}
           >
           
-          <div className={styles.container}>
+          <div className={currentSstyles.container}>
             {viewID ? (
               <>
-                <div className={styles.datePicker}>
-                  <DatepickerRow>
-                    <CustomDatePicker
-                      placeholder={"Start date"}
-                      date={startDate}
-                      handleDateChange={(date) => setStartDate(date)}
-                    />
-                    <CustomDatePicker
-                      placeholder={"End date"}
-                      date={endDate}
-                      handleDateChange={(date) => setEndDate(date)}
-                    />
-                  </DatepickerRow>
-                </div>
-                <br></br>
-                {/* <Tabs  type="card">
-                  <TabPane tab="Views" key="1">
-                    <DayVisitsReport
-                      metric={"ga:users"}
-                      title={"Users"}
-                      viewID={viewID}
-                      startDate ={startDate}
-                      endDate = {endDate}
-                    />
-                  </TabPane>
-                  <TabPane tab="Sessions" key="2">
-                    <DayVisitsReport
-                      metric={"ga:sessions"}
-                      title={"Sessions"}
-                      viewID={viewID}
-                      startDate ={startDate}
-                      endDate = {endDate}
-                    />
-                  </TabPane>
                 
-                </Tabs>
-                */}
+                <br></br>
+              
+                <DayVisitsReport
+                  metric={"ga:users"}
+                  title={"Users"}
+                  viewID={viewID}
+                  startDate ={startDate}
+                  endDate = {endDate}
+                />
+              
+                <DayVisitsReport
+                  metric={"ga:sessions"}
+                  title={"Sessions"}
+                  viewID={viewID}
+                  startDate ={startDate}
+                  endDate = {endDate}
+                />
+             
               
                 <PageviewsReport 
                   viewID={viewID} 
@@ -145,9 +113,7 @@ export default function AllAnalytics() {
               <InputField submitViewId={(id) => setViewID(id)} />
             )}
           </div>
-        </div>
-      </form>
-      
+        </div>      
     </div>
   )
 }

@@ -58,35 +58,33 @@ const PageviewsReport = (props) => {
   }, [props]);
 
   return (
-    <>
-    <ReportWrapper>
-      <ChartTitle>Top 10 Pages by Views</ChartTitle>
-         
-      <Subtitle>{`Total pages - ${totalPages}`}</Subtitle>
-       
-      {reportData.length && (
-        <StyledTable>
-          <thead>
-            <tr>
-              <th>Page</th>
-              <th>Views</th>
-              <th>%</th>
-            </tr>
-          </thead>
-          <tbody>
-            {reportData.map((row, id) => (
-              <tr key={id}>
-                <td className="left-align">{row.path}</td>
-                <td>{row.views}</td>
-                <td>{row.perc}</td>
+    <div className={styles.card}>
+      <ReportWrapper>
+        <ChartTitle>Top 10 Pages by Views</ChartTitle>
+                  
+        {reportData.length && (
+          <StyledTable>
+            <thead>
+              <tr>
+                <th className="left-align">Page  - {totalPages}</th>
+                <th className="center-align">Views</th>
+                <th className="center-align">%</th>
               </tr>
-            ))}
-          </tbody>
-        </StyledTable>
-      )}
-    </ReportWrapper>
-    <br></br>
-    </>
+            </thead>
+            <tbody>
+              {reportData.map((row, id) => (
+                <tr key={id}>
+                  <td className="left-align">{row.path}</td>
+                  <td className="center-align">{row.views}</td>
+                  <td className="center-align">{row.perc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </StyledTable>
+        )}
+      </ReportWrapper>
+      <br></br>
+    </div>
   );
 };
 

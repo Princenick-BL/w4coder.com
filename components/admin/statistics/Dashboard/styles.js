@@ -11,23 +11,24 @@ export const PieChartWrapper = styled.div`
 `;
 
 export const StyledTable = styled.table`
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   border-collapse: collapse;
 
   th,
   td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border-top: 1px solid #ddd;
+    padding: 1rem;
   }
 
   th {
-    background: black;
-    color: white;
   }
 
   .left-align {
     text-align: left;
+  }
+  .center-align{
+    text-align : center;
   }
 `;
 
@@ -64,9 +65,7 @@ export const LastRow = styled.div`
 `;
 
 export const DatepickerRow = styled.div`
-  width: 60vw;
   display: flex;
-  justify-content: space-evenly;
   margin: 0 auto;
 `;
 
@@ -75,18 +74,20 @@ export const DatepickerWrapper = styled.div`
   font-weight: 500;
   .picker {
     width: fit-content;
-    border-radius: 1px;
-    background-color: #f3f3f3f3;
+    border-radius: 50px;
+    background-color: #fff;
     text-align: center;
     line-height: 20px;
     font-size: 1rem;
-    margin-bottom: 20px;
     border : none;
     cursor : pointer;
-    outline : 1px solid #eee;
+    outline : none;
+    padding: .3rem;
   }
 `;
 
 export const DatepickerLabel = styled.label`
-  padding-right: 5px;
+  padding-right: 1rem;
+  padding-left : 1rem;
+  color : #fff
 `;

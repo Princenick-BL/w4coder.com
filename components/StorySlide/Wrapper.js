@@ -1,7 +1,10 @@
 import React, { Component,useState } from 'react'
 import ResizableRect from 'react-resizable-rotatable-draggable'
 import { useStoryContext } from '../../contexts/story.contex'
+import { Textfit } from 'react-textfit';
 
+const layout = [{ key: 'test', x: 0, y: 0, width: 200, height: 100, zIndex: 1 }]
+ 
 export default function Wrapper(props) {
 
     const [editing,setEditing] = useState(false)
@@ -67,34 +70,23 @@ export default function Wrapper(props) {
         })
     }
 
+    console.log("Props",state,props)
+
     return (
         <>{state.currentElement?.id === props.id ? (
-            <div className="App">
-                <div style={{...style,position:"absolute"}}>{props.children}</div>
-                <ResizableRect
-                left={style.left}
-                top={style.top}
-                width={style.width}
-                height={style.height}
-                rotateAngle={style.rotateAngle}
-                // aspectRatio={false}
-                // minWidth={10}
-                // minHeight={10}
-                zoomable='n, w, s, e, nw, ne, se, sw'
-                rotatable={true}
-                // onRotateStart={this.handleRotateStart}
-                onRotate={handleRotate}
-                // onRotateEnd={this.handleRotateEnd}
-                // onResizeStart={this.handleResizeStart}
-                onResize={handleResize}
-                // onResizeEnd={this.handleUp}
-                // onDragStart={this.handleDragStart}
-                onDrag={handleDrag}
-                // onDragEnd={this.handleDragEnd}
-                />
-            </div>
+            <Textfit
+                mode="multi"
+                forceSingleModeWidth={false}
+                style={{...props.style,position:"absolute",cursor:"pointer",border:"1px solid #000"}}
+            >
+                <input type="text" style={{...props.style,width:"100%",height:"100%",border:"none",backgroundColor:"transparent"}} value=  {props.children}/> 
+            </Textfit>       
         ):(
-            <div style={{...props.style,position:"absolute",cursor:"pointer"}}>{props.children}</div>
+            <Textfit
+                mode="multi"
+                forceSingleModeWidth={false}
+                style={{...props.style,position:"absolute",cursor:"pointer"}}
+            >{props.children}</Textfit>
         )}
         </>
     )

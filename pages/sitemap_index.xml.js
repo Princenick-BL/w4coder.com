@@ -7,7 +7,7 @@ export const getServerSideProps = async (ctx) => {
     // const urls = await fetch('https//example.com/api')
 
     return getServerSideSitemapIndex(ctx, [
-        'https://princenickballo.fr',
+        'w4coder.com',
     ])
 }
 

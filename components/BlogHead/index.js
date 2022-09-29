@@ -14,7 +14,6 @@ export default function BlogHead({poster,publishedAt,description,title,location}
         <link rel="apple-touch-icon" href="/favicon.ico"></link>
         <link rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" ></link>
         <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-        <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"  ></script>
         <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
         <style
             amp-custom=""
@@ -24,6 +23,7 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                     font-family: sans-serif;
                     line-height: 1.15;
                     -webkit-text-size-adjust: 100%;
+                    background-color: #202029;
 
                 }
 
@@ -34,7 +34,7 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
                     font-variant: tabular-nums;
                     line-height: 2;
-                    background-color: #ccc;
+                    background-color: #202029;
                     font-feature-settings: tnum, tnum;
                 }
 
@@ -1279,7 +1279,6 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 }
 
                 body {
-                    background: #fff;
                     color: #4a4a4a;
                     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
                         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial,
@@ -1299,6 +1298,10 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                     width: 100%;
                     margin: 0 auto;
                 }
+                .recipe-article-content{
+                    background-color : #fff;
+                    border-radius : 10px;
+                }
 
                 @media (min-width: 500px) {
                     .recipe-article {
@@ -1313,6 +1316,7 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                     padding: 10px;
                     margin: 2rem;
                     margin-left: 0px;
+                    margin-top : 0px;
                 }
 
                 .ads-zone .most-read {
@@ -1577,7 +1581,7 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 }
 
                 .ampstart-footer {
-                    background-color: #fff;
+                    background-color: #000;
                     color: #000;
                     padding-top: 2rem;
                     padding-bottom: 5rem;
@@ -1897,15 +1901,9 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 }
 
                 .ampstart-headerbar {
-                    background-color: #fff;
+                    background-color: #000;
                     color: #000;
                     z-index: 999;
-                    border-bottom: 1px solid rgba(243, 243, 243, 0.9529411765);
-                }
-
-                .ampstart-headerbar+ :not(amp-sidebar),
-                .ampstart-headerbar+amp-sidebar+* {
-                    margin-top: 3.5rem;
                 }
 
                 .ampstart-headerbar-nav .ampstart-nav-item {
@@ -2117,12 +2115,11 @@ export default function BlogHead({poster,publishedAt,description,title,location}
 
                 .webpage-articleHeader {
                     display: flex;
-                    justify-content: center;
+                    justify-content: flex-start;
                     align-items: center;
                     width: 100%;
                     min-height: 60px;
                     height: 60px ;
-                    border-bottom: 1px solid rgba(243, 243, 243, 0.9529411765);
                 }
 
                 .webpage-articleHeader h1 {
@@ -2138,6 +2135,7 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 .webpage-articleHeader .webpage-logo {
                     font-size: 1.5rem;
                     font-family: 'Monoton', cursive;
+                    color: #fff;
                 }
 
 

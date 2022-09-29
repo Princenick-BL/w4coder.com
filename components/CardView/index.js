@@ -12,7 +12,7 @@ export default function Slide({article,style,type=0}){
           ...style
         }}
         >
-            <Link href={`/read/article/${article._id}/${article.slug}`}>
+            <Link href={`/article/${article._id}/${article.slug}`}>
                 <a>
                     <div className={styles.slider}>
                         <Image

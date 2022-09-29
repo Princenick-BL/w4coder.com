@@ -56,14 +56,10 @@ export default function Article({article,canonical,social}) {
             {/* <Fragment>*/}
                
                 <ArticleHeader/> 
-
-                <Menu/> 
                 <main id="content" role="main">
                     
-                    
-                    
                     <article className="recipe-article">
-                        <header>
+                        <div className={"recipe-article-content"}>
                             <span className="ampstart-subtitle block px3 pt2 mb2">{article?.category}</span>
                             <h1 className="mb2 px3 fsh1">{article?.title}</h1>
                             <address className="ampstart-byline clearfix mb4 px3 h5">
@@ -73,41 +69,43 @@ export default function Article({article,canonical,social}) {
                                     dateTime="2016-12-13"
                                 >{`Updated at : ${new Date(article?.updatedAt).toLocaleDateString()}`}</time>
                             </address>
-                            <amp-img
-                                data-hero=""
-                                src={article?.poster}
-                                width={article?.meta?.width || "1280"}
-                                height={article?.meta?.height || "853"}
-                                layout="responsive"
-                                alt="The final spritzer"
-                                className="mb4 mx3 br5"
-                            ></amp-img>
-                        </header>
-                        <div  className={styles.main}>
-
-                            {article?.sections?.map((section,index)=>{
-                                return getSection(section)
-                            })}
-                        </div>
-                        {social && (
-                            <div className='mb1 mx3 br5'>
-                                <br></br>
-                                <br></br>
-                                <br></br>
-                                <amp-embed
-                                    type="taboola"
-                                    width="400"
-                                    height="300"
+                            <header>
+                                <amp-img
+                                    data-hero=""
+                                    src={article?.poster}
+                                    width={article?.meta?.width || "1280"}
+                                    height={article?.meta?.height || "853"}
                                     layout="responsive"
-                                    data-publisher="amp-demo"
-                                    data-mode="thumbnails-a"
-                                    data-placement="Ads Example"
-                                    data-article="auto"
-                                    >
-                                </amp-embed>
-                            </div>
+                                    alt="The final spritzer"
+                                    className="mb4 mx3 br5"
+                                ></amp-img>
+                            </header>
+                            <div  className="main">
 
-                        )}
+                                {article?.sections?.map((section,index)=>{
+                                    return getSection(section)
+                                })}
+                            </div>
+                            {social && (
+                                <div className='mb1 mx3 br5'>
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
+                                    <amp-embed
+                                        type="taboola"
+                                        width="400"
+                                        height="300"
+                                        layout="responsive"
+                                        data-publisher="amp-demo"
+                                        data-mode="thumbnails-a"
+                                        data-placement="Ads Example"
+                                        data-article="auto"
+                                        >
+                                    </amp-embed>
+                                </div>
+
+                            )}
+                        </div>
                     </article>
                     <div className='ads-zone'>
                     <br></br>

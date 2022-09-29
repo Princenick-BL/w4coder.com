@@ -1,6 +1,9 @@
 import React from 'react'
 import styles from './index.module.scss'
 import Image from 'next/image'
+import { Textfit } from 'react-textfit';
+
+
 export default function StorySlidePreview({slide,pos}) {
 
   const get = (section ) =>{
@@ -21,9 +24,13 @@ export default function StorySlidePreview({slide,pos}) {
         )
       case "TEXTBLOCK":
         return(
-          <div style={{position:"absolute",...section.style}}>
+          <Textfit
+            mode="multi"
+            forceSingleModeWidth={false}
+            style={{position:"absolute",...section.style}}
+          >
             {section?.content}
-          </div>
+          </Textfit>
           
           
         )

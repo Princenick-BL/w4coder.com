@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { getSection } from '../../../utils/article-editor.utils'
 import BlogHead from '../../../components/editor/BlogHead'
 import HeaderEditor from '../../../utils/HeaderEditor'
-import AddObject from '../../../components/editor/addObject/story'
+import AddObject from '../../../components/editor/addObject/article'
 import { DragDropContext, Droppable, Draggable,resetServerContext } from 'react-beautiful-dnd';
 import Focusable from '../../../components/editor/Focusable'
 import { useArticleContext } from '../../../contexts/article.context'

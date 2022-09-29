@@ -64,7 +64,7 @@ const DayVisitsReport = (props) => {
         label: `${props.title} per day`,
         fill: false,
         lineTension: 0.3,
-        borderColor: "#35213d",
+        borderColor: "#4285f4",
         pointBorderWidth: 1,
         pointHoverRadius: 5,
         pointHoverBackgroundColor: "#375751",
@@ -122,7 +122,7 @@ const DayVisitsReport = (props) => {
   }, [props]);
 
   return (
-    <>
+    <div className={styles.card}>
       <ReportWrapper>
         <ChartTitle>{`${props.title} per day`}</ChartTitle>
         <Subtitle>{`Average - ${average} ${props.title}`}</Subtitle>
@@ -135,7 +135,7 @@ const DayVisitsReport = (props) => {
         <br></br>
       </ReportWrapper>
       <br></br>
-    </>
+    </div>
   );
 };
 

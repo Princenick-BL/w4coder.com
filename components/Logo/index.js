@@ -10,9 +10,9 @@ export default function Logo({single,style}) {
         <link rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"></link>    
       </Head>
       {single ? (
-        <div className={styles.logo} style={style}>{`D`}</div>
+        <div className={styles.logo} style={style}>{`w`}</div>
       ) : (
-        <div className={styles.logo} style={style}>{`DiscoverAI`}</div>
+        <div className={styles.logo} style={style}>{`w4coder`}</div>
       )}
     </>
   )

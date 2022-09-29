@@ -96,15 +96,17 @@ function StoryEditorContent({location}) {
                         {
                           id:2,
                           type:"TEXTBLOCK",
-                          content :"HELLO WORLD TITLE",
+                          content :"HELLO WORLD TITLE THIS IS THE CGHVE VDEJGD JGUEGJH GDUEGJQHV GDFJQHGFDGJH",
                           style:{
-                              top:"90%",
-                              bottom:5,
-                              left : 0,
-                              color : "#000",
-                              width : 200,
-                              textAlign : "center",
-                              height : 100
+                            top:"20%",
+                            bottom:5,
+                            left : 0,
+                            color : "#fff",
+                            width : "40%",
+                            textAlign : "center",
+                            height : "max-content",
+                            fontSize : "1rem",
+                            backgroundColor:"green"
                           }
                         }
                     ]
@@ -265,12 +267,17 @@ function StoryEditorContent({location}) {
               </div>
             </div>
             <div className={styles.allSlides}>
-              <div className={styles.scrollBtn}></div>
+              <div className={styles.scrollBtn}>
+                <div></div>
+              </div>
               <div className={styles.slider}>
                 {items && items.map((slide,index)=>{
                   return(
-                    <div key={index} onClick={(e)=>{handleChangeCurrentSlide(index);setCurentIndex(index)}}>
-                      <StorySlidePreview slide={slide} pos={index + 1}/>
+                    <div key={index}>
+                      <div className={styles.addSlide}>+</div>
+                      <div  onClick={(e)=>{handleChangeCurrentSlide(index);setCurentIndex(index)}}>
+                        <StorySlidePreview slide={slide} pos={index + 1}/>
+                      </div>
                     </div>
                   )
                 })}
@@ -287,10 +294,6 @@ function StoryEditorContent({location}) {
               <div className={styles.button}>Update</div>
             </div>
             <div className={styles.metas}>
-              <span>Title</span>
-              <textarea placeholder="Title" value={story && story.title} rows={4}/>
-              <span>Description</span>
-              <textarea placeholder="Description" rows={6} value={story && story.desc}/>
               <span>Posters</span>
               <form className={styles.fileInputForm}>
                   <span className={styles.label}>
@@ -299,6 +302,10 @@ function StoryEditorContent({location}) {
 
                   <input type="file" name="upload" id="upload" className={styles.upload} placeholder="Upload File"/>
               </form>
+              <span>Title</span>
+              <textarea placeholder="Title" value={story && story.title} rows={4}/>
+              <span>Description</span>
+              <textarea placeholder="Description" rows={6} value={story && story.desc}/>
             </div>
           </div>           
         </main>
@@ -317,5 +324,5 @@ function StoryEditor() {
   )
 }
 
-export default StoryEditor;
+export default withAuth(StoryEditor);
 

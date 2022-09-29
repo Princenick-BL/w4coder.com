@@ -10,7 +10,7 @@ export default function ArticlePreview({article,type}) {
     <div className={type == 2 ?  styles.item1 : styles.item} >
       {article && (
 
-        <a href={`/read/article/${article?.category?.toLowerCase()}/${article?._id}/${article?.slug}`} className={styles.card}>
+        <a href={`/article/${article?.category?.toLowerCase()}/${article?._id}/${article?.slug}`} className={styles.card}>
           {article?.poster  &&
           <div  className={styles.thumb}>
             <Image 
