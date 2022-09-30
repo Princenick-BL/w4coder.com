@@ -234,7 +234,7 @@ function ReadIndex({topA,page1}) {
             <div className={styles.mainSlideShow}>
               {page1.map((article,index)=>{
                 return(
-                  <Slide key={index} article={article} style={{paddingBottom:".5rem"}}/>
+                  <Slide key={index} article={article} style={{width:"calc(100% - 1rem)",margin:".5rem !important",height:"calc(100% - 1rem)"}}/>
                 )
               })}
             </div>

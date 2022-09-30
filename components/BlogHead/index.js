@@ -1294,11 +1294,11 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 }
 
                 .recipe-article {
+                }
+                .recipe-article-content{
                     max-width: 900px;
                     width: 100%;
                     margin: 0 auto;
-                }
-                .recipe-article-content{
                     background-color : #fff;
                     border-radius : 10px;
                 }
@@ -1310,20 +1310,24 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 }
 
                 .ads-zone {
-                    width: 320px;
-                    min-width: 320px;
-                    max-width: 320px;
+                    width: 400px;
+                    min-width: 400px;
+                    max-width: 400px;
                     padding: 10px;
                     margin: 2rem;
                     margin-left: 0px;
                     margin-top : 0px;
+                    padding-top: 2rem;
+                    display:flex;
+                    flex-direction:column;
+                    align-items : center;
                 }
 
                 .ads-zone .most-read {
-                    margin-top: 3rem;
                     font-size: 1.5rem;
                     font-weight: 400;
                     letter-spacing: .06rem;
+                    color : #fff;
                 }
 
                 p {

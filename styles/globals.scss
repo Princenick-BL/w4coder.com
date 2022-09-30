@@ -182,6 +182,6 @@ body h1 {
 	height: max-content;
 	//background-color: #202029;
 	overflow: hidden;
-	width: 100%;
+	width: calc( 100% - 1rem );
 	padding: .5rem;
 }

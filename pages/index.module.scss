@@ -1,6 +1,6 @@
 .main{
     margin: 0 auto;
-    width: 62.5rem;
+    width: 70rem;
     max-width: calc(100vw - 20px);
     padding-left: 10px;
     padding-right: 10px;
@@ -17,7 +17,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        width: calc( 100% - 1rem );
         padding: .5rem;
     }
     p {
@@ -37,10 +37,8 @@
     }
     .editorial{
         display: flex;
-        height: 110vh;
         justify-content: space-between;
         min-height: 900px;
-        flex-wrap: wrap;
         max-width: 100vw;
         margin-bottom: 2rem;
         @media only screen and (max-width: 500px) {
@@ -52,16 +50,13 @@
         }
         .mainSlideShow{
             height: 100%;
-            width: 67%;
             min-width: 67%;
-            max-width: 67%;
             position: relative;
             overflow: hidden;
-            display: flex;
-            align-content: space-between;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            width: calc(100% - 320px);
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 10px;
             padding-bottom: .5rem;
             @media only screen and (max-width: 950px) {
                 width: calc( 100% - 1rem );
