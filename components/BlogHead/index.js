@@ -6,7 +6,7 @@ export default function BlogHead({poster,publishedAt,description,title,location}
 
   return (
     <Head>
-        <meta name="theme-color" content="#ffffff"/>
+        <meta name="theme-color" content="#000"/>
         <title>{title}</title>
         <meta name="description" content={description}/>
         <link rel="canonical" href={location}/>

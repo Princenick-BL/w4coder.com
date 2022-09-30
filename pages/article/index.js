@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import styles from './index.module.scss'
 import NewHead from '../../components/header/header'
 import Pagination from '../../components/Pagination'
@@ -10,6 +11,7 @@ import TheSideBar from '../../components/ThesideBar'
 export default function index({articles}) {
   return (
     <div className={styles.main}>
+     
       <NewHead/>
       <div className={styles.content}>
         <div className={styles.left}>

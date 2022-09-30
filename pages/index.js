@@ -177,12 +177,13 @@ function ReadIndex({topA,page1}) {
   return (
     <>
       <Head>
-      <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script
-    async
-    custom-element="amp-story-player"
-    src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"
-  ></script>
+        <title>w4coder</title>
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <script
+          async
+          custom-element="amp-story-player"
+          src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"
+        ></script>
       </Head>
       <div id="mainContent">
         {/* <HomeMenu /> */}

@@ -25,7 +25,7 @@ const Card = ({card ,index}) =>{
                     {card?.title}
                 </h1>
                 <div className={styles.titlebottom}>
-                    <Link href='/'>
+                    <Link href={"/article/"+card?._id+"/"+card?.slug}>
                         <a >{"Read this article "}	&#10148;</a>
                     </Link>
                     <span>{card.keywords?.join(" - ")}</span>
