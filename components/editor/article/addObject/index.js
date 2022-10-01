@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons';
 import { useArticleContext } from '../../../../contexts/article.context';
 
-export default function index() {
+export default function AddObject() {
 
     const [show,setShow] = useState(false)
 
