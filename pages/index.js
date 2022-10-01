@@ -194,7 +194,7 @@ function ReadIndex({topA,page1}) {
           </div>
           <div className="viewport">
             <div className="entry-point-container">
-              <h1> Web Stories </h1>
+              {/* <h1> Web Stories </h1> */}
               <div className="circular-entry-point">
                 <div className="entry-points">
                   {stories.map((story,index)=>{

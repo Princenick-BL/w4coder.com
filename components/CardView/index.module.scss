@@ -2,7 +2,6 @@
     display: flex;
     position: relative;
     width: 100%;
-    min-height: 26rem;
     color: #fff;
     border-bottom: 1px solid #fff;
     @media only screen and (min-width: 600px) {
@@ -55,6 +54,7 @@
             -webkit-box-orient: vertical;
             line-height: 1.5 !important;
             margin: 0 !important;
+            font-weight: 300;
         }
         .desc{
             width: 100%;
@@ -142,7 +142,7 @@
         width: 20px;
         height: 20px;
         min-width: 20px;
-        border-radius: 50%;
+        border-radius: 5px;
         overflow: hidden;
         margin-right: 15px;
     }

@@ -18,7 +18,7 @@ export default function Slide({article,style,type=0}){
                         <Image
                             src={article.poster}
                             width={article.meta.width}
-                            height={500}
+                            height={650}
                             layout="responsive"
                             className={styles.img}
                         />
@@ -27,7 +27,7 @@ export default function Slide({article,style,type=0}){
                           <div className={styles.mark_down}>
                               {/* <h5 className={styles.cat}>Catérorie</h5> */}
                               <h2 className={styles.h2}>{article.title}</h2>
-                              <span className={styles.desc+" "+(type==1 ?styles.type2:"" )}>{article.description}</span>
+                              {/* <span className={styles.desc+" "+(type==1 ?styles.type2:"" )}>{article.description}</span> */}
 
                           </div>
 
@@ -35,11 +35,11 @@ export default function Slide({article,style,type=0}){
                         <div className={styles.publisher}>
                           <Image
                               src={article.author.logo}
-                              width="40"
-                              height="40"
+                              width="20"
+                              height="20"
                               layout="fixed"
                               className={styles.publisher_logo}
-                              style={{minWidth:"40px"}}
+                              style={{minWidth:"20px"}}
                           />
                           <div className={styles.name}>Published by <strong>{article.author.name}</strong> on {new Date(article.updatedAt).toLocaleDateString()}</div>
 
