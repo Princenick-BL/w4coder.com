@@ -7,12 +7,13 @@
 
     .item{
         display: flex;
+        margin-bottom: .5rem;
         .desc{
             margin-left: 2rem;
             max-width: 100%;
             line-height: 1.5;
             display: -webkit-box;
-            -webkit-line-clamp: 6;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
             h5{

@@ -9,11 +9,11 @@ import {
     FormatPainterOutlined,
     HomeFilled
 } from '@ant-design/icons';
-import { useStoryContext } from '../../../contexts/story.contex';
-import { getFiles } from '../../../services/files-editor';
+import { useStoryContext } from '../../../../contexts/story.contex';
+import { getFiles } from '../../../../services/files-editor';
 import Image from 'next/image';
-import StorySlidePreview from '../../StorySlide/preview';
-import CustomRichText from './CustomRichTextEditor';
+import StorySlidePreview from '../../../StorySlide/preview';
+import CustomRichText from '../CustomRichTextEditor';
 import Link from 'next/link';
 
 const myLoader = ({ src, width, quality }) => {
@@ -29,20 +29,7 @@ export default function AddObject() {
     const {state,dispatch} = useStoryContext()
     const [show,setShow] = useState(state?.currentTab);
 
-    const handleAddText = () =>{
-        dispatch({
-            type : "add-object",
-            payload :  {  value : 
-                {
-                    pos : 1,
-                    type : "TEXT_BLOCK",
-                    meta : {  },
-                    content : `<p>Hello world</p>`
     
-                },
-            }
-        })
-    }
 
 
     const handleChangeTab = (payload)=>{
@@ -52,24 +39,7 @@ export default function AddObject() {
         })
     }
 
-    const handleAddPicture = () =>{
-        dispatch({
-            type : "add-object",
-            payload :  {  value : 
-                {
-                    pos : 2,
-                    type : "IMAGE_BLOCK",
-                    meta : {
-                        width : 1280,
-                        height : 700,
-                        alt : state?.title
-                    },
-                    content : `https://picsum.photos/1024/700`
-
-                },
-            }
-        })
-    }
+   
 
     useEffect(()=>{
         (async ()=>{

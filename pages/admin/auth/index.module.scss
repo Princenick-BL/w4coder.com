@@ -1,81 +1,36 @@
-.login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    //background-color: var(--color-primary-light);
-    background-image: url("https://picsum.photos/1520/750/?blur");
-    background-repeat: no-repeat;
-    background-size: cover;
-    @media screen and (min-width: 800px) {
-        justify-content: flex-start;
-    }
-    .content{
-        background-color: #fff;
-        border: 2px solid var(--color-primary-light);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        min-width: 70vw;
-        min-height: 70vh;
-        @media screen and (min-width: 800px) {
-            min-width: 40vw;
-            min-height: 80vh;
-            margin-left: 4rem;
-        }
-        .notification{
-            height: 50px;
-            color: red;
-        }
-        form{
-            padding: 1rem;
-            border-radius: 5px;
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            input[type="text"],input[type="password"]{
-                width: 100%;
-                padding: .6rem;
-                margin: 1rem;
-                border: none;
-                border-radius: 5px;
-                outline: none;
-                background-color: #f3f3f3f3;
-            }
-            input[type="submit"]{
-                padding: .4rem;
-                width: 120px;
-                cursor: pointer;
-                margin-bottom: .7rem;
-                background-color: var(--color-primary-light);
-                border: none;
-                border-radius: 5px;
-                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-                margin: .5rem auto;
-                color: #fff;
-            }
-        }
-    }
-}
+
 
 .loginV2{
     @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
-
     * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     }
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .error{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 50px;
+        background-color: rgb(236, 226, 226);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     section {
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 700px;
     background-color: #f3f3f3;
     display: flex;
     justify-content: center;

@@ -1297,7 +1297,7 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 }
                 .recipe-article-content{
                     max-width: 900px;
-                    width: 100%;
+                    width: 96%;
                     margin: 0 auto;
                     background-color : #fff;
                     border-radius : 10px;
@@ -1314,7 +1314,6 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                     min-width: 400px;
                     max-width: 400px;
                     padding: 10px;
-                    margin: 2rem;
                     margin-left: 0px;
                     margin-top : 0px;
                     padding-top: 2rem;
@@ -1338,7 +1337,14 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 .ampstart-accent {
                     color: #003f93;
                 }
-
+                #content{
+                    justify-content:center;
+                }
+                @media only screen and (max-width: 1000px) {
+                    #content{
+                        flex-direction : column;
+                    }
+                }
                 #content:target {
                     margin-top: calc(0px - 3.5rem);
                     padding-top: 3.5rem;

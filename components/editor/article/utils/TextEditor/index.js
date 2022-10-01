@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import dynamic from 'next/dynamic'
 import styles from './index.module.scss'
-import { useArticleContext } from '../../contexts/article.context'
+import { useArticleContext } from '../../../../../contexts/article.context'
 import ReactHtmlParser from 'react-html-parser'; 
 
 
@@ -57,7 +57,7 @@ const formats = [
   'align'
 ]
 
-export default function Editor({children,edit,index}) {
+export default function Editor({children,edit,index,setEdit}) {
     
    
     const {state,dispatch} = useArticleContext()
@@ -77,17 +77,14 @@ export default function Editor({children,edit,index}) {
 
 
     return (
-        <>
+        <div className={styles.container}>
             {edit ? (
                 <QuillNoSSRWrapper className={styles.edit} value={children} modules={modules} formats={formats} theme="snow" onChange={(e)=>{handleChange(e)}} />
             ):(
-                <p className={styles.defaultText}>
+                <p className={styles.defaultText} onClick={(e)=>{setEdit(!edit)}}>
                     <div> { ReactHtmlParser (children) } </div>
-
-
-                    {/* {children} */}
                 </p>
             )}
-        </>
+        </div>
     )
 }

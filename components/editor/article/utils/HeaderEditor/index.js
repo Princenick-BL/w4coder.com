@@ -4,8 +4,8 @@ import Image from 'next/image'
 import {
     EditFilled
 } from '@ant-design/icons';
-import { useArticleContext } from '../../contexts/article.context'
-import { uploadfile } from '../../services/files-editor';
+import { useArticleContext } from '../../../../../contexts/article.context'
+import { uploadfile } from '../../../../../services/files-editor';
 
 export default function HeaderEditor(props) {
 
@@ -98,7 +98,7 @@ export default function HeaderEditor(props) {
     return (
         <header className={styles.header} ref={wrapperRef}>
             <div className={styles.edit}>
-                <span className={styles.category +" "+styles.defaultPadding}>{props?.category}</span>
+                <span className={styles.category }>{props?.category}</span>
             
                 <div className={styles.editBtn}>
                     <EditFilled onClick={(e)=>{setShowEdit(!showEdit)}}/>
@@ -142,38 +142,36 @@ export default function HeaderEditor(props) {
                                 <br></br>
 
                             </div>
-                            <div className={styles.submit} onClick={(e)=>{handleChangeHeader()}} >Submit</div>
+                            <div className={styles.submit} onClick={(e)=>{handleChangeHeader()}} >UPDATE</div>
                         </div>
                     }
                 </div>
             </div>
-            <h1 style={{fontSize:"2rem"}} className={styles.defaultPadding}>{props?.title}</h1>
-            <address className={styles.defaultPadding}>
+            <h1 style={{fontSize:"2rem"}}>{props?.title}</h1>
+            <address >
                 <time
                     className="ampstart-byline-pubdate block bold my1"
                     dateTime="2016-12-13"
-                >{`Updated at : ${props?.updatedAt}`}</time>
+                >{`Updated at : ${new Date(props?.updatedAt).toLocaleDateString()}`}</time>
             </address>
-            <div className={styles.defaultPadding}>
-                    {props?.poster &&
-                        <Image
-                            src={props?.poster}
-                            onLoad={({ target }) => {
-                                const { naturalWidth, naturalHeight } = target ;
-                                setSize({
-                                    width:naturalWidth,
-                                    height:naturalHeight
-                                })
-                            }}
-                            width={size?.width || "1280"}
-                            height={size?.height || "853"}
-                            layout="responsive"
-                            alt="The final spritzer"
-                            className={styles.img}
-                            style={{width:"calc(100% - 2rem );"}}
-                        /> 
-                    }
-            </div>
+            {props?.poster &&
+                <Image
+                    src={props?.poster}
+                    onLoad={({ target }) => {
+                        const { naturalWidth, naturalHeight } = target ;
+                        setSize({
+                            width:naturalWidth,
+                            height:naturalHeight
+                        })
+                    }}
+                    width={size?.width || "1280"}
+                    height={size?.height || "853"}
+                    layout="responsive"
+                    alt="The final spritzer"
+                    className={styles.img}
+                    style={{width:"calc(100% - 2rem );"}}
+                /> 
+            }
             <br></br>
         </header>
     )

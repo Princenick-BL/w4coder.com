@@ -1,7 +1,7 @@
 import React,{Fragment,useState,useEffect,useRef} from 'react'
 import dynamic from 'next/dynamic'
 import styles from './index.module.scss'
-import { getSection } from '../../utils/article.utils'
+import { getSection } from '../../components/client/article/article.utils'
 import axios from 'axios'
 import { config as endpoint } from '../../constants'
 import * as gtag from '../../lib/gtag'
@@ -183,7 +183,7 @@ export default function Article({article,canonical,social,articleTop}) {
 
                         </div>
                         <br></br>
-                        <span className='most-read'>Top articles</span>
+                        <span style={{width:"340px",marginTop:"1rem",color:"#fff",fontSize:"1.2rem"}}>Top articles</span>
                         <br></br>
                         {articleTop && articleTop?.map((top,index)=>{
                             return(
@@ -191,7 +191,7 @@ export default function Article({article,canonical,social,articleTop}) {
                                 style={{textDecoration : "none" }}>
                                     <div style={{
                                         width : "350px",
-                                        height : "100px",
+                                        height : "120px",
                                         backgroundColor:"#fff",
                                         borderRadius : "10px",
                                         padding : "5px",
@@ -199,31 +199,49 @@ export default function Article({article,canonical,social,articleTop}) {
                                     }}>
                                         <div style={{
                                             width : "100%",
-                                            height : "90px",
+                                            height : "110px",
                                             borderRadius : "5px",
                                             boxShadow: "0 0 .5rem rgba(17,17,17,.7)",
                                             transition: ".15s",
                                             overflow:"hidden",
-                                            padding:"5px"
+                                            padding:"5px",
+                                            display:"flex",
                                         }}>
-                                            <h2 style={{
-                                                fontSize:"1rem",
-                                                fontWeight:"bold",
-                                                margin:"0px",
-                                                lineHeight:"1.5",
-                                                "overflow": "hidden",
-                                                "display": "-webkit-box",
-                                                "-webkit-line-clamp": "2",
-                                                "-webkit-box-orient": "vertical",
-                                                textDecoration : "underline"
-                                            }}>{top?.title} </h2>
-                                            <h5 style={{
-                                                "overflow": "hidden",
-                                                "display": "-webkit-box",
-                                                "-webkit-line-clamp": "2",
-                                                "-webkit-box-orient": "vertical",
-                                            }}>{top?.description} </h5>
-
+                                            <div>
+                                                <h5 style={{
+                                                    fontSize:"1rem",
+                                                    fontWeight:"initial",
+                                                    margin:"0px",
+                                                    lineHeight:"1.5",
+                                                    "overflow": "hidden",
+                                                    "display": "-webkit-box",
+                                                    "-webkit-line-clamp": "4",
+                                                    "-webkit-box-orient": "vertical",
+                                                    textDecoration : "none"
+                                                }}>{top?.title} </h5>
+                                                {/* <h5 style={{
+                                                    "overflow": "hidden",
+                                                    "display": "-webkit-box",
+                                                    "-webkit-line-clamp": "2",
+                                                    "-webkit-box-orient": "vertical",
+                                                }}>{top?.description} </h5> */}
+                                            </div>
+                                            <div
+                                                style={{
+                                                    width:"120px",
+                                                    height:"80px"
+                                                }}
+                                            >
+                                                <amp-img
+                                                    data-hero=""
+                                                    src={top?.poster}
+                                                    width={100}
+                                                    height={70}
+                                                    layout="responsive"
+                                                    alt="The final spritzer"
+                                                ></amp-img>
+                                                
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
@@ -314,7 +332,7 @@ export async function getServerSideProps(context) {
     const article = await RedisCache.fetch(`article-${articleId}`,fetcher,3600 * 24) || {}
     const articleTop = await RedisCache.fetch(`article-top`,fetcherTop,3600 * 24) || {}
 
-    console.log("Article Top",articleTop)
+    // console.log("Article Top",articleTop)
 
     // const article = await fetcher() 
 

@@ -9,95 +9,13 @@ import {GlobalProvider} from '../../../contexts/global.context'
 import {ArticleProvider} from '../../../contexts/article.context'
 import Logo from '../../../components/Logo'
 
-function Login() {
-
-    const [showPass,setShowPass] = useState(false);
-    const [loginId,setLoginId] = useState(false)
-    const [loginPwd,setLoginPwd] = useState(false)
-    const {state,dispatch} = useGlobalContext()
-    const Router = useRouter();
-    const [error,setError] = useState(false)
-
-    const {redirect} = Router.query
-
-    
-    const login = async (e) =>{
-        e.preventDefault()
-        const res = await axios.post(`${config.API_ENDPOINT}/auth/login`,{
-            email : loginId,
-            password : loginPwd
-        })
-        if(!res.data?.error){
-            window.localStorage.setItem("access_token", res?.data?.token);
-            dispatch({ //onClose(false)
-                // setNotification({
-                //     text : res.data.message,
-                //     type:"success"
-                // })
-                
-                type:"LOGIN",
-                payload:res?.data?.token,
-            })
-            // notification.success({
-            //     message:res.data.message,
-            // })
-            Router.push(redirect)
-           
-        }
-        if(res.data?.error){
-            setError(res.data?.message)
-            // setNotification({
-            //     text : res.data?.message,
-            //     type:"error"
-            // })
-        }
-        
-    }
-
-   
-
-    return (
-       
-        <div className={styles.login}>
-            <div className={styles.content}>
-
-                <h1>Admin</h1>
-
-                {error && (
-                    <div className={styles.notification}>
-                        <div>{error}</div>
-                    </div>
-                )}
-
-                <form onSubmit={(e)=>{login(e)}}>
-                
-                        <input className={styles.inputText} type={"text"} placeholder='Identifiant' onChange={(e)=>{setLoginId(e.target.value)}}/>
-                        <div className={styles.inputPassword}>
-                            <input className={styles.input} type={showPass? "text": "password"} placeholder='Mot de pass' onChange={(e)=>{setLoginPwd(e.target.value)}}/>
-                            {showPass ?(
-                                <i onClick={(e)=>{setShowPass(false)}} className="fa fa-eye-slash" style={{fontSize:"24px",cursor:"pointer"}}></i>
-                            ):(
-                                <i onClick={(e)=>{setShowPass(true)}} className="fa fa-eye" style={{fontSize:"24px",cursor:"pointer"}}></i>
-                            )}
-
-                        </div>
-                        <br></br>
-                        <input type={"submit"} className={styles.submitBtn} />
-                    
-                </form>
-            </div>
-          
-        </div>
-    )
-}
-
 
 export function LoginV2() {
 
     const [active,setActice] = useState(false)
     const [showPass,setShowPass] = useState(false);
-    const [loginId,setLoginId] = useState(false)
-    const [loginPwd,setLoginPwd] = useState(false)
+    const [loginId,setLoginId] = useState("")
+    const [loginPwd,setLoginPwd] = useState("")
     const {state,dispatch} = useGlobalContext()
     const Router = useRouter();
     const [error,setError] = useState(false)
@@ -107,33 +25,39 @@ export function LoginV2() {
     
     const login = async (e) =>{
         e.preventDefault()
-        const res = await axios.post(`${config.API_ENDPOINT}/auth/login`,{
-            email : loginId,
-            password : loginPwd
-        })
-        if(!res.data?.error){
-            window.localStorage.setItem("access_token", res?.data?.token);
-            dispatch({ //onClose(false)
-                // setNotification({
-                //     text : res.data.message,
-                //     type:"success"
-                // })
-                
-                type:"LOGIN",
-                payload:res?.data?.token,
+        try{
+
+            const res = await axios.post(`${config.API_ENDPOINT}/auth/login`,{
+                email : loginId,
+                password : loginPwd
             })
-            // notification.success({
-            //     message:res.data.message,
-            // })
-            Router.push(redirect)
-           
-        }
-        if(res.data?.error){
-            setError(res.data?.message)
-            // setNotification({
-            //     text : res.data?.message,
-            //     type:"error"
-            // })
+            if(!res.data?.error){
+                window.localStorage.setItem("access_token", res?.data?.token);
+                dispatch({ //onClose(false)
+                    // setNotification({
+                    //     text : res.data.message,
+                    //     type:"success"
+                    // })
+                    
+                    type:"LOGIN",
+                    payload:res?.data?.token,
+                })
+                // notification.success({
+                //     message:res.data.message,
+                // })
+                Router.push(redirect)
+               
+            }
+            if(res.data?.error){
+                setError(res.data?.message)
+                // setNotification({
+                //     text : res.data?.message,
+                //     type:"error"
+                // })
+            }
+        }catch(e){
+            setError(e?.message)
+
         }
         
     }
@@ -145,6 +69,9 @@ export function LoginV2() {
 
     return (
         <div className={styles.loginV2}>
+            <div className={styles.error}>
+                {error}
+            </div>
             <section>
                 <div className={styles.container +" "+ (active ? styles.active : "")}>
                 <div className={styles.user+" "+styles.signinBx}>
@@ -155,8 +82,8 @@ export function LoginV2() {
                     <div className={styles.formBx}>
                     <form action="" onSubmit={(e)=>{login(e)}}>
                         <h2>Sign In</h2>
-                        <input type={"text"} name="email" placeholder='Email' onChange={(e)=>{setLoginId(e.target.value)}} />
-                        <input type="password" name="password" placeholder="Password"  onChange={(e)=>{setLoginPwd(e.target.value)}}/>
+                        <input type={"text"} name="email" placeholder='Email' value={loginId} onChange={(e)=>{setLoginId(e.target.value)}} />
+                        <input type="password" name="password" placeholder="Password" value={loginPwd}  onChange={(e)=>{setLoginPwd(e.target.value)}}/>
                         <input type="submit" name="" value="Login" />
                         <p className={styles.signup}>
                         Don't have an account ?

@@ -2,18 +2,19 @@ import React,{Fragment,useEffect,useState} from 'react'
 import Head from 'next/head'
 import styles from './index.module.scss'
 import Image from 'next/image'
-import { getSection } from '../../../utils/article-editor.utils'
-import BlogHead from '../../../components/editor/BlogHead'
-import HeaderEditor from '../../../utils/HeaderEditor'
-import AddObject from '../../../components/editor/addObject/article'
+import { getSection } from '../../../components/editor/article/utils/article-editor.utils'
+import HeaderEditor from '../../../components/editor/article/utils/HeaderEditor'
 import { DragDropContext, Droppable, Draggable,resetServerContext } from 'react-beautiful-dnd';
-import Focusable from '../../../components/editor/Focusable'
+import Focusable from '../../../components/editor/article/Focusable'
 import { useArticleContext } from '../../../contexts/article.context'
 import withAuth from "../../../middleware/withAuth";
 import { getArticle } from '../../../services/articles-editor'
 import { useRouter } from 'next/router'
 import {GlobalProvider} from '../../../contexts/global.context'
 import {ArticleProvider} from '../../../contexts/article.context'
+import { HiHome } from 'react-icons/hi';
+import Link from 'next/link'
+import AddObject from '../../../components/editor/article/addObject'
 //export const config = { amp: true };
 
 
@@ -81,66 +82,87 @@ export  function Article({location}) {
               <title>Article editor</title>
               <link rel="canonical" href={location}/>
           </Head>
-          <BlogHead/>
+          {/* <BlogHead/> */}
           <Fragment>
               <main id="content" role="main" className={styles.main}>
-                  <AddObject/>
+                  {/* <AddObject/> */}
                   {/* <MyMedias/> */}
-                  <br></br>
-                  <br></br>
+                  <div className={styles.head}>
+                    <div className={styles.left} >
+                      <Link href={"/admin"}>
+                        <a>
+                          <HiHome color='#fff' fontSize={30}/>
+                        </a>
+                      </Link>
+                    </div>
+                    <div className={styles.right}>
+                      <Link href={`/article/${article?._id}/${article?.slug}`}>
+                        <a target={"_blank"}>
+                          <div className={styles.viewPageBtn}>View page</div>
+                        </a>
+                      </Link>
+                      <div className={styles.updateBtn}>UPDATE</div>
+                    </div>
+                  </div>
                   {article &&
                     <article className={styles.recipeArticle}>
+                      <div className={styles.content}>
+
+                        <HeaderEditor
+                          title = {article?.title}
+                          poster = {article?.poster}
+                          category = {article?.category}
+                          updatedAt = {article?.updatedAt}
+                        />
                         
-                      <HeaderEditor
-                        title = {article?.title}
-                        poster = {article?.poster}
-                        category = {article?.category}
-                        updatedAt = {article?.updatedAt}
-                      />
-                      
-                      <div className='main'>
+                        <div className='main'>
 
-                        <DragDropContext onDragEnd={handleOnDragEnd } >
-                          <Droppable droppableId="droppable">
-                            {(provided, snapshot) => (
-                              <div
-                                ref={provided.innerRef}
-                                // className={classNames('list', snapshot.isDraggingOver && 'draggingOver')}
-                                {...provided.droppableProps}
-                              >
-                                {items?.map((section,index)=>(
-                                  <Draggable key={index} draggableId={`${index}-id`} index={index}>
-                                    {(provided, snapshot) => (
-                                      <div
-                                        // className={classNames('item', snapshot.isDragging && 'dragging')}
-                                        style={{width:' 100%',height :'100%'}}
-                                        ref={provided.innerRef}
-                                        {...provided.draggableProps}
-                                        {...provided.dragHandleProps}
-                                      >
-                                        <Focusable
-                                          index={index}
+                          <DragDropContext onDragEnd={handleOnDragEnd } >
+                            <Droppable droppableId="droppable">
+                              {(provided, snapshot) => (
+                                <div
+                                  ref={provided.innerRef}
+                                  // className={classNames('list', snapshot.isDraggingOver && 'draggingOver')}
+                                  {...provided.droppableProps}
+                                >
+                                  {items?.map((section,index)=>(
+                                    <Draggable key={index} draggableId={`${index}-id`} index={index}>
+                                      {(provided, snapshot) => (
+                                        <div
+                                          // className={classNames('item', snapshot.isDragging && 'dragging')}
+                                          style={{width:' 100%',height :'100%'}}
+                                          ref={provided.innerRef}
+                                          {...provided.draggableProps}
+                                          {...provided.dragHandleProps}
                                         >
-                                          {getSection(section,index)}
-                                        </Focusable>
-                                      </div>
-                                    )}
-                                  </Draggable>
-                                ))}
-                                {provided.placeholder}
-                              </div>
-                            )}
-                          </Droppable>
-                        </DragDropContext>                       
+                                          <Focusable
+                                            index={index}
+                                          >
+                                            {getSection(section,index)}
+                                          </Focusable>
+                                        </div>
+                                      )}
+                                    </Draggable>
+                                  ))}
+                                  {provided.placeholder}
+                                </div>
+                              )}
+                            </Droppable>
+                          </DragDropContext>                       
+                        </div>
+                        <div className={styles.addNew}>
+                            <AddObject/>
+                        </div>
+                        <br></br>
+                        <br></br>
+                        <br></br>
                       </div>
-
-                    
-                      <br></br>
-                      <br></br>
-                      <br></br>
 
                     </article>
                   }
+                  {/* <aside className={styles.tools}>
+
+                  </aside> */}
               </main>
 
           </Fragment>

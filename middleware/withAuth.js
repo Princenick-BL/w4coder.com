@@ -30,7 +30,7 @@ const withAuth = (WrappedComponent) => {
     }
 
     // If we are on server, return null
-    return <Loading/>;
+    return null;
   };
 };
 

@@ -7,20 +7,8 @@ import { useRouter } from 'next/router'
 import {GlobalProvider} from '../../../contexts/global.context'
 import {StoryProvider} from '../../../contexts/story.contex'
 import { getStory } from '../../../services/stories-editor'
-import BlogHead from '../../../components/editor/BlogHead'
 import withAuth from "../../../middleware/withAuth";
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  FileTextOutlined,
-  UserOutlined,
-
-} from '@ant-design/icons';
-import Logo from '../../../layouts/icons/logo'
-import WebStory from '../../../layouts/icons/webStory'
-import GoogleAnalyticsIcon from '../../../layouts/icons/analytics'
-import Link from 'next/link';
-import AddObject from '../../../components/editor/addObject/story'
+import AddObject from '../../../components/editor/story/addObject/story'
 import StorySlidePreview from '../../../components/StorySlide/preview'
 import StorySlideEditor from '../../../components/StorySlide/editor'
 

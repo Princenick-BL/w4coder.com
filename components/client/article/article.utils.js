@@ -1,4 +1,4 @@
-import { SECTION_TYPE } from "../constants"
+import { SECTION_TYPE } from "../../../constants"
 
 export const getSection = (section) =>{
     if(section){

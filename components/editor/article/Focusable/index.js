@@ -4,7 +4,7 @@ import {
   DeleteFilled,
   EditFilled
 } from '@ant-design/icons';
-import { useArticleContext } from '../../../contexts/article.context'
+import { useArticleContext } from '../../../../contexts/article.context'
 
 export default function Focusable({children,index}) {
 
@@ -59,9 +59,6 @@ useOutsideAlerter(wrapperRef);
         <div className={styles.actions}>
           <div className={styles.item} onClick={(e)=>{handleDelete()}}>
             <DeleteFilled />
-          </div>
-          <div className={styles.item} onClick={(e)=>{setEdit(!edit)}}>
-            <EditFilled />
           </div>
         </div>
     </div>

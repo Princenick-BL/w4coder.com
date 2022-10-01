@@ -1,5 +1,17 @@
 .header{
-
+    padding: 1rem;
+    h1{
+        padding-top: 0;
+        margin-top: 0;
+        font-weight: 400;
+        letter-spacing: .06rem;
+        margin-bottom: 1rem;
+    }
+    address{
+        margin-bottom: 1rem;
+        font-style: normal;
+        letter-spacing: .06rem;
+    }
     .edit{
 
         display: flex;
@@ -87,6 +99,7 @@
         letter-spacing: normal;
         color: #003f93;
         font-size: 1rem;
+        padding-bottom: 1rem;
     }
     
     .img{
@@ -95,12 +108,9 @@
     
     .defaultPadding{
         padding: 1rem;
-        padding-bottom: .5rem;
-        padding-top: .5rem;
     }
 }
 .header:hover{
-    border: 1px solid var(--color-primary-light);
     border-radius: 5px;
     .editBtn{
         display: flex;

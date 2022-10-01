@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Router from "next/router";
 import styles from './index.module.scss'
+import Logo from "../Logo";
 
 const WaitingPage = props => {
   
@@ -43,7 +44,7 @@ const WaitingPage = props => {
                         </circle>
                     </svg>
                     <br></br>
-                    <div className={styles.text}>Luxe Story Blog</div>
+                    <Logo/>
                 </div>
             </div>
         : props.children }

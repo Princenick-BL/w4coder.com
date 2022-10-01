@@ -18,7 +18,7 @@ export default function Slide({article,style,type=0}){
                         <Image
                             src={article.poster}
                             width={article.meta.width}
-                            height={article.meta.height}
+                            height={500}
                             layout="responsive"
                             className={styles.img}
                         />

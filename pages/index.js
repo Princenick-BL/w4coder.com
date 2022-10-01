@@ -240,8 +240,6 @@ function ReadIndex({topA,page1}) {
             </div>
             <TheSideBar/>
           </div>
-          <br></br>
-          <br></br>
           <Pagination/>
           <br></br>
           <br></br>

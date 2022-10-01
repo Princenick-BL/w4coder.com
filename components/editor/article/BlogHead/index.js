@@ -5,8 +5,8 @@ import {
   HomeFilled
 } from '@ant-design/icons';
 import Link from 'next/link';
-import { useArticleContext } from '../../../contexts/article.context';
-import { patchArticle } from '../../../services/articles-editor';
+import { useArticleContext } from '../../../../contexts/article.context';
+import { patchArticle } from '../../../../services/articles-editor';
 
 
 export default function BlogHead() {

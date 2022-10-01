@@ -1,15 +1,17 @@
 .focusable{
     display: flex;
-
+    padding: 1rem;
+    position: relative;
     .actions{
-        left: 5rem;
+        position: absolute;
+        right: -5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-left: 1rem;
         display: none;
         .item{
-            background-color: var(--color-primary-light);
+            background-color: #fff;
             width: 35px;
             height: 35px;
             border-radius: 35px;
