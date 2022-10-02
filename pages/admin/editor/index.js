@@ -8,7 +8,7 @@ import { DragDropContext, Droppable, Draggable,resetServerContext } from 'react-
 import Focusable from '../../../components/editor/article/Focusable'
 import { useArticleContext } from '../../../contexts/article.context'
 import withAuth from "../../../middleware/withAuth";
-import { getArticle } from '../../../services/articles-editor'
+import { getArticle,patchArticle } from '../../../services/articles-editor'
 import { useRouter } from 'next/router'
 import {GlobalProvider} from '../../../contexts/global.context'
 import {ArticleProvider} from '../../../contexts/article.context'
@@ -73,6 +73,23 @@ export  function Article({location}) {
     setItems(new_items)
   }
 
+  const handleSave = async (e) =>{
+    try{
+      const res =  await patchArticle(state?.article);
+      if(res){
+        dispatch({
+          type : 'init',
+          payload : {
+            value : res?.data
+          }
+        })
+      }
+    }catch(e){
+      
+    }
+
+  }
+
 
 
   return (
@@ -101,7 +118,7 @@ export  function Article({location}) {
                           <div className={styles.viewPageBtn}>View page</div>
                         </a>
                       </Link>
-                      <div className={styles.updateBtn}>UPDATE</div>
+                      <div className={styles.updateBtn} onClick={(e)=>{handleSave()}}>UPDATE</div>
                     </div>
                   </div>
                   {article &&

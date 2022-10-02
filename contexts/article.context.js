@@ -36,7 +36,7 @@ const ArticleReducer = (state,action) =>{
         break
 
         case 'add-object':
-
+            console.log("Value",value)
             state.article.sections = [...state?.article?.sections,value]
 
             return {

@@ -10,6 +10,7 @@ import Slide from '../components/CardView'
 import { getArticle ,getTopArticles} from '../services/articles'
 import TheSideBar from '../components/ThesideBar'
 import Head from 'next/head'
+import InfiniteScroll from "react-infinite-scroll-component";
 
 //export const config = { amp: true };
 
@@ -106,6 +107,9 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
 
 function ReadIndex({topA,page1}) {
 
+  const [pages,setPages] = useState(page1)
+  const [pageNum,setPageNum] = useState(1)
+  const [hasMore,setHasMore] = useState(true)
 
   const playerRef = useRef(null);
   //useAmpStoryPlayer(loadPlayer(playerRef))
@@ -173,6 +177,18 @@ function ReadIndex({topA,page1}) {
     });
     
   }, [])
+
+  const fetchMoreData = async ()=>{
+
+    const res =  await getArticle({filter:{
+      page : pageNum + 1
+    }})
+    setPageNum(pageNum + 1)
+    setPages([...pages,...res])
+    if(res.length === 0){
+      setHasMore(false)
+    }
+  }
  
   return (
     <>
@@ -188,7 +204,7 @@ function ReadIndex({topA,page1}) {
       <div id="mainContent">
         {/* <HomeMenu /> */}
         <main className={styles.main} >
-          <div className={styles.head}>
+          <div className={styles.head} id="#top">
             <Logo style={{fontSize:"2rem"}}/>
             {/* <h3>Main articles</h3> */}
           </div>
@@ -231,16 +247,25 @@ function ReadIndex({topA,page1}) {
             </div>
           </div>          
           <div className={styles.editorial}>
-            <div className={styles.mainSlideShow}>
-              {page1.map((article,index)=>{
+            <InfiniteScroll
+              dataLength={pages.length}
+              next={fetchMoreData}
+              hasMore={hasMore}
+              loader={<h4>Loading...</h4>}
+              className={styles.mainSlideShow}
+            >
+              {pages ? pages.map((article,index)=>{
                 return(
                   <Slide key={index} article={article} style={{width:"calc(100% - 1rem)",margin:".5rem !important",height:"calc(100% - 1rem)"}}/>
                 )
-              })}
-            </div>
+              }):(
+                <></>
+              )}
+            </InfiniteScroll>
+              
             <TheSideBar/>
           </div>
-          <Pagination/>
+          {/* <Pagination/> */}
           <br></br>
           <br></br>
           <Footer/>

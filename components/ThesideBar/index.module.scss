@@ -1,11 +1,10 @@
 .right{
     width: calc(35% - 2rem);
     max-width: calc(35% - 2rem );
-    min-width: 305px;
+    min-width: 320px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
     input[type="search"]{
         padding: 1rem;
         border-radius: 10px;

@@ -12,7 +12,9 @@ export default function BlogHead({poster,publishedAt,description,title,location}
         <link rel="canonical" href={location}/>
         <link rel="preload" as="image" href={poster} />
         <link rel="apple-touch-icon" href="/favicon.ico"></link>
-        <link rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" ></link>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"/>        
         <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
         <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
         <style
@@ -1911,9 +1913,14 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 }
 
                 .ampstart-headerbar {
-                    background-color: #000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: calc(100% - 1rem);
+                    padding: 0.5rem;
                     color: #000;
                     z-index: 999;
+                    margin : 0 auto;
                 }
 
                 .ampstart-headerbar-nav .ampstart-nav-item {
@@ -2143,8 +2150,8 @@ export default function BlogHead({poster,publishedAt,description,title,location}
                 }
 
                 .webpage-articleHeader .webpage-logo {
-                    font-size: 1.5rem;
-                    font-family: 'Monoton', cursive;
+                    font-size: 2rem;
+                    font-family: 'Oswald';
                     color: #fff;
                 }
 
