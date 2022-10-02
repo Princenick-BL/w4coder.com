@@ -58,7 +58,7 @@ useOutsideAlerter(wrapperRef);
         </div>
         <div className={styles.actions}>
           <div className={styles.item} onClick={(e)=>{handleDelete()}}>
-            <DeleteFilled />
+            <DeleteFilled size={5}/>
           </div>
         </div>
     </div>

@@ -36,11 +36,14 @@ const ArticleReducer = (state,action) =>{
         break
 
         case 'add-object':
-            console.log("Value",value)
-            state.article.sections = [...state?.article?.sections,value]
+            const newSections  = [...state?.article?.sections,value]
 
             return {
                 ...state,
+                article:{
+                    ...state.article,
+                    sections :newSections
+                }
             } 
         break
 
