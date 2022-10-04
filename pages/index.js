@@ -108,7 +108,7 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
 
 function ReadIndex({topA,page1}) {
 
-  const [pages,setPages] = useState(page1)
+  const [pages,setPages] = useState([])
   const [pageNum,setPageNum] = useState(1)
   const [hasMore,setHasMore] = useState(true)
 
@@ -229,8 +229,6 @@ function ReadIndex({topA,page1}) {
                     )
                   })}
                 </div>
-                <LasrArticle topA={topA}/>
-
               </div>
             </div>
             <br></br>
@@ -249,21 +247,37 @@ function ReadIndex({topA,page1}) {
             </div>
           </div>          
           <div className={styles.editorial}>
-            <InfiniteScroll
-              dataLength={pages.length}
-              next={fetchMoreData}
-              hasMore={hasMore}
-              loader={<h4>Loading...</h4>}
-              className={styles.mainSlideShow}
-            >
-              {pages ? pages.map((article,index)=>{
-                return(
-                  <Slide key={index} article={article} style={{width:"calc(100% - 1rem)",margin:".5rem !important",height:"calc(100% - 1rem)"}}/>
-                )
-              }):(
-                <></>
-              )}
-            </InfiniteScroll>
+            <div className={styles.editorialContent}>
+              <div
+                className={styles.mainSlideShow}
+              >
+                {topA ? topA.map((article,index)=>{
+                  return(
+                    <Slide key={index} article={article} style={{height:"100%"}}/>
+                  )
+                }):(
+                  <></>
+                )}
+              </div>
+              <LasrArticle topA={topA}/>
+
+              <InfiniteScroll
+                dataLength={pages.length}
+                next={fetchMoreData}
+                hasMore={hasMore}
+                loader={<h4>Loading...</h4>}
+                className={styles.mainSlideShow}
+                style={{margin:"0 auto"}}
+              >
+                {pages ? pages.map((article,index)=>{
+                  return(
+                    <Slide key={index} article={article} style={{height:"100%"}}/>
+                  )
+                }):(
+                  <></>
+                )}
+              </InfiniteScroll>
+            </div>
               
             <TheSideBar/>
           </div>

@@ -2,7 +2,7 @@ import { SECTION_TYPE } from "../../../../constants"
 import Image from "next/image"
 import styles from './index.module.scss'
 import Editor from './TextEditor'
-import ImageEditor from "./ImageEditor"
+import VideoEditor from "./VideoEditor"
 
 export const getSection = (section,index) =>{
     if(section){
@@ -16,7 +16,7 @@ export const getSection = (section,index) =>{
                     </Editor>
                 )
       
-            case SECTION_TYPE.IMAGE :
+            case SECTION_TYPE.IMAGE_BLOCK :
 
                 const imageProps = {
                     mediaUrl : section?.content,
@@ -31,8 +31,23 @@ export const getSection = (section,index) =>{
                         index={index}
                     />
                 )
+            case SECTION_TYPE.VIDEO_BLOCK :
+
+                const videoProps = {
+                    mediaUrl : section?.content,
+                    width : section?.meta?.width,
+                    height : section?.meta?.height,
+                    alt : section?.meta?.alt,
+                }
+
+                return(
+                    <VideoEditor
+                        imageProps = {videoProps}
+                        index={index}
+                    />
+                )
             default :
-                return ""
+                return <p></p>
         }
 
     }

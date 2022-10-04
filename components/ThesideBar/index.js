@@ -6,7 +6,7 @@ export default function TheSideBar() {
   return (
     <div className={styles.right}>
         <input type="search" placeholder='Search'/>
-        <div className={styles.mainPlayer}>
+        {/* <div className={styles.mainPlayer}> */}
 
 
             {/* <amp-story-player style={{position:"relative",width:"100%",height:"100%"}} layout="responsive" width="360" height="600" id="player1" ref={playerRef}>
@@ -24,7 +24,7 @@ export default function TheSideBar() {
             </a>
             </amp-story-player> */}
 
-        </div>
+        {/* </div> */}
         <Ads300/>
     </div>
   )

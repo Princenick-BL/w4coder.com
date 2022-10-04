@@ -1,12 +1,15 @@
 .slide{
     display: flex;
     position: relative;
-    width: 50%;
+    // min-width: 400px;
+    max-width: 100%;
     color: #fff;
     border-bottom: 1px solid #fff;
     @media only screen and (min-width: 600px) {
+        width: 100%;
         background-color: #fff;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 5px;
     }
     margin-bottom: .5rem;
     overflow: hidden;
@@ -83,7 +86,7 @@
 
 @media only screen and (max-width: 950px) {
     .slide{
-        width: 49%;
+        width: calc(100% - 1rem );
         margin-bottom: 2rem;
     }
 }

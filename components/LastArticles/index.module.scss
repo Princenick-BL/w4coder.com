@@ -2,12 +2,15 @@
     display: flex;
     -ms-overflow-style: none; /* IE 11 */
     scrollbar-width: none; /* Firefox 64 */
+    max-width: 100%;
+    overflow: hidden;
+    margin: 1rem auto;
     .container {
         display: flex;
         width: 100%;
         height: max-content;
         overflow-y: hidden;
-        padding-top: 3rem;
+        padding-top: .5rem;
         padding-bottom: .5rem;
         -ms-overflow-style: none; /* IE 11 */
         scrollbar-width: none; /* Firefox 64 */
