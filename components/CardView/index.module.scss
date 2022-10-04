@@ -4,7 +4,7 @@
     // min-width: 400px;
     max-width: 100%;
     color: #fff;
-    border-bottom: 1px solid #fff;
+    border-bottom: 0.01rem solid rgb(135, 133, 133);
     @media only screen and (min-width: 600px) {
         width: 100%;
         background-color: #fff;
@@ -87,17 +87,10 @@
 @media only screen and (max-width: 950px) {
     .slide{
         width: calc(100% - 1rem );
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 }
-@media only screen and (min-width: 800px) {
 
-    .slide{
-        width: 49%;
-    }
- 
-    
-}
 .mark_down{
     padding-top: 1rem;
     margin-bottom: .5rem;
@@ -126,7 +119,7 @@
     display: flex;
     align-items: center;
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 1rem;
     @media only screen and (min-width: 600px) {
         position: absolute;
         bottom: 0;

@@ -12,7 +12,7 @@ import TheSideBar from '../components/ThesideBar'
 import Head from 'next/head'
 import InfiniteScroll from "react-infinite-scroll-component";
 import ScrollToTop from "react-scroll-to-top";
-
+import TopicSlider from '../components/TopicSlider'
 //export const config = { amp: true };
 
 
@@ -248,6 +248,7 @@ function ReadIndex({topA,page1}) {
           </div>          
           <div className={styles.editorial}>
             <div className={styles.editorialContent}>
+              <TopicSlider/>
               <div
                 className={styles.mainSlideShow}
               >
