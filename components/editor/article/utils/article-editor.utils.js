@@ -3,6 +3,7 @@ import Image from "next/image"
 import styles from './index.module.scss'
 import Editor from './TextEditor'
 import VideoEditor from "./VideoEditor"
+import ImageEditor from "./ImageEditor"
 
 export const getSection = (section,index) =>{
     if(section){
