@@ -1,13 +1,13 @@
 .container{
-    width: calc(100% - 0.1rem);
+    width: calc(100% - .7rem);
     height: 70vh;
     max-height: 500px;
     border: 0.01rem solid rgb(135, 133, 133);
-    margin-bottom: 1rem;
+    margin: 1.2rem auto;
     border-radius: 10px;
     
     @media only screen and (max-width: 500px) {
-        max-height: 300px;
+        max-height: 350px;
 
      }
      display: flex !important;
@@ -18,7 +18,32 @@
      }
     .bottom{
         border-top: 0.01rem solid rgb(135, 133, 133);
-        height: 40px;
+        height: 20px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        .positions{
+
+        }
+        .arrows{
+            display: flex;
+            div{
+                border:  0.01rem solid rgb(135, 133, 133);
+                width: 30px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 30px;
+                margin-left: 1rem;
+                text-align: center;
+                font-size: 1.1rem;
+                align-content: center;
+                padding: 0;
+            }
+        }
     }
 }
 .textColor{
