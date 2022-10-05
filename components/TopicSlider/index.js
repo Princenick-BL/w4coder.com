@@ -4,7 +4,12 @@ import styles from './index.module.scss'
 export default function TopicSlider() {
     return (
         <div className={styles.container}>
-            
+            <div className={styles.top}> 
+
+            </div>
+            <div  className={styles.bottom}>
+                
+            </div>
         </div>
     )
 }
