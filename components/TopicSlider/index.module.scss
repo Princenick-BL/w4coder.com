@@ -5,17 +5,31 @@
     border: 0.01rem solid rgb(135, 133, 133);
     margin: 1.2rem auto;
     border-radius: 10px;
-    
+    overflow: hidden;
     @media only screen and (max-width: 500px) {
-        max-height: 350px;
+        max-height: 400px;
 
-     }
-     display: flex !important;
-     flex-direction: column;
-     justify-content: space-between;
-     .top{
+    }
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    .top{
         height: 100%;
-     }
+        .desc{
+            padding: 1rem;
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.5;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            white-space: normal;
+            margin: 0 !important;
+            max-height: calc(90px - 2rem );
+        }
+    }
     .bottom{
         border-top: 0.01rem solid rgb(135, 133, 133);
         height: 20px;
