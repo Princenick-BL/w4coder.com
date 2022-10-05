@@ -5,11 +5,12 @@
     border: 0.01rem solid rgb(135, 133, 133);
     margin-bottom: 1rem;
     border-radius: 10px;
+    
     @media only screen and (max-width: 500px) {
         max-height: 300px;
 
      }
-     display: flex;
+     display: flex !important;
      flex-direction: column;
      justify-content: space-between;
      .top{
@@ -18,5 +19,17 @@
     .bottom{
         border-top: 0.01rem solid rgb(135, 133, 133);
         height: 40px;
+    }
+}
+.textColor{
+    color: #fff;
+}
+
+.wrapper{
+    font-size: .8rem;
+    @media only screen and (max-width: 600px) {
+        border-bottom: 0.01rem solid rgb(135, 133, 133);
+        border-top: 0.01rem solid rgb(135, 133, 133);
+        margin-bottom: 1rem;
     }
 }
