@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { getArticleByCatCaroussel } from '../../services/articles'
 
-const Slide = ({slide,slidePrev,slideNext}) =>{
+const Slide = ({slide,slidePrev,slideNext,total}) =>{
 
     const stratTime = Date.now() / 1000; // use UNIX timestamp in seconds
   const endTime = stratTime + 320; // use UNIX timestamp in seconds
@@ -26,13 +26,13 @@ const Slide = ({slide,slidePrev,slideNext}) =>{
                 </div>
             </div>
             <div  className={styles.bottom}>
-                <div className={styles.positions}>{slide?.id} sur 4</div>
+                <div className={styles.positions}>{slide?.id} sur {total}</div>
                 <div className={styles.arrows}>
                 <div onClick={slidePrev}>&#x2039;</div>
 
                 <CountdownCircleTimer
                     isPlaying
-                    duration={4}
+                    duration={6}
                     colors="#A30000"
                     size={31}
                     strokeWidth={2}
@@ -117,10 +117,10 @@ export default function TopicSlider() {
               setCurrentSlide((prev) => {
                 return prev + 1 === carousselData?.articles.length ? 0 : prev + 1;
               });
-            }, 4000);
+            }, 6000);
             return () => {
                 clearInterval(intervalId);
-          };
+            };
         }
     }, [carousselData?.articles]);
     return (
@@ -132,6 +132,7 @@ export default function TopicSlider() {
                     slide={{...carousselData?.articles[currentSlide],id:currentSlide+1}}
                     slideNext={slideNext}
                     slidePrev={slidePrev}
+                    total={carousselData?.articles?.length}
                 />
             </div>
         )}
