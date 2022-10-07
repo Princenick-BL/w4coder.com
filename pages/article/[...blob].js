@@ -21,60 +21,7 @@ export default function Article({article,canonical,social,articleTop}) {
 
     return (
         <Fragment>
-            {/* <Head>
-                <meta name="theme-color" content="#000"/>
-                <title>{article?.title}</title>
-                <meta name="description" content={article?.description}/>
-                <link rel="canonical" href={canonical}/>
-                <link rel="preload" as="image" href={article?.poster} />
-                <link rel="apple-touch-icon" href="/favicon.ico"></link>
-                <link rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" ></link>
-                <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-                <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-                <style
-                    amp-custom=""
-                    dangerouslySetInnerHTML={{
-                    __html: `
-                        html {
-                            font-family: sans-serif;
-                            line-height: 1.15;
-                            -webkit-text-size-adjust: 100%;
-                            background-color: #202029;
-
-                        }`,
-                    }}
-                ></style>
-                <script type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                        {
-                        "@context": "https://schema.org",
-                        "@type": "BlogPosting",
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": "${canonical}"
-                        },
-                        "headline": "${article?.description}",
-                        "image": "${article?.poster}",  
-                        "author": {
-                            "@type": "Person",
-                            "name": "Prince Nick BALLO",
-                            "url": "https://princenickballo.fr"
-                        },  
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "Nickscorp",
-                            "logo": {
-                            "@type": "ImageObject",
-                            "url": ""
-                            }
-                        },
-                        "datePublished":"${article?.publishedAt}"
-                        }
-                        `
-                    }}>
-                </script>
-            </Head> */}
+           
             <BlogHead
                 title = {article?.title}
                 poster={article?.poster}
@@ -114,7 +61,7 @@ export default function Article({article,canonical,social,articleTop}) {
                     
                     <article className="recipe-article" >
                         <div className={"recipe-article-content"}>
-                            <span className="ampstart-subtitle block px3 pt2 mb2">{article?.category}</span>
+                            <span className="ampstart-subtitle block px3 pt2 mb2">{article?.category?.name}</span>
                             <h1 className="mb2 px3 fsh1">{article?.title}</h1>
                             <address className="ampstart-byline clearfix mb4 px3 h5">
                                 <time
@@ -334,7 +281,7 @@ export async function getServerSideProps(context) {
     const articleTop = await RedisCache.fetch(`article-top`,fetcherTop,3600 * 24) || {}
 
     // console.log("Article Top",articleTop)
-
+    // console.log("Article Top",article)
     // const article = await fetcher() 
 
    

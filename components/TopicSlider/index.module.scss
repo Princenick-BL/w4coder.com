@@ -1,12 +1,13 @@
 .container{
     width: calc(100% - .7rem);
-    height: 70vh;
-    max-height: 500px;
+    min-height: 70vh;
+    max-height: max-content;
     border: 0.01rem solid rgb(135, 133, 133);
     margin: 1.2rem auto;
     border-radius: 10px;
     overflow: hidden;
     @media only screen and (max-width: 500px) {
+        min-height: max-content;
         max-height: 400px;
 
     }
@@ -16,6 +17,7 @@
     .top{
         height: 100%;
         overflow: hidden;
+        
         .img{
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
@@ -32,7 +34,8 @@
             -webkit-box-orient: vertical;
             white-space: normal;
             margin: 0 !important;
-            max-height: calc(90px - 2rem );
+            max-height: calc(120px - 2rem );
+            min-height: calc(120px - 2rem );
         }
     }
     .bottom{

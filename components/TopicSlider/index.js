@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import styles from './index.module.scss'
 import Image from 'next/image'
+import Link from 'next/link'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { getArticleByCatCaroussel } from '../../services/articles'
 
@@ -21,9 +22,13 @@ const Slide = ({slide,slidePrev,slideNext,total}) =>{
                     layout={"responsive"}
                     className={styles.img}
                 />
-                <div className={styles.desc}>
-                    {slide?.title}
-                </div>
+                <Link href={`/article/${slide?._id}/${slide?.slug}`}>
+                  <a>
+                    <div className={styles.desc}>
+                      {slide?.title}
+                    </div>
+                  </a>
+                </Link>
             </div>
             <div  className={styles.bottom}>
                 <div className={styles.positions}>{slide?.id} sur {total}</div>
