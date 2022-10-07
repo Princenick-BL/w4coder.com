@@ -1,7 +1,8 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import styles from './index.module.scss'
 import Image from 'next/image'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import { getArticleByCatCaroussel } from '../../services/articles'
 
 const Slide = ({slide,slidePrev,slideNext}) =>{
 
@@ -14,14 +15,14 @@ const Slide = ({slide,slidePrev,slideNext}) =>{
         <div className={styles.container}>
             <div className={styles.top}> 
                 <Image
-                    src={slide?.img}
+                    src={slide?.poster}
                     width={500}
                     height={300}
                     layout={"responsive"}
                     className={styles.img}
                 />
                 <div className={styles.desc}>
-                    Lorem enim tempor Lorem excepteur aliquip reprehenderit. Enim id aliqua nisi officia sit. Magna veniam adipisicing cillum aliqua ut cillum do et id adipisicing esse quis ad. Anim ex qui quis sint commodo laboris laborum mollit dolore ipsum. Ullamco laboris mollit ut nisi. Do pariatur esse id aute reprehenderit ut enim sit velit pariatur sit.  
+                    {slide?.title}
                 </div>
             </div>
             <div  className={styles.bottom}>
@@ -61,6 +62,15 @@ const Slide = ({slide,slidePrev,slideNext}) =>{
 
 export default function TopicSlider() {
     const [currentSlide, setCurrentSlide] = React.useState(0);
+    const [carousselData,setCarousselData] = useState([])
+
+    useEffect(()=>{
+        (async ()=>{
+            const res = await getArticleByCatCaroussel()
+            setCarousselData(res)
+        })()
+    },[])
+
     const slides = [
       {
         id: 1,
@@ -92,33 +102,40 @@ export default function TopicSlider() {
     ];
     const slideNext = (e) => {
       setCurrentSlide((prev) => {
-        return prev + 1 === slides.length ? 0 : currentSlide + 1;
+        return prev + 1 === carousselData?.articles?.length ? 0 : currentSlide + 1;
       });
     };
     const slidePrev = (e) => {
       setCurrentSlide((prev) => {
-        return prev === 0 ? slides.length - 1 : currentSlide - 1;
+        return prev === 0 ? carousselData?.articles?.length - 1 : currentSlide - 1;
       });
     };
     React.useEffect(() => {
-      const intervalId = setInterval(() => {
-        setCurrentSlide((prev) => {
-          return prev + 1 === slides.length ? 0 : prev + 1;
-        });
-      }, 4000);
-      return () => {
-        clearInterval(intervalId);
-      };
-    }, []);
+        if(carousselData?.articles){
+
+            const intervalId = setInterval(() => {
+              setCurrentSlide((prev) => {
+                return prev + 1 === carousselData?.articles.length ? 0 : prev + 1;
+              });
+            }, 4000);
+            return () => {
+                clearInterval(intervalId);
+          };
+        }
+    }, [carousselData?.articles]);
     return (
-        <div className={styles.wrapper}>
-            <h2 className={styles.textColor}>React JS</h2>
-            <Slide 
-                slide={slides[currentSlide]}
-                slideNext={slideNext}
-                slidePrev={slidePrev}
-            />
-        </div>
+        <>
+        {carousselData?.articles?.length > 0 && (
+            <div className={styles.wrapper}>
+                <h2 className={styles.textColor}>{carousselData?.cat?.name}</h2>
+                <Slide 
+                    slide={{...carousselData?.articles[currentSlide],id:currentSlide+1}}
+                    slideNext={slideNext}
+                    slidePrev={slidePrev}
+                />
+            </div>
+        )}
+        </>
     )
 }
 

@@ -33,3 +33,11 @@ export const getArticleByCat = async (category)=>{
     return null
 }
 
+export const getArticleByCatCaroussel = async (category)=>{
+    const res = await axios.get(`${config.API_ENDPOINT}/get-article-by-cat-caroussel`)
+    if(res){
+        return res.data
+    }
+    return null
+}
+
