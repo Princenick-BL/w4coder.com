@@ -3,7 +3,6 @@
     position: relative;
     // min-width: 400px;
     max-width: 100%;
-    color: #fff;
     border-bottom: 0.01rem solid rgb(135, 133, 133);
     @media only screen and (min-width: 600px) {
         width: 100%;
@@ -96,9 +95,7 @@
     padding-top: 1rem;
     margin-bottom: .5rem;
     //margin-bottom: 70px;
-    color: black;
     @media only screen and (max-width: 600px) {
-        color: #fff;
     }
     h2{
         font-size: 1.2rem;
@@ -149,7 +146,6 @@
         margin-left: 5px;
         max-width: calc( 100% - 55px);
         @media only screen and (max-width: 600px) {
-            color: #fff;
         }
     }
     .read{

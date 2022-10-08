@@ -40,7 +40,7 @@ const useMediaQuery = (width) => {
 export default function Home({page1,topA}) {
   const isBreakpoint = useMediaQuery(768)
    return (
-    <div>
+    <div className={"theme-light"}>
       { isBreakpoint === 2 ? (
         <div>
           <DeskTopHP page1={page1} topA={topA}/>

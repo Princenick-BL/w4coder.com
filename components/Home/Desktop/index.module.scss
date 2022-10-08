@@ -10,7 +10,6 @@
     }
 
     .mainContent{
-        margin: 0 auto;
         width: 1170px;        // background-color: #191654;
         height: 100%;
         margin: 0 auto;
@@ -87,18 +86,18 @@
         .articlesSecond{
             width: 100%;
             height: auto;
-            display: flex;
+            display: grid;
             padding-top: 1rem;
             position: relative;
             padding: 0 20px;
             margin: 30px 0;
             overflow: hidden;
             box-sizing: border-box;
-
+            grid-template-columns: auto auto auto;
+            row-gap: 10px;
+            column-gap: 10px;
             .article{
-                padding: 0 10px;
                 box-sizing: border-box;
-                width: calc(calc(calc(100% - 40px) / 3) - 20px );
             }
             .img{
                 height: auto;
@@ -160,5 +159,10 @@
                 }
             }
         }
+    }
+    .bottomWrapper{
+        width: 1170px;        // background-color: #191654;
+        height: 100%;
+        margin: 0 auto;
     }
 }
