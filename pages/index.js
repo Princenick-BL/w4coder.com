@@ -39,20 +39,53 @@ const useMediaQuery = (width) => {
 
 
 export default function Home({page1,topA}) {
+
   const isBreakpoint = useMediaQuery(768)
-  const light = true
+  const [themeDark,setThemeDark] = useState(false)
+
+  // function to set a given theme/color-scheme
+  function setTheme(themeName) {
+    localStorage.setItem('theme-dark', themeName);
+    document.documentElement.className = themeName;
+  }
+  
+  // function to toggle between light and dark theme
+  function toggleTheme() {
+    if (localStorage.getItem('theme-dark') === 'true'){
+        setTheme(false);
+        setThemeDark(false);
+
+    } else {
+        setTheme(true);
+        setThemeDark(true);
+
+    }
+  }
+  
+  // Immediately invoked function to set the theme on initial load
+  useEffect(()=>{
+    const theme = localStorage.getItem('theme-dark')
+    
+    console.log("Theme",theme)
+    if ( theme == 'true') {
+        setThemeDark(true);
+    } else {
+      setThemeDark(false);
+    }
+  },[])
+
    return (
-    <div className={light===true ? "theme-light" : "theme-dark"}>
+    <div className={themeDark===false ? "theme-light" : "theme-dark"}>
       <Head>
         <meta name="theme-color" content="#fff" />
       </Head>
       { isBreakpoint === 2 ? (
         <div>
-          <DeskTopHP page1={page1} topA={topA}/>
+          <DeskTopHP page1={page1} topA={topA} toggleTheme={toggleTheme}/>
         </div>
       ) : isBreakpoint === 1 ?(
         <div>
-          <MobileHP page1={page1} topA={topA}/>
+          <MobileHP page1={page1} topA={topA} toggleTheme={toggleTheme}/>
         </div>
       ):(
         <></>

@@ -13,6 +13,7 @@ import Head from 'next/head'
 import InfiniteScroll from "react-infinite-scroll-component";
 import ScrollToTop from "react-scroll-to-top";
 import TopicSlider from '../../TopicSlider'
+import ThemeChanger from '../../ThemeChanger'
 //export const config = { amp: true };
 
 
@@ -106,7 +107,7 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
     )
 }
 
-function ReadIndex({topA,page1}) {
+function ReadIndex({topA,page1,toggleTheme}) {
 
   const [pages,setPages] = useState([])
   const [pageNum,setPageNum] = useState(1)
@@ -201,8 +202,8 @@ function ReadIndex({topA,page1}) {
           custom-element="amp-story-player"
           src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"
         ></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5455960452945884"
-     crossOrigin="anonymous"></script>
+        {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5455960452945884"
+     crossOrigin="anonymous"></script> */}
       </Head>
       <div id="mainContent">
         {/* <HomeMenu /> */}
@@ -211,9 +212,7 @@ function ReadIndex({topA,page1}) {
           <div className={styles.head} id="#top">
             <Logo style={{fontSize:"2rem"}}/>
             {/* <h3>Main articles</h3> */}
-            <div>
-
-            </div>
+            <ThemeChanger toggleTheme={toggleTheme}/>
           </div>
           <div className="viewport">
             <div className="entry-point-container">
@@ -257,7 +256,7 @@ function ReadIndex({topA,page1}) {
               <div
                 className={styles.mainSlideShow}
               >
-                {topA ? topA.map((article,index)=>{
+                {page1 ? page1.map((article,index)=>{
                   return(
                     <Slide key={index} article={article} style={{height:"100%"}}/>
                   )
@@ -265,14 +264,14 @@ function ReadIndex({topA,page1}) {
                   <></>
                 )}
               </div>
-              <amp-ad width="100vw" height="320"
+              {/* <amp-ad width="100vw" height="320"
                     type="adsense"
                     data-ad-client="ca-pub-5455960452945884"
                     data-ad-slot="5221773298"
                     data-auto-format="rspv"
                     data-full-width="">
                 <div overflow=""></div>
-                </amp-ad>
+                </amp-ad> */}
               <LasrArticle topA={topA}/>
 
               <InfiniteScroll
