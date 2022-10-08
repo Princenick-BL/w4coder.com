@@ -16,7 +16,10 @@ export default function DeskTopHP({topA,page1}) {
     return (
         <div className={styles.container}>
             <div className={styles.topWrapper}>
+                <div>
 
+                </div>
+                <br></br>
                 <div className={styles.mainContent}>
                     {firstA && (
                         <div className={styles.articlesFirst}>

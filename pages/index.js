@@ -6,23 +6,26 @@ import { getTopArticles,getArticle } from '../services/articles'
 import { useState, useCallback, useEffect } from 'react';
 
 const useMediaQuery = (width) => {
-  const [targetReached, setTargetReached] = useState(false);
+  const [targetReached, setTargetReached] = useState(0);
 
   const updateTarget = useCallback((e) => {
     if (e.matches) {
-      setTargetReached(true);
+      setTargetReached(1);
     } else {
-      setTargetReached(false);
+      setTargetReached(2);
     }
   }, []);
 
   useEffect(() => {
-    const media = window.matchMedia(`(min-width: ${width}px)`);
+    const media = window.matchMedia(`(max-width: ${width}px)`);
     media.addListener(updateTarget);
 
     // Check on mount (callback is not called until a change occurs)
     if (media.matches) {
-      setTargetReached(true);
+      setTargetReached(1);
+    }else{
+      setTargetReached(2);
+
     }
 
     return () => media.removeListener(updateTarget);
@@ -38,14 +41,16 @@ export default function Home({page1,topA}) {
   const isBreakpoint = useMediaQuery(768)
    return (
     <div>
-      { isBreakpoint ? (
+      { isBreakpoint === 2 ? (
         <div>
           <DeskTopHP page1={page1} topA={topA}/>
         </div>
-      ) : (
+      ) : isBreakpoint === 1 ?(
         <div>
           <MobileHP page1={page1} topA={topA}/>
         </div>
+      ):(
+        <></>
       )}
    </div>
    )
