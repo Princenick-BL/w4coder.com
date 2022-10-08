@@ -17,7 +17,7 @@ const useMediaQuery = (width) => {
   }, []);
 
   useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${width}px)`);
+    const media = window.matchMedia(`(min-width: ${width}px)`);
     media.addListener(updateTarget);
 
     // Check on mount (callback is not called until a change occurs)
@@ -40,11 +40,11 @@ export default function Home({page1,topA}) {
     <div>
       { isBreakpoint ? (
         <div>
-          <MobileHP page1={page1} topA={topA}/>
+          <DeskTopHP page1={page1} topA={topA}/>
         </div>
       ) : (
         <div>
-          <DeskTopHP page1={page1} topA={topA}/>
+          <MobileHP page1={page1} topA={topA}/>
         </div>
       )}
    </div>
