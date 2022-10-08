@@ -34,7 +34,7 @@ const useMediaQuery = (width) => {
 
 
 
-export default function index({page1,topA}) {
+export default function Home({page1,topA}) {
   const isBreakpoint = useMediaQuery(768)
    return (
     <div>
