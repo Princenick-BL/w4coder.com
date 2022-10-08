@@ -1,6 +1,7 @@
 import React from 'react'
 import MobileHP from '../components/Home/Mobile'
 import DeskTopHP from '../components/Home/Desktop'
+import Head from 'next/head'
 
 import { getTopArticles,getArticle } from '../services/articles'
 import { useState, useCallback, useEffect } from 'react';
@@ -41,6 +42,9 @@ export default function Home({page1,topA}) {
   const isBreakpoint = useMediaQuery(768)
    return (
     <div className={"theme-light"}>
+      <Head>
+        <meta name="theme-color" content="#fff" />
+      </Head>
       { isBreakpoint === 2 ? (
         <div>
           <DeskTopHP page1={page1} topA={topA}/>
