@@ -149,6 +149,8 @@ export default function DeskTopHP({topA,page1}) {
                 custom-element="amp-story-player"
                 src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"
                 ></script>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5455960452945884"
+     crossOrigin="anonymous"></script>
                 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
             </Head>
             <div className={styles.topWrapper}>

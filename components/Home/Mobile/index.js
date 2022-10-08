@@ -201,6 +201,8 @@ function ReadIndex({topA,page1}) {
           custom-element="amp-story-player"
           src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"
         ></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5455960452945884"
+     crossOrigin="anonymous"></script>
       </Head>
       <div id="mainContent">
         {/* <HomeMenu /> */}
@@ -210,7 +212,7 @@ function ReadIndex({topA,page1}) {
             <Logo style={{fontSize:"2rem"}}/>
             {/* <h3>Main articles</h3> */}
             <div>
-                
+
             </div>
           </div>
           <div className="viewport">
@@ -263,6 +265,14 @@ function ReadIndex({topA,page1}) {
                   <></>
                 )}
               </div>
+              <amp-ad width="100vw" height="320"
+                    type="adsense"
+                    data-ad-client="ca-pub-5455960452945884"
+                    data-ad-slot="5221773298"
+                    data-auto-format="rspv"
+                    data-full-width="">
+                <div overflow=""></div>
+                </amp-ad>
               <LasrArticle topA={topA}/>
 
               <InfiniteScroll
