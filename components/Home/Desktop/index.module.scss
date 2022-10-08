@@ -164,5 +164,120 @@
         width: 1170px;        // background-color: #191654;
         height: 100%;
         margin: 0 auto;
+        .lists{
+            min-height: 100vh;
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+            .listLeft{
+                position: relative;
+                overflow: visible;
+                box-sizing: border-box;
+                min-height: 1px;
+                overflow: hidden;
+                width: 66.66666667%;
+                box-sizing: border-box;
+                word-wrap: break-word;
+                margin: 0;
+                .article{
+                    box-sizing: border-box;
+                    display: flex;
+                }
+                .img{
+                    height: auto;
+                    position: relative;
+                    position: relative;
+                    width: 35%;
+                    height: 180px;
+                    overflow: hidden;
+                    margin: 1rem;
+                    margin-left: 1px;
+                    margin-top: 1px;
+                    // box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+                    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+                }
+                .articleInfo{
+                    min-width: 60%;
+                    max-width: 60%;
+                    .cat{
+                        border-bottom: 1px solid #000;
+                        padding: 0px;
+                        position: unset;
+                        background: none;
+                        color: #000;
+                        font-size: 12px;
+                        line-height: 18px;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        width: max-content;
+                    }
+                    .title{
+                        font-size: 18px;
+                        font-weight: 600;
+                        line-height: 1.5em;
+                        margin: 8px 0 8px;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        letter-spacing: .2px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        line-height: 1.4em;
+                        text-decoration: none;
+                        margin: 5px 0;
+                    }
+                    .author{
+                        color: #888;
+                        font-size: 11px;
+                        font-weight: 600;
+                        margin-bottom: .5rem;
+                    }
+                    .desc{
+                        font-size: 15px;
+                        margin: 0px 0 12px;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        line-height: 1.5;
+                        -webkit-box-orient: vertical;
+                    }
+                    .more{
+                        background-color: #fff;
+                        transition: color .50s ease;
+                        background: #fff;
+                        margin: 24px 0;
+                        width: max-content;
+                        cursor: pointer;
+                        font-size: 13px;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        color: #191654;
+                        a{
+                            text-decoration: none;
+                            color: var(--color-primary);
+                        }
+                        a:hover{
+                            color: inherit;
+                        }
+                    }
+                    .more:hover {
+                        color: #fff;
+                        background: #ff1616;
+                    }
+                }
+            }
+            .sider{
+                position: relative;
+                overflow: visible;
+                box-sizing: border-box;
+                min-height: 1px;
+                overflow: hidden;
+                width: 33.33333333%;
+                box-sizing: border-box;
+                word-wrap: break-word;
+                padding: 0 15px;
+            }
+        }
     }
 }

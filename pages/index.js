@@ -40,8 +40,9 @@ const useMediaQuery = (width) => {
 
 export default function Home({page1,topA}) {
   const isBreakpoint = useMediaQuery(768)
+  const light = true
    return (
-    <div className={"theme-light"}>
+    <div className={light===true ? "theme-light" : "theme-dark"}>
       <Head>
         <meta name="theme-color" content="#fff" />
       </Head>

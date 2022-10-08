@@ -44,7 +44,7 @@ export default function Slide({article,style,type=0}){
                     className={styles.publisher_logo}
                     style={{minWidth:"20px"}}
                 />
-                <div className={styles.name}>Published by <strong>{article.author.name}</strong> on {new Date(article.updatedAt).toLocaleDateString()}</div>
+                <div className={styles.name}>Published by <strong>{article.author.name}</strong> on {new Date(article.updatedAt).toDateString()}</div>
 
               </div>
           </div>

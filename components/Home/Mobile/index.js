@@ -209,6 +209,9 @@ function ReadIndex({topA,page1}) {
           <div className={styles.head} id="#top">
             <Logo style={{fontSize:"2rem"}}/>
             {/* <h3>Main articles</h3> */}
+            <div>
+                
+            </div>
           </div>
           <div className="viewport">
             <div className="entry-point-container">

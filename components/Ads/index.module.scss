@@ -1,4 +1,4 @@
-.widget300{
+.widget300,.widget600{
     width: calc(100%);
     background-color: #fff;
     margin: 0 auto;
@@ -25,4 +25,11 @@
             color: #ccc;
         }
     }
+}
+.widget600{
+    min-height: 610px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

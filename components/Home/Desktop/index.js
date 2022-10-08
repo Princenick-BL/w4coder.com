@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import Image from 'next/image'
 import Head from 'next/head';
+import { getArticle ,getTopArticles} from '../../../services/articles'
+import Link from 'next/link';
+import InfiniteScroll from "react-infinite-scroll-component";
+import TopicSlider from '../../TopicSlider';
+import Ads600 from '../../Ads/Ads600';
+import Footer from '../../footer/footer';
 
 function getAmpPlayerScript(callback) {
     const ampJS = document.createElement("script");
@@ -46,6 +52,10 @@ export default function DeskTopHP({topA,page1}) {
 
     const [firstA,setfirstA] = useState(false)
     const [secondA,setSecondA] = useState(false)
+    const [pages,setPages] = useState([])
+    const [pageNum,setPageNum] = useState(1)
+    const [hasMore,setHasMore] = useState(true)
+
 
     useEffect(()=>{
         const arr = [...topA]
@@ -117,6 +127,18 @@ export default function DeskTopHP({topA,page1}) {
       
     }, [])
 
+    const fetchMoreData = async ()=>{
+
+        const res =  await getArticle({filter:{
+          page : pageNum + 1
+        }})
+        setPageNum(pageNum + 1)
+        setPages([...pages,...res])
+        if(res.length === 0){
+          setHasMore(false)
+        }
+    }
+
     return (
         <div className={styles.container}>
             <Head>
@@ -127,6 +149,7 @@ export default function DeskTopHP({topA,page1}) {
                 custom-element="amp-story-player"
                 src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"
                 ></script>
+                <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
             </Head>
             <div className={styles.topWrapper}>
                 <div>
@@ -154,7 +177,7 @@ export default function DeskTopHP({topA,page1}) {
                                     {firstA?.description}
                                 </div>
                                 <div className={styles.more}>
-                                    READ MORE
+                                    READ MORE &rarr;
                                 </div>
                             </div>
                         </div>
@@ -190,7 +213,7 @@ export default function DeskTopHP({topA,page1}) {
                 
             </div>
             <div className={styles.bottomWrapper}>
-
+                <h4>Web stories</h4>
                 <div className="viewport">
                     <div className="entry-point-container">
                     {/* <h1> Web Stories </h1> */}
@@ -226,8 +249,125 @@ export default function DeskTopHP({topA,page1}) {
                         })}
                     </amp-story-player>
                     </div>
+                </div>
+                <div className={styles.lists}>
+                    <div className={styles.listLeft}>
+                    {page1?.length > 0 && (
+                        page1?.map((a,index)=>{
+                            return(
+                                <div key={index} className={styles.article}>
+                                    <div className={styles.img}>
+                                        <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                            <a>
+                                                <Image
+                                                    src={a?.poster||"https://picsum.photos/400/300"}
+                                                    width={400}
+                                                    height={400}
+                                                    layout={"fill"}
+                                                    
+                                                />
+                                            </a>
+                                        </Link>
+                                    </div>
+                                    <div className={styles.articleInfo}>
+                                        <div className={styles.cat}>{a?.category?.name || "A LA Une"}</div>
+                                        <h2 className={styles.title}>
+                                        <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                            <a>
+                                            {a?.title}
+                                            </a>
+                                        </Link>
+                                        </h2>
+                                        <div className={styles.author}>
+                                            By {a?.author?.name}
+                                        </div>
+                                        <div className={styles.desc}>
+                                        {a?.description}
+                                        </div>
+                                        <div className={styles.more}>
+                                            <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                                <a>
+                                                    READ MORE &rarr;
+                                                </a>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            )
+                        })
+                    )}
+                     <InfiniteScroll
+                        dataLength={pages.length}
+                        next={fetchMoreData}
+                        hasMore={hasMore}
+                        loader={<h4>Loading...</h4>}
+                        className={styles.mainSlideShow}
+                        style={{margin:"0 auto"}}
+                    >
+                        {pages ? pages.map((a,index)=>{
+                        return(
+                            <div key={index} className={styles.article}>
+                                <div className={styles.img}>
+                                    <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                        <a>
+                                            <Image
+                                                src={a?.poster||"https://picsum.photos/400/300"}
+                                                width={400}
+                                                height={400}
+                                                layout={"fill"}
+                                                
+                                            />
+                                        </a>
+                                    </Link>
+                                </div>
+                                <div className={styles.articleInfo}>
+                                    <div className={styles.cat}>{a?.category?.name || "A LA Une"}</div>
+                                    <h2 className={styles.title}>
+                                        <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                            <a>
+                                            {a?.title}
+                                            </a>
+                                        </Link>
+                                    </h2>
+                                    <div className={styles.author}>
+                                        By {a?.author?.name}
+                                    </div>
+                                    <div className={styles.desc}>
+                                    {a?.description}
+                                    </div>
+                                    <div className={styles.more}>
+                                        <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                            <a>
+                                                READ MORE &rarr;
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                        }):(
+                        <></>
+                        )}
+                    </InfiniteScroll>
+                    </div>
+                    <div className={styles.sider}>
+                        <TopicSlider/>
+                        <Ads600>
+                            <amp-ad
+                                layout="fixed"
+                                width="300"
+                                height="600"
+                                type="adsense"
+                                data-ad-client="ca-pub-5455960452945884"
+                                data-ad-slot="5358300827">
+                            </amp-ad>
+                        </Ads600>
+                    </div>
+
                 </div>     
             </div>
+            <Footer/>
         </div>
     )
 }
