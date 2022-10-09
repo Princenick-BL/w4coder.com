@@ -1,9 +1,32 @@
-export function getAmpMeta(){
-    const string = `
-    <title>The Recipe Blog</title>
-    <link rel="canonical" href="https://www.ampstart.com/templates/blog.amp" />
-    `
-    return string
+import { SECTION_TYPE } from "../constants"
+export function getSections(sections){
+    const htmlSections = sections?.map((section,index)=>{
+        
+        if(section){
+            switch(section?.type){
+                case SECTION_TYPE.TEXT_BLOCK :
+                    return`<p class="mb4 px3" >${section?.content}</p>`
+                   
+                case SECTION_TYPE.IMAGE :
+                    return `
+                        <amp-img
+                            src={${section?.content}}
+                            width={${section?.meta?.width}}
+                            height={${section?.meta?.height}}
+                            layout="responsive"
+                            alt={${section?.meta?.alt||"new image"}}
+                            className="mb4 mx3 br5"
+                        ></amp-img>
+                    `
+                default :
+                    return ""
+            }
+    
+        }else {
+            return ''
+        }
+    })
+    return htmlSections
 }
 
 export function getStyles(){
@@ -17,6 +40,12 @@ export function getStyles(){
       line-height: 1.15;
       -ms-text-size-adjust: 100%;
       -webkit-text-size-adjust: 100%;
+    }
+    p{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-size : 1.3rem;
+        line-height : 1.5;
     }
     body {
       margin: 0;
@@ -97,6 +126,7 @@ export function getStyles(){
     sup {
       top: -0.5em;
     }
+    
     audio,
     video {
       display: inline-block;
@@ -208,7 +238,7 @@ export function getStyles(){
     }
     .h0,
     .h1 {
-      font-size: 3rem;
+      font-size: 2rem;
     }
     .h2 {
       font-size: 2rem;
@@ -1086,13 +1116,10 @@ export function getStyles(){
       -webkit-font-smoothing: antialiased;
     }
     main {
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto;
     }
-    p {
-      padding: 0;
-      margin: 0;
-    }
+
     .ampstart-accent {
       color: #003f93;
     }
@@ -1148,8 +1175,8 @@ export function getStyles(){
     }
     .h1,
     h1 {
-      font-size: 3rem;
-      line-height: 3.5rem;
+      font-size: 2rem;
+      line-height: 3rem;
     }
     .h2,
     h2 {
@@ -1753,8 +1780,462 @@ export function getStyles(){
       transform: scale(1.8);
     }
     h1 + .ampstart-byline time {
-      font-size: 1.5rem;
+      font-size: 1rem;
       font-weight: 400;
+    }
+    .main li:not(.ql-direction-rtl)::before {
+        margin-left: -1.5em;
+        margin-right: 0.3em;
+        text-align: right;
+    }
+
+    .main li.ql-direction-rtl::before {
+        margin-left: 0.3em;
+        margin-right: -1.5em;
+    }
+
+    .main ol li:not(.ql-direction-rtl),
+    .main ul li:not(.ql-direction-rtl) {
+        padding-left: 1.5em;
+    }
+
+    .main ol li.ql-direction-rtl,
+    .main ul li.ql-direction-rtl {
+        padding-right: 1.5em;
+    }
+
+    .main ol li {
+        counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+        counter-increment: list-0;
+    }
+
+    .main ol li:before {
+        content: counter(list-0, decimal) '. ';
+    }
+
+    .main ol li.ql-indent-1 {
+        counter-increment: list-1;
+    }
+
+    .main ol li.ql-indent-1:before {
+        content: counter(list-1, lower-alpha) '. ';
+    }
+
+    .main ol li.ql-indent-1 {
+        counter-reset: list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+    }
+
+    .main ol li.ql-indent-2 {
+        counter-increment: list-2;
+    }
+
+    .main ol li.ql-indent-2:before {
+        content: counter(list-2, lower-roman) '. ';
+    }
+
+    .main ol li.ql-indent-2 {
+        counter-reset: list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+    }
+
+    .main ol li.ql-indent-3 {
+        counter-increment: list-3;
+    }
+
+    .main ol li.ql-indent-3:before {
+        content: counter(list-3, decimal) '. ';
+    }
+
+    .main ol li.ql-indent-3 {
+        counter-reset: list-4 list-5 list-6 list-7 list-8 list-9;
+    }
+
+    .main ol li.ql-indent-4 {
+        counter-increment: list-4;
+    }
+
+    .main ol li.ql-indent-4:before {
+        content: counter(list-4, lower-alpha) '. ';
+    }
+
+    .main ol li.ql-indent-4 {
+        counter-reset: list-5 list-6 list-7 list-8 list-9;
+    }
+
+    .main ol li.ql-indent-5 {
+        counter-increment: list-5;
+    }
+
+    .main ol li.ql-indent-5:before {
+        content: counter(list-5, lower-roman) '. ';
+    }
+
+    .main ol li.ql-indent-5 {
+        counter-reset: list-6 list-7 list-8 list-9;
+    }
+
+    .main ol li.ql-indent-6 {
+        counter-increment: list-6;
+    }
+
+    .main ol li.ql-indent-6:before {
+        content: counter(list-6, decimal) '. ';
+    }
+
+    .main ol li.ql-indent-6 {
+        counter-reset: list-7 list-8 list-9;
+    }
+
+    .main ol li.ql-indent-7 {
+        counter-increment: list-7;
+    }
+
+    .main ol li.ql-indent-7:before {
+        content: counter(list-7, lower-alpha) '. ';
+    }
+
+    .main ol li.ql-indent-7 {
+        counter-reset: list-8 list-9;
+    }
+
+    .main ol li.ql-indent-8 {
+        counter-increment: list-8;
+    }
+
+    .main ol li.ql-indent-8:before {
+        content: counter(list-8, lower-roman) '. ';
+    }
+
+    .main ol li.ql-indent-8 {
+        counter-reset: list-9;
+    }
+
+    .main ol li.ql-indent-9 {
+        counter-increment: list-9;
+    }
+
+    .main ol li.ql-indent-9:before {
+        content: counter(list-9, decimal) '. ';
+    }
+
+    .ql-indent-1:not(.ql-direction-rtl) {
+        padding-left: 3em;
+    }
+
+    .main li.ql-indent-1:not(.ql-direction-rtl) {
+        padding-left: 4.5em;
+    }
+
+    .ql-indent-1.ql-direction-rtl.ql-align-right {
+        padding-right: 3em;
+    }
+
+    .main li.ql-indent-1.ql-direction-rtl.ql-align-right {
+        padding-right: 4.5em;
+    }
+
+    .ql-indent-2:not(.ql-direction-rtl) {
+        padding-left: 6em;
+    }
+
+    .main li.ql-indent-2:not(.ql-direction-rtl) {
+        padding-left: 7.5em;
+    }
+
+    .ql-indent-2.ql-direction-rtl.ql-align-right {
+        padding-right: 6em;
+    }
+
+    .main li.ql-indent-2.ql-direction-rtl.ql-align-right {
+        padding-right: 7.5em;
+    }
+
+    .ql-indent-3:not(.ql-direction-rtl) {
+        padding-left: 9em;
+    }
+
+    .main li.ql-indent-3:not(.ql-direction-rtl) {
+        padding-left: 10.5em;
+    }
+
+    .ql-indent-3.ql-direction-rtl.ql-align-right {
+        padding-right: 9em;
+    }
+
+    .main li.ql-indent-3.ql-direction-rtl.ql-align-right {
+        padding-right: 10.5em;
+    }
+
+    .ql-indent-4:not(.ql-direction-rtl) {
+        padding-left: 12em;
+    }
+
+    .main li.ql-indent-4:not(.ql-direction-rtl) {
+        padding-left: 13.5em;
+    }
+
+    .ql-indent-4.ql-direction-rtl.ql-align-right {
+        padding-right: 12em;
+    }
+
+    .main li.ql-indent-4.ql-direction-rtl.ql-align-right {
+        padding-right: 13.5em;
+    }
+
+    .ql-indent-5:not(.ql-direction-rtl) {
+        padding-left: 15em;
+    }
+
+    .main li.ql-indent-5:not(.ql-direction-rtl) {
+        padding-left: 16.5em;
+    }
+
+    .ql-indent-5.ql-direction-rtl.ql-align-right {
+        padding-right: 15em;
+    }
+
+    .main li.ql-indent-5.ql-direction-rtl.ql-align-right {
+        padding-right: 16.5em;
+    }
+
+    .ql-indent-6:not(.ql-direction-rtl) {
+        padding-left: 18em;
+    }
+
+    .main li.ql-indent-6:not(.ql-direction-rtl) {
+        padding-left: 19.5em;
+    }
+
+    .ql-indent-6.ql-direction-rtl.ql-align-right {
+        padding-right: 18em;
+    }
+
+    .main li.ql-indent-6.ql-direction-rtl.ql-align-right {
+        padding-right: 19.5em;
+    }
+
+    .ql-indent-7:not(.ql-direction-rtl) {
+        padding-left: 21em;
+    }
+
+    .main li.ql-indent-7:not(.ql-direction-rtl) {
+        padding-left: 22.5em;
+    }
+
+    .ql-indent-7.ql-direction-rtl.ql-align-right {
+        padding-right: 21em;
+    }
+
+    .main li.ql-indent-7.ql-direction-rtl.ql-align-right {
+        padding-right: 22.5em;
+    }
+
+    .ql-indent-8:not(.ql-direction-rtl) {
+        padding-left: 24em;
+    }
+
+    .main li.ql-indent-8:not(.ql-direction-rtl) {
+        padding-left: 25.5em;
+    }
+
+    .ql-indent-8.ql-direction-rtl.ql-align-right {
+        padding-right: 24em;
+    }
+
+    .main li.ql-indent-8.ql-direction-rtl.ql-align-right {
+        padding-right: 25.5em;
+    }
+
+    .ql-indent-9:not(.ql-direction-rtl) {
+        padding-left: 27em;
+    }
+
+    .main li.ql-indent-9:not(.ql-direction-rtl) {
+        padding-left: 28.5em;
+    }
+
+    .ql-indent-9.ql-direction-rtl.ql-align-right {
+        padding-right: 27em;
+    }
+
+    .main li.ql-indent-9.ql-direction-rtl.ql-align-right {
+        padding-right: 28.5em;
+    }
+
+    .ql-video {
+        display: block;
+        max-width: 100%;
+    }
+
+    .ql-video.ql-align-center {
+        margin: 0 auto;
+    }
+
+    .ql-video.ql-align-right {
+        margin: 0 0 0 auto;
+    }
+
+    .ql-bg-black {
+        background-color: #000;
+    }
+
+    .ql-bg-red {
+        background-color: #e60000;
+    }
+
+    .ql-bg-orange {
+        background-color: #f90;
+    }
+
+    .ql-bg-yellow {
+        background-color: #ff0;
+    }
+
+    .ql-bg-green {
+        background-color: #008a00;
+    }
+
+    .ql-bg-blue {
+        background-color: #06c;
+    }
+
+    .ql-bg-purple {
+        background-color: #93f;
+    }
+
+    .ql-color-white {
+        color: #fff;
+    }
+
+    .ql-color-red {
+        color: #e60000;
+    }
+
+    .ql-color-orange {
+        color: #f90;
+    }
+
+    .ql-color-yellow {
+        color: #ff0;
+    }
+
+    .ql-color-green {
+        color: #008a00;
+    }
+
+    .ql-color-blue {
+        color: #06c;
+    }
+
+    .ql-color-purple {
+        color: #93f;
+    }
+
+    .ql-font-serif {
+        font-family: Georgia, Times New Roman, serif;
+    }
+
+    .ql-font-monospace {
+        font-family: Monaco, Courier New, monospace;
+    }
+
+    .ql-size-small {
+        font-size: 0.75em;
+    }
+
+    .ql-size-large {
+        font-size: 1.5em;
+    }
+
+    .ql-size-huge {
+        font-size: 2.5em;
+    }
+
+    .ql-direction-rtl {
+        direction: rtl;
+        text-align: inherit;
+    }
+
+    .ql-align-center {
+        text-align: center;
+    }
+
+    .ql-align-justify {
+        text-align: justify;
+    }
+
+    .ql-align-right {
+        text-align: right;
+    }
+
+    .ql-snow .main h1 {
+        font-size: 2em;
+    }
+
+    .ql-snow .main h2 {
+        font-size: 1.5em;
+    }
+
+    .ql-snow .main h3 {
+        font-size: 1.17em;
+    }
+
+    .ql-snow .main h4 {
+        font-size: 1em;
+    }
+
+    .ql-snow .main h5 {
+        font-size: 0.83em;
+    }
+
+    .ql-snow .main h6 {
+        font-size: 0.67em;
+    }
+
+    .ql-snow .main a {
+        text-decoration: underline;
+    }
+
+    .ql-snow .main blockquote {
+        border-left: 4px solid #ccc;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding-left: 16px;
+    }
+
+    .ql-snow .main code,
+    .ql-snow .main pre {
+        background-color: #f0f0f0;
+        border-radius: 3px;
+    }
+
+    .ql-snow .main pre {
+        white-space: pre-wrap;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding: 5px 10px;
+    }
+
+    .ql-snow .main code {
+        font-size: 85%;
+        padding: 2px 4px;
+    }
+
+    .ql-snow .main pre.ql-syntax {
+        background-color: #23241f;
+        color: #f8f8f2;
+        overflow: visible;
+    }
+
+    .ql-snow .main img {
+        max-width: 100%;
+    }
+
+    .ql-snow a {
+        color: #06c;
+    }
+
+    .ql-container.ql-snow {
+        border: 1px solid #ccc;
     }
   </style>`
 }

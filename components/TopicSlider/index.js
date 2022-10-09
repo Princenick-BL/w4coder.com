@@ -13,42 +13,46 @@ const Slide = ({slide,slidePrev,slideNext,total}) =>{
   const remainingTime = endTime - stratTime;
  
     return(
-        <div className={styles.container}>
-            <div className={styles.top}> 
-                <Image
-                    src={slide?.poster}
-                    width={500}
-                    height={300}
-                    layout={"responsive"}
-                    className={styles.img}
-                />
-                <Link href={`/api/article/${slide?._id}/${slide?.slug}`}>
-                  <a>
-                    <div className={styles.desc}>
-                      {slide?.title}
-                    </div>
-                  </a>
-                </Link>
-            </div>
-            <div  className={styles.bottom}>
-                <div className={styles.positions}>{slide?.id} sur {total}</div>
-                <div className={styles.arrows}>
-                <div onClick={slidePrev}>&#x2039;</div>
+      <div className={styles.container}>
+        <div className={styles.top}>
+          <Link href={`/api/article/${slide?._id}/${slide?.slug}`}>
+            <a>
+              <Image
+                src={slide?.poster}
+                width={500}
+                height={300}
+                layout={"responsive"}
+                className={styles.img}
+              />
+            </a>
+          </Link>
+          <Link href={`/api/article/${slide?._id}/${slide?.slug}`}>
+            <a>
+              <div className={styles.desc}>
+                {slide?.title}
+              </div>
+            </a>
+          </Link>
+        </div>
+        <div className={styles.bottom}>
+          <div className={styles.positions}>{slide?.id} sur {total}</div>
+          <div className={styles.arrows}>
+            <div onClick={slidePrev}>&#x2039;</div>
 
-                <CountdownCircleTimer
-                    isPlaying
-                    duration={6}
-                    colors="#A30000"
-                    size={31}
-                    strokeWidth={2}
-                    initialRemainingTime={remainingTime}
-                    
-                >
-                        {({ remainingTime }) => 
-                        <span style={{margin:"0"}} onClick={slideNext}>&#x203A;</span>
-                        }
-                </CountdownCircleTimer>
-                {/* <CountdownCircleTimer
+            <CountdownCircleTimer
+              isPlaying
+              duration={6}
+              colors="#A30000"
+              size={31}
+              strokeWidth={2}
+              initialRemainingTime={remainingTime}
+
+            >
+              {({ remainingTime }) =>
+                <span style={{ margin: "0" }} onClick={slideNext}>&#x203A;</span>
+              }
+            </CountdownCircleTimer>
+            {/* <CountdownCircleTimer
                     isPlaying
                     duration={8}
                     initialRemainingTime={8}
@@ -58,10 +62,10 @@ const Slide = ({slide,slidePrev,slideNext,total}) =>{
                 >
                     <div>&#x2039;</div>
                 </CountdownCircleTimer> */}
-                    {/* <div onClick={slideNext}>&#x203A;</div> */}
-                </div>
-            </div>
-        </div> 
+            {/* <div onClick={slideNext}>&#x203A;</div> */}
+          </div>
+        </div>
+      </div> 
     )
 }
 
