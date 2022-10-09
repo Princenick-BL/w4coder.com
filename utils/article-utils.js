@@ -44,7 +44,7 @@ export function getStyles(){
     p{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        font-size : 1.3rem;
+        font-size : 1rem;
         line-height : 1.5;
     }
     body {
