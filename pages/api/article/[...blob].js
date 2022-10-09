@@ -31,7 +31,6 @@ export default async function handler(req, res) {
     }
 
 
-    const canonical =  req?.url
     const article = await RedisCache.fetch(`article-${articleId}`,fetcher,3600 * 24) || {}
     const articleTop = await RedisCache.fetch(`article-top`,fetcherTop,3600 * 24) || {}
 
@@ -40,32 +39,13 @@ export default async function handler(req, res) {
     // const article = await fetcher() 
 
    
-    if (!article ) { 
-        return {
-          notFound: true,
-        }
+    if (!article._id ) { 
+        res.redirect('/404')
     }
 
     const html = `
     
     <!DOCTYPE html>
-
-    <!---
-    Copyright 2017 The AMP Start Authors. All Rights Reserved.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS-IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    -->
-
     <html ⚡="">
       <head>
         <meta charset="utf-8" />
@@ -73,7 +53,9 @@ export default async function handler(req, res) {
         <link rel="canonical" href="https://w4coder.com/api/article/${article?._id}/${article?.slug}" />
         <meta name="viewport" content="width=device-width" />
         <meta name="amp-google-client-id-api" content="googleanalytics" />
-
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"/>
         <script async="" src="https://cdn.ampproject.org/v0.js"></script>
         ${getStyles()}
         <style amp-boilerplate="">
@@ -155,8 +137,12 @@ export default async function handler(req, res) {
        
       </head>
       <body>
-        
+        <header class="article-head">
+            <a href="/"> w4coder</a>
+        </header>
         <main id="content" role="main" class="">
+          <aside>
+          </aside>
           <article class="recipe-article">
             <header>
               <span class="ampstart-subtitle block px3 pt2 mb2">${article?.category?.name || 'A LA UNE'}</span>
@@ -182,6 +168,8 @@ export default async function handler(req, res) {
             </header>
             ${getSections(article?.sections)}
           </article>
+          <aside>
+          </aside>
         </main>
 
         <!-- Start Footer -->

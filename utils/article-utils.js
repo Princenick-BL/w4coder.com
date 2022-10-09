@@ -44,7 +44,7 @@ export function getStyles(){
     p{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        font-size : 1rem;
+        font-size : 1.1rem;
         line-height : 1.5;
     }
     body {
@@ -65,7 +65,8 @@ export function getStyles(){
     figcaption,
     figure,
     main {
-      display: block;
+      display: flex;
+      justify-content: space-between;
     }
     figure {
       margin: 1em 40px;
@@ -1115,11 +1116,21 @@ export function getStyles(){
       font-smooth: always;
       -webkit-font-smoothing: antialiased;
     }
-    main {
+    article {
       max-width: 720px;
-      margin: 0 auto;
     }
-
+    aside{
+        width: 22%;
+        max-width : 310px;
+    }
+    @media only screen and (max-width: 1100px) {
+      aside{
+        display : none;
+      }
+      article{
+        margin : 0 auto;
+      }
+    }
     .ampstart-accent {
       color: #003f93;
     }
@@ -2236,6 +2247,22 @@ export function getStyles(){
 
     .ql-container.ql-snow {
         border: 1px solid #ccc;
+    }
+    .article-head{
+        display: flex;
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-color);
+        padding : 0 .5rem;
+    }
+    .article-head a{
+        text-decoration : none;
+        font-family: "Oswald", sans-serif;
+        font-size : 2rem;
+        padding : 1rem 0;
     }
   </style>`
 }

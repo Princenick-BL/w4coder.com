@@ -157,13 +157,12 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script> */}
             </Head>
             <ScrollToTop smooth color="#6f00ff" />
+            <div className={styles.head} id="#top">
+                <Logo style={{fontSize:"2rem"}}/>
+                {/* <h3>Main articles</h3> */}
+                <ThemeChanger toggleTheme={toggleTheme}/>
+            </div>
             <div className={styles.topWrapper}>
-                <div className={styles.head} id="#top">
-                    <Logo style={{fontSize:"2rem"}}/>
-                    {/* <h3>Main articles</h3> */}
-                    <ThemeChanger toggleTheme={toggleTheme}/>
-                </div>
-                <br></br>
                 <div className={styles.mainContent}>
                     {firstA && (
                         <div className={styles.articlesFirst}>

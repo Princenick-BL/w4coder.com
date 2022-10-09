@@ -6,9 +6,10 @@
         margin: 0 auto;
         justify-content: space-between;
         align-items: center;
-        color: var(--text-color);
+        background-color: transparent;
     }
     .topWrapper{
+        padding-top: 25px;
         padding-bottom: 25px;
         box-sizing: border-box;
         background: #43c6ac;

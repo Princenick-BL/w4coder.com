@@ -13,7 +13,7 @@ const Slide = ({slide,slidePrev,slideNext,total}) =>{
   const remainingTime = endTime - stratTime;
  
     return(
-      <div className={styles.container}>
+      <div className={styles.container + " topic-slider-container"}>
         <div className={styles.top}>
           <Link href={`/api/article/${slide?._id}/${slide?.slug}`}>
             <a>
@@ -34,7 +34,7 @@ const Slide = ({slide,slidePrev,slideNext,total}) =>{
             </a>
           </Link>
         </div>
-        <div className={styles.bottom}>
+        <div className={styles.bottom+ " topic-slider-bottom"}>
           <div className={styles.positions}>{slide?.id} sur {total}</div>
           <div className={styles.arrows}>
             <div onClick={slidePrev}>&#x2039;</div>

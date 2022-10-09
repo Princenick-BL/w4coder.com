@@ -45,6 +45,12 @@ body {
 	.text-color{
 		color: #000;
 	}
+	.topic-slider-container{
+		border : 0.01rem solid rgba(0, 0, 0, 0.05);
+	}
+	.topic-slider-bottom{
+		border-top: 0.01rem solid rgba(0, 0, 0, 0.05) !important;
+	}
 }
 
 .theme-dark{
