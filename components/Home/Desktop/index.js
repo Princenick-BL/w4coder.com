@@ -382,14 +382,22 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                     <div className={styles.sider}>
                         <TopicSlider/>
                         <Ads600>
-                            {/* <amp-ad
+                            <amp-ad
                                 layout="fixed"
                                 width="300"
                                 height="600"
                                 type="adsense"
                                 data-ad-client="ca-pub-5455960452945884"
                                 data-ad-slot="5358300827">
-                            </amp-ad> */}
+                                    <amp-img
+                                        src="/images/adPlaceholder.png"
+                                        width="300"
+                                        height="600"
+                                        layout="responsive"
+                                        alt="placeholder"
+                                        class="mb4 mx3"
+                                    ></amp-img>
+                            </amp-ad>
                         </Ads600>
                     </div>
 

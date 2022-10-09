@@ -29,6 +29,22 @@ export function getSections(sections){
     return htmlSections
 }
 
+export function getRecentArticles(recentA){
+
+  var htmlSections = ""
+  recentA?.map((article,index)=>{ 
+
+    if(article){
+
+      htmlSections += `<div class="mt2"><a href="/">${article?.title}</a></div>`
+              
+    }
+
+  })
+
+  return htmlSections
+}
+
 export function getStyles(){
     return `
     <style amp-custom="">
@@ -1116,12 +1132,21 @@ export function getStyles(){
       font-smooth: always;
       -webkit-font-smoothing: antialiased;
     }
+    .main{
+      width: calc(100% - 330px);
+      display : flex;
+      justify-content: center;
+    }
     article {
       max-width: 720px;
     }
     aside{
-        width: 22%;
-        max-width : 310px;
+      width: 22%;
+      max-width: 310px;
+      margin-right: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
     }
     @media only screen and (max-width: 1100px) {
       aside{
@@ -1129,6 +1154,9 @@ export function getStyles(){
       }
       article{
         margin : 0 auto;
+      }
+      .main{
+        width: 100%;
       }
     }
     .ampstart-accent {
@@ -2263,6 +2291,22 @@ export function getStyles(){
         font-family: "Oswald", sans-serif;
         font-size : 2rem;
         padding : 1rem 0;
+    }
+    .sider-search{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    .sider-search input{
+      width: 100%;
+      height: 40px;
+      margin-right: .5rem;
+    }
+    .sider-search input[type="submit"]{
+      width: 100px;
+      height: 40px;
+      border: none;
+      border-radius : 5px;
     }
   </style>`
 }
