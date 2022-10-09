@@ -1,19 +1,15 @@
 import React,{Fragment,useState,useEffect,useRef} from 'react'
 import dynamic from 'next/dynamic'
-import styles from './index.module.scss'
 import { getSection } from '../../components/client/article/article.utils'
 import axios from 'axios'
 import { config as endpoint } from '../../constants'
 import * as gtag from '../../lib/gtag'
 import router from 'next/router'
 import RedisCache from '../../seoOpt/cache'
-import Head from 'next/head'
 
 export const config = { amp: true };
 
-const BlogHead = dynamic(()=>import('../../components/BlogHead'))
-const Menu = dynamic(()=>import('../../components/Menu'))
-const ArticleHeader = dynamic(()=>import('../../components/HeaderB/header'))
+// const BlogHead = dynamic(()=>import('../../components/BlogHead'))
 
 
 
@@ -22,14 +18,14 @@ export default function Article({article,canonical,social,articleTop}) {
     return (
         <Fragment>
            
-            <BlogHead
+            {/* <BlogHead
                 title = {article?.title}
                 poster={article?.poster}
                 description={article?.description}
                 publishedAt={article?.updatedAt}
                 location = {canonical}
-            />
-
+            /> */}
+{/* 
             <amp-analytics type="gtag" data-credentials="include">
                 <script type="application/json"
                     dangerouslySetInnerHTML={{
@@ -53,10 +49,9 @@ export default function Article({article,canonical,social,articleTop}) {
                 >
                     
                 </script>
-            </amp-analytics>
+            </amp-analytics> */}
             {/* <Fragment>*/}
                
-                <ArticleHeader/> 
                 <main id="content" role="main">
                     
                     <article className="recipe-article" >
@@ -181,7 +176,6 @@ export default function Article({article,canonical,social,articleTop}) {
                                                 }}
                                             >
                                                 <amp-img
-                                                    data-hero=""
                                                     src={top?.poster}
                                                     width={100}
                                                     height={70}

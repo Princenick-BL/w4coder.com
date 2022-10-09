@@ -1,5 +1,13 @@
 .container{
     font-family: 'Poppins',sans-serif;
+    .head{
+        display: flex;
+        width: 1170px;        // background-color: #191654;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-color);
+    }
     .topWrapper{
         padding-bottom: 25px;
         box-sizing: border-box;
@@ -75,11 +83,16 @@
                     font-size: 13px;
                     font-weight: 500;
                     text-transform: uppercase;
-                    color: #191654;
+                    a{
+                        color: #191654;
+                    }
                 }
                 .more:hover {
                     color: #fff;
                     background: #ff1616;
+                }
+                a{
+                    color: var(--text-color);
                 }
             }
         }
@@ -95,7 +108,7 @@
             box-sizing: border-box;
             grid-template-columns: auto auto auto;
             row-gap: 10px;
-            column-gap: 10px;
+            column-gap: 20px;
             .article{
                 box-sizing: border-box;
             }
@@ -120,6 +133,7 @@
                     padding: 4px 7px;
                     margin: 1rem 0;
                     width: max-content;
+                    
                 }
                 .title{
                     font-size: 18px;
@@ -156,6 +170,9 @@
                 .more:hover {
                     color: #fff;
                     background: #ff1616;
+                }
+                a{
+                    color: var(--text-color);
                 }
             }
         }
@@ -204,7 +221,6 @@
                         padding: 0px;
                         position: unset;
                         background: none;
-                        color: #000;
                         font-size: 12px;
                         line-height: 18px;
                         font-weight: 500;

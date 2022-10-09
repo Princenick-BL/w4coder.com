@@ -22,7 +22,7 @@ const Slide = ({slide,slidePrev,slideNext,total}) =>{
                     layout={"responsive"}
                     className={styles.img}
                 />
-                <Link href={`/article/${slide?._id}/${slide?.slug}`}>
+                <Link href={`/api/article/${slide?._id}/${slide?.slug}`}>
                   <a>
                     <div className={styles.desc}>
                       {slide?.title}

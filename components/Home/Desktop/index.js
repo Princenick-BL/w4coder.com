@@ -8,6 +8,9 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import TopicSlider from '../../TopicSlider';
 import Ads600 from '../../Ads/Ads600';
 import Footer from '../../footer/footer';
+import ScrollToTop from 'react-scroll-to-top';
+import Logo from '../../Logo';
+import ThemeChanger from '../../ThemeChanger';
 
 function getAmpPlayerScript(callback) {
     const ampJS = document.createElement("script");
@@ -48,7 +51,7 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
     )
 }
 
-export default function DeskTopHP({topA,page1}) {
+export default function DeskTopHP({topA,page1,toggleTheme}) {
 
     const [firstA,setfirstA] = useState(false)
     const [secondA,setSecondA] = useState(false)
@@ -153,33 +156,49 @@ export default function DeskTopHP({topA,page1}) {
      crossOrigin="anonymous"></script>
                 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script> */}
             </Head>
+            <ScrollToTop smooth color="#6f00ff" />
             <div className={styles.topWrapper}>
-                <div>
-
+                <div className={styles.head} id="#top">
+                    <Logo style={{fontSize:"2rem"}}/>
+                    {/* <h3>Main articles</h3> */}
+                    <ThemeChanger toggleTheme={toggleTheme}/>
                 </div>
                 <br></br>
                 <div className={styles.mainContent}>
                     {firstA && (
                         <div className={styles.articlesFirst}>
                             <div className={styles.img}>
-                                <Image
-                                    src={firstA?.poster}
-                                    width={500}
-                                    height={400}
-                                    layout={"fill"}
-                                    
-                                />
+                                <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
+                                    <a>
+                                        <Image
+                                            src={firstA?.poster}
+                                            width={500}
+                                            height={400}
+                                            layout={"fill"}
+
+                                        />
+                                    </a>
+                                </Link>
                             </div>
                             <div className={styles.articleInfo}>
                                 <div className={styles.cat}>{firstA?.category?.name || "A LA Une"}</div>
                                 <h2 className={styles.title}>
-                                    {firstA?.title}
+                                    <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
+                                        <a>
+                                            {firstA?.title}
+
+                                        </a>
+                                    </Link>
                                 </h2>
                                 <div className={styles.desc}>
                                     {firstA?.description}
                                 </div>
                                 <div className={styles.more}>
-                                    READ MORE &rarr;
+                                    <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
+                                        <a>
+                                            READ MORE &rarr;
+                                        </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -190,18 +209,26 @@ export default function DeskTopHP({topA,page1}) {
                                 return(
                                     <div key={index} className={styles.article}>
                                         <div className={styles.img}>
-                                            <Image
-                                                src={a?.poster||"https://picsum.photos/400/300"}
-                                                width={500}
-                                                height={400}
-                                                layout={"fill"}
-                                                
-                                            />
+                                            <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
+                                                <a>
+                                                    <Image
+                                                        src={a?.poster || "https://picsum.photos/400/300"}
+                                                        width={500}
+                                                        height={400}
+                                                        layout={"fill"}
+
+                                                    />
+                                                </a>
+                                            </Link>
                                         </div>
                                         <div className={styles.articleInfo}>
                                             <div className={styles.cat}>{a?.category?.name || "A LA Une"}</div>
                                             <h2 className={styles.title}>
-                                                {a?.title}
+                                                <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
+                                                    <a>
+                                                        {a?.title}
+                                                    </a>
+                                                </Link>
                                             </h2>
                                         </div>
                                     </div>
@@ -259,7 +286,7 @@ export default function DeskTopHP({topA,page1}) {
                             return(
                                 <div key={index} className={styles.article}>
                                     <div className={styles.img}>
-                                        <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                        <Link href={`/api/article/${a?._id}/${a?.slug}`}>
                                             <a>
                                                 <Image
                                                     src={a?.poster||"https://picsum.photos/400/300"}
@@ -272,9 +299,9 @@ export default function DeskTopHP({topA,page1}) {
                                         </Link>
                                     </div>
                                     <div className={styles.articleInfo}>
-                                        <div className={styles.cat}>{a?.category?.name || "A LA Une"}</div>
+                                        <div className={styles.cat+ " text-color"}>{a?.category?.name || "A LA Une"}</div>
                                         <h2 className={styles.title}>
-                                        <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                        <Link href={`/api/article/${a?._id}/${a?.slug}`}>
                                             <a>
                                             {a?.title}
                                             </a>
@@ -287,7 +314,7 @@ export default function DeskTopHP({topA,page1}) {
                                         {a?.description}
                                         </div>
                                         <div className={styles.more}>
-                                            <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                            <Link href={`/api/article/${a?._id}/${a?.slug}`}>
                                                 <a>
                                                     READ MORE &rarr;
                                                 </a>
@@ -311,7 +338,7 @@ export default function DeskTopHP({topA,page1}) {
                         return(
                             <div key={index} className={styles.article}>
                                 <div className={styles.img}>
-                                    <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                    <Link href={`/api/article/${a?._id}/${a?.slug}`}>
                                         <a>
                                             <Image
                                                 src={a?.poster||"https://picsum.photos/400/300"}
@@ -326,7 +353,7 @@ export default function DeskTopHP({topA,page1}) {
                                 <div className={styles.articleInfo}>
                                     <div className={styles.cat}>{a?.category?.name || "A LA Une"}</div>
                                     <h2 className={styles.title}>
-                                        <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                        <Link href={`/api/article/${a?._id}/${a?.slug}`}>
                                             <a>
                                             {a?.title}
                                             </a>
@@ -339,7 +366,7 @@ export default function DeskTopHP({topA,page1}) {
                                     {a?.description}
                                     </div>
                                     <div className={styles.more}>
-                                        <Link href={`/article/${a?._id}/${a?.slug}`}>
+                                        <Link href={`/api/article/${a?._id}/${a?.slug}`}>
                                             <a>
                                                 READ MORE &rarr;
                                             </a>
