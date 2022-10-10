@@ -206,7 +206,7 @@ function ReadIndex({topA,page1,toggleTheme}) {
         {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5455960452945884"
      crossOrigin="anonymous"></script> */}
       </Head>
-      <div id="mainContent" id="homTop">
+      <div  id="homTop">
         {/* <HomeMenu /> */}
         <main className={styles.main} >
           {/* <ScrollToTop smooth color="#6f00ff" /> */}
