@@ -55,7 +55,7 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                     <div className={styles.subSectionList} >
                         {stories && stories.map((story,index)=>{
                             return(
-                                <div className={styles.preview}>
+                                <div className={styles.preview} key={index}>
                                     <Image
                                         src={story?.poster || "https://picsum.photos/400/534?random=5"}
                                         width={400}
