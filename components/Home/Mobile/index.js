@@ -3,7 +3,7 @@ import HomePage from './HomePage'
 import MoviesPage from './MoviesPage'
 import StoriesPage from './StoriesPage'
 
-export default function index({topA,page1,toggleTheme}) {
+export default function HP({topA,page1,toggleTheme}) {
 
   const [currentView,setCurrentView] = useState(1)
 
