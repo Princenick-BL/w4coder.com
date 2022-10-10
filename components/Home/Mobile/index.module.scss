@@ -232,13 +232,12 @@
     .subSectionList{
         display: grid;
         grid-template-columns: 45vw 45vw;
-        grid-template-rows: calc(45vw * 4 /3) calc(45vw * 4 /3);
+        grid-template-rows: calc(45vw * 1.3328125) calc(45vw * 1.3328125);
         row-gap: 20px;
         column-gap: 20px;
         margin-top: 1rem;
         justify-content: center;
         .preview{
-            background-color: red;
             border-radius: 5px;
             padding: 1rem;
             position: relative;
@@ -253,8 +252,21 @@
                 overflow: hidden;
             }
             .details{
-                height: 45%;
-                
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                display: -webkit-box !important;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                white-space: normal;
+                font-size: 1.1rem;
+                color: #fff;
+                background-image: url("./down_gradient.png");
+                background-size: contain;
+                padding: .5rem;
             }
         }
     }
