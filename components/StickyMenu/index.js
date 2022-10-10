@@ -6,7 +6,9 @@ import {MdWebStories} from 'react-icons/md'
 export default function StickyMenu() {
   return (
     <div className={styles.stickyMenu}>
-        <RiHome2Fill size={24} style={{marginRight:"5px",marginLeft:"5px"}}/>
+        <a href='#homTop'>
+            <RiHome2Fill size={24} style={{marginRight:"5px",marginLeft:"5px"}}/>
+        </a>
         <MdWebStories size={24} style={{marginRight:"5px",marginLeft:"5px"}}/>
         <RiMovieFill size={24} style={{marginRight:"5px",marginLeft:"5px"}}/>
     </div>

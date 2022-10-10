@@ -8,8 +8,14 @@
     background-color: #fff;
     z-index: 2;
     left: calc(50% - 100px - 1rem);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 1px 6px 6px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 1px 13px 4px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    a{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
