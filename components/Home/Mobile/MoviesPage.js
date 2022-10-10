@@ -22,10 +22,10 @@ export default function MoviesPage({setCurrentView,toggleTheme}) {
             </div>
             <div className={styles.titleHead}>
                 <RiYoutubeFill size={24}/> <h1>Vidéos</h1>
-                <div className={styles.subSectionList} >
-                    <div className={styles.preview}>
+            </div>
+            <div className={styles.subSectionList} >
+                <div className={styles.preview}>
 
-                    </div>
                 </div>
             </div>
         </main>
