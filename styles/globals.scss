@@ -48,6 +48,9 @@ body {
 	.text-color{
 		color: #000;
 	}
+	.sticky-menu{
+		background-color: #fff;
+	}
 	@media only screen and (min-width: 600px) {		// display: none;
 		.topic-slider-container{
 			border : 0.01rem solid rgba(0, 0, 0, 0.05);
@@ -66,6 +69,9 @@ body {
 	}
 	.text-color{
 		color: #fff;
+	}
+	.sticky-menu{
+		background-color: #202029;
 	}
 }
 
