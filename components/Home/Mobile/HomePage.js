@@ -2,7 +2,6 @@ import React,{useEffect,useState,useRef} from 'react'
 import styles from './index.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import Logo from '../../Logo'
 import LasrArticle from '../../LastArticles'
 import Footer from '../../footer/footer'
 import Pagination from '../../Pagination'
@@ -13,6 +12,7 @@ import Head from 'next/head'
 import InfiniteScroll from "react-infinite-scroll-component";
 import ScrollToTop from "react-scroll-to-top";
 import TopicSlider from '../../TopicSlider'
+import Logo from '../../Logo'
 import ThemeChanger from '../../ThemeChanger'
 import StickyMenu from '../../StickyMenu'
 //export const config = { amp: true };

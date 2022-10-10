@@ -14,11 +14,11 @@ export default function HP({topA,page1,toggleTheme}) {
         break
 
       case 2:
-        return <StoriesPage setCurrentView={setCurrentView}/>
+        return <StoriesPage toggleTheme={toggleTheme} setCurrentView={setCurrentView}/>
         break
 
       case 3:
-        return <MoviesPage setCurrentView={setCurrentView}/>
+        return <MoviesPage toggleTheme={toggleTheme} setCurrentView={setCurrentView}/>
         break
 
       default:
