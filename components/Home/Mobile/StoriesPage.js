@@ -33,6 +33,78 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
             poster : "https://picsum.photos/400/534?random=4",
             color : "#4CA47C",
             title : "Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading" 
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
+            poster : 'https://picsum.photos/400/534?random=1',
+            color : '#FF6F32',
+            title : 'Q&A with ZOE Newman'
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
+            poster : "https://picsum.photos/400/534?random=2" ,
+            color :"#E6AD1C" ,
+            title : "24 Hours in New York City"
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
+            poster : "https://picsum.photos/400/534?random=3" ,
+            color : "#466FFF",
+            title : "The Next King of the Sea"
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
+            poster : "https://picsum.photos/400/534?random=4",
+            color : "#4CA47C",
+            title : "Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading" 
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
+            poster : 'https://picsum.photos/400/534?random=1',
+            color : '#FF6F32',
+            title : 'Q&A with ZOE Newman'
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
+            poster : "https://picsum.photos/400/534?random=2" ,
+            color :"#E6AD1C" ,
+            title : "24 Hours in New York City"
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
+            poster : "https://picsum.photos/400/534?random=3" ,
+            color : "#466FFF",
+            title : "The Next King of the Sea"
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
+            poster : "https://picsum.photos/400/534?random=4",
+            color : "#4CA47C",
+            title : "Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading" 
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
+            poster : 'https://picsum.photos/400/534?random=1',
+            color : '#FF6F32',
+            title : 'Q&A with ZOE Newman'
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
+            poster : "https://picsum.photos/400/534?random=2" ,
+            color :"#E6AD1C" ,
+            title : "24 Hours in New York City"
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
+            poster : "https://picsum.photos/400/534?random=3" ,
+            color : "#466FFF",
+            title : "The Next King of the Sea"
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
+            poster : "https://picsum.photos/400/534?random=4",
+            color : "#4CA47C",
+            title : "Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading" 
         }
     ])
 

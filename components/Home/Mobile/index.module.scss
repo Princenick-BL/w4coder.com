@@ -232,16 +232,17 @@
     .subSectionList{
         display: grid;
         grid-template-columns: 45vw 45vw;
-        grid-template-rows: calc(45vw * 1.3328125) calc(45vw * 1.3328125);
-        row-gap: 20px;
-        column-gap: 20px;
+        row-gap: 10px;
+        column-gap: 10px;
         margin-top: 1rem;
         justify-content: center;
+        padding-bottom: 6rem;
         .preview{
             border-radius: 5px;
             padding: 1rem;
             position: relative;
             overflow: hidden;
+            min-height:  calc(45vw * 1.3328125);
             .publisherLog{
                 position: absolute;
                 top: .5rem;
@@ -256,14 +257,19 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                overflow: hidden;
-                text-overflow:ellipsis;
-                display: -webkit-box !important;
-                -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
-                white-space: normal;
-                font-size: 1.1rem;
-                color: #fff;
+                div{
+
+                    height: max-content;
+                    max-height: max-content;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    display: -webkit-box !important;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    white-space: normal;
+                    font-size: 1.1rem;
+                    color: #fff;
+                }
                 background-image: url("./down_gradient.png");
                 background-size: contain;
                 padding: .5rem;
