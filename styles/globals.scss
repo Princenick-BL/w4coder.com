@@ -23,6 +23,7 @@ body {
 	background-color: #202029;
 	-ms-overflow-style: none; /* IE 11 */
 	scrollbar-width: none; /* Firefox 64 */
+	
 	p{
 		line-height: 1.8;
 		font-size: 1.3rem;
@@ -30,7 +31,9 @@ body {
 		margin: 0;
 	}
 }
-
+*{
+	scroll-behavior: smooth;
+}
 // #mainContent{
 // 	max-height: 99vh;
 // 	overflow-y: auto;
