@@ -14,6 +14,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import ScrollToTop from "react-scroll-to-top";
 import TopicSlider from '../../TopicSlider'
 import ThemeChanger from '../../ThemeChanger'
+import StickyMenu from '../../StickyMenu'
 //export const config = { amp: true };
 
 
@@ -208,7 +209,8 @@ function ReadIndex({topA,page1,toggleTheme}) {
       <div id="mainContent">
         {/* <HomeMenu /> */}
         <main className={styles.main} >
-          <ScrollToTop smooth color="#6f00ff" />
+          {/* <ScrollToTop smooth color="#6f00ff" /> */}
+          <StickyMenu/>
           <div className={styles.head} id="#top">
             <Logo style={{fontSize:"2rem"}}/>
             {/* <h3>Main articles</h3> */}

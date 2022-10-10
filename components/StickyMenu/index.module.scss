@@ -1,0 +1,12 @@
+.stickyMenu{
+    position: fixed;
+    bottom: 1rem;
+    width: 200px;
+    height: 20px;
+    padding: 1rem;
+    border-radius: 40px;
+    background-color: #fff;
+    z-index: 2;
+    left: calc(50% - 100px - 1rem);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

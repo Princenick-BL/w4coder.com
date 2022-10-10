@@ -1,5 +1,4 @@
 
-import { getSection } from '../../../components/client/article/article.utils'
 import axios from 'axios'
 import { config as endpoint } from '../../../constants'
 import * as gtag from '../../../lib/gtag'
