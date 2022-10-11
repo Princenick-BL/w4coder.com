@@ -24,9 +24,7 @@ export default function MoviesPage({setCurrentView,toggleTheme}) {
                 <RiYoutubeFill size={24}/> <h1>Vidéos</h1>
             </div>
             <div className={styles.subSectionList} >
-                <div className={styles.preview}>
-
-                </div>
+               {"Coming soon :)"}
             </div>
         </main>
     </>

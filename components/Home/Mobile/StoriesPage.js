@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import Head from 'next/head'
 import styles from './index.module.scss'
 import StickyMenu from '../../StickyMenu'
@@ -108,6 +108,12 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
             title : "Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading" 
         }
     ])
+
+    useEffect(()=>{
+        (async ()=>{
+            const res = await getStor
+        })();
+    },[])
 
     return (
         <>
