@@ -65,6 +65,8 @@
         position: relative;
         overflow: hidden;
         margin-right: calc( 50px + 1rem);
+        border : 1px solid #ccc;
+        border-radius: 10px;
         .title{
             background-color: #000;
             height: 400px;

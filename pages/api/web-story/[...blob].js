@@ -108,10 +108,10 @@ export default async function handler(req, res) {
         title="Joy of Pets"
         publisher="AMP tutorials"
         publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-        poster-portrait-src="assets/cover.jpg">
+        poster-portrait-src="https://picsum.photos/720/1280">
       <amp-story-page id="cover">
         <amp-story-grid-layer template="fill">
-          <amp-img src="assets/cover.jpg"
+          <amp-img src="https://picsum.photos/720/1280"
               width="720" height="1280"
               layout="responsive">
           </amp-img>
@@ -126,7 +126,7 @@ export default async function handler(req, res) {
       <amp-story-page id="page1">
         <amp-story-grid-layer template="vertical">
           <h1>Cats</h1>
-          <amp-img src="assets/cat.jpg"
+          <amp-img src="https://picsum.photos/720/1280"
               width="720" height="1280"
               layout="responsive">
           </amp-img>
@@ -137,7 +137,7 @@ export default async function handler(req, res) {
       <!-- Page 2 (Dog): 2 layers (fill + thirds) -->
       <amp-story-page id="page2">
         <amp-story-grid-layer template="fill">
-          <amp-img src="assets/dog.jpg" 
+          <amp-img src="https://picsum.photos/720/1280" 
               width="720" height="1280"
               layout="responsive">
           </amp-img>
@@ -151,7 +151,7 @@ export default async function handler(req, res) {
       <!-- Page 3 (Bird): 3 layers (fill + vertical + vertical) + Audio-->
       <amp-story-page id="page3" background-audio="assets/bird-singing.mp3">
         <amp-story-grid-layer template="fill">
-          <amp-img src="assets/bird.jpg"
+          <amp-img src="https://picsum.photos/720/1280"
               width="720" height="1280"
               layout="responsive">
           </amp-img>
@@ -169,7 +169,7 @@ export default async function handler(req, res) {
         <amp-story-grid-layer template="fill">
           <amp-video autoplay loop
                 width="720" height="1280"
-                poster="assets/rabbit.jpg"
+                poster="https://picsum.photos/720/1280"
                 layout="responsive">
               <source src="assets/rabbit.mp4" type="video/mp4">
           </amp-video>
@@ -186,25 +186,25 @@ export default async function handler(req, res) {
       <amp-story-page id="page5">
         <amp-story-grid-layer template="vertical" class="noedge">
           <div class="wrapper">
-            <amp-img src="assets/cat.jpg"
+            <amp-img src="https://picsum.photos/720/1280"
                 width="720" height="1280"
                 layout="responsive"
                 animate-in="fade-in"
                 animate-in-delay="0.4s">
             </amp-img>
-            <amp-img src="assets/dog.jpg"
+            <amp-img src="https://picsum.photos/720/1280"
                 width="720" height="1280"
                 layout="responsive"
                 animate-in="fade-in"
                 animate-in-delay="0.6s">
             </amp-img>
-            <amp-img src="assets/bird.jpg"
+            <amp-img src="https://picsum.photos/720/1280"
                 width="720" height="1280"
                 layout="responsive"
                 animate-in="fade-in"
                 animate-in-delay=".8s">
             </amp-img>
-            <amp-img src="assets/rabbit.jpg"
+            <amp-img src="https://picsum.photos/720/1280"
                 width="720" height="1280"
                 layout="responsive"
                 animate-in="fade-in"

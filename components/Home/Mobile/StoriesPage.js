@@ -6,6 +6,7 @@ import Logo from '../../Logo'
 import ThemeChanger from '../../ThemeChanger'
 import {MdWebStories} from 'react-icons/md'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 export default function StoriesPage({setCurrentView,toggleTheme}) {
@@ -128,23 +129,27 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                         {stories && stories.map((story,index)=>{
                             return(
                                 <div className={styles.preview} key={index}>
-                                    <Image
-                                        src={story?.poster || "https://picsum.photos/400/534?random=5"}
-                                        width={400}
-                                        height={534}
-                                        layout={"fill"}
-                                    />
-                                    <div className={styles.publisherLog}>
-                                        <Image
-                                            src={"https://picsum.photos/400/534?random=7"}
-                                            width={50}
-                                            height={50}
-                                            layout={"fill"}
-                                        />
-                                    </div>
-                                    <div className={styles.details}>
-                                        <div>{story?.title}</div>
-                                    </div>
+                                    <Link href={`/api/web-story/${story?._id}/${story?.slug}`}>
+                                        <a>
+                                            <Image
+                                                src={story?.poster || "https://picsum.photos/400/534?random=5"}
+                                                width={400}
+                                                height={534}
+                                                layout={"fill"}
+                                            />
+                                            <div className={styles.publisherLog}>
+                                                <Image
+                                                    src={"https://picsum.photos/400/534?random=7"}
+                                                    width={50}
+                                                    height={50}
+                                                    layout={"fill"}
+                                                />
+                                            </div>
+                                            <div className={styles.details}>
+                                                <div>{story?.title}</div>
+                                            </div>
+                                        </a>
+                                    </Link>
                                 </div>
 
                             )
