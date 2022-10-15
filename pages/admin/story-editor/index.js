@@ -11,6 +11,7 @@ import withAuth from "../../../middleware/withAuth";
 import AddObject from '../../../components/editor/story/addObject/story'
 import StorySlidePreview from '../../../components/StorySlide/preview'
 import StorySlideEditor from '../../../components/StorySlide/editor'
+import { patchStory } from '../../../services/stories-editor'
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
@@ -245,14 +246,23 @@ function StoryEditorContent({location}) {
     imgWindow?.document.write(image.outerHTML);
   };
 
-  const escFunction = useCallback((event) => {
+  const handleUpdate = useCallback(async (event) => {
 
-    // dispatch({
-    //     type:"setCurrentElement",
-    //     payload : {}
-    // })
+    try{
+      const res =  await patchStory(story);
+      if(res){
+        dispatch({
+          type : 'init',
+          payload : {
+            value : res?.data
+          }
+        })
+      }
+    }catch(e){
+      
+    }
     
-  }, []);
+  }, [story]);
 
 
   return (
@@ -298,7 +308,7 @@ function StoryEditorContent({location}) {
                 <div>Draft</div>
                 <div className={styles.saved}>Last saved 27/09/2000 - 10:09:33</div>
               </div>
-              <div className={styles.button}>Update</div>
+              <div className={styles.button} onClick={(e)=>{handleUpdate()}}>Update</div>
             </div>
             <div className={styles.metas}>
               <span>Posters</span>

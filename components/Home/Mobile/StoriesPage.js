@@ -7,114 +7,41 @@ import ThemeChanger from '../../ThemeChanger'
 import {MdWebStories} from 'react-icons/md'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getStories } from '../../../services/stories-editor'
+import { getStories } from '../../../services/stories'
+import InfiniteScroll from "react-infinite-scroll-component";
 
 
 export default function StoriesPage({setCurrentView,toggleTheme}) {
-    const [stories,setStories] = useState([
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
-            poster : 'https://picsum.photos/400/534?random=1',
-            color : '#FF6F32',
-            title : 'Q&A with ZOE Newman'
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
-            poster : "https://picsum.photos/400/534?random=2" ,
-            color :"#E6AD1C" ,
-            title : "24 Hours in New York City"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
-            poster : "https://picsum.photos/400/534?random=3" ,
-            color : "#466FFF",
-            title : "The Next King of the Sea"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
-            poster : "https://picsum.photos/400/534?random=4",
-            color : "#4CA47C",
-            title : "Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading" 
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
-            poster : 'https://picsum.photos/400/534?random=1',
-            color : '#FF6F32',
-            title : 'Q&A with ZOE Newman'
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
-            poster : "https://picsum.photos/400/534?random=2" ,
-            color :"#E6AD1C" ,
-            title : "24 Hours in New York City"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
-            poster : "https://picsum.photos/400/534?random=3" ,
-            color : "#466FFF",
-            title : "The Next King of the Sea"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
-            poster : "https://picsum.photos/400/534?random=4",
-            color : "#4CA47C",
-            title : "Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading" 
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
-            poster : 'https://picsum.photos/400/534?random=1',
-            color : '#FF6F32',
-            title : 'Q&A with ZOE Newman'
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
-            poster : "https://picsum.photos/400/534?random=2" ,
-            color :"#E6AD1C" ,
-            title : "24 Hours in New York City"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
-            poster : "https://picsum.photos/400/534?random=3" ,
-            color : "#466FFF",
-            title : "The Next King of the Sea"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
-            poster : "https://picsum.photos/400/534?random=4",
-            color : "#4CA47C",
-            title : "Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading" 
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
-            poster : 'https://picsum.photos/400/534?random=1',
-            color : '#FF6F32',
-            title : 'Q&A with ZOE Newman'
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
-            poster : "https://picsum.photos/400/534?random=2" ,
-            color :"#E6AD1C" ,
-            title : "24 Hours in New York City"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
-            poster : "https://picsum.photos/400/534?random=3" ,
-            color : "#466FFF",
-            title : "The Next King of the Sea"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
-            poster : "https://picsum.photos/400/534?random=4",
-            color : "#4CA47C",
-            title : "Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading Spark a Passion for Reading" 
-        }
-    ])
+    
+    const [pageNum,setPageNum] = useState(0)
+    const [hasMore,setHasMore] = useState(true)
+
+    
+    const [stories,setStories] = useState([])
 
     useEffect(()=>{
         (async ()=>{
-            const res = await getStories()
+            const res = await getStories({filter:{
+                page : 1
+            }})
+            setStories(res)
+            if(res.length < 10){
+                setHasMore(false)
+            }
         })();
     },[])
+
+    const fetchMoreData = async ()=>{
+
+        const res =  await getStories({filter:{
+          page : pageNum + 1
+        }})
+        setPageNum(pageNum + 1)
+        setStories([...stories,...res])
+        if(res.length === 0){
+          setHasMore(false)
+        }
+    }
 
     return (
         <>
@@ -138,7 +65,14 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                             <option>fr</option>
                         </select>
                     </div>
-                    <div className={styles.subSectionList} >
+                    <InfiniteScroll
+                        dataLength={stories.length}
+                        next={fetchMoreData}
+                        hasMore={hasMore}
+                        loader={<h4>Loading...</h4>}
+                        className={styles.subSectionList}                         
+                        style={{margin:"0 auto"}}
+                    >
                         {stories && stories.map((story,index)=>{
                             return(
                                 <div className={styles.preview} key={index}>
@@ -167,7 +101,37 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
 
                             )
                         })}
-                    </div>
+                    </InfiniteScroll>
+                    {/* <div className={styles.subSectionList} >
+                        {stories && stories.map((story,index)=>{
+                            return(
+                                <div className={styles.preview} key={index}>
+                                    <Link href={`/api/web-story/${story?._id}/${story?.slug}`}>
+                                        <a>
+                                            <Image
+                                                src={story?.poster || "https://picsum.photos/400/534?random=5"}
+                                                width={400}
+                                                height={534}
+                                                layout={"fill"}
+                                            />
+                                            <div className={styles.publisherLog}>
+                                                <Image
+                                                    src={"https://picsum.photos/400/534?random=7"}
+                                                    width={50}
+                                                    height={50}
+                                                    layout={"fill"}
+                                                />
+                                            </div>
+                                            <div className={styles.details}>
+                                                <div>{story?.title}</div>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </div>
+
+                            )
+                        })}
+                    </div> */}
                 </main>
             </div>
         </>
