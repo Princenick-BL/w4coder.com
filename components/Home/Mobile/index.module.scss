@@ -1,3 +1,9 @@
+.flexSpace{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
 .main{
     margin: 0 auto;
     width: 70rem;
@@ -23,7 +29,6 @@
     .titleHead{
         display: flex ;
         align-items: center;
-        margin-top: 1rem;
         h1{
             margin: 0;
             padding: 0;

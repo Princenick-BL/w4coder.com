@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import {RiYoutubeFill,RiHome2Fill} from 'react-icons/ri'
 import {MdWebStories} from 'react-icons/md'
 
-export default function StickyMenu({setCurrentView}) {
+export default function StickyMenu({setCurrentView,currentScrollTop}) {
   return (
     <div className={styles.stickyMenu + " sticky-menu"}>
         <RiHome2Fill size={24} style={{marginRight:"5px",marginLeft:"5px"}} onClick={(e)=>{setCurrentView(1)}}/>

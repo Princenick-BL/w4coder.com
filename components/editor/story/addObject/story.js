@@ -74,6 +74,47 @@ export default function AddObject() {
 
         const [show,setShow] = useState(1)
 
+        const slide1 = {
+            id:0,
+            pos:1,
+            type : "SLIDE",
+            background : "https://picsum.photos/350/623?random=1",
+            sections :[
+                {
+                  id:1,
+                  type:"BACKGROUND",
+                  content :"https://picsum.photos/350/623?random=1",
+                },
+                {
+                  id:2,
+                  type:"TEXTBLOCK",
+                  balise : "h1",
+                  content :"Top 5 Javascript Framework and librairie",
+                  style:{
+                    color : "#fff",
+                    width : "100%",
+                    height : "max-content",
+                    fontSize : "1.5rem",
+                    lineHeight : "1.5",
+                    height: "12.1988%"
+                  }
+                },
+                {
+                  id:3,
+                  type:"TEXTBLOCK",
+                  balise : "p",
+                  content :"By Prince Nick BALLO",
+                  style:{
+                    color : "#fff",
+                    width : "100%",
+                    height : "max-content",
+                    fontSize : "1rem",
+                    height: "12.1988%"
+                  }
+                }
+            ]
+        }
+
         const slide = {
             pos:1,
             type : "SLIDE",
@@ -147,24 +188,36 @@ export default function AddObject() {
                     content :"https://picsum.photos/350/623",
                 },
                 {
-                    type:"IMAGEBLOCK",
-                    content :"https://api-nickscorp-app.herokuapp.com/read/d99236183650026fce649fdf35608bf4.png",
-                    style:{
-                        width:"150%",
-                        height:"60%",
-                        top:"40%",
-                        left : "0%",
-                    }
-                },
-                {
+                    id:2,
                     type:"TEXTBLOCK",
-                    content :"HELLO WORLD TITLE",
+                    balise : "h1",
+                    content :"Top 5 Javascript Framework and librairie",
                     style:{
-                        bottom:"5%",
-                        left : "5%",
-                        color : "#fff"
+                      top:"20%",
+                      bottom:5,
+                      left : 0,
+                      color : "#fff",
+                      width : "100%%",
+                      height : "max-content",
+                      fontSize : "1.5rem",
+                      lineHeight : "1.5"
                     }
-                }
+                  },
+                  {
+                    id:3,
+                    type:"TEXTBLOCK",
+                    balise : "p",
+                    content :"By Prince Nick BALLO",
+                    style:{
+                      top:"20%",
+                      bottom:5,
+                      left : 0,
+                      color : "#fff",
+                      width : "100%%",
+                      height : "max-content",
+                      fontSize : "1rem",
+                    }
+                  }
             ]
         }
         
@@ -177,7 +230,7 @@ export default function AddObject() {
                             <div className={styles.themesTitle}>Themes</div>
                             <div className={styles.themes}>
                                 <div className={styles.template}>
-                                    <StorySlidePreview slide={slide2}/>
+                                    <StorySlidePreview slide={slide1}/>
                                 </div>
                                 <div className={styles.template}>
                                     <StorySlidePreview slide={slide3}/>

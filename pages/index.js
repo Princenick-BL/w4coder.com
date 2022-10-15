@@ -75,7 +75,7 @@ export default function Home({page1,topA}) {
   },[])
 
    return (
-    <div className={themeDark===false ? "theme-light" : "theme-dark"}>
+    <div  className={themeDark===false ? "theme-light" : "theme-dark"}>
       <Head>
         <meta name="theme-color" content={themeDark===false ? "#fff" : "#202029"}/>
       </Head>

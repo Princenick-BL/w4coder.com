@@ -20,9 +20,16 @@ export default function MoviesPage({setCurrentView,toggleTheme}) {
                 {/* <h3>Main articles</h3> */}
                 <ThemeChanger toggleTheme={toggleTheme}/>
             </div>
-            <div className={styles.titleHead}>
-                <RiYoutubeFill size={24}/> <h1>Vidéos</h1>
+            <div className={styles.flexSpace}>
+                <div className={styles.titleHead}>
+                    <RiYoutubeFill size={24}/> <h1>Vidéos</h1>
+                </div>
+                <select>
+                    <option>en</option>
+                    <option>fr</option>
+                </select>
             </div>
+           
             <div className={styles.subSectionList} >
                {"Coming soon :)"}
             </div>

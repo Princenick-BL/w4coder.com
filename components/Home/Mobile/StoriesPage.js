@@ -7,6 +7,7 @@ import ThemeChanger from '../../ThemeChanger'
 import {MdWebStories} from 'react-icons/md'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getStories } from '../../../services/stories-editor'
 
 
 export default function StoriesPage({setCurrentView,toggleTheme}) {
@@ -111,7 +112,7 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
 
     useEffect(()=>{
         (async ()=>{
-            const res = await getStor
+            const res = await getStories()
         })();
     },[])
 
@@ -128,8 +129,14 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                         {/* <h3>Main articles</h3> */}
                         <ThemeChanger toggleTheme={toggleTheme}/>
                     </div>
-                    <div className={styles.titleHead}>
-                        <MdWebStories size={24}/> <h1>Web Stories</h1>
+                    <div className={styles.flexSpace}>
+                        <div className={styles.titleHead}>
+                            <MdWebStories size={24}/> <h1>Web Stories</h1>
+                        </div>
+                        <select>
+                            <option>en</option>
+                            <option>fr</option>
+                        </select>
                     </div>
                     <div className={styles.subSectionList} >
                         {stories && stories.map((story,index)=>{

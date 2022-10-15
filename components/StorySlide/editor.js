@@ -22,23 +22,65 @@ const get = (section,active=false ) =>{
           />
         )
       case "TEXTBLOCK":
-        
-        
+          switch(section.balise){
+            case "h1":
+              return(
+                <Wrapper
+                  style={{...section.style,fontWeight:"600"}}
+                  content={section?.content}
+                >
+                  <h1
+                  style={{
+                    position:"relative",
+                    ...section.style,
+                  }}
+                  >
+                  {section?.content}
 
-        return(
-          <Wrapper
-            style={{position:"absolute",...section.style}}
-            id={section.id}
-          >
-              {section?.content}
-          </Wrapper>
-        )
+                  </h1>
+                
+              </Wrapper>
+              )
+              case "p":
+                return(
+                  <Wrapper
+                  style={{...section.style}}
+                  content={section?.content}
+                >
+                  <p
+                  style={{
+                    position:"relative",
+                    ...section.style,
+                   
+                  }}
+                  >
+                  {section?.content}
+  
+                  </p>
+                  </Wrapper>
+                )
+              default:
+                return(
+                  <p
+                  style={{
+                    position:"relative",
+                    ...section.style,
+                    
+                  }}
+                  >
+                  {section?.content}
+  
+                  </p>
+                )
+          }
+
+       
       case "IMAGEBLOCK":
         return(
           <div 
           className={active ? styles.active : ""}
           style={{
-              position:"absolute",
+             
               ...section.style
           }}>
             <Image

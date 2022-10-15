@@ -282,14 +282,26 @@ const StoryReducer = (state,action) =>{
         case 'patch-text':
 
 
-            if(section){
-                section.content = value;
-                state.story.sections[pos] = section
-            }
+            const newSlides = slides.filter((slide)=>{
+                if(slide.id === state.currentSlide.id){
+                    const newSlide = slide.sections
+                    slide.sections = newSlide.filter(section=>{
+                        if(section.id === state.currentElement.id){
+                            section.content = action.payload
+                        }
+                        return section
+                    })
+                }
+                return slide
+            })
 
             return {
                 ...state,
-            } 
+                story:{
+                    ...state.story,
+                    slides : newSlides
+                }
+            }
         break
 
         case 'patch-image':

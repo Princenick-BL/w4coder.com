@@ -1,4 +1,4 @@
-import React,{Fragment,useEffect,useState} from 'react'
+import React,{useCallback,useEffect,useState} from 'react'
 import Head from 'next/head'
 import styles from './index.module.scss'
 import Image from 'next/image'
@@ -74,27 +74,38 @@ function StoryEditorContent({location}) {
                     id:0,
                     pos:1,
                     type : "SLIDE",
-                    background : "https://api.lorem.space/image/movie?w=350&h=623",
+                    background : "https://picsum.photos/350/623?random=1",
                     sections :[
                         {
                           id:1,
                           type:"BACKGROUND",
-                          content :"https://api.lorem.space/image/movie?w=350&h=623",
+                          content :"https://picsum.photos/350/623?random=1",
                         },
                         {
                           id:2,
                           type:"TEXTBLOCK",
-                          content :"HELLO WORLD TITLE THIS IS THE CGHVE VDEJGD JGUEGJH GDUEGJQHV GDFJQHGFDGJH",
+                          balise : "h1",
+                          content :"Top 5 Javascript Framework and librairie",
                           style:{
-                            top:"20%",
-                            bottom:5,
-                            left : 0,
                             color : "#fff",
-                            width : "40%",
-                            textAlign : "center",
+                            width : "100%%",
+                            height : "max-content",
+                            fontSize : "1.5rem",
+                            lineHeight : "1.5",
+                            height: "12.1988%"
+                          }
+                        },
+                        {
+                          id:3,
+                          type:"TEXTBLOCK",
+                          balise : "p",
+                          content :"By Prince Nick BALLO",
+                          style:{
+                            color : "#fff",
+                            width : "100%%",
                             height : "max-content",
                             fontSize : "1rem",
-                            backgroundColor:"green"
+                            height: "12.1988%"
                           }
                         }
                     ]
@@ -103,12 +114,12 @@ function StoryEditorContent({location}) {
                     id:1,
                     pos:1,
                     type : "SLIDE",
-                    background : "https://api.lorem.space/image/movie?w=350&h=623",
+                    background : "https://picsum.photos/350/623?random=1",
                     sections :[
                         {
                           id:1,
                             type:"BACKGROUND",
-                            content :"https://api.lorem.space/image/movie?w=350&h=623",
+                            content :"https://picsum.photos/350/623?random=1",
                         },
                         {
                           id:2,
@@ -137,7 +148,7 @@ function StoryEditorContent({location}) {
                       id:2,
                       pos:1,
                       type : "SLIDE",
-                      background : "https://api.lorem.space/image/movie?w=350&h=623",
+                      background : "https://picsum.photos/350/623?random=1",
                       sections :[
                           {
                             id:1,
@@ -171,12 +182,12 @@ function StoryEditorContent({location}) {
                       id:3,
                       pos:1,
                       type : "SLIDE",
-                      background : "https://api.lorem.space/image/movie?w=350&h=623",
+                      background : "https://picsum.photos/350/623?random=1",
                       sections :[
                           {
                             id:1,
                               type:"BACKGROUND",
-                              content :"https://api.lorem.space/image/movie?w=350&h=623",
+                              content :"https://picsum.photos/350/623?random=1",
                           },
                           {
                             id:2,
@@ -234,6 +245,14 @@ function StoryEditorContent({location}) {
     imgWindow?.document.write(image.outerHTML);
   };
 
+  const escFunction = useCallback((event) => {
+
+    // dispatch({
+    //     type:"setCurrentElement",
+    //     payload : {}
+    // })
+    
+  }, []);
 
 
   return (
@@ -246,7 +265,7 @@ function StoryEditorContent({location}) {
         <main id="content" role="main" className={styles.main}>
           <AddObject/>
           <div className={styles.content}>
-            <div className={styles.slideContainer}>
+            <div className={styles.slideContainer} onClick={(e)=>{escFunction()}}>
               <div className={styles.slide}>
                 <StorySlideEditor/>
               </div>

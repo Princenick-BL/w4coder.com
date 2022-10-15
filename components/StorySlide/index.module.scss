@@ -1,12 +1,13 @@
 .preview{
-    width: 150px;
-    height: calc(150px * 16 / 9);
+    width: calc(150px - 20px );
+    height: calc(calc(150px * 16 / 9) - 30px);
     background-color: #fff;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    padding: 15px 10px;
     .pos{
         position: absolute;
         top: 0;

@@ -58,9 +58,13 @@ export default async function handler(req, res) {
             src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400" rel="stylesheet">
         <style amp-custom>
+          html{
+            background : #000;
+          }
           amp-story {
             font-family: 'Oswald',sans-serif;
             color: #fff;
+            border-radius : 10px;
           }
           amp-story-page {
             background-color: #000;

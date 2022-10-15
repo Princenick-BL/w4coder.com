@@ -26,8 +26,7 @@ export default function StorySlidePreview({slide,pos}) {
         return(
           <Textfit
             mode="multi"
-            forceSingleModeWidth={false}
-            style={{position:"absolute",...section.style}}
+            style={{...section.style,position:"absolute"}}
           >
             {section?.content}
           </Textfit>
@@ -38,7 +37,8 @@ export default function StorySlidePreview({slide,pos}) {
         return(
           <div style={{
               position:"absolute",
-              ...section.style
+              ...section.style,
+              fontSize:".5rem"
           }}>
             <Image
               src={section?.content}
