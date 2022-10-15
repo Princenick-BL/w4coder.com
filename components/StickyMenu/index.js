@@ -2,13 +2,29 @@ import React from 'react'
 import styles from './index.module.scss'
 import {RiYoutubeFill,RiHome2Fill} from 'react-icons/ri'
 import {MdWebStories} from 'react-icons/md'
+import Link from 'next/link'
 
-export default function StickyMenu({setCurrentView,currentScrollTop}) {
+export default function StickyMenu({current,currentScrollTop}) {
   return (
     <div className={styles.stickyMenu + " sticky-menu"}>
-        <RiHome2Fill size={24} style={{marginRight:"5px",marginLeft:"5px"}} onClick={(e)=>{setCurrentView(1)}}/>
-        <MdWebStories size={24} style={{marginRight:"5px",marginLeft:"5px"}} onClick={(e)=>{setCurrentView(2)}}/>
-        <RiYoutubeFill size={24} style={{marginRight:"5px",marginLeft:"5px"}} onClick={(e)=>{setCurrentView(3)}}/>
+      <Link href="/">
+        <a className={current===1 ? styles.active : ""}>
+          <RiHome2Fill size={24} style={{marginRight:"5px",marginLeft:"5px"}}/>
+          Home
+        </a>
+      </Link>
+      <Link href="/web-stories">
+        <a className={current===2 ? styles.active : ""}>
+          <MdWebStories size={24} style={{marginRight:"5px",marginLeft:"5px"}}/>   
+          Stories       
+        </a>
+      </Link>
+      <Link href="/videos">
+        <a className={current===3 ? styles.active : ""}>
+          <RiYoutubeFill size={24} style={{marginRight:"5px",marginLeft:"5px"}}/>  
+          Vidéos        
+        </a>
+      </Link>
     </div>
   )
 }

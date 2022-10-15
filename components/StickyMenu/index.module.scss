@@ -1,21 +1,32 @@
 .stickyMenu{
-    position: fixed;
+    // position: fixed;
     bottom: 1rem;
-    width: 200px;
+    width: calc(100% - 2rem);
     height: 20px;
     padding: 1rem;
     border-radius: 40px;
     background-color: #fff;
     z-index: 2;
-    left: calc(50% - 100px - 1rem);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 1px 13px 4px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    // box-shadow: rgba(50, 50, 93, 0.25) 0px 1px 13px 4px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    svg{
+        width: 20px;
+    }
     a{
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0 1rem;
+    }
+}
+
+.active{
+    text-decoration: underline !important;
+    color: var(--color-primary) !important;
+    svg{
+        fill: var(--color-primary);
     }
 }

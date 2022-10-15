@@ -156,11 +156,10 @@ export default function AddObject() {
                     type:"IMAGEBLOCK",
                     content :"https://picsum.photos/350/350",
                     style:{
-                        width:"98%",
-                        height:"45%",
-                        top:"5%",
-                        left : "0%",
-                        margin : "1%",
+                        width:"80%",
+                        height:"75%",
+                        top:"9%",
+                        left : "10%",
                         borderRadius:"10px",
                     }
                 },
@@ -233,7 +232,7 @@ export default function AddObject() {
                                     <StorySlidePreview slide={slide1}/>
                                 </div>
                                 <div className={styles.template}>
-                                    <StorySlidePreview slide={slide3}/>
+                                    <StorySlidePreview slide={slide2}/>
                                 </div>
                                 <div className={styles.template}>
                                     <StorySlidePreview slide={slide}/>
@@ -241,16 +240,7 @@ export default function AddObject() {
                                 <div className={styles.template}>
                                     <StorySlidePreview slide={slide}/>
                                 </div>
-                                <div className={styles.template}> 
-                                    <StorySlidePreview slide={slide}/>
-                                </div>
-                                <div className={styles.template}>
-                                    <StorySlidePreview slide={slide}/>
-                                </div>
-                                <div className={styles.template}>
-                                    <StorySlidePreview slide={slide}/>
-                                </div>
-                                <div className={styles.template}>
+                                {/* <div className={styles.template}> 
                                     <StorySlidePreview slide={slide}/>
                                 </div>
                                 <div className={styles.template}>
@@ -259,6 +249,15 @@ export default function AddObject() {
                                 <div className={styles.template}>
                                     <StorySlidePreview slide={slide}/>
                                 </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div>
+                                <div className={styles.template}>
+                                    <StorySlidePreview slide={slide}/>
+                                </div> */}
                             </div>
                         </div>
                     )

@@ -211,6 +211,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
         {/* <HomeMenu /> */}
         <main className={styles.main} >
           {/* <ScrollToTop smooth color="#6f00ff" /> */}
+          <StickyMenu setCurrentView={setCurrentView}/>
           <div className={styles.head} id="#top">
             <Logo style={{fontSize:"2rem"}}/>
             {/* <h3>Main articles</h3> */}
@@ -251,9 +252,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
                   })}
               </amp-story-player>
             </div>
-          </div>   
-          <StickyMenu setCurrentView={setCurrentView}  current={1}/>
-       
+          </div>          
           <div className={styles.editorial}>
             <div className={styles.editorialContent}>
               <TopicSlider/>

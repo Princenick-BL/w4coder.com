@@ -275,7 +275,7 @@ function StoryEditorContent({location}) {
         <main id="content" role="main" className={styles.main}>
           <AddObject/>
           <div className={styles.content}>
-            <div className={styles.slideContainer} onClick={(e)=>{escFunction()}}>
+            <div className={styles.slideContainer}>
               <div className={styles.slide}>
                 <StorySlideEditor/>
               </div>
