@@ -150,35 +150,40 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
 
   useEffect(()=>{
     const player = document.getElementById("player2");
-    var script = document.createElement("script")
-    script.type="application/json"
-    script.innerHTML=`
-      {
-        "behavior": {
-          "autoplay": false,
-          "pageScroll": false
-        },
-        "controls": [{
-          "name": "close",
-          "position": "start"
-        }]
+    
+    const existed  = document.getElementById("playerConfig");
+    if(!existed){
+
+        var script = document.createElement("script")
+        script.id = "playerConfig"
+        script.type="application/json"
+        script.innerHTML=`
+          {
+            "behavior": {
+              "autoplay": false,
+              "pageScroll": false
+            },
+            "controls": [{
+              "name": "close",
+              "position": "start"
+            }]
+          }
+        `
+        player.appendChild(script)
+
+        player.addEventListener("amp-story-player-close", () => {
+          document.getElementById("homTop").style.overflowY="auto"
+            player.pause();
+            setShow(false)
+        });
+
+        
+        player.addEventListener("ready", () => {
+          player.play()
+          initializeWidget(0);
+          player.pause()
+        });
       }
-    `
-    player.appendChild(script)
-
-    player.addEventListener("amp-story-player-close", () => {
-      document.getElementById("homTop").style.overflowY="auto"
-        player.pause();
-        setShow(false)
-    });
-
-    
-    player.addEventListener("ready", () => {
-      player.play()
-      initializeWidget(0);
-      player.pause()
-    });
-    
   }, [])
 
   const fetchMoreData = async ()=>{

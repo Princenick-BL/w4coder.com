@@ -71,64 +71,68 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
     
     
     const [stories,setStories] = useState([
-      {
-          url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
-          img : 'https://assets.codepen.io/1780597/4.png',
-          color : '#FF6F32',
-          text : 'Q&A with ZOE Newman'
-      },
-      {
-          url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
-          img : "https://assets.codepen.io/1780597/1.png" ,
-          color :"#E6AD1C" ,
-          text : "24 Hours in New York City"
-      },
-      {
-          url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
-          img : "https://assets.codepen.io/1780597/3.png" ,
-          color : "#466FFF",
-          text : "The Next King of the Sea"
-      },
-      {
-          url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
-          img : "https://assets.codepen.io/1780597/2.png",
-          color : "#4CA47C",
-          text : "Spark a Passion for Reading"
-      }
-  ])
-  
+    {
+        url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
+        img : 'https://assets.codepen.io/1780597/4.png',
+        color : '#FF6F32',
+        text : 'Q&A with ZOE Newman'
+    },
+    {
+        url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
+        img : "https://assets.codepen.io/1780597/1.png" ,
+        color :"#E6AD1C" ,
+        text : "24 Hours in New York City"
+    },
+    {
+        url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
+        img : "https://assets.codepen.io/1780597/3.png" ,
+        color : "#466FFF",
+        text : "The Next King of the Sea"
+    },
+    {
+        url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
+        img : "https://assets.codepen.io/1780597/2.png",
+        color : "#4CA47C",
+        text : "Spark a Passion for Reading"
+    }
+])
   
     useEffect(()=>{
-      const player = document.getElementById("player2");
-      var script = document.createElement("script")
-      script.type="application/json"
-      script.innerHTML=`
-        {
-          "behavior": {
-            "autoplay": false,
-            "pageScroll": false
-          },
-          "controls": [{
-            "name": "close",
-            "position": "start"
-          }]
+        const player = document.getElementById("player2");
+        const existed  = document.getElementById("playerConfig");
+        if(!existed){
+
+            var script = document.createElement("script")
+            script.id = "playerConfig"
+            script.type="application/json"
+            script.innerHTML=`
+                {
+                "behavior": {
+                    "autoplay": false,
+                    "pageScroll": false
+                },
+                "controls": [{
+                    "name": "close",
+                    "position": "start"
+                }]
+                }
+            `
+            player.appendChild(script)
+        
+            player.addEventListener("amp-story-player-close", () => {
+                // document.getElementById("mainContent").style.overflowY="auto"
+                player.pause();
+                setShow(false)
+            });
+        
+            
+            player.addEventListener("ready", () => {
+                player.play()
+                initializeWidget(0);
+                player.pause()
+            });
         }
-      `
-      player.appendChild(script)
-  
-      player.addEventListener("amp-story-player-close", () => {
-        // document.getElementById("mainContent").style.overflowY="auto"
-          player.pause();
-          setShow(false)
-      });
-  
-      
-      player.addEventListener("ready", () => {
-        player.play()
-        initializeWidget(0);
-        player.pause()
-      });
-      
+    
     }, [])
 
     const fetchMoreData = async ()=>{
@@ -248,38 +252,38 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                 <h4>Web stories</h4>
                 <div className="viewport">
                     <div className="entry-point-container">
-                    {/* <h1> Web Stories </h1> */}
-                    <div className="circular-entry-point">
-                        <div className="entry-points">
-                        {stories.map((story,index)=>{
-                            return(
-                                <Widget
-                                    key={index}
-                                    pos={index}
-                                    img={story.img}
-                                    color = {story.color}
-                                    text = {story.text}
-                                    url={story.url}
-                                    onclick={(e)=>{setShow(!show)}}
-                                />
-                            )
-                        })}
+                        {/* <h1> Web Stories </h1> */}
+                        <div className="circular-entry-point">
+                            <div className="entry-points">
+                            {stories.map((story,index)=>{
+                                return(
+                                    <Widget
+                                        key={index}
+                                        pos={index}
+                                        img={story.img}
+                                        color = {story.color}
+                                        text = {story.text}
+                                        url={story.url}
+                                        onclick={(e)=>{setShow(!show)}}
+                                    />
+                                )
+                            })}
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <br></br>
 
                     <div className={`lightbox ${show?"show":""}`}>
-                    {/* <div className={styles.side}>
+                        {/* <div className={styles.side}>
 
-                    </div> */}
-                    <amp-story-player style={{width:"100vw",height:"100vh"}} layout="responsive" width="360" height="600" id="player2" >
-                        {stories.map((story,index)=>{
-                            return(
-                            <a key={index} href={story?.url}></a>
-                            )
-                        })}
-                    </amp-story-player>
+                        </div> */}
+                        <amp-story-player style={{width:"100vw",height:"100vh"}} layout="responsive" width="360" height="600" id="player2" >
+                            {stories.map((story,index)=>{
+                                return(
+                                <a key={index} href={story?.url}></a>
+                                )
+                            })}
+                        </amp-story-player>
                     </div>
                 </div>
                 <div className={styles.lists}>
