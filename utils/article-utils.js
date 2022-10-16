@@ -1143,7 +1143,7 @@ export function getStyles(){
     aside{
       width: 22%;
       max-width: 310px;
-      margin-right: 1rem;
+      margin-right: 10%;
       display: flex;
       flex-direction: column;
       align-content: center;
