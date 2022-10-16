@@ -296,7 +296,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
                   return(
                     <>
                     <Slide key={index} article={article} style={{height:"100%"}}/>
-                    {(Math.floor(Math.random()* 10) > 8 )&& (
+                    {/* {(Math.floor(Math.random()* 10) > 8 )&& (
                       <Ads300>
                         <amp-ad 
                           width="300" 
@@ -315,7 +315,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
                           ></amp-img>
                         </amp-ad>
                       </Ads300>
-                    )}
+                    )} */}
                     </>
                   )
                 }):(
