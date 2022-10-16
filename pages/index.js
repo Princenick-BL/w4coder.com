@@ -40,7 +40,7 @@ const useMediaQuery = (width) => {
 
 export default function Home({page1,topA}) {
 
-  const isBreakpoint = useMediaQuery(768)
+  const isBreakpoint = useMediaQuery(800)
   const [themeDark,setThemeDark] = useState(false)
 
   // function to set a given theme/color-scheme

@@ -11,6 +11,7 @@ import Footer from '../../footer/footer';
 import ScrollToTop from 'react-scroll-to-top';
 import Logo from '../../Logo';
 import ThemeChanger from '../../ThemeChanger';
+import StickyMenu from '../../StickyMenu';
 
 function getAmpPlayerScript(callback) {
     const ampJS = document.createElement("script");
@@ -145,7 +146,7 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
     return (
         <div className={styles.container}>
             <Head>
-                <title>w4coder</title>
+                <title>w4coder - Officiel</title>
                 <script async src="https://cdn.ampproject.org/v0.js"></script>
                 <script
                 async
@@ -158,7 +159,10 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
             </Head>
             <ScrollToTop smooth color="#6f00ff" />
             <div className={styles.head} id="#top">
-                <Logo style={{fontSize:"2rem"}}/>
+                <div style={{display:"flex"}}>
+                    <Logo style={{fontSize:"2rem"}}/>
+                    <StickyMenu current={1}/>
+                </div>
                 {/* <h3>Main articles</h3> */}
                 <ThemeChanger toggleTheme={toggleTheme}/>
             </div>

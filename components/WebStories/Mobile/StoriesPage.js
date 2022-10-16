@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getStories } from '../../../services/stories'
 import InfiniteScroll from "react-infinite-scroll-component";
+import ScrollToTop from "react-scroll-to-top";
 
 
 export default function StoriesPage({setCurrentView,toggleTheme}) {
@@ -46,7 +47,7 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
     return (
         <>
             <Head>
-
+                <title>w4coder - Web Stories</title>
             </Head>
             <div id="storiesTop">
                 <main className={styles.main} >
@@ -55,6 +56,18 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                         {/* <h3>Main articles</h3> */}
                         <ThemeChanger toggleTheme={toggleTheme}/>
                     </div>
+                    <div className={styles.banner}>
+                        <Image
+                            src={"https://picsum.photos/500/150"}
+                            layout="fill"
+                        />
+                        <div className={styles.bannerContent}>
+                            <h1>Web Stories</h1>
+
+                        </div>
+                    </div>
+                    <ScrollToTop smooth color="#6f00ff" />
+
                     <StickyMenu setCurrentView={setCurrentView} current={2}/>
 
                     <div className={styles.flexSpace}>

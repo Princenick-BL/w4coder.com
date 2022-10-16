@@ -11,6 +11,7 @@ import Footer from '../../footer/footer';
 import ScrollToTop from 'react-scroll-to-top';
 import Logo from '../../Logo';
 import ThemeChanger from '../../ThemeChanger';
+import StickyMenu from '../../StickyMenu';
 
 function getAmpPlayerScript(callback) {
     const ampJS = document.createElement("script");
@@ -70,31 +71,31 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
     
     
     const [stories,setStories] = useState([
-      {
-          url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
-          img : 'https://assets.codepen.io/1780597/4.png',
-          color : '#FF6F32',
-          text : 'Q&A with ZOE Newman'
-      },
-      {
-          url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
-          img : "https://assets.codepen.io/1780597/1.png" ,
-          color :"#E6AD1C" ,
-          text : "24 Hours in New York City"
-      },
-      {
-          url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
-          img : "https://assets.codepen.io/1780597/3.png" ,
-          color : "#466FFF",
-          text : "The Next King of the Sea"
-      },
-      {
-          url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
-          img : "https://assets.codepen.io/1780597/2.png",
-          color : "#4CA47C",
-          text : "Spark a Passion for Reading"
-      }
-  ])
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
+            img : 'https://assets.codepen.io/1780597/4.png',
+            color : '#FF6F32',
+            text : 'Q&A with ZOE Newman'
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
+            img : "https://assets.codepen.io/1780597/1.png" ,
+            color :"#E6AD1C" ,
+            text : "24 Hours in New York City"
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
+            img : "https://assets.codepen.io/1780597/3.png" ,
+            color : "#466FFF",
+            text : "The Next King of the Sea"
+        },
+        {
+            url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
+            img : "https://assets.codepen.io/1780597/2.png",
+            color : "#4CA47C",
+            text : "Spark a Passion for Reading"
+        }
+    ])
   
   
     useEffect(()=>{
@@ -145,7 +146,7 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
     return (
         <div className={styles.container}>
             <Head>
-                <title>w4coder</title>
+                <title>w4coder - Web Stories</title>
                 <script async src="https://cdn.ampproject.org/v0.js"></script>
                 <script
                 async
@@ -162,247 +163,70 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                 {/* <h3>Main articles</h3> */}
                 <ThemeChanger toggleTheme={toggleTheme}/>
             </div>
-            <div className={styles.topWrapper}>
-                <div className={styles.mainContent}>
-                    {firstA && (
-                        <div className={styles.articlesFirst}>
-                            <div className={styles.img}>
-                                <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
-                                    <a>
-                                        <Image
-                                            src={firstA?.poster}
-                                            width={500}
-                                            height={400}
-                                            layout={"fill"}
+            <div className={styles.banner}>
+                <Image
+                    src={"https://picsum.photos/1700/300"}
+                    layout="fill"
+                />
+                <div className={styles.bannerContent}>
+                    <h1>Web Stories</h1>
 
-                                        />
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className={styles.articleInfo}>
-                                <div className={styles.cat}>{firstA?.category?.name || "A LA Une"}</div>
-                                <h2 className={styles.title}>
-                                    <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
-                                        <a>
-                                            {firstA?.title}
-
-                                        </a>
-                                    </Link>
-                                </h2>
-                                <div className={styles.desc}>
-                                    {firstA?.description}
-                                </div>
-                                <div className={styles.more}>
-                                    <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
-                                        <a>
-                                            READ MORE &rarr;
-                                        </a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                    <div className={styles.articlesSecond}>
-                        {secondA?.length > 0 && (
-                            secondA?.map((a,index)=>{
-                                return(
-                                    <div key={index} className={styles.article}>
-                                        <div className={styles.img}>
-                                            <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
-                                                <a>
-                                                    <Image
-                                                        src={a?.poster || "https://picsum.photos/400/300"}
-                                                        width={500}
-                                                        height={400}
-                                                        layout={"fill"}
-
-                                                    />
-                                                </a>
-                                            </Link>
-                                        </div>
-                                        <div className={styles.articleInfo}>
-                                            <div className={styles.cat}>{a?.category?.name || "A LA Une"}</div>
-                                            <h2 className={styles.title}>
-                                                <Link href={`/api/article/${firstA?._id}/${firstA?.slug}`}>
-                                                    <a>
-                                                        {a?.title}
-                                                    </a>
-                                                </Link>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                )
-
-                            })
-                        )}
-                       
-                    </div>
                 </div>
-                
             </div>
-            <div className={styles.bottomWrapper}>
-                <h4>Web stories</h4>
-                <div className="viewport">
-                    <div className="entry-point-container">
-                    {/* <h1> Web Stories </h1> */}
-                    <div className="circular-entry-point">
-                        <div className="entry-points">
-                        {stories.map((story,index)=>{
-                            return(
-                                <Widget
-                                    key={index}
-                                    pos={index}
-                                    img={story.img}
-                                    color = {story.color}
-                                    text = {story.text}
-                                    url={story.url}
-                                    onclick={(e)=>{setShow(!show)}}
+            <StickyMenu current={2}/>
+
+            <div className={styles.listCenter}>
+                <div 
+                    className={styles.subSectionList}                         
+                >
+                {stories.map((story,index)=>{
+                    return(
+                        <div className={styles.preview} 
+                            key={index}
+                            onClick={(e)=>{        
+                                setShow(true)
+                                // document.getElementById("mainContent").style.overflowY="hidden"
+                                initializeWidget(index)
+                            }}
+                            >
+                            <Image
+                                src={story?.poster || "https://picsum.photos/400/534?random=5"}
+                                width={400}
+                                height={534}
+                                layout={"fill"}
+                            />
+                            <div className={styles.publisherLog}>
+                                <Image
+                                    src={"https://picsum.photos/400/534?random=7"}
+                                    width={50}
+                                    height={50}
+                                    layout={"fill"}
                                 />
-                            )
-                        })}
-                        </div>
-                    </div>
-                    </div>
-                    <br></br>
-
-                    <div className={`lightbox ${show?"show":""}`}>
-                    {/* <div className={styles.side}>
-
-                    </div> */}
-                    <amp-story-player style={{width:"100vw",height:"100vh"}} layout="responsive" width="360" height="600" id="player2" >
-                        {stories.map((story,index)=>{
-                            return(
-                            <a key={index} href={story?.url}></a>
-                            )
-                        })}
-                    </amp-story-player>
-                    </div>
-                </div>
-                <div className={styles.lists}>
-                    <div className={styles.listLeft}>
-                    {page1?.length > 0 && (
-                        page1?.map((a,index)=>{
-                            return(
-                                <div key={index} className={styles.article}>
-                                    <div className={styles.img}>
-                                        <Link href={`/api/article/${a?._id}/${a?.slug}`}>
-                                            <a>
-                                                <Image
-                                                    src={a?.poster||"https://picsum.photos/400/300"}
-                                                    width={400}
-                                                    height={400}
-                                                    layout={"fill"}
-                                                    
-                                                />
-                                            </a>
-                                        </Link>
-                                    </div>
-                                    <div className={styles.articleInfo}>
-                                        <div className={styles.cat+ " text-color"}>{a?.category?.name || "A LA Une"}</div>
-                                        <h2 className={styles.title}>
-                                        <Link href={`/api/article/${a?._id}/${a?.slug}`}>
-                                            <a>
-                                            {a?.title}
-                                            </a>
-                                        </Link>
-                                        </h2>
-                                        <div className={styles.author}>
-                                            By {a?.author?.name}
-                                        </div>
-                                        <div className={styles.desc}>
-                                        {a?.description}
-                                        </div>
-                                        <div className={styles.more}>
-                                            <Link href={`/api/article/${a?._id}/${a?.slug}`}>
-                                                <a>
-                                                    READ MORE &rarr;
-                                                </a>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            )
-                        })
-                    )}
-                     <InfiniteScroll
-                        dataLength={pages.length}
-                        next={fetchMoreData}
-                        hasMore={hasMore}
-                        loader={<h4>Loading...</h4>}
-                        className={styles.mainSlideShow}
-                        style={{margin:"0 auto"}}
-                    >
-                        {pages ? pages.map((a,index)=>{
-                        return(
-                            <div key={index} className={styles.article}>
-                                <div className={styles.img}>
-                                    <Link href={`/api/article/${a?._id}/${a?.slug}`}>
-                                        <a>
-                                            <Image
-                                                src={a?.poster||"https://picsum.photos/400/300"}
-                                                width={400}
-                                                height={400}
-                                                layout={"fill"}
-                                                
-                                            />
-                                        </a>
-                                    </Link>
-                                </div>
-                                <div className={styles.articleInfo}>
-                                    <div className={styles.cat}>{a?.category?.name || "A LA Une"}</div>
-                                    <h2 className={styles.title}>
-                                        <Link href={`/api/article/${a?._id}/${a?.slug}`}>
-                                            <a>
-                                            {a?.title}
-                                            </a>
-                                        </Link>
-                                    </h2>
-                                    <div className={styles.author}>
-                                        By {a?.author?.name}
-                                    </div>
-                                    <div className={styles.desc}>
-                                    {a?.description}
-                                    </div>
-                                    <div className={styles.more}>
-                                        <Link href={`/api/article/${a?._id}/${a?.slug}`}>
-                                            <a>
-                                                READ MORE &rarr;
-                                            </a>
-                                        </Link>
-                                    </div>
-                                </div>
                             </div>
-                        )
-                        }):(
-                        <></>
-                        )}
-                    </InfiniteScroll>
-                    </div>
-                    <div className={styles.sider}>
-                        <TopicSlider/>
-                        <Ads600>
-                            <amp-ad
-                                layout="fixed"
-                                width="300"
-                                height="600"
-                                type="adsense"
-                                data-ad-client="ca-pub-5455960452945884"
-                                data-ad-slot="5358300827">
-                                    <amp-img
-                                        src="/images/adPlaceholder.png"
-                                        width="300"
-                                        height="600"
-                                        layout="responsive"
-                                        alt="placeholder"
-                                        class="mb4 mx3"
-                                    ></amp-img>
-                            </amp-ad>
-                        </Ads600>
-                    </div>
-
-                </div>     
+                            <div className={styles.details}>
+                                <div>{story?.title}</div>
+                            </div>
+                        </div>
+                    )
+                })}
+                </div>
             </div>
+
+            <br></br>
+
+            <div className={`lightbox ${show?"show":""}`}>
+                {/* <div className={styles.side}>
+
+                </div> */}
+                <amp-story-player style={{width:"100vw",height:"100vh"}} layout="responsive" width="360" height="600"id="player2" >
+                    {stories.map((story,index)=>{
+                        return(
+                        <a key={index} href={story?.url}></a>
+                        )
+                    })}
+                </amp-story-player>
+            </div>   
+
             <Footer/>
         </div>
     )

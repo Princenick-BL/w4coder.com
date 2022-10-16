@@ -197,7 +197,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
   return (
     <>
       <Head>
-        <title>w4coder</title>
+        <title>w4coder - Officiel</title>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script
           async
@@ -210,7 +210,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
       <div  id="homTop">
         {/* <HomeMenu /> */}
         <main className={styles.main} >
-          {/* <ScrollToTop smooth color="#6f00ff" /> */}
+          <ScrollToTop smooth color="#6f00ff" />
           <div className={styles.head} id="#top">
             <Logo style={{fontSize:"2rem"}}/>
             {/* <h3>Main articles</h3> */}

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './index.module.scss'
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Logo({single,style}) {
   return (
@@ -13,7 +14,9 @@ export default function Logo({single,style}) {
       {single ? (
         <div className={styles.logo} style={style}>{`w`}</div>
       ) : (
-        <div className={styles.logo} style={style}>{`w4coder`}</div>
+        <Link href={"/"}>
+          <div className={styles.logo} style={style}>{`w4coder`}</div>
+        </Link>
       )}
     </>
   )
