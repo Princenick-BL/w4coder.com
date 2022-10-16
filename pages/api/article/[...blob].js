@@ -176,22 +176,23 @@ export default async function handler(req, res) {
               <span style="font-size:1.2rem;font-weight:800;">Recent Posts</span>
               ${getRecentArticles(articleTop)}
             </div>
-            <amp-ad
-              layout="fixed"
-              width="300"
-              height="600"
-              type="adsense"
-              data-ad-client="ca-pub-5455960452945884"
-              data-ad-slot="5358300827">
-                  <amp-img
-                      src="/images/adPlaceholder.png"
-                      width="300"
-                      height="600"
-                      layout="responsive"
-                      alt="placeholder"
-                      class="mb4 mx3"
-                  ></amp-img>
-            </amp-ad>
+            <div class="ads600">
+              <amp-ad
+                layout="fixed"
+                width="300"
+                height="600"
+                type="adsense"
+                data-ad-client="ca-pub-5455960452945884"
+                data-ad-slot="5358300827">
+                    <amp-img
+                        src="/images/adPlaceholder.png"
+                        width="300"
+                        height="600"
+                        layout="responsive"
+                        alt="placeholder"
+                    ></amp-img>
+              </amp-ad>
+            </div>
           </aside>
         </main>
 

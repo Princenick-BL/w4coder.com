@@ -2308,5 +2308,14 @@ export function getStyles(){
       border: none;
       border-radius : 5px;
     }
+    .ads600{
+      min-height: 610px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 310px !important;
+      padding: 5px 0;
+    }
   </style>`
 }

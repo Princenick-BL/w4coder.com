@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import LasrArticle from '../../LastArticles'
 import Footer from '../../footer/footer'
-import Pagination from '../../Pagination'
+import Ads300 from '../../Ads/Ads300'
 import Slide from '../../CardView'
 import { getArticle ,getTopArticles} from '../../../services/articles'
 import TheSideBar from '../../ThesideBar'
@@ -15,6 +15,7 @@ import TopicSlider from '../../TopicSlider'
 import Logo from '../../Logo'
 import ThemeChanger from '../../ThemeChanger'
 import StickyMenu from '../../StickyMenu'
+
 //export const config = { amp: true };
 
 
@@ -293,7 +294,29 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
               >
                 {pages ? pages.map((article,index)=>{
                   return(
+                    <>
                     <Slide key={index} article={article} style={{height:"100%"}}/>
+                    {(Math.floor(Math.random()* 10) > 8 )&& (
+                      <Ads300>
+                        <amp-ad 
+                          width="300" 
+                          height="200"
+                          type="adsense"
+                          data-ad-client="ca-pub-5455960452945884"
+                          data-ad-slot="5221773298"
+                          data-auto-format="rspv"
+                          data-full-width="">
+                            <amp-img
+                              src="/images/adPlaceholder300.png"
+                              width="300"
+                              height="250"
+                              layout="responsive"
+                              alt="placeholder"
+                          ></amp-img>
+                        </amp-ad>
+                      </Ads300>
+                    )}
+                    </>
                   )
                 }):(
                   <></>
