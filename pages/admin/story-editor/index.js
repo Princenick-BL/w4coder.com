@@ -117,21 +117,16 @@ function StoryEditorContent({location}) {
                     type : "SLIDE",
                     background : "https://picsum.photos/350/623?random=1",
                     sections :[
-                        {
-                          id:1,
-                            type:"BACKGROUND",
-                            content :"https://picsum.photos/350/623?random=1",
-                        },
+                       
                         {
                           id:2,
                             type:"IMAGEBLOCK",
-                            content :"https://api-nickscorp-app.herokuapp.com/read/e495cfd0b4686374727ad525f53414ad.png",
+                            content :"https://picsum.photos/350/623?random=1",
                             style:{
-                                width:"150%",
-                                height:"100%",
+                                width:"90%",
+                                height:"80%",
                                 top:"50%",
                                 left : "-30%",
-                                transform:"rotate(30deg)"
                             }
                         },
                         {
