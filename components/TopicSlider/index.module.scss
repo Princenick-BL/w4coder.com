@@ -1,5 +1,5 @@
 .container{
-    width: calc(100% - .7rem);
+    width: calc(100% );
     min-height: 50vh;
     max-height: max-content;
     border: 0.01rem solid rgb(135, 133, 133);
@@ -74,7 +74,7 @@
 .wrapper{
     font-size: .8rem;
     @media only screen and (max-width: 600px) {
-        border-bottom: 0.01rem solid rgb(135, 133, 133);
+        // border-bottom: 0.01rem solid rgb(135, 133, 133);
         // border-top: 0.01rem solid rgb(135, 133, 133);
         margin-bottom: 1rem;
     }

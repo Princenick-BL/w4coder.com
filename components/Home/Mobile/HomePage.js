@@ -262,7 +262,6 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
        
           <div className={styles.editorial}>
             <div className={styles.editorialContent}>
-              <TopicSlider/>
               <div
                 className={styles.mainSlideShow}
               >
@@ -282,7 +281,9 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
                     data-full-width="">
                 <div overflow=""></div>
                 </amp-ad> */}
-              <LasrArticle topA={topA}/>
+              {/* <LasrArticle topA={topA}/> */}
+              <TopicSlider/>
+
 
               <InfiniteScroll
                 dataLength={pages.length}
