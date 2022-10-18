@@ -62,11 +62,11 @@ export function getStorySlides(slides){
   
                 switch(section.balise){
                     case  "h1":
-                        return slideContent = slideContent +`<h1>${section?.content}</h1>`
+                        return slideContent = slideContent +`<h1 style="font-size:1rem">${section?.content}</h1>`
                     case  "p":
-                        return slideContent = slideContent +`<p>${section?.content}</p>`
+                        return slideContent = slideContent +`<p style="font-size:1rem">${section?.content}</p>`
                     default :
-                        return slideContent = slideContent +`<p>${section?.content}</p>`
+                        return slideContent = slideContent +`<p style="font-size:1rem">${section?.content}</p>`
   
                     
                 }
@@ -103,8 +103,8 @@ export function getStorySlides(slides){
                     </amp-story-grid-layer>`            
             }
         })
-        var slideContentTop = '<amp-story-grid-layer template="vertical">'
-        var slideContentBottom = '</amp-story-grid-layer>'
+        var slideContentTop = ''
+        var slideContentBottom = ''
         var slideContent = ``
         slide.sections.map((section,index)=>{
             if(section.type === "TEXTBLOCK"){

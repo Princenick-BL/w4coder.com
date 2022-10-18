@@ -204,7 +204,8 @@ function StoryEditorContent({location}) {
                             }
                           }
                       ]
-                  },{
+                  },
+                  {
                       id:3,
                       pos:1,
                       type : "SLIDE",
@@ -243,7 +244,167 @@ function StoryEditorContent({location}) {
                             }
                           }
                       ]
+                  },
+                  {
+                    id:3,
+                    pos:1,
+                    type : "SLIDE",
+                    background : "https://picsum.photos/350/623?random=1",
+                    sections :[
+                        {
+                          id:1,
+                            type:"BACKGROUND",
+                            content :"https://picsum.photos/350/623?random=1",
+                        },
+                        {
+                          id:2,
+                          type:"TEXTBLOCK",
+                          balise : "h1",
+                          content :"Top 5 Javascript Framework and librairie",
+                          style:{
+                            color : "#fff",
+                            width : "100%%",
+                            height : "max-content",
+                            fontSize : "1.5rem",
+                            lineHeight : "1.5",
+                            height: "12.1988%"
+                          }
+                        },
+                        {
+                          id:3,
+                          type:"TEXTBLOCK",
+                          balise : "p",
+                          content :"By Prince Nick BALLO",
+                          style:{
+                            color : "#fff",
+                            width : "100%%",
+                            height : "max-content",
+                            fontSize : "1rem",
+                            height: "12.1988%"
+                          }
+                        }
+                    ]
+                },
+                {
+                  id:3,
+                  pos:1,
+                  type : "SLIDE",
+                  background : "https://picsum.photos/350/623?random=1",
+                  sections :[
+                      {
+                        id:1,
+                          type:"BACKGROUND",
+                          content :"https://picsum.photos/350/623?random=1",
+                      },
+                      {
+                        id:2,
+                        type:"TEXTBLOCK",
+                        balise : "h1",
+                        content :"Top 5 Javascript Framework and librairie",
+                        style:{
+                          color : "#fff",
+                          width : "100%%",
+                          height : "max-content",
+                          fontSize : "1.5rem",
+                          lineHeight : "1.5",
+                          height: "12.1988%"
+                        }
+                      },
+                      {
+                        id:3,
+                        type:"TEXTBLOCK",
+                        balise : "p",
+                        content :"By Prince Nick BALLO",
+                        style:{
+                          color : "#fff",
+                          width : "100%%",
+                          height : "max-content",
+                          fontSize : "1rem",
+                          height: "12.1988%"
+                        }
+                      }
+                  ]
+              },
+              {
+                id:3,
+                pos:1,
+                type : "SLIDE",
+                background : "https://picsum.photos/350/623?random=1",
+                sections :[
+                    {
+                      id:1,
+                        type:"BACKGROUND",
+                        content :"https://picsum.photos/350/623?random=1",
+                    },
+                    {
+                      id:2,
+                      type:"TEXTBLOCK",
+                      balise : "h1",
+                      content :"Top 5 Javascript Framework and librairie",
+                      style:{
+                        color : "#fff",
+                        width : "100%%",
+                        height : "max-content",
+                        fontSize : "1.5rem",
+                        lineHeight : "1.5",
+                        height: "12.1988%"
+                      }
+                    },
+                    {
+                      id:3,
+                      type:"TEXTBLOCK",
+                      balise : "p",
+                      content :"By Prince Nick BALLO",
+                      style:{
+                        color : "#fff",
+                        width : "100%%",
+                        height : "max-content",
+                        fontSize : "1rem",
+                        height: "12.1988%"
+                      }
+                    }
+                ]
+            },
+            {
+              id:3,
+              pos:1,
+              type : "SLIDE",
+              background : "https://picsum.photos/350/623?random=1",
+              sections :[
+                  {
+                    id:1,
+                      type:"BACKGROUND",
+                      content :"https://picsum.photos/350/623?random=1",
+                  },
+                  {
+                    id:2,
+                    type:"TEXTBLOCK",
+                    balise : "h1",
+                    content :"Top 5 Javascript Framework and librairie",
+                    style:{
+                      color : "#fff",
+                      width : "100%%",
+                      height : "max-content",
+                      fontSize : "1.5rem",
+                      lineHeight : "1.5",
+                      height: "12.1988%"
+                    }
+                  },
+                  {
+                    id:3,
+                    type:"TEXTBLOCK",
+                    balise : "p",
+                    content :"By Prince Nick BALLO",
+                    style:{
+                      color : "#fff",
+                      width : "100%%",
+                      height : "max-content",
+                      fontSize : "1rem",
+                      height: "12.1988%"
+                    }
                   }
+              ]
+          }
                 ] 
               }
             }
