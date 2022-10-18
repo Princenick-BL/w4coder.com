@@ -49,13 +49,13 @@ export default async function handler(req, res) {
           amp-story-page {
             background-color: #000;
           }
-          h1 {
+          .homeH1 {
             font-weight: bold;
             font-size: 2.875em;
             font-weight: normal;
             line-height: 1.174;
           }
-          p {
+          homeP {
             font-weight: normal;
             font-size: 1.3em;
             line-height: 1.5em;
@@ -94,6 +94,7 @@ export default async function handler(req, res) {
             publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
             poster-portrait-src="https://picsum.photos/720/1280">
           ${getStorySlides(story?.slides)}
+          
           <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
         </amp-story>
       </body>

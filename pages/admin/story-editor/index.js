@@ -117,7 +117,6 @@ function StoryEditorContent({location}) {
                     type : "SLIDE",
                     background : "https://picsum.photos/350/623?random=1",
                     sections :[
-                       
                         {
                           id:2,
                             type:"IMAGEBLOCK",
@@ -125,19 +124,36 @@ function StoryEditorContent({location}) {
                             style:{
                                 width:"90%",
                                 height:"80%",
-                                top:"50%",
-                                left : "-30%",
+                                top:"5%",
+                                left : "5%",
                             }
                         },
                         {
+                          id:2,
+                          type:"TEXTBLOCK",
+                          balise : "h1",
+                          content :"Top 5 Javascript Framework and librairie",
+                          style:{
+                            color : "#fff",
+                            width : "100%%",
+                            height : "max-content",
+                            fontSize : "1.5rem",
+                            lineHeight : "1.5",
+                            height: "12.1988%"
+                          }
+                        },
+                        {
                           id:3,
-                            type:"TEXTBLOCK",
-                            content :"HELLO WORLD TITLE",
-                            style:{
-                                top:"55%",
-                                left : "5%",
-                                color : "#fff"
-                            }
+                          type:"TEXTBLOCK",
+                          balise : "p",
+                          content :"By Prince Nick BALLO",
+                          style:{
+                            color : "#fff",
+                            width : "100%%",
+                            height : "max-content",
+                            fontSize : "1rem",
+                            height: "12.1988%"
+                          }
                         }
                     ]
                   },{
@@ -148,7 +164,7 @@ function StoryEditorContent({location}) {
                       sections :[
                           {
                             id:1,
-                              type:"IMAGEBLOCK",
+                              type:"BACKGROUND",
                               content :"https://api.lorem.space/image/movie?w=340&h=300",
                               style:{
                                   width:"98%",
@@ -160,18 +176,32 @@ function StoryEditorContent({location}) {
                                   overflow : "hidden"
                               }
                           },
-                        
                           {
                             id:2,
-                              type:"TEXTBLOCK",
-                              content :"HELLO WORLD TITLE",
-                              style:{
-                                  top:"60%",
-                                  left : "0%",
-                                  textAlign:"center",
-                                  color:"#000",
-                                  width:"100%"
-                              }
+                            type:"TEXTBLOCK",
+                            balise : "h1",
+                            content :"Top 5 Javascript Framework and librairie",
+                            style:{
+                              color : "#fff",
+                              width : "100%%",
+                              height : "max-content",
+                              fontSize : "1.5rem",
+                              lineHeight : "1.5",
+                              height: "12.1988%"
+                            }
+                          },
+                          {
+                            id:3,
+                            type:"TEXTBLOCK",
+                            balise : "p",
+                            content :"By Prince Nick BALLO",
+                            style:{
+                              color : "#fff",
+                              width : "100%%",
+                              height : "max-content",
+                              fontSize : "1rem",
+                              height: "12.1988%"
+                            }
                           }
                       ]
                   },{
@@ -187,24 +217,30 @@ function StoryEditorContent({location}) {
                           },
                           {
                             id:2,
-                              type:"IMAGEBLOCK",
-                              content :"https://api-nickscorp-app.herokuapp.com/read/d99236183650026fce649fdf35608bf4.png",
-                              style:{
-                                  width:"150%",
-                                  height:"60%",
-                                  top:"40%",
-                                  left : "0%",
-                              }
+                            type:"TEXTBLOCK",
+                            balise : "h1",
+                            content :"Top 5 Javascript Framework and librairie",
+                            style:{
+                              color : "#fff",
+                              width : "100%%",
+                              height : "max-content",
+                              fontSize : "1.5rem",
+                              lineHeight : "1.5",
+                              height: "12.1988%"
+                            }
                           },
                           {
                             id:3,
-                              type:"TEXTBLOCK",
-                              content :"HELLO WORLD TITLE",
-                              style:{
-                                  bottom:"5%",
-                                  left : "5%",
-                                  color : "#fff"
-                              }
+                            type:"TEXTBLOCK",
+                            balise : "p",
+                            content :"By Prince Nick BALLO",
+                            style:{
+                              color : "#fff",
+                              width : "100%%",
+                              height : "max-content",
+                              fontSize : "1rem",
+                              height: "12.1988%"
+                            }
                           }
                       ]
                   }

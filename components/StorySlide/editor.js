@@ -80,7 +80,7 @@ const get = (section,active=false ) =>{
           <div 
           className={active ? styles.active : ""}
           style={{
-             
+             position:"absolute",
               ...section.style
           }}>
             <Image
