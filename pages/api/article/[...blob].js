@@ -59,7 +59,7 @@ export default async function handler(req, res) {
         <link href=https://fonts.gstatic.com rel="dns-prefetch preconnect" crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional" as="style">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional">      
-        <link rel="preload" as="image" href="${article?.poster}" crossorigin=="anonymous"/>
+        <link rel="preload" as="image" href="${article?.poster}" crossorigin="anonymous"/>
         ${getStyles()}
         <style amp-boilerplate="">
           body {
