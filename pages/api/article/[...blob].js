@@ -56,8 +56,9 @@ export default async function handler(req, res) {
         <link rel="canonical" href="https://w4coder.com/api/article/${article?._id}/${article?.slug}" />
         <meta name="viewport" content="width=device-width" />
         <meta name="amp-google-client-id-api" content="googleanalytics" />
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" as="style">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">      
+        <link href=https://fonts.gstatic.com rel="dns-prefetch preconnect" crossorigin>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional" as="style">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional">      
         <link rel="preload" as="image" href="${article?.poster}" crossorigin=="anonymous"/>
         ${getStyles()}
         <style amp-boilerplate="">
@@ -149,6 +150,7 @@ export default async function handler(req, res) {
                 </address>
                 <!-- End byline -->
                 <amp-img
+                  data-hero
                   src="${article?.poster}"
                   width="${article?.meta?.width}"
                   height="${article?.meta?.height}"
