@@ -114,23 +114,13 @@ export default async function handler(req, res) {
             }
           </style></noscript
         >
-
-        <script
-          custom-element="amp-carousel"
-          src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
-          async=""
-        ></script>
   
         <script
           custom-element="amp-form"
           src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
           async=""
         ></script>
-        <script
-          custom-element="amp-instagram"
-          src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"
-          async=""
-        ></script>
+       
         <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
        
       </head>
