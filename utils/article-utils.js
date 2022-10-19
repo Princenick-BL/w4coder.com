@@ -2314,7 +2314,7 @@ export function getStyles(){
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 310px !important;
+      width: 310px ;
       padding: 5px 0;
     }
   </style>`
