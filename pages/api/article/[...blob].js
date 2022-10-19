@@ -45,16 +45,15 @@ export default async function handler(req, res) {
     const html = `
     
     <!DOCTYPE html>
-    <html ⚡="">
+    <html ⚡="" lang="fr">
       <head>
         <meta charset="utf-8" />
         <title>${article?.title}</title>
         <link rel="canonical" href="https://w4coder.com/api/article/${article?._id}/${article?.slug}" />
         <meta name="viewport" content="width=device-width" />
         <meta name="amp-google-client-id-api" content="googleanalytics" />
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"/>
+        <link rel="preload" as="font" type="font/Oswald"  href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"  crossorigin=="anonymous"/>
+        <link rel="preload" as="image" href="${article?.poster}" />
         <script async="" src="https://cdn.ampproject.org/v0.js"></script>
         ${getStyles()}
         <style amp-boilerplate="">
