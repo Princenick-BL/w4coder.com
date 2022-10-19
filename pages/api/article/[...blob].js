@@ -48,13 +48,17 @@ export default async function handler(req, res) {
     <html ⚡="" lang="fr">
       <head>
         <meta charset="utf-8" />
+        <script async="" src="https://cdn.ampproject.org/v0.js"></script>
         <title>${article?.title}</title>
+        <meta name="description" content="${article?.description}">
+        <link rel="apple-touch-icon" href="/favicon.icon">
+        <meta name="theme-color" content="#fff">
         <link rel="canonical" href="https://w4coder.com/api/article/${article?._id}/${article?.slug}" />
         <meta name="viewport" content="width=device-width" />
         <meta name="amp-google-client-id-api" content="googleanalytics" />
-        <link rel="preload" as="font" type="font/Oswald"  href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"  crossorigin=="anonymous"/>
-        <link rel="preload" as="image" href="${article?.poster}" />
-        <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" as="style">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">      
+        <link rel="preload" as="image" href="${article?.poster}" crossorigin=="anonymous"/>
         ${getStyles()}
         <style amp-boilerplate="">
           body {
@@ -207,6 +211,12 @@ export default async function handler(req, res) {
     </html>
     `
 
-    
+    res.setHeader(
+      "Content-Type", 'text/html; charset=utf-8' 
+    );    
+    // res.setHeader(
+    //   "Accept-Encoding" , 'gzip, compress, br'
+
+    // )
     res.send(html)
 }
