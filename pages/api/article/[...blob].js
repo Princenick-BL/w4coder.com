@@ -47,20 +47,24 @@ export default async function handler(req, res) {
     <!DOCTYPE html>
     <html ⚡="" lang="fr">
       <head>
-        <meta charset="utf-8" />
-        <script async="" src="https://cdn.ampproject.org/v0.js"></script>
-        <title>${article?.title}</title>
-        <meta name="description" content="${article?.description}">
-        <link rel="apple-touch-icon" href="/favicon.icon">
         <meta name="theme-color" content="#fff">
-        <link rel="canonical" href="https://w4coder.com/api/article/${article?._id}/${article?.slug}" />
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="amp-google-client-id-api" content="googleanalytics" />
+        <meta name="description" content="${article?.description}">
+        <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+        <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+        <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+        <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+        ${getStyles()}
+        <title>${article?.title}</title>
+        <link rel="apple-touch-icon" href="/favicon.icon">
+        <link rel="canonical" href="https://w4coder.com/api/article/${article?._id}/${article?.slug}" />
         <link href=https://fonts.gstatic.com rel="dns-prefetch preconnect" crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional" as="style">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional">      
-        <link rel="preload" as="image" href="${article?.poster}" crossorigin="anonymous"/>
-        ${getStyles()}
+        <link rel="preload" href="${article?.poster}" as="image"/>
         <style amp-boilerplate="">
           body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
