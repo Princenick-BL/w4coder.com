@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ampproject/toolbox-optimizer": "^2.9.0",
     "@ant-design/icons": "^4.7.0",
     "@madzadev/image-slider": "^1.0.9",
     "@mdi/js": "^7.0.96",

@@ -4,6 +4,8 @@ import { config as endpoint } from '../../../constants'
 import * as gtag from '../../../lib/gtag'
 import RedisCache from '../../../seoOpt/cache'
 import {getStyles,getSections,getRecentArticles} from '../../../utils/article-utils'
+const AmpOptimizer = require('@ampproject/toolbox-optimizer');
+const ampOptimizer = AmpOptimizer.create();
 
 export default async function handler(req, res) {
 
@@ -52,8 +54,8 @@ export default async function handler(req, res) {
         <meta name="viewport" content="width=device-width" />
         <meta name="amp-google-client-id-api" content="googleanalytics" />
         <meta name="description" content="${article?.description}">
-        <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-        <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+        <link rel="preload" href="https://cdn.ampproject.org/v0.js"  as="script">
+        <link rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"  as="script">
         <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
@@ -224,5 +226,6 @@ export default async function handler(req, res) {
     //   "Accept-Encoding" , 'gzip, compress, br'
 
     // )
-    res.send(html)
+    const optimizedHtml = await ampOptimizer.transformHtml(html);
+    res.send(optimizedHtml)
 }
