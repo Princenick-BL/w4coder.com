@@ -55,10 +55,8 @@ export default async function handler(req, res) {
         <meta name="amp-google-client-id-api" content="googleanalytics" />
         <meta name="description" content="${article?.description}">
         <link rel="preload" href="https://cdn.ampproject.org/v0.js"  as="script">
-        <link rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"  as="script">
         <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
-        <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
         ${getStyles()}
         <title>${article?.title}</title>
         <link rel="apple-touch-icon" href="/favicon.icon">
