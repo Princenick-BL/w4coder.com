@@ -222,10 +222,9 @@ export default async function handler(req, res) {
     res.setHeader(
       "Content-Type", 'text/html; charset=utf-8' 
     );    
-    // res.setHeader(
-    //   "Accept-Encoding" , 'gzip, compress, br'
-
-    // )
+    res.setHeader(
+      "Accept-Encoding" , 'gzip, compress, br'
+    )
     const optimizedHtml = await ampOptimizer.transformHtml(html);
     res.send(optimizedHtml)
 }

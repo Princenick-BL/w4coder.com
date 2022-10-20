@@ -4,7 +4,8 @@ import { config as endpoint } from '../../../constants'
 import * as gtag from '../../../lib/gtag'
 import RedisCache from '../../../seoOpt/cache'
 import {getStorySlides} from '../../../utils/story-utils'
-
+const AmpOptimizer = require('@ampproject/toolbox-optimizer');
+const ampOptimizer = AmpOptimizer.create();
 export default async function handler(req, res) {
 
   const {query,headers,params} = req;
@@ -101,6 +102,12 @@ export default async function handler(req, res) {
     </html>
 
   `
-
-  res.send(html)
-}
+  res.setHeader(
+    "Content-Type", 'text/html; charset=utf-8' 
+  );    
+  res.setHeader(
+    "Accept-Encoding" , 'gzip, compress, br'
+  )
+  const optimizedHtml = await ampOptimizer.transformHtml(html);
+    res.send(optimizedHtml)
+  }
