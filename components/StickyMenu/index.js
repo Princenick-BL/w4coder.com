@@ -26,7 +26,7 @@ export default function StickyMenu({current,currentScrollTop}) {
           Vidéos        
         </a>
       </Link>
-      <Link href="/videos">
+      <Link href="/tutos">
         <a className={current===3 ? styles.active : ""}>
           <FaGraduationCap size={24} style={{marginRight:"5px",marginLeft:"5px"}}/>  
           Tutos        

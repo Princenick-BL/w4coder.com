@@ -295,8 +295,8 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
               >
                 {pages ? pages.map((article,index)=>{
                   return(
-                    <>
-                    <Slide key={index} article={article} style={{height:"100%"}}/>
+                    <div  key={index}>
+                    <Slide article={article} style={{height:"100%"}}/>
                     {/* {(Math.floor(Math.random()* 10) > 8 )&& (
                       <Ads300>
                         <amp-ad 
@@ -317,7 +317,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
                         </amp-ad>
                       </Ads300>
                     )} */}
-                    </>
+                    </div>
                   )
                 }):(
                   <></>
