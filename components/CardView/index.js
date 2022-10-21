@@ -14,6 +14,8 @@ export default function Slide({article,style,type=0}){
         >
             
           <div className={styles.slider}>
+          <Link href={`/blog/article/${article._id}/${article.slug}`}>
+            <a>
               <Image
                   src={article.poster}
                   width={article.meta.width}
@@ -21,6 +23,8 @@ export default function Slide({article,style,type=0}){
                   layout="responsive"
                   className={styles.img}
               />
+            </a>
+          </Link>
               <Link href={`/blog/article/${article._id}/${article.slug}`}>
                 <a>
                   <div className={styles.bonttom}>
