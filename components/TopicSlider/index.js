@@ -15,7 +15,7 @@ const Slide = ({slide,slidePrev,slideNext,total}) =>{
     return(
       <div className={styles.container + " topic-slider-container"}>
         <div className={styles.top}>
-          <Link href={`/api/article/${slide?._id}/${slide?.slug}`}>
+          <Link href={`/blog/article/${slide?._id}/${slide?.slug}`}>
             <a>
               <Image
                 src={slide?.poster}
@@ -26,7 +26,7 @@ const Slide = ({slide,slidePrev,slideNext,total}) =>{
               />
             </a>
           </Link>
-          <Link href={`/api/article/${slide?._id}/${slide?.slug}`}>
+          <Link href={`/blog/article/${slide?._id}/${slide?.slug}`}>
             <a>
               <div className={styles.desc}>
                 {slide?.title}

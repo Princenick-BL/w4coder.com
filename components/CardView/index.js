@@ -21,7 +21,7 @@ export default function Slide({article,style,type=0}){
                   layout="responsive"
                   className={styles.img}
               />
-              <Link href={`/api/article/${article._id}/${article.slug}`}>
+              <Link href={`/blog/article/${article._id}/${article.slug}`}>
                 <a>
                   <div className={styles.bonttom}>
 

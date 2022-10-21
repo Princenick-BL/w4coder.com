@@ -60,7 +60,7 @@ export default async function handler(req, res) {
         ${getStyles()}
         <title>${article?.title}</title>
         <link rel="apple-touch-icon" href="/favicon.icon">
-        <link rel="canonical" href="https://w4coder.com/api/article/${article?._id}/${article?.slug}" />
+        <link rel="canonical" href="https://w4coder.com/blog/article/${article?._id}/${article?.slug}" />
         <link href=https://fonts.gstatic.com rel="dns-prefetch preconnect" crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional" as="style">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional">      

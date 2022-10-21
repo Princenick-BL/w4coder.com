@@ -118,7 +118,7 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                         {stories && stories.map((story,index)=>{
                             return(
                                 <div className={styles.preview} key={index}>
-                                    <Link href={`/api/web-story/${story?._id}/${story?.slug}`}>
+                                    <Link href={`/blog/web-story/${story?._id}/${story?.slug}`}>
                                         <a>
                                             <Image
                                                 src={story?.poster || "https://picsum.photos/400/534?random=5"}
@@ -148,7 +148,7 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                         {stories && stories.map((story,index)=>{
                             return(
                                 <div className={styles.preview} key={index}>
-                                    <Link href={`/api/web-story/${story?._id}/${story?.slug}`}>
+                                    <Link href={`/blog/web-story/${story?._id}/${story?.slug}`}>
                                         <a>
                                             <Image
                                                 src={story?.poster || "https://picsum.photos/400/534?random=5"}

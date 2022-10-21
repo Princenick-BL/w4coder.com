@@ -210,7 +210,7 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                             {stories.map((story,index)=>{
                                 return(
                                     <div className={styles.preview} key={index}>
-                                        <Link href={`/api/web-story/${story?._id}/${story?.slug}`}>
+                                        <Link href={`/blog/web-story/${story?._id}/${story?.slug}`}>
                                             <a>
                                                 <Image
                                                     src={story?.poster || "https://picsum.photos/400/534?random=5"}
@@ -260,7 +260,7 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                 <amp-story-player style={{width:"100vw",height:"100vh"}} layout="responsive" width="360" height="600" id="player33" >
                     {stories.map((story,index)=>{
                         return(
-                            <a key={index} href={`/api/web-story/${story?._id}/${story?.slug}`}></a>
+                            <a key={index} href={`/blog/web-story/${story?._id}/${story?.slug}`}></a>
                         )
                     })}
                 </amp-story-player>
