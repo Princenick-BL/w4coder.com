@@ -49,7 +49,7 @@ export default async function handler(req, res) {
 
         <style amp-custom>
           html{
-            background : #fff;
+            background : #000;
           }
           amp-story {
             font-family: 'Oswald',sans-serif;

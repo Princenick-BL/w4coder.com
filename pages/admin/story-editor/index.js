@@ -170,17 +170,14 @@ function StoryEditorContent({location}) {
                 //       sections :[
                 //           {
                 //             id:7,
-                //               type:"BACKGROUND",
-                //               content :"https://api.lorem.space/image/movie?w=340&h=300",
-                //               style:{
-                //                   width:"98%",
-                //                   height:"45%",
-                //                   top:"5%",
-                //                   left : "0%",
-                //                   margin : "1%",
-                //                   borderRadius:"10px",
-                //                   overflow : "hidden"
-                //               }
+                //             type:"IMAGEBLOCK",
+                //             content :"https://picsum.photos/350/623?random=1",
+                //             style:{
+                //                 width:"90%",
+                //                 height:"80%",
+                //                 top:"5%",
+                //                 left : "5%",
+                //             }
                 //           },
                 //           {
                 //             id:8,
@@ -219,9 +216,14 @@ function StoryEditorContent({location}) {
                 //       sections :[
                 //           {
                 //             id:10,
-                //               type:"BACKGROUND",
-                //               content :"https://picsum.photos/350/623?random=1",
-                //           },
+                //             type:"IMAGEBLOCK",
+                //             content :"https://picsum.photos/350/623?random=1",
+                //             style:{
+                //                 width:"90%",
+                //                 height:"80%",
+                //                 top:"5%",
+                //                 left : "5%",
+                //             }                      },
                 //           {
                 //             id:11,
                 //             type:"TEXTBLOCK",
@@ -259,9 +261,14 @@ function StoryEditorContent({location}) {
                 //     sections :[
                 //         {
                 //           id:13,
-                //             type:"BACKGROUND",
+                //           type:"IMAGEBLOCK",
                 //             content :"https://picsum.photos/350/623?random=1",
-                //         },
+                //             style:{
+                //                 width:"90%",
+                //                 height:"80%",
+                //                 top:"5%",
+                //                 left : "5%",
+                //             }                        },
                 //         {
                 //           id:14,
                 //           type:"TEXTBLOCK",
@@ -299,9 +306,14 @@ function StoryEditorContent({location}) {
                 //     sections :[
                 //         {
                 //           id:1,
-                //             type:"BACKGROUND",
-                //             content :"https://picsum.photos/350/623?random=1",
-                //         },
+                //           type:"IMAGEBLOCK",
+                //           content :"https://picsum.photos/350/623?random=1",
+                //           style:{
+                //               width:"90%",
+                //               height:"80%",
+                //               top:"5%",
+                //               left : "5%",
+                //           }                        },
                 //         {
                 //           id:2,
                 //           type:"TEXTBLOCK",
@@ -339,9 +351,14 @@ function StoryEditorContent({location}) {
                 //     sections :[
                 //         {
                 //           id:1,
-                //             type:"BACKGROUND",
-                //             content :"https://picsum.photos/350/623?random=1",
-                //         },
+                //           type:"IMAGEBLOCK",
+                //           content :"https://picsum.photos/350/623?random=1",
+                //           style:{
+                //               width:"90%",
+                //               height:"80%",
+                //               top:"5%",
+                //               left : "5%",
+                //           }                        },
                 //         {
                 //           id:2,
                 //           type:"TEXTBLOCK",
@@ -379,9 +396,14 @@ function StoryEditorContent({location}) {
                 //     sections :[
                 //         {
                 //           id:1,
-                //             type:"BACKGROUND",
-                //             content :"https://picsum.photos/350/623?random=1",
-                //         },
+                //           type:"IMAGEBLOCK",
+                //           content :"https://picsum.photos/350/623?random=1",
+                //           style:{
+                //               width:"90%",
+                //               height:"80%",
+                //               top:"5%",
+                //               left : "5%",
+                //           }                        },
                 //         {
                 //           id:2,
                 //           type:"TEXTBLOCK",
