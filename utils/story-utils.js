@@ -4,6 +4,7 @@ export function getStorySlides(slides){
 
 
   var htmlSections = ``
+  var booken = ` `
 
   slides?.map((slide,index)=>{
 
@@ -21,7 +22,15 @@ export function getStorySlides(slides){
                             width="720" height="1280"
                             layout="responsive">
                         </amp-img>
-                    </amp-story-grid-layer>`            
+                    </amp-story-grid-layer>`  
+                booken = booken + `
+                <amp-img src="${section.content}"
+                    width="720" height="1280"
+                    layout="responsive"
+                    animate-in="fade-in"
+                    animate-in-delay="0.4s">
+                </amp-img>`
+          
             }
         })
         var slideContentTop = '<amp-story-grid-layer template="vertical">'
@@ -46,7 +55,7 @@ export function getStorySlides(slides){
       }else {
           return ''
       }
-    }else if (index === 1){
+    }else {
 
       if(slide && slide?.sections?.length > 0){
       
@@ -72,6 +81,13 @@ export function getStorySlides(slides){
                 }
             }
             if(section.type === "IMAGEBLOCK"){
+                booken = booken + `
+                <amp-img src="${section.content}"
+                    width="720" height="1280"
+                    layout="responsive"
+                    animate-in="fade-in"
+                    animate-in-delay="0.4s">
+                </amp-img>`
               return slideContent = slideContent +`
                 <amp-img src="${section.content}"
                     width="720" height="1280"
@@ -85,53 +101,77 @@ export function getStorySlides(slides){
           return ''
       }
 
-    }else{
-
-      if(slide && slide?.sections?.length > 0){
-      
-        const slideTop = `<amp-story-page id="page-${index}">`
-        const slideBottom = `</amp-story-page>`
-        var slideBG = ``
-        slide.sections.map((section,index)=>{
-            if(section.type === "BACKGROUND"){
-                slideBG = `
-                    <amp-story-grid-layer template="fill">
-                        <amp-img src="${section.content}"
-                            width="720" height="1280"
-                            layout="responsive">
-                        </amp-img>
-                    </amp-story-grid-layer>`            
-            }
-        })
-        var slideContentTop = ''
-        var slideContentBottom = ''
-        var slideContent = ``
-        slide.sections.map((section,index)=>{
-            if(section.type === "TEXTBLOCK"){
-  
-                switch(section.balise){
-                    case  "h1":
-                        return slideContent = slideContent +` <amp-story-grid-layer template="vertical"><h1>${section?.content}</h1></amp-story-grid-layer>`
-                    case  "p":
-                        return slideContent = slideContent +`<amp-story-grid-layer template="vertical" class="bottom"><p>${section?.content}</p></amp-story-grid-layer>`
-                    default :
-                        return slideContent = slideContent +`<amp-story-grid-layer template="vertical" class="bottom"><p>${section?.content}</p></amp-story-grid-layer>`
-  
-                    
-                }
-            }
-        })
-        htmlSections += slideTop + slideBG + slideContentTop+ slideContent + slideContentBottom + slideBottom
-      }else {
-          return ''
-      }
     }
     
+    // else{
+
+    //   if(slide && slide?.sections?.length > 0){
+      
+    //     const slideTop = `<amp-story-page id="page-${index}">`
+    //     const slideBottom = `</amp-story-page>`
+    //     var slideBG = ``
+    //     slide.sections.map((section,index)=>{
+    //         if(section.type === "BACKGROUND"){
+    //             slideBG = `
+    //                 <amp-story-grid-layer template="fill">
+    //                     <amp-img src="${section.content}"
+    //                         width="720" height="1280"
+    //                         layout="responsive">
+    //                     </amp-img>
+    //                 </amp-story-grid-layer>`  
+    //             booken = booken + `
+    //             <amp-img src="${section.content}"
+    //                 width="720" height="1280"
+    //                 layout="responsive"
+    //                 animate-in="fade-in"
+    //                 animate-in-delay="0.4s">
+    //             </amp-img>`          
+    //         }
+    //     })
+    //     var slideContentTop = ''
+    //     var slideContentBottom = ''
+    //     var slideContent = ``
+    //     slide.sections.map((section,index)=>{
+    //         if(section.type === "TEXTBLOCK"){
+  
+    //             switch(section.balise){
+    //                 case  "h1":
+    //                     return slideContent = slideContent +` <amp-story-grid-layer template="vertical"><h1>${section?.content}</h1></amp-story-grid-layer>`
+    //                 case  "p":
+    //                     return slideContent = slideContent +`<amp-story-grid-layer template="vertical" class="bottom"><p>${section?.content}</p></amp-story-grid-layer>`
+    //                 default :
+    //                     return slideContent = slideContent +`<amp-story-grid-layer template="vertical" class="bottom"><p>${section?.content}</p></amp-story-grid-layer>`
+  
+                    
+    //             }
+    //         }
+    //     })
+
+        
+    //     htmlSections += slideTop + slideBG + slideContentTop+ slideContent + slideContentBottom + slideBottom
+    //   }else {
+    //       return ''
+    //   }
+    // }
+
+   
     
   })
+  var bookendHtml = `
+    <amp-story-page id="page5">
+      <amp-story-grid-layer template="vertical" class="noedge">
+          <div class="wrapper">
+              ${booken}
+          </div>
+      </amp-story-grid-layer>
+      <amp-story-grid-layer template="vertical" class="center-text">
+          <p class="banner-text" animate-in="whoosh-in-right">w4coder.com</p>
+      </amp-story-grid-layer>
+    </amp-story-page>
+  `
+  htmlSections = htmlSections + bookendHtml;
 
   return htmlSections
   
-  return storySlides
     
 }

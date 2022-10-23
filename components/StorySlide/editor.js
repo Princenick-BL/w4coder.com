@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useStoryContext } from '../../contexts/story.contex'
 import Wrapper from './Wrapper'
 
-const get = (section,active=false ) =>{
+const get = (section,active=false,boxRef,index ) =>{
     switch(section?.type){
       case "BACKGROUND":
         return(
@@ -26,8 +26,11 @@ const get = (section,active=false ) =>{
             case "h1":
               return(
                 <Wrapper
-                  style={{...section.style,fontWeight:"600"}}
-                  content={section?.content}
+                  { ...section}
+                  style={{...section.style,fontWeight:600}}
+                  boxRef = {boxRef}
+                  index = {index}
+                  active={active}
                 >
                   <h1
                   style={{
@@ -44,8 +47,11 @@ const get = (section,active=false ) =>{
               case "p":
                 return(
                   <Wrapper
-                  style={{...section.style}}
-                  content={section?.content}
+                  { ...section}
+                  boxRef = {boxRef}
+                  index = {index}
+                  active={active}
+
                 >
                   <p
                   style={{
@@ -103,10 +109,10 @@ export default function StorySlidePreview() {
         type:"changeTab",
         payload : "THEMEBLOCK"
     })
-    dispatch({
-        type:"setCurrentElement",
-        payload : {}
-    })
+    // dispatch({
+    //     type:"setCurrentElement",
+    //     payload : {}
+    // })
     }
   }, []);
 
@@ -118,63 +124,37 @@ export default function StorySlidePreview() {
     };
   }, []);
 
-    const wrapperRef = useRef()
+  const wrapperRef = useRef()
 
-    const {state,dispatch} = useStoryContext()
+  const {state,dispatch} = useStoryContext()
 
-    const {currentSlide} = state
+  const {currentSlide} = state
 
-    const handleChangeTab = (payload)=>{
-        dispatch({
-            type:"changeTab",
-            payload : payload?.type
-        })
-        dispatch({
-            type:"setCurrentElement",
-            payload : payload
-        })
-    }
+  const handleChangeTab = (payload)=>{
+    dispatch({
+        type:"changeTab",
+        payload : payload?.type
+    })
+    dispatch({
+        type:"setCurrentElement",
+        payload : payload
+    })
+  }
 
-    function useOutsideAlerter(ref) {
-        useEffect(() => {
-    
-          /**
-           * Alert if clicked on outside of element
-           */
-          function handleClickOutside(event) {
-            if (ref.current && !ref.current.contains(event.target)) {
-                dispatch({
-                    type:"changeTab",
-                    payload :"THEMEBLOCK"
-                })
-                dispatch({
-                    type:"setCurrentElement",
-                    payload : {}
-                })
-            }
-          }
-          // Bind the event listener
-          document.addEventListener("mousedown", handleClickOutside);
-          return () => {
-            // Unbind the event listener on clean up
-            document.removeEventListener("mousedown", handleClickOutside);
-          };
-        }, [ref]);
-    }
-    //useOutsideAlerter(wrapperRef);
 
-    return (
-        <div 
-            className={styles.editor} 
-            ref={wrapperRef}
-        >
-            {currentSlide?.sections?.map((section,index)=>{
-                return(
-                <div key={index} onClick={(e)=>{handleChangeTab(section)}} >
-                    {get(section,state.currentElement.id === section.id)}
-                </div>
-                )
-            })}
-        </div>
-    )
+  return (
+    <div 
+        id = "wrapper"
+        className={styles.editor} 
+        ref={wrapperRef}
+    >
+        {currentSlide?.sections?.map((section,index)=>{
+            return(
+            <div key={index} onClick={(e)=>{handleChangeTab(section)}} >
+                {get(section,((state.currentElement.id === section.id) &&( state.currentElement.type === section.type) ),wrapperRef,index)}
+            </div>
+            )
+        })}
+    </div>
+  )
 }

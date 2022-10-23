@@ -23,13 +23,18 @@ export default async function handler(req, res) {
 
   const story = await RedisCache.fetch(`story-${storyId}`,fetcher,3600 * 24) || {}
 
+  if (!story._id ) { 
+    res.redirect('/404')
+  }
+
   const html = `
     <!doctype html>
     <html ⚡>
       <head>
         <meta charset="utf-8">
-        <title>Joy of Pets</title>
-        <link rel="canonical" href="pets.html">
+        <title>${story.title}</title>
+        <meta name="description" content="${story?.description}">
+        <link rel="canonical" href="https://w4coder.com/blog/web-story/${story?._id}/${story?.slug}">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <link rel="preload" href="https://cdn.ampproject.org/v0.js"  as="script">
 
@@ -44,7 +49,7 @@ export default async function handler(req, res) {
 
         <style amp-custom>
           html{
-            background : #000;
+            background : #fff;
           }
           amp-story {
             font-family: 'Oswald',sans-serif;
@@ -81,8 +86,8 @@ export default async function handler(req, res) {
           }
           .wrapper {
             display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 50% 50%;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-rows: 50% 50% ;
           }
           .banner-text {
             text-align: center;
@@ -100,6 +105,8 @@ export default async function handler(req, res) {
             poster-portrait-src="https://picsum.photos/720/1280">
           ${getStorySlides(story?.slides)}
           
+    
+          <!-- Bookend -->    
           <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
         </amp-story>
       </body>

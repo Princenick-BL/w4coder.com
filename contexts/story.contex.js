@@ -24,7 +24,9 @@ const StoryReducer = (state,action) =>{
 
     //console.log(section)
 
+    console.log("Dispatch", action.type);
     switch (action.type) {
+
 
         case 'init':
 
@@ -40,35 +42,31 @@ const StoryReducer = (state,action) =>{
 
             switch(action.payload){
                 case 'THEMEBLOCK':
-                    state.currentTab = 1
 
                     return {
                         ...state,
+                        currentTab : 1
                     } 
                 case 'TEXTBLOCK':
-                    state.currentTab = 2
-
                     return {
                         ...state,
+                        currentTab : 2
                     } 
                 case 'IMAGEBLOCK':
-                    state.currentTab = 3
-
                     return {
                         ...state,
+                        currentTab : 3
                     } 
                 case 'INSTABLOCK':
-                    state.currentTab = 4
-
                     return {
                         ...state,
-                    } 
+                        currentTab : 4
+                    }  
                 case 'TWITTERBLOCK':
-                    state.currentTab = 5
-
                     return {
                         ...state,
-                    } 
+                        currentTab : 5
+                    }  
                 default :
                     return {
                         ...state,
@@ -78,19 +76,20 @@ const StoryReducer = (state,action) =>{
             
         case 'setCurrentSlide':
 
-            state.currentSlide = action?.payload
+            const newCurrentSlide = action?.payload
 
             return {
                 ...state,
+                currentSlide : newCurrentSlide
             } 
 
         break
 
         case 'setCurrentElement':
 
-            state.currentElement = action?.payload
             return {
                 ...state,
+                currentElement : action.payload
             } 
 
         break
@@ -122,7 +121,7 @@ const StoryReducer = (state,action) =>{
        
         case 'changeElementColor':
 
-            state.story.slides = slides.filter((slide)=>{
+            const newSlideForColor = slides.filter((slide)=>{
                 if(slide.id === state.currentSlide.id){
                     const newSlide = slide.sections
                     slide.sections = newSlide.filter(section=>{
@@ -141,13 +140,17 @@ const StoryReducer = (state,action) =>{
 
             return {
                 ...state,
-            } 
+                story:{
+                    ...state.story,
+                    slides : newSlideForColor
+                }
+            }  
 
         break
     
         case 'changeElementWeight':
 
-            state.story.slides = slides.filter((slide)=>{
+            const newSlideForFontWeight = slides.filter((slide)=>{
                 if(slide.id === state.currentSlide.id){
                     const newSlide = slide.sections
                     slide.sections = newSlide.filter(section=>{
@@ -166,13 +169,17 @@ const StoryReducer = (state,action) =>{
 
             return {
                 ...state,
+                story:{
+                    ...state.story,
+                    slides : newSlideForFontWeight
+                }
             } 
 
         break
         
         case 'changeElementStyle':
 
-            state.story.slides = slides.filter((slide)=>{
+            const newSlidesForStyle = slides.filter((slide)=>{
                 if(slide.id === state.currentSlide.id){
                     const newSlide = slide.sections
                     slide.sections = newSlide.filter(section=>{
@@ -191,13 +198,17 @@ const StoryReducer = (state,action) =>{
 
             return {
                 ...state,
+                story:{
+                    ...state.story,
+                    slides : newSlidesForStyle
+                }
             } 
 
         break
         
         case 'changeTextAlign':
 
-            state.story.slides = slides.filter((slide)=>{
+            const newSlidesForTextAlign = slides.filter((slide)=>{
                 if(slide.id === state.currentSlide.id){
                     const newSlide = slide.sections
                     slide.sections = newSlide.filter(section=>{
@@ -216,13 +227,17 @@ const StoryReducer = (state,action) =>{
 
             return {
                 ...state,
-            } 
+                story:{
+                    ...state.story,
+                    slides : newSlidesForTextAlign
+                }
+            }
 
         break
     
         case 'changeElementFontSize':
 
-            state.story.slides = slides.filter((slide)=>{
+            const newSlideForFontSize = slides.filter((slide)=>{
                 if(slide.id === state.currentSlide.id){
                     const newSlide = slide.sections
                     slide.sections = newSlide.filter(section=>{
@@ -241,13 +256,18 @@ const StoryReducer = (state,action) =>{
 
             return {
                 ...state,
-            } 
+                story:{
+                    ...state.story,
+                    slides : newSlideForFontSize
+                }
+            }  
 
         break
 
         case 'patchElementPosition':
 
-            state.story.slides = slides.filter((slide)=>{
+
+             const newSlidesPatchPos = slides.filter((slide)=>{
                 if(slide.id === state.currentSlide.id){
                     const newSlide = slide.sections
                     slide.sections = newSlide.filter(section=>{
@@ -266,17 +286,24 @@ const StoryReducer = (state,action) =>{
 
             return {
                 ...state,
+                story:{
+                    ...state.story,
+                    slides : newSlidesPatchPos
+                }
             } 
 
         break
 
         case 'add-object':
 
-            state.story.sections = [...state?.story?.sections,value]
+            const newAddSlide = [...state?.story?.slides,value]
 
             return {
                 ...state,
-            } 
+                story:{
+                    slides : newAddSlide
+                }
+            }  
         break
 
         case 'patch-text':
@@ -300,6 +327,36 @@ const StoryReducer = (state,action) =>{
                 story:{
                     ...state.story,
                     slides : newSlides
+                }
+            }
+        break
+
+        case 'patch-text-block-and-content':
+
+
+            const updateTextAndContent = slides.filter((slide)=>{
+                if(slide.id === state.currentSlide.id){
+                    const newSlide = slide.sections
+                    slide.sections = newSlide.filter(section=>{
+                        if(section.id === state.currentElement.id){
+                            const oldStyle = section.style 
+                            // section.style = {
+                            //     ...oldStyle,
+                            //     ...action.payload.position
+                            // }
+                            section.content = action.payload.content
+                        }
+                        return section
+                    })
+                }
+                return slide
+            })
+
+            return {
+                ...state,
+                story:{
+                    ...state.story,
+                    slides : updateTextAndContent
                 }
             }
         break

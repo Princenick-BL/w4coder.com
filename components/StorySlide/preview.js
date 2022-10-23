@@ -26,7 +26,7 @@ export default function StorySlidePreview({slide,pos}) {
         return(
           <Textfit
             mode="multi"
-            style={{...section.style,position:"absolute"}}
+            style={{...section.style,position:"relative",margin:"2px 0"}}
           >
             {section?.content}
           </Textfit>

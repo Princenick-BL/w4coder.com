@@ -178,47 +178,45 @@ export default function AddObject() {
         }
 
         const slide3 = {
+            id:3,
             pos:1,
             type : "SLIDE",
-            background : "https://picsum.photos/350/623",
+            background : "https://picsum.photos/350/623?random=1",
             sections :[
                 {
+                  id:1,
                     type:"BACKGROUND",
-                    content :"https://picsum.photos/350/623",
+                    content :"https://picsum.photos/350/623?random=1",
                 },
                 {
-                    id:2,
-                    type:"TEXTBLOCK",
-                    balise : "h1",
-                    content :"Top 5 Javascript Framework and librairie",
-                    style:{
-                      top:"20%",
-                      bottom:5,
-                      left : 0,
-                      color : "#fff",
-                      width : "100%%",
-                      height : "max-content",
-                      fontSize : "1.5rem",
-                      lineHeight : "1.5"
-                    }
-                  },
-                  {
-                    id:3,
-                    type:"TEXTBLOCK",
-                    balise : "p",
-                    content :"By Prince Nick BALLO",
-                    style:{
-                      top:"20%",
-                      bottom:5,
-                      left : 0,
-                      color : "#fff",
-                      width : "100%%",
-                      height : "max-content",
-                      fontSize : "1rem",
-                    }
+                  id:2,
+                  type:"TEXTBLOCK",
+                  balise : "h1",
+                  content :"Top 5 Javascript Framework and librairie",
+                  style:{
+                    color : "#fff",
+                    width : "100%%",
+                    height : "max-content",
+                    fontSize : "1.5rem",
+                    lineHeight : "1.5",
+                    height: "12.1988%"
                   }
+                },
+                {
+                  id:3,
+                  type:"TEXTBLOCK",
+                  balise : "p",
+                  content :"By Prince Nick BALLO",
+                  style:{
+                    color : "#fff",
+                    width : "100%%",
+                    height : "max-content",
+                    fontSize : "1rem",
+                    height: "12.1988%"
+                  }
+                }
             ]
-        }
+          }
         
 
         const getOpen = () =>{
@@ -235,7 +233,7 @@ export default function AddObject() {
                                     <StorySlidePreview slide={slide2}/>
                                 </div>
                                 <div className={styles.template}>
-                                    <StorySlidePreview slide={slide}/>
+                                    <StorySlidePreview slide={slide3}/>
                                 </div>
                                 <div className={styles.template}>
                                     <StorySlidePreview slide={slide}/>
@@ -285,6 +283,7 @@ export default function AddObject() {
                                 {medias && medias.map((media,index)=>{
                                     return(
                                         <div 
+                                            onDragOver={(e)=>{}}
                                             key={index}
                                             className={styles.mediaImg}
                                             style={{backgroundImage:`url(${media.url})`}}

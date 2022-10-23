@@ -1,5 +1,5 @@
 import '../styles/globals.scss'
-import '../styles/carouselle.scss'
+import 'react-modern-drawer/dist/index.css'
 // import '../styles/globals.css'
 // import '../styles/index.scss'
 import '../styles/typingscript.scss'
