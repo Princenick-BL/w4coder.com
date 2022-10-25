@@ -64,42 +64,42 @@ const App = ({children}) => {
         <div className={styles.siderClose}>
           <div>
             <Link href={"/read"}>
-              <a>
+              
                 <div className={styles.icon + " "+ styles.logo}>
                   <Logo style={{color:"#000"}}/>
                 </div>
-              </a>
+              
             </Link>
             <Link href={"/admin/articles"}>
-              <a>
+              
                 <div className={styles.icon+ " "+ styles.article}>
                   <FileTextOutlined/>
                 </div>
-              </a>
+              
             </Link>
             <Link href={"/admin/web-stories"}>
-              <a>
+              
                 <div className={styles.icon+ " "+ styles.webStory}>
                   <WebStory/>
                 </div>
-              </a>
+              
             </Link>
             <Link href={"/admin/analytics"}>
-              <a>
+              
                 <div className={styles.icon+ " "+ styles.analytics}>
                   <GoogleAnalyticsIcon/>
                 </div>
-              </a>
+              
             </Link>
             
           </div>
           <div>
             <Link href={"/admin/users"}>
-              <a>
+              
                 <div className={styles.icon+ " "+ styles.user}>
                   <UserOutlined/>
                 </div> 
-              </a>
+              
             </Link>
              
             <div className={styles.icon+ " "+ styles.collapse} onClick={(e)=>{setCollapsed(!collapsed)}}>
@@ -111,45 +111,45 @@ const App = ({children}) => {
           <div className={styles.siderOpened}>
             <div>
               <Link href={"/read"}>
-                <a>
+                
                   <div className={styles.iconText+ " "+ styles.logo}>
                     Logo
                   </div> 
-                </a>
+                
               </Link>
               
               <Link href={"/admin/articles"}>
-                <a>
+                
                   <div className={styles.iconText+ " "+ styles.article}>
                     Articles
                   </div>
-                </a>
+                
               </Link>
               
               <Link href={"/admin/web-stories"}>
-                <a>
+                
                   <div className={styles.iconText+ " "+ styles.webStory}>
                     Web Stories
                   </div>
-                </a>
+                
               </Link>
               
               <Link href={"/admin/analytics"}>
-                <a>
+                
                   <div className={styles.iconText+ " "+ styles.analytics}>
                     Analytics
                   </div>
-                </a>
+                
               </Link>
               
             </div>
             <div>
               <Link href={"/admin/my-account"}>
-                <a>
+                
                   <div className={styles.iconText+ " "+ styles.user}>
                     My account
                   </div> 
-                </a>
+                
               </Link>
                
               <div className={styles.iconText+ " "+ styles.collapse} onClick={(e)=>{setCollapsed(!collapsed)}}>

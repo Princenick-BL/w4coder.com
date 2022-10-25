@@ -16,22 +16,18 @@ const Slide = ({slide,slidePrev,slideNext,total}) =>{
       <div className={styles.container + " topic-slider-container"}>
         <div className={styles.top}>
           <Link href={`/blog/article/${slide?._id}/${slide?.slug}`}>
-            <a>
               <Image
                 src={slide?.poster}
                 width={500}
-                height={300}
+                height={250}
                 layout={"responsive"}
                 className={styles.img}
               />
-            </a>
           </Link>
           <Link href={`/blog/article/${slide?._id}/${slide?.slug}`}>
-            <a>
               <div className={styles.desc}>
                 {slide?.title}
               </div>
-            </a>
           </Link>
         </div>
         <div className={styles.bottom+ " topic-slider-bottom"}>

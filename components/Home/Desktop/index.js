@@ -176,25 +176,25 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                         <div className={styles.articlesFirst}>
                             <div className={styles.img}>
                                 <Link href={`/blog/article/${firstA?._id}/${firstA?.slug}`}>
-                                    <a>
+                                    
                                         <Image
                                             src={firstA?.poster}
                                             width={500}
                                             height={400}
                                             layout={"fill"}
-
+                                            style={{width:"100%",height:"auto"}}
                                         />
-                                    </a>
+                                    
                                 </Link>
                             </div>
                             <div className={styles.articleInfo}>
                                 <div className={styles.cat}>{firstA?.category?.name || "A LA Une"}</div>
                                 <h2 className={styles.title}>
                                     <Link href={`/blog/article/${firstA?._id}/${firstA?.slug}`}>
-                                        <a>
+                                        
                                             {firstA?.title}
 
-                                        </a>
+                                        
                                     </Link>
                                 </h2>
                                 <div className={styles.desc}>
@@ -202,9 +202,9 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                                 </div>
                                 <div className={styles.more}>
                                     <Link href={`/blog/article/${firstA?._id}/${firstA?.slug}`}>
-                                        <a>
+                                        
                                             READ MORE &rarr;
-                                        </a>
+                                        
                                     </Link>
                                 </div>
                             </div>
@@ -217,24 +217,25 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                                     <div key={index} className={styles.article}>
                                         <div className={styles.img}>
                                             <Link href={`/blog/article/${firstA?._id}/${firstA?.slug}`}>
-                                                <a>
+                                                
                                                     <Image
                                                         src={a?.poster || "https://picsum.photos/400/300"}
                                                         width={500}
                                                         height={400}
                                                         layout={"fill"}
+                                                        style={{width:"100%",height:"auto"}}
 
                                                     />
-                                                </a>
+                                                
                                             </Link>
                                         </div>
                                         <div className={styles.articleInfo}>
                                             <div className={styles.cat}>{a?.category?.name || "A LA Une"}</div>
                                             <h2 className={styles.title}>
                                                 <Link href={`/blog/article/${firstA?._id}/${firstA?.slug}`}>
-                                                    <a>
+                                                    
                                                         {a?.title}
-                                                    </a>
+                                                    
                                                 </Link>
                                             </h2>
                                         </div>
@@ -294,24 +295,25 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                                 <div key={index} className={styles.article}>
                                     <div className={styles.img}>
                                         <Link href={`/blog/article/${a?._id}/${a?.slug}`}>
-                                            <a>
+                                            
                                                 <Image
                                                     src={a?.poster||"https://picsum.photos/400/300"}
                                                     width={400}
                                                     height={400}
                                                     layout={"fill"}
-                                                    
+                                                    style={{width:"100%",height:"auto"}}
+
                                                 />
-                                            </a>
+                                            
                                         </Link>
                                     </div>
                                     <div className={styles.articleInfo}>
                                         <div className={styles.cat+ " text-color"}>{a?.category?.name || "A LA Une"}</div>
                                         <h2 className={styles.title}>
                                         <Link href={`/blog/article/${a?._id}/${a?.slug}`}>
-                                            <a>
+                                            
                                             {a?.title}
-                                            </a>
+                                            
                                         </Link>
                                         </h2>
                                         <div className={styles.author}>
@@ -322,9 +324,9 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                                         </div>
                                         <div className={styles.more}>
                                             <Link href={`/blog/article/${a?._id}/${a?.slug}`}>
-                                                <a>
+                                                
                                                     READ MORE &rarr;
-                                                </a>
+                                                
                                             </Link>
                                         </div>
                                     </div>
@@ -346,24 +348,25 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                             <div key={index} className={styles.article}>
                                 <div className={styles.img}>
                                     <Link href={`/blog/article/${a?._id}/${a?.slug}`}>
-                                        <a>
+                                        
                                             <Image
                                                 src={a?.poster||"https://picsum.photos/400/300"}
                                                 width={400}
                                                 height={400}
                                                 layout={"fill"}
-                                                
+                                                style={{width:"100%",height:"auto"}}
+  
                                             />
-                                        </a>
+                                        
                                     </Link>
                                 </div>
                                 <div className={styles.articleInfo}>
                                     <div className={styles.cat}>{a?.category?.name || "A LA Une"}</div>
                                     <h2 className={styles.title}>
                                         <Link href={`/blog/article/${a?._id}/${a?.slug}`}>
-                                            <a>
+                                            
                                             {a?.title}
-                                            </a>
+                                            
                                         </Link>
                                     </h2>
                                     <div className={styles.author}>
@@ -374,9 +377,9 @@ export default function DeskTopHP({topA,page1,toggleTheme}) {
                                     </div>
                                     <div className={styles.more}>
                                         <Link href={`/blog/article/${a?._id}/${a?.slug}`}>
-                                            <a>
+                                            
                                                 READ MORE &rarr;
-                                            </a>
+                                            
                                         </Link>
                                     </div>
                                 </div>

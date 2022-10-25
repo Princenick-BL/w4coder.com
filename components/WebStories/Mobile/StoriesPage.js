@@ -119,7 +119,7 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                             return(
                                 <div className={styles.preview} key={index}>
                                     <Link href={`/blog/web-story/${story?._id}/${story?.slug}`}>
-                                        <a>
+                                        <div>
                                             <Image
                                                 src={story?.poster || "https://picsum.photos/400/534?random=5"}
                                                 width={400}
@@ -137,7 +137,7 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                                             <div className={styles.details}>
                                                 <div>{story?.title}</div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </Link>
                                 </div>
 

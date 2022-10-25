@@ -57,17 +57,17 @@ export default class caroussel extends Component {
 				<ul>
 						<li>
 							<Link href='/read'>
-								<a >BLOG</a>
+								BLOG
 							</Link>
 						</li>
 						<li>
 							<Link href='/projects'>
-								<a>MES PROJETS</a>
+								MES PROJETS
 							</Link>
 						</li>
 						<li>
 							<Link href='/curriculum-vitae/read'>
-								<a >MOI</a>
+								MOI
 							</Link>
 						</li>
 					</ul>

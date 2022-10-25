@@ -13,6 +13,11 @@
     margin-bottom: .5rem;
     overflow: hidden;
     margin-bottom: 2rem;
+    .imgContainer{
+        width: 100%;
+        position: relative;
+        height: 300px;
+    }
     a{
         //color: #fff;
         line-height: 1.5;
@@ -30,7 +35,11 @@
     }
     .img{
         border-radius: 10px;
-        max-height: 200px;
+        height: auto;
+        max-height: 250px;
+        width: 100%;
+        border-radius: 50px;
+        overflow: hidden;
     }
     @media only screen and (max-width: 600px) {
         width:100%  !important;

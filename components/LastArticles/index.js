@@ -25,8 +25,8 @@ const Card = ({card ,index}) =>{
                     {card?.title}
                 </h1>
                 <div className={styles.titlebottom}>
-                    <Link href={"/article/"+card?._id+"/"+card?.slug}>
-                        <a >{"Read this article "}	&#10148;</a>
+                    <Link href={"/blog/"+card?._id+"/"+card?.slug}>
+                        {"Read this article "}	&#10148;
                     </Link>
                     <span>{card.keywords?.join(" - ")}</span>
                 </div>
@@ -117,7 +117,7 @@ export default function LasrArticle({topA}) {
            <div className={styles.mostreadedArticleMore}>
                 <div>
                     <Link href="/read/article?page=2">
-                        <a> Read more article &#10148; </a>
+                        Read more article &#10148; 
                     </Link>
                 </div>
                 <div className={styles.icon}>

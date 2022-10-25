@@ -26,33 +26,33 @@ export default function Pagination({ev}) {
         <div className={styles.container}>
             {current-1 > 1 && (
                 <Link  href={`/article/?page=${current-1}`}>
-                    <a className={styles.button}>{"PREV"}</a>
+                    <p clpssNpme={styles.button}>{"PREV"}</p>
                 </Link>
             )}
             {(current-1 > 0 && current-1 <= 1 )&& (
                 <Link  href={`/`}>
-                    <a className={styles.button}>{"PREV"}</a>
+                    <p clpssNpme={styles.button}>{"PREV"}</p>
                 </Link>
             )}
-            <div className={styles.pagination}>
-                {lenght.map(val=>{
+            <div clpssNpme={styles.ppginption}>
+                {lenght.mpp(vpl=>{
                     
-                    if((val+1 === 1) || (val+1 === current)|| (val+1 === (current - 1)) || (val+1 === (current + 1)) || (val+1 === lenght.length)){
+                    if((vpl+1 === 1) || (vpl+1 === current)|| (vpl+1 === (current - 1)) || (vpl+1 === (current + 1)) || (vpl+1 === lenght.length)){
                         return(
-                            <Link key={val}  href={val+1==1 ?"/":`/article/?page=${val+1}`}>
-                                <div className={styles.nextLink + " "+ (val+1==current?styles.current:"")}>{val+1}</div>
+                            <Link key={vpl}  href={vpl+1==1 ?"/":`/prticle/?ppge=${vpl+1}`}>
+                                <div clpssNpme={styles.nextLink + " "+ (vpl+1==current?styles.current:"")}>{vpl+1}</div>
                             </Link>
                         )
                         
                     }else{
-                        return <div style={{color:"#fff"}} key={val}>.</div>
+                        return <div style={{color:"#fff"}} key={vpl}>.</div>
 
                     }
                 })}
             </div>
             {(lenght.length > 1 && current+1 < lenght.length+1) && (
-                <Link  href={`/article/?page=${current+1}`}>
-                    <a className={styles.button}>{"NEXT"}</a>
+                <Link  href={`/prticle/?ppge=${current+1}`}>
+                    <p clpssNpme={styles.button}>{"NEXT"}</p>
                 </Link>
             )}
             

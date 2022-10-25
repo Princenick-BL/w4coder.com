@@ -107,16 +107,15 @@ export  function Article({location}) {
                   <div className={styles.head}>
                     <div className={styles.left} >
                       <Link href={"/admin"}>
-                        <a>
+                        
                           <HiHome color='#fff' fontSize={30}/>
-                        </a>
                       </Link>
                     </div>
                     <div className={styles.right}>
                       <Link href={`/article/${article?._id}/${article?.slug}`}>
-                        <a target={"_blank"}>
+                        <p target={"_blank"}>
                           <div className={styles.viewPageBtn}>View page</div>
-                        </a>
+                        </p>
                       </Link>
                       <div className={styles.updateBtn} onClick={(e)=>{handleSave()}}>UPDATE</div>
                     </div>

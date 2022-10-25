@@ -3,6 +3,7 @@ import styles from './index.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 
+
 export default function Slide({article,style,type=0}){
   return(
     <div
@@ -14,19 +15,16 @@ export default function Slide({article,style,type=0}){
         >
             
           <div className={styles.slider}>
-          <Link href={`/blog/article/${article._id}/${article.slug}`}>
-            <a>
+            <Link href={`/blog/article/${article._id}/${article.slug}`} className={styles.imgContainer}>
               <Image
                   src={article.poster}
-                  width={article.meta.width}
-                  height={650}
+                  width={300}
+                  height={300}
                   layout="responsive"
                   className={styles.img}
               />
-            </a>
-          </Link>
+            </Link>
               <Link href={`/blog/article/${article._id}/${article.slug}`}>
-                <a>
                   <div className={styles.bonttom}>
 
                     <div className={styles.mark_down}>
@@ -37,7 +35,6 @@ export default function Slide({article,style,type=0}){
                     </div>
 
                   </div>
-                </a>
               </Link>
               <div className={styles.publisher}>
                 <Image

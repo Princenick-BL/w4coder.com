@@ -12,9 +12,7 @@ export default class header extends Component {
 
                     <div className={style.translucide}>
                         <Link href={"/read"}>
-                            <a>
                                 <Logo style={{fontSize:"2rem"}}/>
-                            </a>
                         </Link>
                         <br></br>
                         {/* <div className={style.discoverText}>Découvrez mes compétences de A à Z !!!</div> */}
@@ -39,9 +37,7 @@ export function NewHead() {
   return (
     <div>
         <Link href={"/read"}>
-            <a>
                 <Logo/>
-            </a>
         </Link>
     </div>
   )

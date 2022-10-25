@@ -44,7 +44,6 @@ export default function Slideshow() {
                         style={{ backgroundColor }}
                     >
                         <Link href={"#"}>
-                            <a>
                                 <div className={styles.slider}>
                                     <Image
                                         src={"https://picsum.photos/500/400"}
@@ -59,7 +58,6 @@ export default function Slideshow() {
                                         <span>No comments to show.No comments to show.No comments to show.No comments to show.No comments to show.No comments to show.</span>
                                     </div>
                                 </div>
-                            </a>
                         </Link>
 
                     </div>

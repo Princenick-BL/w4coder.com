@@ -10,11 +10,9 @@ export default function TopicCluster() {
         
             return (
                 <Link  key={index} href={`/${res.name.toLowerCase()}`}>
-                    <a >
                         <div className={styles.cluster}>
                             {res?.name?.toUpperCase()}
                         </div>
-                    </a>
                 </Link>
             )
         })}
