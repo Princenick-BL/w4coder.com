@@ -98,7 +98,7 @@ export default function HeaderEditor(props) {
     return (
         <header className={styles.header} ref={wrapperRef}>
             <div className={styles.edit}>
-                <span className={styles.category }>{props?.category}</span>
+                <span className={styles.category }>{props?.category?.name}</span>
             
                 <div className={styles.editBtn}>
                     <EditFilled onClick={(e)=>{setShowEdit(!showEdit)}}/>
@@ -155,22 +155,25 @@ export default function HeaderEditor(props) {
                 >{`Updated at : ${new Date(props?.updatedAt).toLocaleDateString()}`}</time>
             </address>
             {props?.poster &&
-                <Image
-                    src={props?.poster}
-                    onLoad={({ target }) => {
-                        const { naturalWidth, naturalHeight } = target ;
-                        setSize({
-                            width:naturalWidth,
-                            height:naturalHeight
-                        })
-                    }}
-                    width={size?.width || "1280"}
-                    height={size?.height || "853"}
-                    layout="responsive"
-                    alt="The final spritzer"
-                    className={styles.img}
-                    style={{width:"calc(100% - 2rem );"}}
-                /> 
+                <div >
+
+                    <Image
+                        src={props?.poster}
+                        onLoad={({ target }) => {
+                            const { naturalWidth, naturalHeight } = target ;
+                            setSize({
+                                width:naturalWidth,
+                                height:naturalHeight
+                            })
+                        }}
+                        width={size?.width || "1280"}
+                        height={size?.height || "853"}
+                        layout="fill"
+                        alt="The final spritzer"
+                        className={styles.img}
+                        style={{width:"calc(100% - 2rem )"}}
+                    /> 
+                </div>
             }
             <br></br>
         </header>
