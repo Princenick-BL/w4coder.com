@@ -149,43 +149,43 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
 ])
 
 
-  useEffect(()=>{
-    const player = document.getElementById("player2");
+  // useEffect(()=>{
+  //   const player = document.getElementById("player2");
     
-    const existed  = document.getElementById("playerConfig");
-    if(!existed){
+  //   const existed  = document.getElementById("playerConfig");
+  //   if(!existed){
 
-        var script = document.createElement("script")
-        script.id = "playerConfig"
-        script.type="application/json"
-        script.innerHTML=`
-          {
-            "behavior": {
-              "autoplay": false,
-              "pageScroll": false
-            },
-            "controls": [{
-              "name": "close",
-              "position": "start"
-            }]
-          }
-        `
-        player.appendChild(script)
+  //       var script = document.createElement("script")
+  //       script.id = "playerConfig"
+  //       script.type="application/json"
+  //       script.innerHTML=`
+  //         {
+  //           "behavior": {
+  //             "autoplay": false,
+  //             "pageScroll": false
+  //           },
+  //           "controls": [{
+  //             "name": "close",
+  //             "position": "start"
+  //           }]
+  //         }
+  //       `
+  //       player.appendChild(script)
 
-        player.addEventListener("amp-story-player-close", () => {
-          document.getElementById("homTop").style.overflowY="auto"
-            player.pause();
-            setShow(false)
-        });
+  //       player.addEventListener("amp-story-player-close", () => {
+  //         document.getElementById("homTop").style.overflowY="auto"
+  //           player.pause();
+  //           setShow(false)
+  //       });
 
         
-        player.addEventListener("ready", () => {
-          player.play()
-          initializeWidget(0);
-          player.pause()
-        });
-      }
-  }, [])
+  //       player.addEventListener("ready", () => {
+  //         player.play()
+  //         initializeWidget(0);
+  //         player.pause()
+  //       });
+  //     }
+  // }, [])
 
   const fetchMoreData = async ()=>{
 
@@ -218,13 +218,13 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
         <main className={styles.main} >
           <ScrollToTop smooth color="#6f00ff" />
           <div className={styles.head} id="#top">
-            <Logo style={{fontSize:"2rem"}}/>
+            <Logo style={{fontSize:"2rem",marginRight:"0"}}/>
             {/* <h3>Main articles</h3> */}
             <ThemeChanger toggleTheme={toggleTheme}/>
           </div>
-          <div className="viewport">
+          <input type={"search"} className={styles.search} placeholder={"Search"}/>
+          {/* <div className="viewport">
             <div className="entry-point-container">
-              {/* <h1> Web Stories </h1> */}
               <div className="circular-entry-point">
                 <div className="entry-points">
                   {stories.map((story,index)=>{
@@ -246,9 +246,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
             <br></br>
 
             <div className={`lightbox ${show?"show":""}`}>
-              {/* <div className={styles.side}>
 
-              </div> */}
               <amp-story-player style={{width:"100vw",height:"100vh"}} layout="responsive" width="360" height="600"id="player2" >
                 {stories.map((story,index)=>{
                     return(
@@ -257,7 +255,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
                   })}
               </amp-story-player>
             </div>
-          </div>   
+          </div>    */}
           <StickyMenu setCurrentView={setCurrentView}  current={1}/>
        
           <div className={styles.editorial}>
