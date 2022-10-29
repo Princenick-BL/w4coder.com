@@ -222,7 +222,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
             {/* <h3>Main articles</h3> */}
             <ThemeChanger toggleTheme={toggleTheme}/>
           </div>
-          <input type={"search"} className={styles.search} placeholder={"Search"}/>
+          <input type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
           {/* <div className="viewport">
             <div className="entry-point-container">
               <div className="circular-entry-point">

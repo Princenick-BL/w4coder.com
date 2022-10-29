@@ -51,6 +51,9 @@ body {
 	.sticky-menu{
 		background-color: #fff;
 	}
+	.searchBar{
+		background-color: #f3f3f3;
+	}
 	@media only screen and (min-width: 600px) {		// display: none;
 		.topic-slider-container{
 			border : 0.01rem solid rgba(0, 0, 0, 0.05);
@@ -72,6 +75,11 @@ body {
 	}
 	.sticky-menu{
 		background-color: #202029;
+	}
+	.searchBar{
+		border: 0.01rem solid rgb(135, 133, 133) !important;
+		background: transparent;
+		color: #f3f3f3;
 	}
 }
 
