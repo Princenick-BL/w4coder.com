@@ -9,7 +9,7 @@ export function getSections(sections){
         if(section){
             switch(section?.type){
                 case SECTION_TYPE.TEXT_BLOCK :
-                  htmlSections += section?.content?.replace("h1>","h1 class=\"mb4 px3\">")
+                  htmlSections += section?.content?.replace("h1>","h1 class=\"px3\">")
                   return
                 case SECTION_TYPE.IMAGE_BLOCK :
                   htmlSections+= `
@@ -80,7 +80,7 @@ export function getStyles(){
       display: block;
     }
     h1 {
-      font-size: 2em;
+      font-size: 1.5em;
       margin: 0.67em 0;
     }
     figcaption,
@@ -260,16 +260,16 @@ export function getStyles(){
     }
     .h0,
     .h1 {
-      font-size: 2rem;
-    }
-    .h2 {
-      font-size: 2rem;
-    }
-    .h3 {
       font-size: 1.5rem;
     }
+    .h2 {
+      font-size: 1rem;
+    }
+    .h3 {
+      font-size: 1rem;
+    }
     .h4 {
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
     .h5 {
       font-size: 0.875rem;
@@ -1219,23 +1219,23 @@ export function getStyles(){
     }
     .h1,
     h1 {
-      font-size: 2rem;
-      line-height: 3rem;
+      font-size: 1.5rem;
+      line-height: 1.5;
     }
     .h2,
     h2 {
       font-size: 2rem;
-      line-height: 2.5rem;
+      line-height: 1.5;
     }
     .h3,
     h3 {
       font-size: 1.5rem;
-      line-height: 2rem;
+      line-height: 1.5;
     }
     .h4,
     h4 {
       font-size: 1.125rem;
-      line-height: 1.5rem;
+      line-height: 1.5;
     }
     .h5,
     h5 {
@@ -2212,7 +2212,7 @@ export function getStyles(){
     }
 
     .ql-snow .main h1 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
     .ql-snow .main h2 {

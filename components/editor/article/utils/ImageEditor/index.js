@@ -41,7 +41,6 @@ export default function ImageEditor({imageProps,edit,setEdit,index}) {
         var poster = imageProps?.mediaUrl
         var formData = new FormData();
         formData.append("file", selectedFile);
-
         if(selectedFile){
             const res = await  uploadfile(formData)
             poster = res.url
@@ -93,7 +92,13 @@ export default function ImageEditor({imageProps,edit,setEdit,index}) {
                                 layout="fill"
                                 alt={imageProps?.alt}
                                 style={{width:"50%",height:"auto"}}
-
+                                onLoad={({ target }) => {
+                                    const { naturalWidth, naturalHeight } = target ;
+                                    setSize({
+                                        width:naturalWidth,
+                                        height:naturalHeight
+                                    })
+                                }}
                             />
                         </div>
                         <input type={"file"} onChange={(e)=>onSelectFile(e)}/>
