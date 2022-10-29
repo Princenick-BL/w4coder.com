@@ -81,16 +81,19 @@ export default function ImageEditor({imageProps,edit,setEdit,index}) {
                         })
                     }}
                     alt={imageProps?.alt}
+                    style={{width:"100%",height:"auto"}}
                 />
                 {edit &&
                     <div className={styles.edit}>
-                        <div style={{width:"100%",marginBottom:"1rem"}}> 
+                        <div style={{position:"relative",width:"100%",marginBottom:"1rem"}}> 
                             <Image
                                 src={preview || imageProps?.mediaUrl}
                                 width={imageProps?.width}
                                 height={imageProps?.height}
-                                layout="responsive"
+                                layout="fill"
                                 alt={imageProps?.alt}
+                                style={{width:"50%",height:"auto"}}
+
                             />
                         </div>
                         <input type={"file"} onChange={(e)=>onSelectFile(e)}/>

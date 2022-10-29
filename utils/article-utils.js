@@ -1,23 +1,28 @@
 import { SECTION_TYPE } from "../constants"
 export function getSections(sections){
-    const htmlSections = sections?.map((section,index)=>{
+
+  var htmlSections = ""
+  const regex = /class="(.*?)"/
+
+  sections?.map((section,index)=>{
         
         if(section){
             switch(section?.type){
                 case SECTION_TYPE.TEXT_BLOCK :
-                    return`<p class="mb4 px3" >${section?.content}</p>`
-                   
-                case SECTION_TYPE.IMAGE :
-                    return `
+                  htmlSections += section?.content?.replace("h1>","h1 class=\"mb4 px3\">")
+                  return
+                case SECTION_TYPE.IMAGE_BLOCK :
+                  htmlSections+= `
                         <amp-img
-                            src={${section?.content}}
-                            width={${section?.meta?.width}}
-                            height={${section?.meta?.height}}
+                            src=${section?.content}
+                            width=${section?.meta?.width}
+                            height=${section?.meta?.height}
                             layout="responsive"
-                            alt={${section?.meta?.alt||"new image"}}
-                            className="mb4 mx3 br5"
+                            alt=${section?.meta?.alt||"w4coder"}}
+                            class="mb4 mx3 br5"
                         ></amp-img>
                     `
+                    return
                 default :
                     return ""
             }
