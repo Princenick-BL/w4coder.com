@@ -38,7 +38,7 @@ export default function Slide({article,style,type=0}){
               </Link>
               <div className={styles.publisher}>
                 <Image
-                    src={article.author.logo}
+                    src={article.author.logo || "/favicon.ico"}
                     width="20"
                     height="20"
                     layout="fixed"
