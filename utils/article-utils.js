@@ -79,6 +79,7 @@ export function getStyles(){
     section {
       display: block;
     }
+    
     h1 {
       font-size: 1.5em;
       margin: 0.67em 0;
@@ -254,6 +255,9 @@ export function getStyles(){
     [hidden],
     template {
       display: none;
+    }
+    .br5{
+      border-radius: 5px;
     }
     .h00 {
       font-size: 4rem;
