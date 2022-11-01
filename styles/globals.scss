@@ -235,11 +235,17 @@ background: #555;
 	position: fixed;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	left: 0;
 	top : 0;
 	z-index: 1000;
 	width: 70rem;
-	max-width: calc(100vw - 20px);
+	max-width: calc(100vw - 30px);
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+.searching{
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	height: 300px;
+	padding: 5px;
+	border-radius: 5px;
 }

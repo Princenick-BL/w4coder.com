@@ -115,7 +115,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
   const [pageNum,setPageNum] = useState(1)
   const [hasMore,setHasMore] = useState(true)
 
-  const playerRef = useRef(null);
+  const searchRef = useRef(null);
   //useAmpStoryPlayer(loadPlayer(playerRef))
   const stickyHeader = useRef()
   const [show,setShow]=useState(false)
@@ -211,6 +211,41 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
     window.addEventListener('scroll', fixedHeader)
   }, [])
  
+
+
+  const searching = (e)=>{
+    console.log(e?.target?.value.length)
+
+    if(e?.target?.value?.length > 0){
+      const mainHeaderResult = document.getElementById("mainHeader")
+      mainHeaderResult.classList.add('searching')
+    }else{
+      mainHeaderResult.classList.remove('searching')
+    }
+  }
+
+  function searchStop(ref) {
+    useEffect(() => {
+
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          const mainHeaderResult = document.getElementById("mainHeader")
+          mainHeaderResult.classList.remove('searching')
+        }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+  searchStop(searchRef);
+
   return (
     <>
       <Head>
@@ -234,7 +269,10 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
             <ThemeChanger toggleTheme={toggleTheme}/>
           </div>
           <div  id={"mainHeader"} ref={stickyHeader} className="mainHeader">
-            <input type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
+            <input ref={searchRef} onChange={(e)=>{searching(e)}} onFocus={(e)=>{}} type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
+            <div className='mainHeaderResult' id="mainHeaderResult">
+
+            </div>
           </div>
           {/* <div className="viewport">
             <div className="entry-point-container">
