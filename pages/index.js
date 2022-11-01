@@ -101,6 +101,8 @@ export async function getServerSideProps(context) {
     page : 1
   }})
 
+  console.log(page1)
+
   const topA =  await getTopArticles()
 
   //console.log(res.length)

@@ -12,6 +12,10 @@
     align-items: flex-start;
     overflow: auto;
     margin-top: 1rem;
+    @media only screen and (max-width: 500px) {
+        border-bottom: 0.01rem solid rgb(135, 133, 133);
+    }
+
     .menu{
         background-color: #f3f3f3;
         padding: 5px 1rem;
