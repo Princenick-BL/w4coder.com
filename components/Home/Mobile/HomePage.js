@@ -224,7 +224,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
     }
   }
 
-  function searchStop(ref) {
+  function useSearchStop(ref) {
     useEffect(() => {
 
       /**
@@ -244,7 +244,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
       };
     }, [ref]);
   }
-  searchStop(searchRef);
+  useSearchStop(searchRef);
 
   return (
     <>
