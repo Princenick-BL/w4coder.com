@@ -48,7 +48,7 @@ body {
 	.text-color{
 		color: #000;
 	}
-	.sticky-menu{
+	.sticky-menu,.mainHeader{
 		background-color: #fff;
 	}
 	.searchBar{
@@ -73,7 +73,7 @@ body {
 	.text-color{
 		color: #fff;
 	}
-	.sticky-menu{
+	.sticky-menu,.mainHeader{
 		background-color: #202029;
 	}
 	.searchBar{
@@ -229,4 +229,17 @@ background: #555;
 	overflow: hidden;
 	width: calc( 100%  );
 	margin: .5rem auto;
+}
+
+.fixedTop {
+	position: fixed;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	left: 0;
+	top : 0;
+	z-index: 100;
+	width: 70rem;
+	max-width: calc(100vw - 20px);
+	padding-left: 10px;
+	padding-right: 10px;
 }

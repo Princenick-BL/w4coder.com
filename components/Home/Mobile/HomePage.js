@@ -1,4 +1,4 @@
-import React,{useEffect,useState,useRef} from 'react'
+import React,{useEffect,useState,useRef,useLayoutEffect} from 'react'
 import styles from './index.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -117,7 +117,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
 
   const playerRef = useRef(null);
   //useAmpStoryPlayer(loadPlayer(playerRef))
-
+  const stickyHeader = useRef()
   const [show,setShow]=useState(false)
     
     
@@ -198,7 +198,18 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
       setHasMore(false)
     }
   }
-
+  useLayoutEffect(() => {
+    const mainHeader = document.getElementById('mainHeader')
+    let fixedTop = stickyHeader.current.offsetTop
+    const fixedHeader = () => {
+      if (window.pageYOffset > fixedTop) {
+        mainHeader.classList.add('fixedTop')
+      } else {
+        mainHeader.classList.remove('fixedTop')
+      }
+    }
+    window.addEventListener('scroll', fixedHeader)
+  }, [])
  
   return (
     <>
@@ -222,7 +233,9 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
             {/* <h3>Main articles</h3> */}
             <ThemeChanger toggleTheme={toggleTheme}/>
           </div>
-          <input type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
+          <div  id={"mainHeader"} ref={stickyHeader} className="mainHeader">
+            <input type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
+          </div>
           {/* <div className="viewport">
             <div className="entry-point-container">
               <div className="circular-entry-point">
