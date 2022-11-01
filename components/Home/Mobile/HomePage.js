@@ -278,7 +278,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
             <div className='mainHeaderResult' id="mainHeaderResult">
               {searchResult && searchResult.length > 0 && searchResult.map((res,index)=>{
                 return(
-                  <div className={"searchResultText"}>
+                  <div className={"searchResultText"} key={index}>
                     <Link href={`/blog/article/${res?._id}/${res?.slug}`} >
                       {res.title}
                     </Link>
