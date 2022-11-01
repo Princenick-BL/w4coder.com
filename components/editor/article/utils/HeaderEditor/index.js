@@ -47,16 +47,6 @@ export default function HeaderEditor(props) {
     const handleChangeHeader = async () =>{
 
             // I've kept this example simple by using the first image instead of multiple
-        var poster = props?.poster
-        var formData = new FormData();
-        formData.append("file", selectedFile);
-
-        if(selectedFile){
-            const res = await  uploadfile(formData)
-            poster = res.url
-        }
-      
-        
         dispatch({
             type : "patch-header",
             payload : {
@@ -64,8 +54,6 @@ export default function HeaderEditor(props) {
                     title : title,
                     description : description,
                     category : category,
-                    poster : poster,
-                    posterSize : size
                 }
             }
         })
@@ -125,23 +113,7 @@ export default function HeaderEditor(props) {
                                 <br></br>
                                 <textarea type={"text"} value={description} onChange={(e)=>{setDescription(e.target.value)}}  placeholder='Set description'/>
                             </div>
-                            <div className={styles.uploadsImage}>
-                                <br></br>
-
-                                <label style={{width: "calc( 100% - 1rem )"}}>Poster : </label>
-                                <img
-                                    className={styles.imagePreview}
-                                    src={preview || props?.poster}
-                                />
-                                {/* <div 
-                                    style={{backgroundImage : `url(${props?.poster})`}}
-                                >
-                                </div> */}
-                                <br></br>
-                                <input type={"file"} onChange={(e)=>onSelectFile(e)}/>
-                                <br></br>
-
-                            </div>
+                            
                             <div className={styles.submit} onClick={(e)=>{handleChangeHeader()}} >UPDATE</div>
                         </div>
                     }
@@ -154,27 +126,7 @@ export default function HeaderEditor(props) {
                     dateTime="2016-12-13"
                 >{`Updated at : ${new Date(props?.updatedAt).toLocaleDateString()}`}</time>
             </address>
-            {props?.poster &&
-                <div >
 
-                    <Image
-                        src={props?.poster}
-                        onLoad={({ target }) => {
-                            const { naturalWidth, naturalHeight } = target ;
-                            setSize({
-                                width:naturalWidth,
-                                height:naturalHeight
-                            })
-                        }}
-                        width={size?.width || "1280"}
-                        height={size?.height || "853"}
-                        layout="fill"
-                        alt="The final spritzer"
-                        className={styles.img}
-                        style={{width:"calc(100% - 2rem )"}}
-                    /> 
-                </div>
-            }
             <br></br>
         </header>
     )

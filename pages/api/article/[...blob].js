@@ -152,16 +152,7 @@ export default async function handler(req, res) {
                     >${new Date(article?.updatedAt).toDateString()}</time
                   >
                 </address>
-                <!-- End byline -->
-                <amp-img
-                  data-hero
-                  src="${article?.poster}"
-                  width="${article?.meta?.width}"
-                  height="${article?.meta?.height}"
-                  layout="responsive"
-                  alt="${article?.title}"
-                  class="mb4 mx3"
-                ></amp-img>
+                
               </header>
               ${getSections(article?.sections)}
             </article>
