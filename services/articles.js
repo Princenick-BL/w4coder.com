@@ -9,6 +9,14 @@ export const getArticle = async ({filter})=>{
     return null
 }
 
+export const searchArticle = async (keywords)=>{
+    const res = await axios.get(`${config.API_ENDPOINT}/article/search?keywords=${keywords}`)
+    if(res.data.success){
+        return res.data.data
+    }
+    return null
+}
+
 export const count = async ()=>{
     const res = await axios.get(`${config.API_ENDPOINT}/article/count`)
     if(res.data.success){

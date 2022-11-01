@@ -54,6 +54,22 @@ body {
 	.searchBar{
 		background-color: #f3f3f3;
 	}
+	.searching{
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		padding: 5px;
+		border-radius: 5px;
+
+		input{
+			border-radius: 2px !important;
+		}
+		.searchResultText{
+			line-height: 1.5;
+			background: #f3f3f3;
+			padding: 5px;
+			border-radius: 5px;
+			margin-top: 5px;
+		}
+	}
 	@media only screen and (min-width: 600px) {		// display: none;
 		.topic-slider-container{
 			border : 0.01rem solid rgba(0, 0, 0, 0.05);
@@ -243,12 +259,4 @@ background: #555;
 	padding-right: 10px;
 }
 
-.searching{
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-	height: 300px;
-	padding: 5px;
-	border-radius: 5px;
-	input{
-		border-radius: 2px !important;
-	}
-}
+

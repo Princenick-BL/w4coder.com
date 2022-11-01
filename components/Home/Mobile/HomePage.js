@@ -6,7 +6,7 @@ import LasrArticle from '../../LastArticles'
 import Footer from '../../footer/footer'
 import Ads300 from '../../Ads/Ads300'
 import Slide from '../../CardView'
-import { getArticle ,getTopArticles} from '../../../services/articles'
+import { getArticle ,getTopArticles,searchArticle} from '../../../services/articles'
 import TheSideBar from '../../ThesideBar'
 import Head from 'next/head'
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -114,6 +114,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
   const [pages,setPages] = useState([])
   const [pageNum,setPageNum] = useState(1)
   const [hasMore,setHasMore] = useState(true)
+  const [searchResult,setSearchResult]=useState([])
 
   const searchRef = useRef(null);
   //useAmpStoryPlayer(loadPlayer(playerRef))
@@ -213,13 +214,18 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
  
 
 
-  const searching = (e)=>{
+  const searching = async (e)=>{
     const mainHeaderResult = document.getElementById("mainHeader")
     if(e?.target?.value?.length > 0){
       mainHeaderResult.classList.add('searching')
+      const res = await searchArticle(e?.target?.value)
+      console.log(res)
+      setSearchResult(res)
     }else{
       mainHeaderResult.classList.remove('searching')
+      setSearchResult([])
     }
+
   }
 
   function useSearchStop(ref) {
@@ -232,6 +238,7 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
         if (ref.current && !ref.current.contains(event.target)) {
           const mainHeaderResult = document.getElementById("mainHeader")
           mainHeaderResult.classList.remove('searching')
+          setSearchResult([])
         }
       }
       // Bind the event listener
@@ -269,7 +276,15 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
           <div  id={"mainHeader"} ref={stickyHeader} className="mainHeader">
             <input ref={searchRef} onChange={(e)=>{searching(e)}} onFocus={(e)=>{}} type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
             <div className='mainHeaderResult' id="mainHeaderResult">
-
+              {searchResult && searchResult.length > 0 && searchResult.map((res,index)=>{
+                return(
+                  <div className={"searchResultText"}>
+                    <Link href={`/blog/article/${res?._id}/${res?.slug}`} >
+                      {res.title}
+                    </Link>
+                  </div>
+                )
+              })}
             </div>
           </div>
           {/* <div className="viewport">
