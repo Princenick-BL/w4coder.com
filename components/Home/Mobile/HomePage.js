@@ -214,10 +214,8 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
 
 
   const searching = (e)=>{
-    console.log(e?.target?.value.length)
-
+    const mainHeaderResult = document.getElementById("mainHeader")
     if(e?.target?.value?.length > 0){
-      const mainHeaderResult = document.getElementById("mainHeader")
       mainHeaderResult.classList.add('searching')
     }else{
       mainHeaderResult.classList.remove('searching')

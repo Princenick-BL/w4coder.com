@@ -22,6 +22,7 @@ export default function Slide({article,style,type=0}){
                   height={300}
                   layout="responsive"
                   className={styles.img}
+                  alt={article.title}
               />
             </Link>
               <Link href={`/blog/article/${article._id}/${article.slug}`}>
@@ -44,6 +45,7 @@ export default function Slide({article,style,type=0}){
                     layout="fixed"
                     className={styles.publisher_logo}
                     style={{minWidth:"20px"}}
+                     alt={"Publisher logo"}
                 />
                 <div className={styles.name}>Published by <strong>{article.author.name}</strong> on {new Date(article.updatedAt).toDateString()}</div>
 
