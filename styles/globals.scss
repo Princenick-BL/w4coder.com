@@ -1,0 +1,125 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a{
+  color: #000;
+}
+
+.text-color{
+  color: #000;
+}
+
+.sticky-menu,.mainHeader{
+  background-color: #fff;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.mainHeader{
+  margin: 0;
+  padding-top: 5px;
+}
+
+.searchBar{
+  background-color: #f3f3f3;
+}
+
+.searching{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 5px;
+  border-radius: 5px;
+
+  input{
+    border-radius: 2px !important;
+  }
+  .searchResultText{
+    line-height: 1.5;
+    background: #f3f3f3;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+}
+
+.fixedTop {
+	position: fixed;
+	padding-bottom: 5px;
+	top : 0;
+	z-index: 1000;
+	width: 70rem;
+	max-width: calc(100vw - 30px);
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+@media only screen and (min-width: 600px) {		// display: none;
+  .topic-slider-container{
+    border : 0.01rem solid rgba(0, 0, 0, 0.05);
+  }
+  .topic-slider-bottom{
+    border-top: 0.01rem solid rgba(0, 0, 0, 0.05) !important;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: rgb(0, 0, 0, 0.7)  !important;
+    background-color: rgb(0, 0, 0, 0.7) !important;
+  }
+
+  a{
+    color: #fff;
+  }
+  .text-color{
+    color: #fff;
+  }
+  .sticky-menu,.mainHeader{
+    background-color: #202029;
+  }
+  .searchBar{
+    border: 0.01rem solid rgb(135, 133, 133) !important;
+    background: transparent;
+    color: #f3f3f3;
+  }
+  
+
+}
+
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #ccc;
+    width: 2px;
+
+}
+body::-webkit-scrollbar{
+    width: 2px;
+    background-color: #F5F5F5;
+	display: none;
+    
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 2px;
+    width: 2px;
+
+}
