@@ -102,8 +102,6 @@
     
 }
 
-
-
 .subSectionList{
     display: grid;
     grid-template-columns: 45vw 45vw;
@@ -149,6 +147,28 @@
             background-size: contain;
             padding: .5rem;
             height: 50%;
+        }
+    }
+}
+
+.homeDesktop{
+    width: 100%;
+    height: 100%;
+    .listOne{
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 2.5rem;
+    }
+    .listTwo{
+        display: grid;
+        gap: 2.5rem;
+        overflow: hidden !important;
+        @media (min-width: 768px){
+            grid-template-columns: repeat(2,minmax(0,1fr));
+        }
+        @media (min-width: 1280px){
+            grid-template-columns: repeat(3,minmax(0,1fr));
+
         }
     }
 }

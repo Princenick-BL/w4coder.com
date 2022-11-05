@@ -52,11 +52,17 @@ export default function Desktop() {
       useSearchStop(searchRef);
   return (
     <div className={styles.deskHead}>
-        <div>
-          <Logo style={{fontSize:"2rem",marginRight:"1rem"}}/>
-        </div>
+        <ul className={styles.submenu}>
+          <li><Link href={"/"}>Acceuil</Link></li>
+          <li><Link href={"/"}>Categories </Link></li>
+          <li><Logo style={{fontSize:"2rem",margin:"0 2rem"}}/></li>
+          <li><Link href={"/"}>A propos</Link></li>
+
+          <li><Link href={"/"}>Contact</Link></li>
+
+        </ul>
         
-            <div className="mainHeader">
+            {/* <div className="mainHeader">
               <input id="mainHeader" ref={searchRef} onChange={(e)=>{searching(e)}} onFocus={(e)=>{}} type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
               <div className='mainHeaderResult' id="mainHeaderResult">
                 {searchResult && searchResult.length > 0 && searchResult.map((res,index)=>{
@@ -70,7 +76,7 @@ export default function Desktop() {
                 })}
 
           </div>
-        </div>
+        </div> */}
     </div>
   )
 }

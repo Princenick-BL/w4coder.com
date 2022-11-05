@@ -14,6 +14,22 @@
         padding: 5px 1rem;
         font-size: 1.1rem;
     }
+    .submenu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        li{
+            text-decoration: none;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 1rem 0;
+        }
+    }
 }
 
 .deskHead{
@@ -35,21 +51,23 @@
         font-size: 1.1rem;
         outline: none;
     }
-}
-
-.submenu{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    li{
-        text-decoration: none;
-        list-style-type: none;
+    .submenu{
         display: flex;
         justify-content: center;
-        align-items: center;
+        width: 100%;
         margin: 0;
-        padding: 1rem 0;
+        padding: 0;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        li{
+            text-decoration: none;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 1rem;
+            padding: 1rem 0;
+        }
     }
 }
+

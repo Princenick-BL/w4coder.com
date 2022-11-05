@@ -15,16 +15,17 @@ export default function Slide({article,style,type=0}){
         >
             
           <div className={styles.slider}>
-            <Link href={`/blog/article/${article._id}/${article.slug}`} className={styles.imgContainer}>
-              <Image
-                  src={article.poster}
-                  width={600}
-                  height={300}
-                  layout="responsive"
-                  className={styles.img}
-                  alt={article.title}
-              />
-            </Link>
+              <Link href={`/blog/article/${article._id}/${article.slug}`} className={styles.imgContainer}>
+                <Image
+                    src={type==2 ? article.poster3x4 : article.poster}
+                    width={article?.meta?.width || 1000}
+                    height={type=== 2 ?(600* 4 / 3) :300}
+                    layout="raw"
+                    className={type=== 2 ? styles.img2 : styles.img}
+                    alt={article.title}
+                />
+              </Link>
+            
             <Link href={`/blog/article/${article._id}/${article.slug}`}>
                 <div className={styles.bonttom}>
                   <span className={styles.cat}>{article?.category?.name}</span>
