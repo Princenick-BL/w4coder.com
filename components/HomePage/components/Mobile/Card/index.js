@@ -18,7 +18,7 @@ export default function Slide({article,style,type=0}){
             <Link href={`/blog/article/${article._id}/${article.slug}`} className={styles.imgContainer}>
               <Image
                   src={article.poster}
-                  width={300}
+                  width={600}
                   height={300}
                   layout="responsive"
                   className={styles.img}
