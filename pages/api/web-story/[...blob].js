@@ -1,8 +1,6 @@
 
 import axios from 'axios'
 import { config as endpoint } from '../../../constants'
-import * as gtag from '../../../lib/gtag'
-import RedisCache from '../../../seoOpt/cache'
 import {getStorySlides} from '../../../utils/story-utils'
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const ampOptimizer = AmpOptimizer.create();
