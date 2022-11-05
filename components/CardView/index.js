@@ -23,6 +23,7 @@ export default function Slide({article,style,type=0}){
                   layout="responsive"
                   className={styles.img}
                   alt={article.title}
+                  
               />
             </Link>
               <Link href={`/blog/article/${article._id}/${article.slug}`}>
