@@ -26,7 +26,7 @@ export default function WebStories() {
           minHeight:"calc(calc(96vw * 16 / 9 ) - 20px )",
           borderRadius:"10px"
         }}>
-          <a href='http://localhost:3000/blog/web-story/632f345c62740dca9e49910d/top-javascript-programmation-framework-for-web-app-creation'></a>
+          <a href='https://w4coder.com/blog/web-story/632f345c62740dca9e49910d/top-javascript-programmation-framework-for-web-app-creation'></a>
       </amp-story-player>
       <amp-story-player 
         width="300" 
@@ -37,7 +37,7 @@ export default function WebStories() {
           minHeight:"calc(calc(96vw * 16 / 9 ) - 20px )",
           borderRadius:"10px"
         }}>
-          <a href='http://localhost:3000/blog/web-story/632f345c62740dca9e49910d/top-javascript-programmation-framework-for-web-app-creation'></a>
+          <a href='https://w4coder.com/blog/web-story/632f345c62740dca9e49910d/top-javascript-programmation-framework-for-web-app-creation'></a>
       </amp-story-player>
     </div>
   )
