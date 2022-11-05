@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function Mobile() {
     const [searchResult,setSearchResult]=useState([])
-
+    const [openedMenu,setOpenedMenu] = useState(false)
     const searchRef = useRef(null);
     //useAmpStoryPlayer(loadPlayer(playerRef))
     const stickyHeader = useRef()
@@ -64,7 +64,23 @@ export default function Mobile() {
       useSearchStop(searchRef);
     return (
         <div className={styles.mobileHead}>
-            <Logo style={{fontSize:"2rem"}}/>
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+              <Logo style={{fontSize:"2rem"}}/>
+              <div onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
+                {openedMenu ? (
+                  <svg  className='hamburger' style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
+                ):(
+                  <svg className='hamburger' style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
+                )}
+              </div>
+            </div>
+              {openedMenu && (
+                <ul className={styles.submenu}>
+                  <li><Link href={"/"}>Home</Link></li>
+                  <li><Link href={"/"}>About</Link></li>
+                  <li><Link href={"/"}>Contact</Link></li>
+                </ul>
+              )}
             <div  id={"mainHeader"} ref={stickyHeader} className="mainHeader">
                 <input ref={searchRef} onChange={(e)=>{searching(e)}} onFocus={(e)=>{}} type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
                 <div className='mainHeaderResult' id="mainHeaderResult">

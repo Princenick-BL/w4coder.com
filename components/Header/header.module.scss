@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
+    padding: 1.25rem 0 0 0;
     .search{
         width: 100%;
         height: 46px;
@@ -12,5 +13,43 @@
         border: 0px solid;
         padding: 5px 1rem;
         font-size: 1.1rem;
+    }
+}
+
+.deskHead{
+    display: flex;
+    align-items: center;
+    .tab{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        .subTab{
+            position: absolute;
+        }
+    }
+    .search{
+        width: 100%;
+        border-radius: 30px;
+        border: 0px solid;
+        padding: 5px 1rem;
+        font-size: 1.1rem;
+        outline: none;
+    }
+}
+
+.submenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    li{
+        text-decoration: none;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 1rem 0;
     }
 }

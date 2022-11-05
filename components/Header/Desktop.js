@@ -1,7 +1,8 @@
-import React from 'react'
+import React , {useState,useRef,useLayoutEffect,useEffect} from 'react'
 import Logo from '../Logo'
 import styles from './header.module.scss'
 import Link from 'next/link'
+import {searchArticle} from '../../services/articles'
 
 export default function Desktop() {
   const [searchResult,setSearchResult]=useState([])
@@ -10,18 +11,6 @@ export default function Desktop() {
     //useAmpStoryPlayer(loadPlayer(playerRef))
     const stickyHeader = useRef()
 
-    useLayoutEffect(() => {
-        const mainHeader = document.getElementById('mainHeader')
-        let fixedTop = stickyHeader.current.offsetTop
-        const fixedHeader = () => {
-          if (window.pageYOffset > fixedTop) {
-            mainHeader.classList.add('fixedTop')
-          } else {
-            mainHeader.classList.remove('fixedTop')
-          }
-        }
-        window.addEventListener('scroll', fixedHeader)
-      }, [])
      
     
     
@@ -63,21 +52,25 @@ export default function Desktop() {
       useSearchStop(searchRef);
   return (
     <div className={styles.deskHead}>
-        <Logo style={{fontSize:"1.5rem"}}/>
-        <div  id={"mainHeader"} ref={stickyHeader} className="mainHeader">
-            <input ref={searchRef} onChange={(e)=>{searching(e)}} onFocus={(e)=>{}} type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
-            <div className='mainHeaderResult' id="mainHeaderResult">
-              {searchResult && searchResult.length > 0 && searchResult.map((res,index)=>{
-                return(
-                  <div className={"searchResultText"} key={index}>
-                    <Link href={`/blog/article/${res?._id}/${res?.slug}`} >
-                      {res.title}
-                    </Link>
-                  </div>
-                )
-              })}
-            </div>
+        <div>
+          <Logo style={{fontSize:"2rem",marginRight:"1rem"}}/>
+        </div>
+        
+            <div className="mainHeader">
+              <input id="mainHeader" ref={searchRef} onChange={(e)=>{searching(e)}} onFocus={(e)=>{}} type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
+              <div className='mainHeaderResult' id="mainHeaderResult">
+                {searchResult && searchResult.length > 0 && searchResult.map((res,index)=>{
+                  return(
+                    <div className={"searchResultText"} key={index}>
+                      <Link href={`/blog/article/${res?._id}/${res?.slug}`} >
+                        {res.title}
+                      </Link>
+                    </div>
+                  )
+                })}
+
           </div>
+        </div>
     </div>
   )
 }
