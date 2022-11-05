@@ -255,14 +255,6 @@ function HomePage({topA,page1,toggleTheme,currentView,setCurrentView}) {
     <>
       <Head>
         <title>w4coder - Officiel</title>
-        <script async src="https://cdn.ampproject.org/v0.js"></script>
-        <script
-          async
-          custom-element="amp-story-player"
-          src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"
-        ></script>
-        {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5455960452945884"
-     crossOrigin="anonymous"></script> */}
       </Head>
       <div  id="homTop">
         {/* <HomeMenu /> */}

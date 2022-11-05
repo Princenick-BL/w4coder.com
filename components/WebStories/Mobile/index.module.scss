@@ -22,9 +22,10 @@
     .head{
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        width: calc( 100% - 1rem );
-        padding: .5rem;
+        justify-content: center;
+        width: calc(100% - 1rem);
+        padding: 0.5rem;
+        margin-top: 2rem;
     }
     .titleHead{
         display: flex ;
@@ -286,6 +287,12 @@
                 height: 50%;
             }
         }
+    }
+
+    .player{
+        width: 96vw;
+        height: calc(96vw * 16 / 9);
+        background-color: #191654;
     }
    
 }

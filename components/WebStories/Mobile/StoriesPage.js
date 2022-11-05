@@ -48,24 +48,20 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
         <>
             <Head>
                 <title>w4coder - Web Stories</title>
+                <script async src="https://cdn.ampproject.org/v0.js"></script>
             </Head>
             <div id="storiesTop">
                 <main className={styles.main} >
                     <div className={styles.head} id="#top">
-                        <Logo style={{fontSize:"2rem"}}/>
+                        <Logo style={{fontSize:"2rem",marginRight:"0"}}/>
                         {/* <h3>Main articles</h3> */}
                         <ThemeChanger toggleTheme={toggleTheme}/>
                     </div>
-                    <div className={styles.banner}>
-                        <Image
-                            src={"https://picsum.photos/1700/150"}
-                            layout="fill"
-                        />
+                    {/* <div className={styles.banner}>
                         <div className={styles.bannerContent}>
                             <h1>Web Stories</h1>
-
                         </div>
-                    </div>
+                    </div> */}
                     <ScrollToTop smooth color="#6f00ff" />
 
                     <StickyMenu setCurrentView={setCurrentView} current={2}/>
@@ -79,7 +75,14 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
                             <option>fr</option>
                         </select>
                     </div>
-                    <InfiniteScroll
+
+                    <div className={styles.player}>
+                        <amp-story-player width="300" height="700" style={{width:"96vw",height:"calc(96vw * 16 / 9 )"}}>
+                            <a href='http://localhost:3000/blog/web-story/632f345c62740dca9e49910d/top-javascript-programmation-framework-for-web-app-creation'></a>
+                        </amp-story-player>
+                    </div>
+
+                    {/* <InfiniteScroll
                         dataLength={stories.length}
                         next={fetchMoreData}
                         hasMore={hasMore}
@@ -143,37 +146,8 @@ export default function StoriesPage({setCurrentView,toggleTheme}) {
 
                             )
                         })}
-                    </InfiniteScroll>
-                    {/* <div className={styles.subSectionList} >
-                        {stories && stories.map((story,index)=>{
-                            return(
-                                <div className={styles.preview} key={index}>
-                                    <Link href={`/blog/web-story/${story?._id}/${story?.slug}`}>
-                                        <a>
-                                            <Image
-                                                src={story?.poster || "https://picsum.photos/400/534?random=5"}
-                                                width={400}
-                                                height={534}
-                                                layout={"fill"}
-                                            />
-                                            <div className={styles.publisherLog}>
-                                                <Image
-                                                    src={"https://picsum.photos/400/534?random=7"}
-                                                    width={50}
-                                                    height={50}
-                                                    layout={"fill"}
-                                                />
-                                            </div>
-                                            <div className={styles.details}>
-                                                <div>{story?.title}</div>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                </div>
-
-                            )
-                        })}
-                    </div> */}
+                    </InfiniteScroll> */}
+                   
                 </main>
             </div>
         </>
