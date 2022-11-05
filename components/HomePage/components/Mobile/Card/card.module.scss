@@ -3,7 +3,7 @@
     position: relative;
     // min-width: 400px;
     max-width: 100%;
-    border-bottom: 0.01rem solid rgb(135, 133, 133);
+    // border-bottom: 0.01rem solid rgb(135, 133, 133);
     @media only screen and (min-width: 600px) {
         width: 100%;
         background-color: #fff;
@@ -36,7 +36,6 @@
     .img{
         border-radius: 10px;
         height: auto;
-        min-height: 250px;
         width: 100%;
         border-radius: 10px;
         overflow: hidden;
