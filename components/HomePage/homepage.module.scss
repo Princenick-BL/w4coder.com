@@ -162,7 +162,7 @@
     .listTwo{
         display: grid;
         gap: 2.5rem;
-        overflow: hidden !important;
+        overflow-y: hidden !important;
         @media (min-width: 768px){
             grid-template-columns: repeat(2,minmax(0,1fr));
         }

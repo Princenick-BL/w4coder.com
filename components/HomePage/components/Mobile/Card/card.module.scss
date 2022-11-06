@@ -4,9 +4,8 @@
     // min-width: 400px;
     max-width: 100%;
     // border-bottom: 0.01rem solid rgb(135, 133, 133);
-   
+    
     margin-bottom: .5rem;
-    overflow: hidden;
     margin-bottom: 2rem;
     .imgContainer{
         width: 100%;
@@ -29,21 +28,21 @@
         }
     }
     .img{
-        border-radius: 10px;
-        height: auto;
         width: 100%;
+        aspect-ratio: 16/9;
         border-radius: 10px;
-        overflow: hidden;
+
     }
     .img2{
-        border-radius: 10px;
         width: 100%;
         border-radius: 10px;
-        overflow: hidden;
         max-height: calc(300px * 4 / 3) !important;
-        img{
-            background-size: contain;
-        }
+        aspect-ratio: 3/4;
+        border-radius: 10px;
+
+    }
+    .img:hover{
+        transform: scale(1.05);
     }
    
     @media only screen and (max-width: 600px) {
@@ -61,9 +60,16 @@
             padding: 0;
         }
         h2{
-            width: 100%;
             overflow: hidden;
             display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            line-height: 1.5 !important;
+            margin: 0;
+        }
+        h2 span{
+            width: 100%;
+            overflow: hidden;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             line-height: 1.5 !important;
@@ -71,6 +77,13 @@
             font-size: 1.125rem;
             line-height: 1.75rem;
             font-weight: 600;
+            transition-duration: .5s;
+            transition-property: background-size;
+            transition-timing-function: cubic-bezier(.4,0,.2,1);
+            background-repeat: no-repeat;
+            background-image: linear-gradient(to right, var(--color-secondary-1), var(--color-secondary-2));
+            background-size: 0 10px;
+            background-position: 0 100%;
         }
         .desc{
             width: 100%;
@@ -84,6 +97,8 @@
             margin: 0 !important;
             font-size: 1.125rem;
             line-height: 1.75rem;
+            
+        
         }
     }
     .type2{
@@ -94,6 +109,18 @@
     }
 }
 
+.slide:hover{
+    // img{
+    //     transform: scale(1.1);
+    //     border-radius: 10px;
+    //     overflow: hidden;
+    // }
+    h2 span{
+
+        background-size: 100% 10px;
+
+    }
+}
 
 .slider{
     width: 100%;

@@ -35,7 +35,7 @@ const useMediaQuery = (width) => {
 function MyApp({ Component, pageProps }) {
 
   const isBreakpoint = useMediaQuery(800)
-  const [themeDark,setThemeDark] = useState(false)
+  const [themeDark,setThemeDark] = useState(null)
 
   // function to set a given theme/color-scheme
   function setTheme(themeName) {
@@ -44,31 +44,29 @@ function MyApp({ Component, pageProps }) {
   }
   
   // function to toggle between light and dark theme
-  function toggleTheme() {
-    if (localStorage.getItem('theme-dark') === 'true'){
-        setTheme(false);
-        setThemeDark(false);
-
-    } else {
-        setTheme(true);
-        setThemeDark(true);
-
+  function toggleTheme(theme) {
+    if(theme == 'true' || theme == 'false'){
+      setTheme(theme);
+      setThemeDark(theme);
+    }else{
+      setTheme(null);
+      setThemeDark(null);
     }
   }
 
   useEffect(()=>{
     const theme = localStorage.getItem('theme-dark')
     
-    console.log("Theme",theme)
     if ( theme == 'true') {
-        setThemeDark(true);
-    } else {
+      setThemeDark(true);
+    } else if(theme == 'false') {
       setThemeDark(false);
     }
+
   },[])
   return(
-    <div  className={themeDark===false ? "theme-light" : "theme-dark"}>
-      <Component  {...pageProps} isBreakpoint={isBreakpoint} toggleTheme={toggleTheme}/>
+    <div  className={themeDark===false ? "theme-light" :themeDark===true ? "theme-dark" : ""}>
+      <Component  {...pageProps} isBreakpoint={isBreakpoint} toggleTheme={(e)=>toggleTheme(e)}/>
     </div>
   )
 }

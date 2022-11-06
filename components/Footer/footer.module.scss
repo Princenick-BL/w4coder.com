@@ -1,0 +1,40 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 2rem 0;
+    border-top: 1px solid #eaeaea;
+    justify-content: center;
+    align-items: center;
+    .cr{
+        font-size: .875rem;
+        line-height: 1.25rem;
+        margin-bottom: 1rem;
+        display: flex;
+    }
+    .txt{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        a{
+            max-width: max-content;
+            font-size: .875rem;
+            line-height: 1.25rem;
+        }
+        .themeChanger{
+            display: flex;
+            align-items: center;
+            select{
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+  
+.footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}

@@ -76,9 +76,10 @@ export default function Mobile() {
             </div>
               {openedMenu && (
                 <ul className={styles.submenu}>
-                  <li><Link href={"/"}>Home</Link></li>
-                  <li><Link href={"/"}>About</Link></li>
-                  <li><Link href={"/"}>Contact</Link></li>
+                  <li><Link href={"/"}>Acceuil</Link></li>
+                  <li><Link href={"/web-stories"}>Web Stories </Link></li>
+                  <li><Link href={"/about"}>A propos</Link></li>
+                  <li><Link href={"/contact"}>Contact</Link></li>
                 </ul>
               )}
             <div  id={"mainHeader"} ref={stickyHeader} className="mainHeader">

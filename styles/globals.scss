@@ -8,6 +8,8 @@ body {
 }
 :root{
   --color-primary:#5f87ff;
+  --color-secondary-1:#bbf7d0;
+  --color-secondary-2:#dcfce7;
 }
 a {
   color: inherit;
@@ -18,7 +20,10 @@ a {
   box-sizing: border-box;
 }
 
-
+h1,h2,h3,h4{
+  margin: 0;
+  padding: 0;
+}
 .sticky-menu,.mainHeader{
   background-color: #fff;
   width: 100%;
@@ -48,9 +53,8 @@ a {
   }
   .searchResultText{
     line-height: 1.5;
-    background: #f3f3f3;
+    border-top: 1px solid #ccc;
     padding: 5px;
-    border-radius: 5px;
     margin-top: 5px;
   }
 }
@@ -77,6 +81,11 @@ a {
 
 
 @media (prefers-color-scheme: dark) {
+  :root{
+    --color-secondary-1:#95169a;
+    --color-secondary-2:#d96fbb;
+
+  }
   html {
     color-scheme: dark;
   }
@@ -85,9 +94,7 @@ a {
     background-color: #202029;
   }
 
-  a{
-    color: #fff;
-  }
+
   .text-color{
     color: #fff;
   }
@@ -104,6 +111,15 @@ a {
     fill: #fff;
   }
 }
+
+// .theme-light{
+//   background-color: #fff;
+//   color: rgb(38 38 38/10);
+//   :root{
+//     --color-secondary-1:#bbf7d0;
+//     --color-secondary-2:#dcfce7; 
+//   }
+// }
 
 
 ::-webkit-scrollbar-track {

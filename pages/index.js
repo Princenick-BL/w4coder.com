@@ -4,8 +4,9 @@ import styles from './index.module.scss'
 import Header from '../components/Header'
 import HomePage from '../components/HomePage'
 import { getTopArticles,getArticle } from '../services/articles'
+import Footer from '../components/Footer'
 
-export default function Home({isBreakpoint,page1,topA}) {
+export default function Home({isBreakpoint,page1,topA,toggleTheme}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,19 +18,8 @@ export default function Home({isBreakpoint,page1,topA}) {
       <main className={styles.main}>
         <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1}/>      
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Footer toggleTheme={toggleTheme}/>
+      
     </div>
   )
 }
@@ -41,14 +31,13 @@ export async function getServerSideProps(context) {
     page : 1
   }})
 
-  const topA =  await getTopArticles()
 
   //console.log(res.length)
 
   return { 
       props: {
         page1 : page1 || [],
-        topA : topA || []
+        topA :  []
       } 
   }
 }

@@ -68,8 +68,27 @@ export function getStyles(){
         font-size : 1.1rem;
         line-height : 1.5;
     }
+
     body {
       margin: 0;
+      background: #fff;
+      color: #4a4a4a;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial,
+        sans-serif;
+      min-width: 315px;
+      overflow-x: hidden;
+      font-smooth: always;
+      -webkit-font-smoothing: antialiased;
+    }
+    @media (prefers-color-scheme: dark) {
+      html {
+        color-scheme: dark;
+      }
+      body {
+        color: white;
+        background-color: #202029;
+      }
     }
     article,
     aside,
@@ -1130,17 +1149,7 @@ export function getStyles(){
     * {
       box-sizing: border-box;
     }
-    body {
-      background: #fff;
-      color: #4a4a4a;
-      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial,
-        sans-serif;
-      min-width: 315px;
-      overflow-x: hidden;
-      font-smooth: always;
-      -webkit-font-smoothing: antialiased;
-    }
+    
     .main{
       width: calc(100% - 330px);
       display : flex;
@@ -1377,8 +1386,6 @@ export function getStyles(){
       opacity: 1;
     }
     .ampstart-footer {
-      background-color: #fff;
-      color: #000;
       padding-top: 5rem;
       padding-bottom: 5rem;
     }
