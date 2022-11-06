@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       }
   }
 
-  const story = await RedisCache.fetch(`story-${storyId}`,fetcher,3600 * 24) || {}
+  const story = await fetcher()
 
   if (!story._id ) { 
     res.redirect('/404')
