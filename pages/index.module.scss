@@ -179,11 +179,12 @@
 .cats{
   width: 100%;
   display: grid;
-  gap: 2rem;
   margin: 3rem 0;
   grid-template-columns: repeat(2,minmax(0,1fr));
   grid-auto-rows: minmax(300px, auto);
+  gap: 1rem;
   @media (min-width: 768px){
+    gap: 2rem;
     grid-template-columns: repeat(3,minmax(0,1fr));
   }
 

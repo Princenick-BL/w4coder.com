@@ -5,6 +5,7 @@ import styles from './index.module.scss'
 import Footer from '../components/Footer'
 import { getStories } from '../services/stories'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function WebStories({isBreakpoint,stories}) {
   return (
@@ -28,26 +29,26 @@ export default function WebStories({isBreakpoint,stories}) {
                                 className={styles.img}
                                 alt={s.title}
                             />
-                            <div className={styles.poster}>
-                                <div className={styles.publisherLogo}>
-                                    <Image
-                                        src={s.publisherLogo}
-                                        width={45}
-                                        height={45}
-                                        layout="raw"
-                                        className={styles.img}
-                                        alt={s.title}
-                                    />
-                                </div>
-                                <div className={styles.publisherTP}>
-                                    <div className={styles.postTitle}>
-                                        {s.title}
+                                <Link  className={styles.poster} href={`/blog/web-story/${s._id}/${s.slug}`}>
+                                    <div className={styles.publisherLogo}>
+                                            <Image
+                                                src={s.publisherLogo}
+                                                width={45}
+                                                height={45}
+                                                layout="raw"
+                                                className={styles.img}
+                                                alt={s.title}
+                                            />
                                     </div>
-                                    <div className={styles.publisherName}>
-                                        w4coder
-                                    </div>
-                                </div> 
-                            </div>    
+                                    <div className={styles.publisherTP}>
+                                        <div className={styles.postTitle}>
+                                            {s.title}
+                                        </div>
+                                        <div className={styles.publisherName}>
+                                            w4coder
+                                        </div>
+                                    </div> 
+                            </Link>
                         </div>
                     )
                 })}
