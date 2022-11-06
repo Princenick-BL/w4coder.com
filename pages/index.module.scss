@@ -208,6 +208,8 @@
     overflow: hidden;
     position: relative;
     background-color: #fff;
+    min-height: 270px;
+
     .poster{
       display: flex;
       flex-direction: column;
@@ -217,6 +219,7 @@
       height: 100%;
       div{
         height: max-content;
+        color: #fff;
       }
       .publisherLogo{
         width: 45px;
@@ -235,6 +238,11 @@
         margin: 0 !important;
         font-size: 1.125rem;
         line-height: 1.5rem;
+        color: #fff;
+      }
+      .publisherName{
+        font-weight: 100;
+        margin-top: .5rem;
       }
     }
   }

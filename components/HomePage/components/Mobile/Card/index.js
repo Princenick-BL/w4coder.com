@@ -19,7 +19,7 @@ export default function Slide({article,style,type=0}){
                 <Image
                     src={type==2 ? article.poster3x4 : article.poster}
                     width={article?.meta?.width || 1000}
-                    height={type=== 2 ?(600* 4 / 3) :300}
+                    height={type=== 2 ?400 :250}
                     layout="raw"
                     className={type=== 2 ? styles.img2 : styles.img}
                     alt={article.title}
