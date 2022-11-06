@@ -19,7 +19,7 @@ export default function WebStories({isBreakpoint,stories}) {
         <main className={styles.main}>
             <h1>Web Stories</h1>
             <div className={styles.cats}>
-                {[...stories,...stories,...stories,...stories,...stories,...stories,...stories,...stories].map((s,i)=>{
+                {stories.map((s,i)=>{
                     return(
                         <div className={styles.cat} key={i}>
                             <Image
