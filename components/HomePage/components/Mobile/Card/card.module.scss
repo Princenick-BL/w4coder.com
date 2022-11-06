@@ -84,6 +84,12 @@
             background-image: linear-gradient(to right, var(--color-secondary-1), var(--color-secondary-2));
             background-size: 0 10px;
             background-position: 0 100%;
+            
+        }
+        span:hover{
+
+            background-size: 100% 10px !important;
+    
         }
         .desc{
             width: 100%;
@@ -110,14 +116,10 @@
 }
 
 .slide:hover{
-    // img{
-    //     transform: scale(1.1);
-    //     border-radius: 10px;
-    //     overflow: hidden;
-    // }
+
     h2 span{
 
-        background-size: 100% 10px;
+        background-size: 100% 10px !important;
 
     }
 }
