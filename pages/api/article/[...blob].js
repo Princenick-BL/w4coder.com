@@ -47,7 +47,6 @@ export default async function handler(req, res) {
     <!DOCTYPE html>
     <html ⚡="" lang="fr">
       <head>
-        <meta name="theme-color" content="#fff">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="amp-google-client-id-api" content="googleanalytics" />

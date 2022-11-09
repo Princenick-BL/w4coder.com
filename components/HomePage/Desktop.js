@@ -3,7 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import styles from './homepage.module.scss'
 import Slide from './components/Mobile/Card'
 import { getArticle ,getTopArticles,searchArticle} from '../../services/articles'
-
+import AmpStoryPlayerComponent from '../AmpStoryPlayer';
 export default function Desktop({page1,topA}) {
     const [pages,setPages] = useState([...page1.slice(2)])
     const [pageNum,setPageNum] = useState(1)
@@ -22,6 +22,7 @@ export default function Desktop({page1,topA}) {
     }
   return (
     <div className={styles.homeDesktop}>
+      
       <div className={styles.listOne}>
         { page1.slice(0, 2).map((article,index)=>{
           return(
@@ -29,6 +30,9 @@ export default function Desktop({page1,topA}) {
           )
         })}
       </div>
+      <AmpStoryPlayerComponent/>
+      <br></br>
+      <br></br>
       <InfiniteScroll
         dataLength={pages.length}
         next={fetchMoreData}
