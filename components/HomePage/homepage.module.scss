@@ -12,8 +12,9 @@
         width: 67%;
         min-width: 800px;
         @media only screen and (max-width: 790px) {
-            width: 100%;
+            width: calc(100% - 2rem );
             min-width: unset;
+            margin: 0 auto;
         }
     }
     .mainSlideShow{
