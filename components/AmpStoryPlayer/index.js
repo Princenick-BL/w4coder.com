@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Head from 'next/head';
 import Image from 'next/image';
 
@@ -69,6 +69,44 @@ export default function AmpStoryPlayer() {
             text : "Spark a Passion for Reading"
         }
     ])
+
+     useEffect(()=>{
+        const player = document.getElementById("player2");
+        
+        const existed  = document.getElementById("playerConfig");
+        if(!existed){
+
+            var script = document.createElement("script")
+            script.id = "playerConfig"
+            script.type="application/json"
+            script.innerHTML=`
+            {
+                "behavior": {
+                "autoplay": false,
+                "pageScroll": false
+                },
+                "controls": [{
+                "name": "close",
+                "position": "start"
+                }]
+            }
+            `
+            player.appendChild(script)
+
+            player.addEventListener("amp-story-player-close", () => {
+            document.getElementById("homTop").style.overflowY="auto"
+                player.pause();
+                setShow(false)
+            });
+
+            
+            player.addEventListener("ready", () => {
+                player.play()
+                initializeWidget(0);
+                player.pause()
+            });
+        }
+    }, [])
 
     return (
         <>
