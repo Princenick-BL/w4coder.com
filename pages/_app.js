@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }) {
 
   },[])
   return(
-    <div  className={themeDark===false ? "theme-light" :themeDark===true ? "theme-dark" : ""}>
+    <div id='app'  className={themeDark===false ? "theme-light" :themeDark===true ? "theme-dark" : ""}>
       <Component  {...pageProps} isBreakpoint={isBreakpoint} toggleTheme={(e)=>toggleTheme(e)}/>
     </div>
   )

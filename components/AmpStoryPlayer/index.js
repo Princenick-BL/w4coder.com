@@ -3,12 +3,19 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 
+async function initializeWidget(idx) {
+    const player = document.getElementById("player2");
+    var stories = player.getStories();
+    player.show(stories[idx].href, null, {animate: true});
+    player.play();
+  }
+  
 const Widget = ({img,pos,color,text,url,onclick}) =>{
     return(
         <div className="entry-point-card-container" 
           onClick={(e)=>{        
             onclick()
-            document.getElementById("homTop").style.overflowY="hidden"
+            document.getElementById("app").style.overflowY="hidden"
             initializeWidget(pos)
         }}>
           <div 
