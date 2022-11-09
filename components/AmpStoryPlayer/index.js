@@ -94,7 +94,7 @@ export default function AmpStoryPlayer() {
             player.appendChild(script)
 
             player.addEventListener("amp-story-player-close", () => {
-            document.getElementById("homTop").style.overflowY="auto"
+                document.getElementById("app").style.overflowY="auto"
                 player.pause();
                 setShow(false)
             });
