@@ -6,9 +6,12 @@ import Image from 'next/image';
 async function initializeWidget(idx) {
     const player = document.getElementById("player2");
     // var stories = player.getStories();
+    // console.log(stories)
     // player.show(stories[idx].href, null, {animate: true});
+    console.log(idx)
+    player.go(idx - 1)
     // player.play();
-  }
+}
   
 const Widget = ({img,pos,color,text,url,onclick}) =>{
     return(
@@ -81,36 +84,41 @@ export default function AmpStoryPlayerComponent() {
             playerEl.id = "player2"
             playerEl.style="width:100vw;height:100vh;"
             new AmpStoryPlayer(window, playerEl);
-            document.body.appendChild(playerEl);
+            lightbox.appendChild(playerEl)
             playerEl.load();
+            var script = document.createElement("script")
+            script.id = "playerConfig"
+            script.type="application/json"
+            script.innerHTML=`
+            {
+                "behavior": {
+                    "autoplay": false,
+                    "pageScroll": false
+                },
+                "controls": [{
+                    "name": "close",
+                    "position": "start"
+                }],
+                {
+                    "behavior": {
+                        "pageScroll": false
+                    }
+                }
+            }
+            `
+            playerEl.appendChild(script)
             const urls = stories.map((st=>{
                 return {href: st.url}
             }))
             playerEl.add(urls)
             // playerEl.pause()
     
-            lightbox.appendChild(playerEl)
         }
 
         // const existed  = document.getElementById("playerConfig");
         // if(!existed){
 
-        //     var script = document.createElement("script")
-        //     script.id = "playerConfig"
-        //     script.type="application/json"
-        //     script.innerHTML=`
-        //     {
-        //         "behavior": {
-        //         "autoplay": false,
-        //         "pageScroll": false
-        //         },
-        //         "controls": [{
-        //         "name": "close",
-        //         "position": "start"
-        //         }]
-        //     }
-        //     `
-        //     player.appendChild(script)
+      
 
         //     player.addEventListener("amp-story-player-close", () => {
         //         document.getElementById("app").style.overflowY="auto"
