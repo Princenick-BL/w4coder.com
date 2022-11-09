@@ -9,7 +9,7 @@ async function initializeWidget(idx) {
     // console.log(stories)
     // player.show(stories[idx].href, null, {animate: true});
     console.log(idx)
-    player.go(idx - 1)
+    player.go(idx )
     // player.play();
 }
   
