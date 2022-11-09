@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 async function initializeWidget(idx) {
     const player = document.getElementById("player2");
-    var stories = player.getStories();
-    player.show(stories[idx].href, null, {animate: true});
-    player.play();
+    // var stories = player.getStories();
+    // player.show(stories[idx].href, null, {animate: true});
+    // player.play();
   }
   
 const Widget = ({img,pos,color,text,url,onclick}) =>{
@@ -39,8 +39,10 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
             </div>
         </div>
     )
-  }
-export default function AmpStoryPlayer() {
+}
+
+export default function AmpStoryPlayerComponent() {
+
     const [show,setShow]=useState(false)
 
     const [stories,setStories] = useState([
@@ -70,42 +72,59 @@ export default function AmpStoryPlayer() {
         }
     ])
 
-     useEffect(()=>{
-        const player = document.getElementById("player2");
-        
-        const existed  = document.getElementById("playerConfig");
+    useEffect(()=>{
+        const lightbox = document.getElementById("lightbox");
+        const existed  = document.getElementById("player2");
         if(!existed){
 
-            var script = document.createElement("script")
-            script.id = "playerConfig"
-            script.type="application/json"
-            script.innerHTML=`
-            {
-                "behavior": {
-                "autoplay": false,
-                "pageScroll": false
-                },
-                "controls": [{
-                "name": "close",
-                "position": "start"
-                }]
-            }
-            `
-            player.appendChild(script)
+            const playerEl = document.createElement('amp-story-player');
+            playerEl.id = "player2"
+            playerEl.style="width:100vw;height:100vh;"
+            new AmpStoryPlayer(window, playerEl);
+            document.body.appendChild(playerEl);
+            playerEl.load();
+            const urls = stories.map((st=>{
+                return {href: st.url}
+            }))
+            playerEl.add(urls)
+            // playerEl.pause()
+    
+            lightbox.appendChild(playerEl)
+        }
 
-            player.addEventListener("amp-story-player-close", () => {
-                document.getElementById("app").style.overflowY="auto"
-                player.pause();
-                setShow(false)
-            });
+        // const existed  = document.getElementById("playerConfig");
+        // if(!existed){
+
+        //     var script = document.createElement("script")
+        //     script.id = "playerConfig"
+        //     script.type="application/json"
+        //     script.innerHTML=`
+        //     {
+        //         "behavior": {
+        //         "autoplay": false,
+        //         "pageScroll": false
+        //         },
+        //         "controls": [{
+        //         "name": "close",
+        //         "position": "start"
+        //         }]
+        //     }
+        //     `
+        //     player.appendChild(script)
+
+        //     player.addEventListener("amp-story-player-close", () => {
+        //         document.getElementById("app").style.overflowY="auto"
+        //         player.pause();
+        //         setShow(false)
+        //     });
 
             
-            player.addEventListener("ready", () => {
-                player.play()
-                initializeWidget(0);
-                player.pause()
-            });
-        }
+        //     player.addEventListener("ready", () => {
+        //         player.play()
+        //         initializeWidget(0);
+        //         player.pause()
+        //     });
+        // }
     }, [])
 
     return (
@@ -129,16 +148,10 @@ export default function AmpStoryPlayer() {
                         })}
                         </div>
                     </div>
-                    </div>
-                    <br></br>
-                    <div className={`lightbox ${show?"show":""}`}>
-                    <amp-story-player style={{width:"100vw",height:"100vh"}} layout="responsive" width="360" height="600"id="player2" >
-                        {stories.map((story,index)=>{
-                            return(
-                            <a key={index} href={story?.url}></a>
-                            )
-                        })}
-                    </amp-story-player>
+                </div>
+                <br></br>
+                <div id='lightbox' className={`lightbox ${show?"show":""}`}>
+                
                 </div>
             </div>   
         </>
