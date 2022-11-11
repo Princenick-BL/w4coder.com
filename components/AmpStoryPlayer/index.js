@@ -46,38 +46,14 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
     )
 }
 
-export default function AmpStoryPlayerComponent() {
+export default function AmpStoryPlayerComponent({stories}) {
 
     const [show,setShow]=useState(false)
 
-    const [stories,setStories] = useState([
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
-            img : 'https://picsum.photos/640/853',
-            color : '#FF6F32',
-            text : 'Comment créer une application web full stack avec NextJS et NodeJS'
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
-            img : "https://picsum.photos/640/853" ,
-            color :"#E6AD1C" ,
-            text : "Comment créer une application web full stack avec NextJS et NodeJS"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
-            img : "https://picsum.photos/640/853" ,
-            color : "#466FFF",
-            text : "The Next King of the Sea"
-        },
-        {
-            url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
-            img : "https://picsum.photos/640/853",
-            color : "#4CA47C",
-            text : "Spark a Passion for Reading"
-        }
-    ])
+
 
     useEffect(()=>{
+
         const lightbox = document.getElementById("lightbox");
         const existed  = document.getElementById("player2");
         if(!existed){
@@ -110,7 +86,7 @@ export default function AmpStoryPlayerComponent() {
             `
             player.appendChild(script)
             const urls = stories.map((st=>{
-                return {href: st.url}
+                return {href:`/blog/web-story/${st._id}/${st.slug}`}
             }))
             player.add(urls)
             // playerEl.pause()
@@ -136,7 +112,7 @@ export default function AmpStoryPlayerComponent() {
         //     });
         // }
     }, [])
-
+    
     return (
         <>
             <RecommendedTitle title={"Web stories"}/>
@@ -149,9 +125,9 @@ export default function AmpStoryPlayerComponent() {
                             <Widget
                                 key={index}
                                 pos={index}
-                                img={story.img}
-                                color = {story.color}
-                                text = {story.text}
+                                img={story.posterP}
+                                color = {index == 0 ? "#FF6F32": index == 1 ? "#E6AD1C" : index==2 ? "#466FFF":"#4CA47C"}
+                                text = {story.title}
                                 url={story.url}
                                 onclick={(e)=>{setShow(!show)}}
                             />

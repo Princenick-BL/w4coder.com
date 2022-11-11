@@ -4,9 +4,10 @@ import styles from './index.module.scss'
 import Header from '../components/Header'
 import HomePage from '../components/HomePage'
 import { getTopArticles,getArticle } from '../services/articles'
+import {getStories} from '../services/stories'
 import Footer from '../components/Footer'
 
-export default function Home({isBreakpoint,page1,topA,toggleTheme}) {
+export default function Home({isBreakpoint,page1,topA,toggleTheme,stories}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +19,7 @@ export default function Home({isBreakpoint,page1,topA,toggleTheme}) {
       </Head>
       <Header isBreakpoint={isBreakpoint}/>
       <main className={styles.main}>
-        <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1}/>      
+        <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1} stories={stories}/>      
       </main>
       <Footer toggleTheme={toggleTheme}/>
       
@@ -33,12 +34,15 @@ export async function getServerSideProps(context) {
     page : 1
   }})
 
-
+  const stories =  await getStories({filter:{
+      page : 1
+  }})
   //console.log(res.length)
 
   return { 
       props: {
         page1 : page1 || [],
+        stories : stories || [],
         topA :  []
       } 
   }

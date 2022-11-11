@@ -7,7 +7,7 @@ import AmpStoryPlayerComponent from '../AmpStoryPlayer';
 import RecommendedTitle from '../RecommendedTitle';
 
 
-export default function Mobile({page1,topA}) {
+export default function Mobile({page1,topA,stories}) {
     const [pages,setPages] = useState([])
     const [pageNum,setPageNum] = useState(1)
     const [hasMore,setHasMore] = useState(true)
@@ -24,7 +24,7 @@ export default function Mobile({page1,topA}) {
 
   return (
     <div className={styles.editorial}>
-      <AmpStoryPlayerComponent/>
+      <AmpStoryPlayerComponent stories={stories}/>
       <div style={{marginTop:"1rem"}}></div>
       <RecommendedTitle title={"Articles"}/>
       <div className={styles.editorialContent}>

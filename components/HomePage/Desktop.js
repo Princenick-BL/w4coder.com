@@ -4,7 +4,7 @@ import styles from './homepage.module.scss'
 import Slide from './components/Mobile/Card'
 import { getArticle ,getTopArticles,searchArticle} from '../../services/articles'
 import AmpStoryPlayerComponent from '../AmpStoryPlayer';
-export default function Desktop({page1,topA}) {
+export default function Desktop({page1,topA,stories}) {
     const [pages,setPages] = useState([...page1.slice(2)])
     const [pageNum,setPageNum] = useState(1)
     const [hasMore,setHasMore] = useState(true)
@@ -30,7 +30,7 @@ export default function Desktop({page1,topA}) {
           )
         })}
       </div>
-      <AmpStoryPlayerComponent/>
+      <AmpStoryPlayerComponent stories={stories}/>
       <br></br>
       <br></br>
       <InfiniteScroll
