@@ -51,25 +51,25 @@ export default function AmpStoryPlayerComponent() {
     const [stories,setStories] = useState([
         {
             url: "https://wsdemos.uc.r.appspot.com/ampfest/s1",
-            img : 'https://assets.codepen.io/1780597/4.png',
+            img : 'https://picsum.photos/640/853',
             color : '#FF6F32',
-            text : 'Q&A with ZOE Newman'
+            text : 'Comment créer une application web full stack avec NextJS et NodeJS'
         },
         {
             url: "https://wsdemos.uc.r.appspot.com/ampfest/s2",
-            img : "https://assets.codepen.io/1780597/1.png" ,
+            img : "https://picsum.photos/640/853" ,
             color :"#E6AD1C" ,
-            text : "24 Hours in New York City"
+            text : "Comment créer une application web full stack avec NextJS et NodeJS"
         },
         {
             url: "https://wsdemos.uc.r.appspot.com/ampfest/s3",
-            img : "https://assets.codepen.io/1780597/3.png" ,
+            img : "https://picsum.photos/640/853" ,
             color : "#466FFF",
             text : "The Next King of the Sea"
         },
         {
             url: "https://wsdemos.uc.r.appspot.com/ampfest/s4",
-            img : "https://assets.codepen.io/1780597/2.png",
+            img : "https://picsum.photos/640/853",
             color : "#4CA47C",
             text : "Spark a Passion for Reading"
         }

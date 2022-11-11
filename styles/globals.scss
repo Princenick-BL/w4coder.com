@@ -155,10 +155,10 @@ body::-webkit-scrollbar{
 	font-weight: 500;
 	font-family: Poppins;
 	font-size: 14px;
-	line-height: 15px;
+	line-height: 20px;
 	text-align: center;
 	display: inline-block;
-	width: 100px;
+	width: 100%;
 }
 
 .lightbox {
@@ -219,17 +219,18 @@ background: #888;
 background: #555;
 }
 .circular-entry-point .img-container{
-	border-radius: 100%;
+	border-radius: 10px;
 	padding: 3px !important;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+  width: max-content;
 }
 .circular-entry-point .img {
 	cursor: pointer;
-	width: 100px;
-	height: 100px;
-	border-radius: 100%;
+	width: 200px;
+	height: calc(200px * 4 / 3);
+	border-radius: 5px;
 	background-clip: content-box;
 }
 
@@ -268,7 +269,11 @@ background: #555;
 	height: max-content;
 	//background-color: #202029;
 	overflow: hidden;
-	width: calc( 100% - 2rem );
+	width: calc( 100%  );
 	margin: .5rem auto;
+  @media only screen and (max-width: 600px) {
+    width: calc( 100%  - 2rem);
+
+  }
 }
  
