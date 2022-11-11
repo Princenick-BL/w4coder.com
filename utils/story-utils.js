@@ -82,16 +82,24 @@ export function getStorySlides(slides){
             }
             if(section.type === "IMAGEBLOCK"){
                 booken = booken + `
-                <amp-img src="${section.content}"
-                    width="720" height="1280"
+                <amp-img 
+                    src="${section.content}"
+                    width="4" 
+                    height="3"
                     layout="responsive"
                     animate-in="fade-in"
-                    animate-in-delay="0.4s">
+                    animate-in-delay="0.4s"
+                    class="br3"
+                >
                 </amp-img>`
               return slideContent = slideContent +`
-                <amp-img src="${section.content}"
-                    width="720" height="1280"
-                    layout="responsive">
+                <amp-img 
+                    src="${section.content}"
+                    width="4" 
+                    height="3"
+                    layout="responsive"
+                    class="br3"
+                >
                 </amp-img>
               `
             }

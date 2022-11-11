@@ -27,7 +27,7 @@ export default async function handler(req, res) {
 
   const html = `
     <!doctype html>
-    <html ⚡>
+    <html ⚡ lang="en">
       <head>
         <meta charset="utf-8">
         <title>${story.title}</title>
@@ -89,8 +89,12 @@ export default async function handler(req, res) {
           }
           .banner-text {
             text-align: center;
-            background-color: #000;
+            background-color: #ccc;
+            border : 1px solid #000;
             line-height: 2em;
+          }
+          .br3{
+            border-radius: 5px;
           }
         </style>
       </head>
