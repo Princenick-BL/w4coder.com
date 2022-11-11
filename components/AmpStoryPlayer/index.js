@@ -36,7 +36,7 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
                     src={img}
                     alt={text}  
                 />
-                <div className="viewport-author-logo"><Logo single={true}/></div>
+                {/* <div className="viewport-author-logo"><Logo single={true}/></div> */}
                 <div className="viewport-author"><Logo/></div>
             </div>
             <div>
@@ -53,68 +53,48 @@ export default function AmpStoryPlayerComponent({stories}) {
 
 
     useEffect(()=>{
+        try{
 
-        const lightbox = document.getElementById("lightbox");
-        const existed  = document.getElementById("player2");
-        if(!existed){
-
-            const playerEl = document.createElement('amp-story-player');
-            playerEl.id = "player2"
-            playerEl.style="width:100vw;height:100vh;"
-            const player = new AmpStoryPlayer(window, playerEl);
-            lightbox.appendChild(player)
-            player.load();
-            var script = document.createElement("script")
-            script.id = "playerConfig"
-            script.type="application/json"
-            script.innerHTML=`
-            {
-                "behavior": {
-                    "autoplay": false,
-                    "pageScroll": false
-                },
-                "controls": [{
-                    "name": "close",
-                    "position": "start"
-                }],
+            const existed  = document.getElementById("playerConfig");
+            if(!existed){
+                const player = document.getElementById("player2");
+                player.load();
+                var script = document.createElement("script")
+                script.id = "playerConfig"
+                script.type="application/json"
+                script.innerHTML=`
                 {
                     "behavior": {
+                        "autoplay": false,
                         "pageScroll": false
+                    },
+                    "controls": [{
+                        "name": "close",
+                        "position": "start"
+                    }],
+                    {
+                        "behavior": {
+                            "pageScroll": false
+                        }
                     }
                 }
+                `
+                player.appendChild(script)
+                // playerEl.pause()
+        
             }
-            `
-            player.appendChild(script)
-            const urls = stories.map((st=>{
-                return {href:`/blog/web-story/${st._id}/${st.slug}`}
-            }))
-            player.add(urls)
-            // playerEl.pause()
-    
+        }catch(e){
+
         }
 
-        // const existed  = document.getElementById("playerConfig");
-        // if(!existed){
-
-      
-
-        //     player.addEventListener("amp-story-player-close", () => {
-        //         document.getElementById("app").style.overflowY="auto"
-        //         player.pause();
-        //         setShow(false)
-        //     });
-
-            
-        //     player.addEventListener("ready", () => {
-        //         player.play()
-        //         initializeWidget(0);
-        //         player.pause()
-        //     });
-        // }
     }, [])
     
     return (
         <>
+            <Head>
+                <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
+                <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel='stylesheet' type='text/css'/>
+            </Head>
             <RecommendedTitle title={"Web stories"}/>
             <div className="viewport">
                 <div className="entry-point-container">
@@ -138,7 +118,14 @@ export default function AmpStoryPlayerComponent({stories}) {
                 </div>
                 <br></br>
                 <div id='lightbox' className={`lightbox ${show?"show":""}`}>
-                
+                    <amp-story-player 
+                        id="player2"
+                        style={{width:"100vw",height:"100vh"}}
+                    >
+                        {stories.map(((st,idx)=>{
+                            return <a key={idx} href={`/blog/web-story/${st._id}/${st.slug}`}></a>
+                        }))}
+                    </amp-story-player>
                 </div>
             </div>   
         </>
