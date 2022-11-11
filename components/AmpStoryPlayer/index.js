@@ -125,7 +125,7 @@ export default function AmpStoryPlayerComponent({stories}) {
                             <Widget
                                 key={index}
                                 pos={index}
-                                img={story.posterP}
+                                img={story.posterL}
                                 color = {index == 0 ? "#FF6F32": index == 1 ? "#E6AD1C" : index==2 ? "#466FFF":"#4CA47C"}
                                 text = {story.title}
                                 url={story.url}
