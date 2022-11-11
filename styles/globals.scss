@@ -258,6 +258,10 @@ background: #555;
   max-width: min-content;
 }
 
+.entry-point-card-container:nth-child(1){
+  margin-left: 0;
+}
+
 /* Extra stuff that makes sample aesthetic. */
 
 // body h1 {
