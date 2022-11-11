@@ -120,7 +120,7 @@ export default function AmpStoryPlayerComponent({stories}) {
                 <div id='lightbox' className={`lightbox ${show?"show":""}`}>
                     <amp-story-player 
                         id="player2"
-                        style={{width:"100vw",height:"100vh"}}
+                        style={{width:"100vw",height:"100%"}}
                     >
                         {stories.map(((st,idx)=>{
                             return <a key={idx} href={`/blog/web-story/${st._id}/${st.slug}`}></a>
