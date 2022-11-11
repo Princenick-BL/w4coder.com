@@ -237,6 +237,11 @@ background: #555;
     flex-direction: column-reverse;
     color: #fff;
   }
+  .viewport-author-logo{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
 }
 .circular-entry-point .img {
 	cursor: pointer;

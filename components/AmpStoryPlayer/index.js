@@ -36,6 +36,7 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
                     src={img}
                     alt={text}  
                 />
+                <div className="viewport-author-logo"><Logo single={true}/></div>
                 <div className="viewport-author"><Logo/></div>
             </div>
             <div>

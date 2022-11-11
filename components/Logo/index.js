@@ -12,7 +12,7 @@ export default function Logo({single,style}) {
         <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" rel="stylesheet"/>         
       </Head>
       {single ? (
-        <div className={styles.logo} style={style}>{`LSB`}</div>
+        <div className={styles.logo + " "+styles.bg} style={style}>{`LSB`}</div>
       ) : (
         <Link href={"/"}>
           <div className={styles.logo} style={style}>{`Luxe Story Blog`}</div>
@@ -21,3 +21,5 @@ export default function Logo({single,style}) {
     </>
   )
 }
+
+
