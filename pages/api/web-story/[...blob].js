@@ -96,16 +96,19 @@ export default async function handler(req, res) {
       </head>
       <body>
         <!-- Cover page -->
-        <amp-story standalone
-            title="Joy of Pets"
-            publisher="AMP tutorials"
-            publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-            poster-portrait-src="https://picsum.photos/720/1280">
+        <amp-story 
+          standalone
+          title="${story.title}"
+          publisher="w4coder"
+          publisher-logo-src="/logo.png"
+          poster-portrait-src="${story?.posterP}"
+          poster-square-src="${story?.posterS}"
+          poster-landscape-src="${story?.posterL}"
+        >
           ${getStorySlides(story?.slides)}
           
     
           <!-- Bookend -->    
-          <amp-story-bookend src="bookend.json" layout="nodisplay"></amp-story-bookend>
         </amp-story>
       </body>
     </html>
