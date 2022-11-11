@@ -11,7 +11,7 @@ export function getStorySlides(slides){
     if(index === 0){
       if(slide && slide?.sections?.length > 0){
       
-        const slideTop = `<amp-story-page id="page-${index}">`
+        const slideTop = `<amp-story-page auto-advance-after="4s" id="page-${index}">`
         const slideBottom = `</amp-story-page>`
         var slideBG = ``
         slide.sections.map((section,index)=>{
@@ -51,7 +51,7 @@ export function getStorySlides(slides){
 
       if(slide && slide?.sections?.length > 0){
       
-        const slideTop = `<amp-story-page id="page-${index}">`
+        const slideTop = `<amp-story-page auto-advance-after="22s" id="page-${index}">`
         const slideBottom = `</amp-story-page>`
         var slideBG = ``
        
