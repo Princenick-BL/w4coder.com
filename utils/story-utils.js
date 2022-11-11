@@ -22,15 +22,7 @@ export function getStorySlides(slides){
                             width="720" height="1280"
                             layout="responsive">
                         </amp-img>
-                    </amp-story-grid-layer>`  
-                booken = booken + `
-                <amp-img src="${section.content}"
-                    width="720" height="1280"
-                    layout="responsive"
-                    animate-in="fade-in"
-                    animate-in-delay="0.4s">
-                </amp-img>`
-          
+                    </amp-story-grid-layer>`            
             }
         })
         var slideContentTop = '<amp-story-grid-layer template="vertical">'
@@ -165,19 +157,6 @@ export function getStorySlides(slides){
    
     
   })
-  var bookendHtml = `
-    <amp-story-page id="page5">
-      <amp-story-grid-layer template="vertical" class="noedge">
-          <div class="wrapper">
-              ${booken}
-          </div>
-      </amp-story-grid-layer>
-      <amp-story-grid-layer template="vertical" class="center-text">
-          <p class="banner-text" animate-in="whoosh-in-right">w4coder.com</p>
-      </amp-story-grid-layer>
-    </amp-story-page>
-  `
-  htmlSections = htmlSections + bookendHtml;
 
   return htmlSections
   

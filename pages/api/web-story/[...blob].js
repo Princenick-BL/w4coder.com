@@ -110,9 +110,22 @@ export default async function handler(req, res) {
           poster-landscape-src="${story?.posterL}"
         >
           ${getStorySlides(story?.slides)}
-          
-    
-          <!-- Bookend -->    
+          <!-- Bookend -->  
+          <amp-story-page id="bookend">
+            <amp-story-grid-layer  aspect-ratio="4:3" template="third" class="noedge">
+              <amp-img 
+                src="${story.posterP}"
+                width="720" 
+                height="1280"
+                layout="responsive"
+                animate-in="fade-in"
+                animate-in-delay="0.4s">
+              </amp-img>
+            </amp-story-grid-layer>
+            <amp-story-grid-layer template="vertical" class="center-text">
+                <p class="banner-text" animate-in="whoosh-in-right">w4coder.com</p>
+            </amp-story-grid-layer>
+          </amp-story-page> 
         </amp-story>
       </body>
     </html>
