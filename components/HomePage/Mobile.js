@@ -4,6 +4,8 @@ import { getArticle ,getTopArticles,searchArticle} from '../../services/articles
 import Slide from './components/Mobile/Card'
 import styles from './homepage.module.scss'
 import AmpStoryPlayer from '../AmpStoryPlayer';
+
+
 export default function Mobile({page1,topA}) {
     const [pages,setPages] = useState([])
     const [pageNum,setPageNum] = useState(1)

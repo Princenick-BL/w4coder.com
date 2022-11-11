@@ -225,6 +225,12 @@ background: #555;
 	align-items: center;
 	justify-content: center;
   width: max-content;
+  position: relative;
+  .viewport-author{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
 }
 .circular-entry-point .img {
 	cursor: pointer;
@@ -272,8 +278,7 @@ background: #555;
 	width: calc( 100%  );
 	margin: .5rem auto;
   @media only screen and (max-width: 600px) {
-    width: calc( 100%  - 2rem);
-
+    width: calc( 100%  - 1rem - 4px);
   }
 }
  

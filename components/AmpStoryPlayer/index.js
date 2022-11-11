@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import Head from 'next/head';
 import Image from 'next/image';
-
+import Logo from '../Logo'
+import RecommendedTitle from '../RecommendedTitle'
 
 async function initializeWidget(idx) {
     const player = document.getElementById("player2");
@@ -21,21 +22,21 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
             document.getElementById("app").style.overflowY="hidden"
             initializeWidget(pos)
         }}>
-          <div 
-            className='img-container' 
-            style={{ 
-              borderColor: `${color} !important`,
-              border: `2px solid ${color}`,
-  
-            }}>
-              <Image 
-                  className='img' 
-                  width={100} 
-                  height={100} 
-                  src={img}
-                  alt={text}  
+            <div 
+                className='img-container' 
+                style={{ 
+                    borderColor: `${color} !important`,
+                    border: `2px solid ${color}`,
+                }}
+            >
+                <Image 
+                    className='img' 
+                    width={100} 
+                    height={100} 
+                    src={img}
+                    alt={text}  
                 />
-  
+                <div className="viewport-author"><Logo/></div>
             </div>
             <div>
             <span className="entry-point-card-title">{text}</span>
@@ -137,6 +138,7 @@ export default function AmpStoryPlayerComponent() {
 
     return (
         <>
+            <RecommendedTitle title={"Web stories"}/>
             <div className="viewport">
                 <div className="entry-point-container">
                     <div className="circular-entry-point">
