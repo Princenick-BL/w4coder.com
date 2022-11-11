@@ -3,7 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { getArticle ,getTopArticles,searchArticle} from '../../services/articles'
 import Slide from './components/Mobile/Card'
 import styles from './homepage.module.scss'
-import AmpStoryPlayer from '../AmpStoryPlayer';
+import AmpStoryPlayerComponent from '../AmpStoryPlayer';
 import RecommendedTitle from '../RecommendedTitle';
 
 
@@ -24,7 +24,7 @@ export default function Mobile({page1,topA}) {
 
   return (
     <div className={styles.editorial}>
-      <AmpStoryPlayer/>
+      <AmpStoryPlayerComponent/>
       <div style={{marginTop:"1rem"}}></div>
       <RecommendedTitle title={"Articles"}/>
       <div className={styles.editorialContent}>

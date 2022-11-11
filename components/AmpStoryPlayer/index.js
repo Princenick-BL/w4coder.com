@@ -85,9 +85,9 @@ export default function AmpStoryPlayerComponent() {
             const playerEl = document.createElement('amp-story-player');
             playerEl.id = "player2"
             playerEl.style="width:100vw;height:100vh;"
-            new AmpStoryPlayer(window, playerEl);
-            lightbox.appendChild(playerEl)
-            playerEl.load();
+            const player = new AmpStoryPlayer(window, playerEl);
+            lightbox.appendChild(player)
+            player.load();
             var script = document.createElement("script")
             script.id = "playerConfig"
             script.type="application/json"
@@ -108,11 +108,11 @@ export default function AmpStoryPlayerComponent() {
                 }
             }
             `
-            playerEl.appendChild(script)
+            player.appendChild(script)
             const urls = stories.map((st=>{
                 return {href: st.url}
             }))
-            playerEl.add(urls)
+            player.add(urls)
             // playerEl.pause()
     
         }
