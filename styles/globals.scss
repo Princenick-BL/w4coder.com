@@ -255,6 +255,7 @@ background: #555;
 	position: relative;
 	transition: transform 0.3s;
 	margin: 5px;
+  max-width: min-content;
 }
 
 /* Extra stuff that makes sample aesthetic. */
@@ -289,7 +290,7 @@ background: #555;
 	width: calc( 100%  );
 	margin: .5rem auto;
   @media only screen and (max-width: 600px) {
-    width: calc( 100%  - 1rem - 4px);
+    width: calc( 100% - 4px);
   }
 }
  

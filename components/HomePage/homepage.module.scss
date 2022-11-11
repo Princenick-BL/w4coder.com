@@ -13,7 +13,7 @@
         width: 67%;
         min-width: 800px;
         @media only screen and (max-width: 790px) {
-            width: calc(100% - 2rem );
+            width: calc(100%  );
             min-width: unset;
             margin: 0 auto;
         }
