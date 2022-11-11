@@ -33,11 +33,11 @@ export function getStorySlides(slides){
   
                 switch(section.balise){
                     case  "h1":
-                        return slideContent = slideContent +`<h1 class="homeH1">${section?.content}</h1>`
+                        return slideContent = slideContent +`<h1 class="homeH1" style="color:${section?.style?.color||"#000"};font-size:${section?.style?.fontSize||"1.5rem"};font-style:${section?.style?.fontStyle||"initial"}">${section?.content}</h1>`
                     case  "p":
-                        return slideContent = slideContent +`<p class="homeP">${section?.content}</p>`
+                        return slideContent = slideContent +`<p class="homeP" style="color:${section?.style?.color||"#000"};font-size:${section?.style?.fontSize||"1.5rem"};font-style:${section?.style?.fontStyle||"initial"}">${section?.content}</p>`
                     default :
-                        return slideContent = slideContent +`<p class="homeP">${section?.content}</p>`
+                        return slideContent = slideContent +`<p class="homeP" style="color:${section?.style?.color||"#000"};font-size:${section?.style?.fontSize||"1.5rem"};font-style:${section?.style?.fontStyle||"initial"}">${section?.content}</p>`
   
                     
                 }
@@ -63,12 +63,11 @@ export function getStorySlides(slides){
   
                 switch(section.balise){
                     case  "h1":
-                        return slideContent = slideContent +`<h1 style="font-size:1rem">${section?.content}</h1>`
+                        return slideContent = slideContent +`<h1 style="color:${section?.style?.color||"#000"};font-size:${section?.style?.fontSize||"1.5rem"};font-style:${section?.style?.fontStyle||"initial"}">${section?.content}</h1>`
                     case  "p":
-                        return slideContent = slideContent +`<p style="font-size:1rem">${section?.content}</p>`
+                        return slideContent = slideContent +`<p style="color:${section?.style?.color||"#000"};font-size:${section?.style?.fontSize||"1.5rem"};font-style:${section?.style?.fontStyle||"initial"}">${section?.content}</p>`
                     default :
-                        return slideContent = slideContent +`<p style="font-size:1rem">${section?.content}</p>`
-  
+                        return slideContent = slideContent +`<p style="color:${section?.style?.color||"#000"};font-size:${section?.style?.fontSize||"1.5rem"};font-style:${section?.style?.fontStyle||"initial"}">${section?.content}</p>` 
                     
                 }
             }

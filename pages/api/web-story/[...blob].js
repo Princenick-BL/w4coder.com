@@ -59,9 +59,9 @@ export default async function handler(req, res) {
           }
           .homeH1 {
             font-weight: bold;
-            font-size: 2.875em;
+            font-size: 2em;
             font-weight: normal;
-            line-height: 1.174;
+            line-height: 1.5;
           }
           homeP {
             font-weight: normal;
