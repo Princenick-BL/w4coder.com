@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import Head from 'next/head'
 import Link from 'next/link'
 
-export default function Logo({single,style}) {
+export default function Logo({single,style,head}) {
   return (
     <>
       <Head>
@@ -15,7 +15,7 @@ export default function Logo({single,style}) {
         <div className={styles.logo + " "+styles.bg} style={style}>{`LSB`}</div>
       ) : (
         <Link href={"/"}>
-          <div className={styles.logo} style={style}>{`Luxe Story Blog`}</div>
+          <div className={styles.logo+ "  "+(head ? styles.head:"")} style={style}>{`Luxe Story Blog`}</div>
         </Link>
       )}
     </>
