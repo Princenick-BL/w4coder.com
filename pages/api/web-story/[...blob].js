@@ -35,16 +35,42 @@ export default async function handler(req, res) {
         <link rel="canonical" href="https://w4coder.com/blog/web-story/${story?._id}/${story?.slug}">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <link rel="preload" href="https://cdn.ampproject.org/v0.js"  as="script">
-
         <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
-        <script async custom-element="amp-video"
-            src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-        <script async custom-element="amp-story"
-            src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+        <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+        <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400" rel="stylesheet">
         <link rel="preload" href="${story?.poster}" as="image"/>
-
+        <script type="application/ld+json">
+          {
+            "@context":"http://schema.org",
+            "publisher": {
+              "@type": "Organization",
+              "name": "w4coder",
+              "logo": {
+                "@type":"ImageObject",
+                "url":"/logo.png",
+                "width":96,
+                "height":96
+              }
+            },
+            "image": {
+              "@type":"ImageObject",
+              "url":"${story?.posterP}",
+              "width":640,
+              "height":853
+            },
+            "@type":"Article",
+            "mainEntityOfPage":"https://blog/web-story/${story?._id}/${story?.slug}",
+            "headline":"",
+            "datePublished":"${story?.createdAt}",
+            "dateModified":"${story?.updatedAt}",
+            "author": {
+              "@type":"Organization",
+              "name":"w4coder"
+            }
+          }        
+        </script>
         <style amp-custom>
           html{
             background : #000;
