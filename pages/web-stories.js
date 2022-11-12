@@ -23,7 +23,7 @@ export default function WebStories({isBreakpoint,stories}) {
                     return(
                         <div className={styles.cat} key={i}>
                             <Image
-                                src={s.posterL}
+                                src={s.posterP}
                                 layout="fill"
                                 className={styles.img}
                                 alt={s.title}
