@@ -62,6 +62,54 @@ export default async function handler(req, res) {
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional" as="style">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional">      
         <link rel="preload" href="${article?.poster}" as="image"/>
+        <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "publisher": {
+            "@type":"Organization",
+            "name":"w4coder",
+            "sameAs":"https://w4coder.com",
+            "logo": {
+              "@type":"ImageObject",
+              "url":"/logo.png",
+              "height":500,
+              "width":500
+            }
+          },
+          "headline":"titre",
+          "url":"url",
+          "thumbnailUrl":"poster",
+          "image":{
+            "@type":"ImageObject",
+            "url":"${article?.poster}",
+            "width":${article?.meta?.width || 1024},
+            "height":${article?.meta?.height || 682}
+          },
+          "mainEntityOfPage": "https://w4coder.com/blog/article/${article?._id}/${article?.slug}",
+          "@type":"NewsArticle",
+          "dateCreated":"${article?.createdAt}",
+          "datePublished":"${article?.createdAt}",
+          "dateModified":"${article?.updatedAt}",
+          "articleSection":"news",
+          "creator":[
+            {
+              "name":"w4coder",
+              "@type":"Organization"
+            }
+          ],
+          "author":[
+            {
+              "name":"w4coder",
+              "@type":"Organization",
+              "URL":"https://w4coder.com"
+            }
+          ],
+          "keywords":[
+            ${article?.keywords?.join(",")},
+            "/article"
+          ]
+        }			
+        </script>
         <style amp-boilerplate="">
           body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;

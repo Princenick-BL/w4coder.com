@@ -62,8 +62,8 @@ export default async function handler(req, res) {
               "logo": {
                 "@type":"ImageObject",
                 "url":"/logo.png",
-                "width":96,
-                "height":96
+                "width":500,
+                "height":500
               }
             },
             "image": {
@@ -73,7 +73,7 @@ export default async function handler(req, res) {
               "height":853
             },
             "@type":"Article",
-            "mainEntityOfPage":"https://blog/web-story/${story?._id}/${story?.slug}",
+            "mainEntityOfPage":"https://w4coder.com/blog/web-story/${story?._id}/${story?.slug}",
             "headline":"",
             "datePublished":"${story?.createdAt}",
             "dateModified":"${story?.updatedAt}",
