@@ -38,8 +38,6 @@
         border-radius: 10px;
         max-height: calc(300px * 4 / 3) !important;
         aspect-ratio: 3/4;
-        border-radius: 10px;
-
     }
     .img:hover{
         transform: scale(1.05);
@@ -174,7 +172,7 @@
         width: 20px;
         height: 20px;
         min-width: 20px;
-        border-radius: 5px;
+        border-radius: 1px;
         overflow: hidden;
         margin-right: 0px;
     }
