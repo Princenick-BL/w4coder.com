@@ -106,7 +106,7 @@ export default function AmpStoryPlayerComponent({stories}) {
                                 key={index}
                                 pos={index}
                                 img={story.posterL}
-                                color = {index == 0 ? "#FF6F32": index == 1 ? "#E6AD1C" : index==2 ? "#466FFF":"#4CA47C"}
+                                color = {index == 0 ? "#466FFF": index == 1 ? "#E6AD1C" : index==2 ? "#FF6F32":"#4CA47C"}
                                 text = {story.title}
                                 url={story.url}
                                 onclick={(e)=>{setShow(!show)}}
