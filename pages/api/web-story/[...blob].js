@@ -143,6 +143,7 @@ export default async function handler(req, res) {
             border-radius : 5px;
             height: max-content;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding : 5px;
           }
           .blur{
             -webkit-filter: blur(5px);
@@ -190,7 +191,7 @@ export default async function handler(req, res) {
                         height="1"
                         layout="responsive"
                         animate-in="fade-in"
-                        style="width:150px; height:120px;border-radius:5px;margin:5px;"
+                        style="width:250px; height:auto;border-radius:5px;margin-right:10px;"
                         >
                       </amp-img>
                       <div> ${r.title} </div>
