@@ -105,7 +105,9 @@ export default async function handler(req, res) {
             }
           ],
           "keywords":[
-            ${article?.keywords?.join(",")},
+            ${article?.keywords?.map((v)=>{
+              return '"'+v+'"'
+            })},
             "/article"
           ]
         }			
