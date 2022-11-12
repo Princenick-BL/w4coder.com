@@ -51,7 +51,6 @@ export default async function handler(req, res) {
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
         <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400" rel="stylesheet">
         <link rel="preload" href="${story?.poster}" as="image"/>
         <script type="application/ld+json">
           {
@@ -88,7 +87,6 @@ export default async function handler(req, res) {
             background : #000;
           }
           amp-story {
-            font-family: 'Oswald',sans-serif;
             color: #000;
             border-radius : 10px;
           }
