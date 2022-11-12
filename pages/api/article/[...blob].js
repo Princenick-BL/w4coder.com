@@ -198,11 +198,11 @@ export default async function handler(req, res) {
           <div class="main">
             <article class="recipe-article">
               <ul class="menu">
-                <li><a href={"/"}>Acceuil</a></li>
-                <li><a href={"/web-stories"}>Web Stories </a></li>
+                <li><a href="/">Acceuil</a></li>
+                <li><a href="/web-stories">Web Stories </a></li>
                 <li class="article-head"> <a href="/"> w4coder</a></li>
-                <li><a href={"/about"}>A propos</a></li>
-                <li><a href={"/contact"}>Contact</a></li>
+                <li><a href="/about">A propos</a></li>
+                <li><a href="/contact">Contact</a></li>
                 
               </ul>
               <div class="menuMobile">
@@ -212,10 +212,10 @@ export default async function handler(req, res) {
                   <svg id="closed" onclick="openeMenu()"  class='hamburger close' style="width:1.5rem;height:1.5rem;cursor:pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
                 </div>
                 <ul id="submenu" class=" submenu close">
-                  <li><a href={"/"}>. Acceuil .</a></li>
-                  <li><a href={"/web-stories"}>. Web Stories .</a></li>
-                  <li><a href={"/about"}>. A propos .</a></li>
-                  <li><a href={"/contact"}>. Contact .</a></li>
+                  <li><a href="/">. Acceuil .</a></li>
+                  <li><a href="/web-stories">. Web Stories .</a></li>
+                  <li><a href="/about">. A propos .</a></li>
+                  <li><a href="/contact">. Contact .</a></li>
                 </ul>
               </div>
               <header>
