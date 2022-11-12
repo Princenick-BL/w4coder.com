@@ -81,6 +81,9 @@ export function getStyles(){
       font-smooth: always;
       -webkit-font-smoothing: antialiased;
     }
+    .hamburger{
+      fill: #000;
+    }
     @media (prefers-color-scheme: dark) {
       html {
         color-scheme: dark;
@@ -88,6 +91,9 @@ export function getStyles(){
       body {
         color: white;
         background-color: #202029;
+      }
+      .hamburger{
+        fill: #fff;
       }
     }
     article,
@@ -2294,13 +2300,11 @@ export function getStyles(){
     }
     .article-head{
         display: flex;
-        width: 100%;
-        max-width: 1170px;
-        margin: 0 auto;
         justify-content: space-between;
         align-items: center;
         color: var(--text-color);
         padding : 0 .5rem;
+        font-family: "Oswald", sans-serif;
     }
     .article-head a{
         text-decoration : none;
@@ -2333,5 +2337,51 @@ export function getStyles(){
       width: 310px ;
       padding: 5px 0;
     }
+    .menu,.submenu{
+      display : none;
+      justify-content: center;
+      align-items : center; 
+      margin : 0;
+      padding: 0;
+    }
+    .menu li,.submenu li{
+      list-style-type : none;
+      margin : 0;
+      padding: 0 1rem !important;
+    }
+    .menuView{
+      display : flex;
+      justify-content: space-between;
+      align-items : center;
+      padding: 1rem;
+    }
+    .menuView div{
+      width : max-width;
+    }
+    .submenu{
+      flex-direction : column;
+    }
+    .submenu li{
+      margin : .5rem 0 !important;
+    }
+    .show{
+      display : flex;
+    }
+    .close{
+      display : none;
+    }
+
+    @media (min-width: 700px) {
+      .menu{
+        display: flex;
+      }
+      .menu li a{
+        text-decoration : none;
+      }
+      .menuMobile{
+        display : none; 
+      }
+    }
+    
   </style>`
 }
