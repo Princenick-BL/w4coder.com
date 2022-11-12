@@ -19,7 +19,19 @@ export default async function handler(req, res) {
       }
   }
 
+  const recomandedFetcher = async ( )=>{
+    try{
+        const result = await axios.get(`${endpoint.API_ENDPOINT}/stories/recomanded/${storyId}`)
+        return result.data?.data
+    }catch(e){
+        return null
+    }
+}
+
   const story = await fetcher()
+  const recomanded = await recomandedFetcher()
+
+  // console.log(recomanded)
 
   if (!story._id ) { 
     res.redirect('/404')
@@ -116,16 +128,30 @@ export default async function handler(req, res) {
           .banner-text {
             text-align: center;
             background-color: #fff;
-            border : 1px solid #000;
             line-height: 2em;
             border-radius : 5px;
-            margin-top: 50%;
+            height : max-content;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           }
           .br3{
             border-radius: 5px;
           }
           #bookend{
             background-color:#000;
+          }
+          .reco{
+            display:flex;
+            background-color: #fff;
+            border-radius : 5px;
+            height: max-content;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          }
+          .blur{
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
           }
         </style>
       </head>
@@ -143,27 +169,40 @@ export default async function handler(req, res) {
           ${getStorySlides(story?.slides)}
           <!-- Bookend -->  
           <amp-story-page id="bookend">
-            <amp-story-grid-layer  aspect-ratio="4:3" template="thirds" class="noedge">
+            <amp-story-grid-layer template="fill">
               <amp-img 
-                src="${story.posterP}"
-                width="720" 
-                height="1280"
-                layout="responsive"
-                animate-in="fade-in"
-                animate-in-delay="0.4s"
-                aspect-ratio="4:3"
+                src="/bookend.webp"
+                layout="fill"
+                class="blur"
                 >
               </amp-img>
             </amp-story-grid-layer>
             <amp-story-grid-layer template="vertical" class="center-text">
-                <p class="banner-text" animate-in="whoosh-in-right">w4coder.com</p>
+              <p class="banner-text" animate-in="fly-in-top">Read More</p>
+              ${recomanded.map((r,id)=>{
+                return `
+                  <a href="/blog/web-story/${r._id}/${r?.slug}">
+                    <div class="reco" animate-in="${id==0 ? "fly-in-left" : id==1 ? "fly-in-right" : "fly-in-bottom"}" >
+                      <amp-img 
+                        src="${r.posterS}"
+                        width="1" 
+                        height="1"
+                        layout="responsive"
+                        animate-in="fade-in"
+                        style="width:140px; height:120px;border-radius:5px;margin:5px;"
+                        >
+                      </amp-img>
+                      <div> ${r.title} </div>
+                    </div>
+                  </a>
+                  `
+              })}
             </amp-story-grid-layer>
             <amp-story-page-outlink 
               layout="nodisplay" 
-              cta-text="More stories"
               cta-image="/logo.png"
             >
-              <a href="https://w4coder.com" title="More stories"></a>
+              <a href="https://w4coder.com" title="More stories">w4coder.com</a>
             </amp-story-page-outlink>
           </amp-story-page> 
         </amp-story>
