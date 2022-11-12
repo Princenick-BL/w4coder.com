@@ -151,6 +151,9 @@ export default async function handler(req, res) {
             -ms-filter: blur(5px);
             filter: blur(5px);
           }
+          p{
+            line-height: 1.5;
+          }
         </style>
       </head>
       <body>
@@ -187,7 +190,7 @@ export default async function handler(req, res) {
                         height="1"
                         layout="responsive"
                         animate-in="fade-in"
-                        style="width:140px; height:120px;border-radius:5px;margin:5px;"
+                        style="width:150px; height:120px;border-radius:5px;margin:5px;"
                         >
                       </amp-img>
                       <div> ${r.title} </div>
