@@ -28,25 +28,18 @@ export default function WebStories({isBreakpoint,stories}) {
                                 className={styles.img}
                                 alt={s.title}
                             />
-                                <Link  className={styles.poster} href={`/blog/web-story/${s._id}/${s.slug}`}>
-                                    <div className={styles.publisherLogo}>
-                                            <Image
-                                                src={s.publisherLogo}
-                                                width={45}
-                                                height={45}
-                                                layout="raw"
-                                                className={styles.img}
-                                                alt={s.title}
-                                            />
+                            <Link  className={styles.poster} href={`/blog/web-story/${s._id}/${s.slug}`}>
+                                <div className={styles.publisherLogo}>
+
+                                </div>
+                                <div className={styles.publisherTP}>
+                                    <div className={styles.postTitle}>
+                                        {s.title}
                                     </div>
-                                    <div className={styles.publisherTP}>
-                                        <div className={styles.postTitle}>
-                                            {s.title}
-                                        </div>
-                                        <div className={styles.publisherName}>
-                                            w4coder
-                                        </div>
-                                    </div> 
+                                    <div className={styles.publisherName}>
+                                        w4coder
+                                    </div>
+                                </div> 
                             </Link>
                         </div>
                     )
