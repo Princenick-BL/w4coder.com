@@ -180,7 +180,6 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   margin: 3rem 0;
   grid-template-columns: repeat(1,minmax(0,1fr));
@@ -241,7 +240,7 @@
         -webkit-box-orient: vertical;
         white-space: normal;
         margin: 0 !important;
-        font-size: 1.125rem;
+        font-size: 1rem;
         line-height: 1.5rem;
         color: #fff;
         width: 100%;
