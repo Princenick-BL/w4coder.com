@@ -22,7 +22,7 @@ export default function Contact({isBreakpoint}) {
                     <h3 style={{display:"flex",alignItems:"center"}}>Service client <Logo style={{marginLeft:"1rem"}}/></h3>
                     <p>Vous avez une recommendation pour ou nous ou une requête à nous soumettre ? N'hésitez pas notre service client étudiera votre message avec soin et attention.
                         <br></br>Merci à vous !!!</p>
-                    <a href='mailto:contact@luxestoryblog.com'>Email : contact@luxestoryblog.com</a>
+                    <a href='mailto:contact@w4coder.com'>Email : contact@w4coder.com</a>
                 </div>
                 <form className={styles.contactForm}>
                     <input type={"text"} name="name" placeholder="Full Name"/>
