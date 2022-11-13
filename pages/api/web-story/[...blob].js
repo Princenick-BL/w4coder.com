@@ -145,13 +145,7 @@ export default async function handler(req, res) {
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             padding : 5px;
           }
-          .blur{
-            -webkit-filter: blur(5px);
-            -moz-filter: blur(5px);
-            -o-filter: blur(5px);
-            -ms-filter: blur(5px);
-            filter: blur(5px);
-          }
+         
           p{
             line-height: 1.5;
           }
