@@ -5,7 +5,12 @@ const nextConfig = {
     domains: ['api.w4coder.com','picsum.photos', 'localhost', 'api-nickscorp-app.herokuapp.com','assets.codepen.io','api.lorem.space','random.imagecdn.app']
   }, 
   async rewrites() {
-    return [{ source: "/blog/:path*", destination: "/api/:path*" }];
+    return [
+      { source: "/blog/:path*", destination: "/api/:path*" },
+      { source: "/sitemap_index.xml", destination: "https://api.w4coder.com/sitemap_index.xml" },
+      { source: "/sitemap/:path*", destination: "https://api.w4coder.com/sitemap/:path*" }
+
+    ];
   },
 }
 
