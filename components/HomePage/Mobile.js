@@ -24,7 +24,6 @@ export default function Mobile({page1,topA,stories}) {
 
   return (
     <div className={styles.editorial}>
-      <AmpStoryPlayerComponent stories={stories}/>
       <div style={{marginTop:"1rem"}}></div>
       <RecommendedTitle title={"Articles"}/>
       <div className={styles.editorialContent}>
@@ -33,7 +32,12 @@ export default function Mobile({page1,topA,stories}) {
         >
           {page1 ? page1.map((article,index)=>{
             return(
+              <>
               <Slide key={index} article={article} style={{height:"100%"}}/>
+              {index === 1 &&(
+                <AmpStoryPlayerComponent stories={stories}/>
+              )}
+              </>
             )
           }):(
             <></>
