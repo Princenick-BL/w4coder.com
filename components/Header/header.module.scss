@@ -93,4 +93,14 @@
         }
     }
 }
+.annonce{
+    background-color: var(--placeholder-color);
+    height: 40px;
+    width: 100%;
+    border-top: .005rem solid var(--boder-color );
+    border-bottom: .005rem solid var(--boder-color );
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
 

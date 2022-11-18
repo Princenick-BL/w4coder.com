@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: .005rem solid #ccc;
-    border-bottom: .005rem solid #ccc;
-    background-color: #f2f1f1;
+    border-top: .005rem solid var(--boder-color );
+    border-bottom: .005rem solid var(--boder-color );
+    background-color: var(--placeholder-color);
 }
