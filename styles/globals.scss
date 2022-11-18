@@ -18,6 +18,8 @@ a {
 
 * {
   box-sizing: border-box;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
 }
 
 h1,h2,h3,h4{
@@ -67,7 +69,7 @@ h1,h2,h3,h4{
   right: 0;
 	z-index: 1000;
   margin: 0;
-  padding: 5px 1rem ;
+  padding: 5px .5rem ;
 }
 
 @media only screen and (min-width: 600px) {		// display: none;
@@ -122,20 +124,20 @@ h1,h2,h3,h4{
 // }
 
 
-::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     border-radius: 10px;
     background-color: #ccc;
     width: 2px;
 
 }
-body::-webkit-scrollbar{
+*::-webkit-scrollbar{
     width: 2px;
     background-color: #F5F5F5;
 	display: none;
     
 }
 
-::-webkit-scrollbar-thumb{
+*::-webkit-scrollbar-thumb{
     border-radius: 2px;
     width: 2px;
 
