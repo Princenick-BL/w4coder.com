@@ -11,6 +11,7 @@ export default function Mobile({page1,topA,stories}) {
     const [pages,setPages] = useState([])
     const [pageNum,setPageNum] = useState(1)
     const [hasMore,setHasMore] = useState(true)
+    console.log(page1)
     const fetchMoreData = async ()=>{
       const res =  await getArticle({filter:{
         page : pageNum + 1
