@@ -7,22 +7,24 @@ import Link from 'next/link'
 export default function Mobile() {
     const [searchResult,setSearchResult]=useState([])
     const [openedMenu,setOpenedMenu] = useState(false)
+    const [openedSearch,setOpenedSearch] = useState(false)
+
     const searchRef = useRef(null);
     //useAmpStoryPlayer(loadPlayer(playerRef))
     const stickyHeader = useRef()
 
-    useLayoutEffect(() => {
-        const mainHeader = document.getElementById('mainHeader')
-        let fixedTop = stickyHeader.current.offsetTop
-        const fixedHeader = () => {
-          if (window.pageYOffset > fixedTop) {
-            mainHeader.classList.add('fixedTop')
-          } else {
-            mainHeader.classList.remove('fixedTop')
-          }
-        }
-        window.addEventListener('scroll', fixedHeader)
-      }, [])
+    // useLayoutEffect(() => {
+    //     const mainHeader = document.getElementById('mainHeader')
+    //     let fixedTop = stickyHeader.current.offsetTop
+    //     const fixedHeader = () => {
+    //       if (window.pageYOffset > fixedTop) {
+    //         mainHeader.classList.add('fixedTop')
+    //       } else {
+    //         mainHeader.classList.remove('fixedTop')
+    //       }
+    //     }
+    //     window.addEventListener('scroll', fixedHeader)
+    //   }, [])
      
     
     
@@ -65,7 +67,6 @@ export default function Mobile() {
     return (
         <div className={styles.mobileHead}>
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-              <Logo style={{fontSize:"2rem"}}/>
               <div onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
                 {openedMenu ? (
                   <svg  className='hamburger' style={{width:"2rem",height:"2rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
@@ -73,6 +74,12 @@ export default function Mobile() {
                   <svg className='hamburger' style={{width:"2rem",height:"2rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
                 )}
               </div>
+              <Logo style={{fontSize:"2rem"}}/>
+              <svg 
+                className='hamburger' 
+                onClick={(e)=>{setOpenedMenu(!openedMenu)}}
+                style={{width:"2rem",height:"2rem",cursor:"pointer"}}
+                focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
             </div>
             
             <ul className={styles.submenu+"  "+(openedMenu?styles.visible:styles.hidden)}>
@@ -81,21 +88,23 @@ export default function Mobile() {
               <li><Link href={"/about"}>. A propos .</Link></li>
               <li><Link href={"/contact"}>. Contact .</Link></li>
             </ul>
+            {openedSearch&&(
               
-            <div  id={"mainHeader"} ref={stickyHeader} className="mainHeader">
-              <input ref={searchRef} onChange={(e)=>{searching(e)}} onFocus={(e)=>{}} type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
-              <div className='mainHeaderResult' id="mainHeaderResult">
-              {searchResult && searchResult.length > 0 && searchResult.map((res,index)=>{
-                  return(
-                  <div className={"searchResultText"} key={index}>
-                      <Link href={`/blog/article/${res?._id}/${res?.slug}`} >
-                      {res.title}
-                      </Link>
-                  </div>
-                  )
-              })}
+              <div  id={"mainHeader"} ref={stickyHeader} className="mainHeader">
+                <input ref={searchRef} onChange={(e)=>{searching(e)}} onFocus={(e)=>{}} type={"search"} className={styles.search+ "  searchBar"} placeholder={"Search"}/>
+                <div className='mainHeaderResult' id="mainHeaderResult">
+                {searchResult && searchResult.length > 0 && searchResult.map((res,index)=>{
+                    return(
+                    <div className={"searchResultText"} key={index}>
+                        <Link href={`/blog/article/${res?._id}/${res?.slug}`} >
+                        {res.title}
+                        </Link>
+                    </div>
+                    )
+                })}
+                </div>
               </div>
-            </div>
+            )}
         </div>
     )
 }
