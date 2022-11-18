@@ -8,6 +8,7 @@ body {
 }
 :root{
   --color-primary:#5f87ff;
+  --color-primary-a:#d01100;
   --color-secondary-1:#bbf7d0;
   --color-secondary-2:#dcfce7;
 }
@@ -200,23 +201,23 @@ amp-story-player.my-player {
 }
 /* width */
 .entry-points::-webkit-scrollbar {
-width: 0px;
-height: 0px;
+  width: 0px;
+  height: 0px;
 }
 
 /* Track */
 .entry-points::-webkit-scrollbar-track {
-background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 /* Handle */
 .entry-points::-webkit-scrollbar-thumb {
-background: #888;
+  background: #888;
 }
 
 /* Handle on hover */
 .entry-points::-webkit-scrollbar-thumb:hover {
-background: #555;
+  background: #555;
 }
 .circular-entry-point .img-container{
 	border-radius: 10px;

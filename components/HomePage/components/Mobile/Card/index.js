@@ -41,11 +41,11 @@ export default function Slide({article,style,type=0}){
           <div className={styles.publisher}>
             <Image
                 src={article.author.logo || "/favicon.ico"}
-                width="20"
-                height="20"
+                width="10"
+                height="10"
                 layout="fixed"
                 className={styles.publisher_logo}
-                style={{minWidth:"20px"}}
+                style={{minWidth:"10px"}}
                   alt={"Publisher logo"}
             />
             <div className={styles.name}>Published by <strong>{article.author.name}</strong> on {new Date(article.updatedAt).toDateString()}</div>
