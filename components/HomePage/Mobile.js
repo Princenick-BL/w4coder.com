@@ -26,7 +26,7 @@ export default function Mobile({page1,topA,stories}) {
   return (
     <div className={styles.editorial}>
       <div style={{marginTop:"1rem"}}></div>
-      <RecommendedTitle title={"Articles"}/>
+      <RecommendedTitle title={"ARTICLES"}/>
       <div className={styles.editorialContent}>
         <div
           className={styles.mainSlideShow}
