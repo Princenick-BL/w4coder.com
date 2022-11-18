@@ -5,7 +5,7 @@ import Slide from './components/Mobile/Card'
 import styles from './homepage.module.scss'
 import AmpStoryPlayerComponent from '../AmpStoryPlayer';
 import RecommendedTitle from '../RecommendedTitle';
-
+import Ads300x600 from '../Ads300';
 
 export default function Mobile({page1,topA,stories}) {
     const [pages,setPages] = useState([])
@@ -45,7 +45,7 @@ export default function Mobile({page1,topA,stories}) {
           )}
         </div>
         
-        {/* <TopicSlider/> */}
+        <Ads300x600/>
 
         <InfiniteScroll
           dataLength={pages.length}
@@ -59,26 +59,9 @@ export default function Mobile({page1,topA,stories}) {
             return(
               <div  key={index}>
               <Slide article={article} style={{height:"100%"}}/>
-              {/* {(Math.floor(Math.random()* 10) > 8 )&& (
-                <Ads300>
-                  <amp-ad 
-                    width="300" 
-                    height="200"
-                    type="adsense"
-                    data-ad-client="ca-pub-5455960452945884"
-                    data-ad-slot="5221773298"
-                    data-auto-format="rspv"
-                    data-full-width="">
-                      <amp-img
-                        src="/images/adPlaceholder300.png"
-                        width="300"
-                        height="250"
-                        layout="responsive"
-                        alt="placeholder"
-                    ></amp-img>
-                  </amp-ad>
-                </Ads300>
-              )} */}
+              {index%2 === 0 && (
+                <Ads300x600/>
+              )}
               </div>
             )
           }):(
