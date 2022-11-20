@@ -1,12 +1,12 @@
 .cookies{
     position: fixed;
     left: 0;
+    bottom: 0;
     width: 100vw;
     border-top: 2px solid #000;
     min-height: 50px;
     background-color: var(--background-primary);
     display: flex;
-    bottom: 0px;
     width: 100%;
     z-index: 1000000101;
     opacity: 1;
@@ -35,17 +35,7 @@
             flex-direction: row;
         }
     }
-    div{
-        // font-size: 0.875rem;
-        // line-height: 20px;
-        // display: flex;
-        // flex-flow: column nowrap;
-        // width: 100%;
-        // font-family: nyt-franklin, helvetica, arial, sans-serif;
-        // max-height: 100%;
-        // overflow: scroll;
-        // position: relative;
-    }
+   
     .txt{
         font-size: 0.875rem;
         line-height: 1.5;
