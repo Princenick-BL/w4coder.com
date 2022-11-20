@@ -50,6 +50,31 @@ export function getRecentArticles(recentA){
   return htmlSections
 }
 
+export function injectAnalytics(tag){
+  if(tag){
+    return  `
+      <amp-analytics  type="googleanalytics"  config="https://amp.analytics-debugger.com/ga4.json"  data-credentials="include">
+        <script  type="application/json">
+        {
+          "vars": {
+            "GA4_MEASUREMENT_ID": "${tag}",
+            "GA4_ENDPOINT_HOSTNAME": "www.google-analytics.com",
+            "GOOGLE_CONSENT_ENABLED": false,
+            "WEBVITALS_TRACKING": false,
+            "PERFORMANCE_TIMING_TRACKING": false,
+            "DEFAULT_PAGEVIEW_ENABLED": true,
+            "SEND_DOUBLECLICK_BEACON": false,
+            "ENABLE_REGIONAL_DATA_COLLECTION": true
+          }
+        }
+        </script>
+      </amp-analytics>
+    `
+  }else{
+    return ``
+  }
+}
+
 export function getStyles(){
     return `
     <style amp-custom="">

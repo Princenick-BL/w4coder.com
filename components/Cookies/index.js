@@ -27,6 +27,7 @@ export default function Cookies() {
         <>
         {!cookies && (
         <div className={styles.cookies +  " cookies"}>
+            
             <div className={styles.info}>
                 <span className={styles.essentials} onClick={(e)=>{setTheme(false)}}>Accepter uniquement les cookies essentiels</span>
 

@@ -1,7 +1,7 @@
 
 import axios from 'axios'
 import { config as endpoint } from '../../../constants'
-import {getStyles,getSections,getRecentArticles} from '../../../utils/article-utils'
+import {getStyles,getSections,getRecentArticles,injectAnalytics} from '../../../utils/article-utils'
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const ampOptimizer = AmpOptimizer.create();
 
@@ -194,6 +194,7 @@ export default async function handler(req, res) {
         </script>
       </head>
       <body>
+        ${injectAnalytics(article?.domainInfo?.ga)}
         <main id="content" role="main" >
           <div class="main">
             <article class="recipe-article">
@@ -219,7 +220,7 @@ export default async function handler(req, res) {
                 </ul>
               </div>
               <header>
-                <span class="ampstart-subtitle block px3 pt2 mb2">${article?.category?.name || 'A LA UNE'}</span>
+                <span class="ampstart-subtitle block px3 pt2 mb2">${article?.categoryInfo?.name || 'A LA UNE'}</span>
                 <h1 class="mb1 px3">${article?.title}</h1>
 
                 <!-- Start byline -->

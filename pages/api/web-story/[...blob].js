@@ -1,7 +1,7 @@
 
 import axios from 'axios'
 import { config as endpoint } from '../../../constants'
-import {getStorySlides} from '../../../utils/story-utils'
+import {getStorySlides,injectAnalytics} from '../../../utils/story-utils'
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const ampOptimizer = AmpOptimizer.create();
 export default async function handler(req, res) {
@@ -162,6 +162,7 @@ export default async function handler(req, res) {
           poster-square-src="${story?.posterS}"
           poster-landscape-src="${story?.posterL}"
         >
+          ${injectAnalytics(story?.domainInfo?.ga)}
           ${getStorySlides(story?.slides)}
           <!-- Bookend -->  
           <amp-story-page id="bookend">
