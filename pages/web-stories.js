@@ -25,7 +25,7 @@ export default function WebStories({isBreakpoint,stories}) {
 
             gtag('config', 'G-WV85CLJKTF');
             `}}></script>
-            <h1>Web Stories</h1>
+            <h1 style={{marginTop:"1rem"}}>Web Stories</h1>
             <div className={styles.cats}>
                 {stories.map((s,i)=>{
                     return(

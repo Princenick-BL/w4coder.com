@@ -24,7 +24,7 @@ export default function Contact({isBreakpoint}) {
 
             gtag('config', 'G-WV85CLJKTF');
             `}}/>
-            <h1>Contactez nous</h1>
+            <h1 style={{marginTop:"1rem"}}>Contactez nous</h1>
             <p>Nous sommes à votre écoute</p>
             <div className={styles.contact}>
                 <div>
