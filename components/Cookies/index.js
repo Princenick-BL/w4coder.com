@@ -28,6 +28,8 @@ export default function Cookies() {
         {!cookies && (
         <div className={styles.cookies +  " cookies"}>
             <div className={styles.info}>
+                <span className={styles.essentials} onClick={(e)=>{setTheme(false)}}>Accepter uniquement les cookies essentiels</span>
+
                 <div className={styles.txt}>
                     <span>
                         Nous utilisons des cookies et des méthodes similaires pour reconnaître les visiteurs et mémoriser leurs préférences. Nous les utilisons également pour mesurer l'efficacité des campagnes publicitaires, cibler les annonces et analyser le trafic du site. Pour en savoir plus sur ces méthodes, y compris sur la manière de les désactiver, consultez notre politique en matière de cookies.                
@@ -40,8 +42,7 @@ export default function Cookies() {
 
                 </div>
                 <div className={styles.buttons}>
-                    <button onClick={(e)=>{setTheme(true)}}>ACCEPT</button>
-                    <button onClick={(e)=>{setTheme(false)}}>REJECT</button>
+                    <button onClick={(e)=>{setTheme(true)}}>TOUT ACCEPTER</button>
                 </div>
             </div>
         </div>
