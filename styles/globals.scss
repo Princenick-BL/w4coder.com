@@ -13,6 +13,7 @@ body {
   --color-secondary-2:#dcfce7;
   --placeholder-color : #fafafa;
   --boder-color : rgb(226, 221, 221);
+  --background-primary : #fff;
 }
 a {
   color: inherit;
@@ -90,7 +91,7 @@ h1,h2,h3,h4{
     --color-secondary-1:#95169a;
     --color-secondary-2:#d96fbb;
     --placeholder-color : #4d4d4d;
-
+    --background-primary : #202029;
   }
   html {
     color-scheme: dark;

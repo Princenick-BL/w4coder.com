@@ -8,7 +8,7 @@ export default function Footer({toggleTheme}) {
     return (
         <footer className={styles.footer}>
             <div className={styles.cr}>
-                Copyright © 2022 <Logo style={{margin:"0 .2rem"}}/>. All rights reserved.
+                Copyright © 2022 <Logo style={{margin:"0 .2rem",fontSize:".7rem"}}/>. All rights reserved.
             </div>
             <div className={styles.txt}>
                 
