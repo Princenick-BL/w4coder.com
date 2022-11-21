@@ -109,7 +109,7 @@ export default function Mobile() {
             )}
         </div>
         <div className={styles.annonce}>
-          <div>{new Date().toDateString()}</div>
+          <div>{new Date().toLocaleDateString("fr-FR",date_options)}</div>
           <span>S'abonner ?</span>
         </div>
       </>
