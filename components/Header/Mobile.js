@@ -3,6 +3,7 @@ import Logo from '../Logo'
 import styles from './header.module.scss'
 import {searchArticle} from '../../services/articles'
 import Link from 'next/link'
+const date_options =  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 export default function Mobile() {
     const [searchResult,setSearchResult]=useState([])
@@ -70,16 +71,16 @@ export default function Mobile() {
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <div onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
                 {openedMenu ? (
-                  <svg  className='hamburger' style={{width:"2rem",height:"2rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
+                  <svg  className='hamburger' style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
                 ):(
-                  <svg className='hamburger' style={{width:"2rem",height:"2rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
+                  <svg className='hamburger' style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
                 )}
               </div>
               <Logo style={{fontSize:"1.5rem"}}/>
               <svg 
                 className='hamburger' 
                 onClick={(e)=>{setOpenedSearch(!openedSearch)}}
-                style={{width:"2rem",height:"2rem",cursor:"pointer"}}
+                style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}}
                 focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
             </div>
             
@@ -108,7 +109,8 @@ export default function Mobile() {
             )}
         </div>
         <div className={styles.annonce}>
-          
+          <div>{new Date().toDateString()}</div>
+          <span>S'abonner ?</span>
         </div>
       </>
     )
