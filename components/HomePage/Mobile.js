@@ -36,8 +36,12 @@ export default function Mobile({page1,topA,stories}) {
               <>
               <Slide key={index} article={article} style={{height:"100%"}}/>
               {index === 1 &&(
-                <AmpStoryPlayerComponent stories={stories}/>
+                <>
+                  <AmpStoryPlayerComponent stories={stories}/>
+                  <Ads300x600/>
+                </>
               )}
+              
               </>
             )
           }):(
@@ -59,7 +63,7 @@ export default function Mobile({page1,topA,stories}) {
             return(
               <div  key={index}>
               <Slide article={article} style={{height:"100%"}}/>
-              {index%2 === 0 && (
+              {index%2 === 1 && (
                 <Ads300x600/>
               )}
               </div>
