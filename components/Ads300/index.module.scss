@@ -36,7 +36,8 @@
     height: 100%;
     position: absolute;
     background-size: cover;
-background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    color: #fff;
     a{
         width: max-content !important;
         height: max-content !important;
@@ -46,6 +47,8 @@ background-repeat: no-repeat;
         justify-content: center;
         align-items: center;
         text-align: center;
+        font-size: larger;
+        line-height: 1.5;
     }
     .button{
         border: 1px solid;
