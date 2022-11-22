@@ -1,5 +1,6 @@
 import { useState,useEffect,useCallback } from 'react';
 import '../styles/globals.scss'
+import Script from 'next/script';
 
 
 const useMediaQuery = (width) => {
@@ -66,6 +67,14 @@ function MyApp({ Component, pageProps }) {
   },[])
   return(
     <div id='app'  className={themeDark===false ? "theme-light" :themeDark===true ? "theme-dark" : ""}>
+      {/* <Script 
+        id="Adsense-id" 
+        async    
+        onError={(e) => { console.error("Script failed to load", e);}}   
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-987************676"    
+        crossorigin="anonymous"  
+      /> */}
       <Component  {...pageProps} isBreakpoint={isBreakpoint} toggleTheme={(e)=>toggleTheme(e)}/>
     </div>
   )

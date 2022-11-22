@@ -1,11 +1,28 @@
 .ads300x300{
     width: 100%;
-    height: 320px;
+    min-height: 320px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     border-top: .005rem solid var(--boder-color );
     border-bottom: .005rem solid var(--boder-color );
     background-color: var(--placeholder-color);
     margin-bottom: .5rem;
+    .adInfo{
+        font-size: .7rem;
+        padding: .5rem 0;
+        border-bottom: .005rem solid var(--boder-color );
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .adContent{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 300px;
+    }
 }
