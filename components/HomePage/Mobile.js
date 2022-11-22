@@ -63,9 +63,9 @@ export default function Mobile({page1,topA,stories}) {
             return(
               <div  key={index}>
               <Slide article={article} style={{height:"100%"}}/>
-              {index%2 === 1 && (
+              {/* {index%2 === 1 && (
                 <Ads300x600/>
-              )}
+              )} */}
               </div>
             )
           }):(
