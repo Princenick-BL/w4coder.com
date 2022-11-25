@@ -24,10 +24,10 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
         }}>
             <div 
                 className='img-container' 
-                style={{ 
-                    borderColor: `${color} !important`,
-                    border: `2px solid ${color}`,
-                }}
+                // style={{ 
+                //     borderColor: `${color} !important`,
+                //     border: `2px solid ${color}`,
+                // }}
             >
                 <Image 
                     className='img' 
