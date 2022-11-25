@@ -110,7 +110,7 @@ export default function Mobile() {
         </div>
         <div className={styles.annonce}>
           <div>{new Date().toLocaleDateString("fr-FR",date_options)}</div>
-          <span>S'abonner ?</span>
+          <span><Link href={"/newsletter"}> S'abonner ?</Link></span>
         </div>
       </>
     )
