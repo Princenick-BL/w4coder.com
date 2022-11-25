@@ -248,18 +248,16 @@ amp-story-player.my-player {
     left: 1rem;
   }
 }
-.circular-entry-point .img-container:nth-child(1){
-  margin-left: 0;
-  padding-left: 0;
-}
+
+
 .circular-entry-point .img {
 	cursor: pointer;
 	width: 50vw;
 	height: calc(50vw * 6 / 4);
-  max-width: 250px;
-  max-height: calc(250px * 6 / 4);
-  min-width: 200px;
-  min-height: calc(200px * 6 / 4);
+  max-width: 300px;
+  max-height: calc(300px * 6 / 4);
+  min-width: 300px;
+  min-height: calc(300px * 6 / 4);
 	border-radius: 5px;
 	background-clip: content-box;
 }
@@ -306,7 +304,5 @@ amp-story-player.my-player {
 	overflow: hidden;
 	width: 100%;
 	margin: .5rem auto;
-  padding: 0 1rem;
-
 }
  
