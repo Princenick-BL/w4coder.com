@@ -38,7 +38,7 @@ export default function Mobile({page1,topA,stories}) {
               {index === 1 &&(
                 <>
                   <AmpStoryPlayerComponent stories={stories}/>
-                  <Ads300x600/>
+                  {/* <Ads300x600/> */}
                 </>
               )}
               
@@ -49,7 +49,7 @@ export default function Mobile({page1,topA,stories}) {
           )}
         </div>
         
-        <Ads300x600/>
+        {/* <Ads300x600/> */}
 
         <InfiniteScroll
           dataLength={pages.length}
