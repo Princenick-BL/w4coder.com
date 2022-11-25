@@ -202,6 +202,7 @@ amp-story-player.my-player {
 	overflow-x: scroll;
 	-ms-overflow-style: none; /* IE 11 */
     scrollbar-width: none; /* Firefox 64 */
+    padding-left: .7rem;
 }
 /* width */
 .entry-points::-webkit-scrollbar {
@@ -225,7 +226,6 @@ amp-story-player.my-player {
 }
 .circular-entry-point .img-container{
 	border-radius: 10px;
-	padding: 3px !important;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -254,10 +254,10 @@ amp-story-player.my-player {
 	cursor: pointer;
 	width: 50vw;
 	height: calc(50vw * 6 / 4);
-  max-width: 300px;
-  max-height: calc(300px * 6 / 4);
-  min-width: 300px;
-  min-height: calc(300px * 6 / 4);
+  max-width: 250px;
+  max-height: calc(250px * 6 / 4);
+  min-width: 250px;
+  min-height: calc(250px * 6 / 4);
 	border-radius: 5px;
 	background-clip: content-box;
 }
