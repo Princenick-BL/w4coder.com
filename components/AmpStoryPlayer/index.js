@@ -38,9 +38,9 @@ const Widget = ({img,pos,color,text,url,onclick}) =>{
                 />
                 {/* <div className="viewport-author-logo"><Logo single={true}/></div> */}
                 {/* <div className="viewport-author"><Logo/></div> */}
-            </div>
-            <div>
-            <span className="entry-point-card-title">{text}</span>
+                <div className='entry-point-card-content'>
+                    <h2 className="entry-point-card-title">{text}</h2>
+                </div>
             </div>
         </div>
     )
