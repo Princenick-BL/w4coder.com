@@ -21,27 +21,51 @@ export default function WebStories({isBreakpoint,stories}) {
             <div className={styles.cats}>
                 {stories.map((s,i)=>{
                     return(
-                        <div className={styles.cat} key={i}>
-                            <Image
-                                src={s.posterP}
-                                layout="fill"
-                                className={styles.img}
-                                alt={s.title}
-                            />
-                            <Link  className={styles.poster} href={`/blog/web-story/${s._id}/${s.slug}`}>
-                                <div className={styles.publisherLogo}>
-
+                        <div 
+                            className="entry-point-card-container"  
+                            key={i} 
+                            style={{borderRadius:"10px",overflow:"hidden"}} 
+                        >
+                            <a href={`/blog/web-story/${s._id}/${s.slug}`}>
+                            <div 
+                                className='img-container' 
+                            >
+                                <Image 
+                                    className='img' 
+                                    width={300} 
+                                    height={400} 
+                                    src={s.posterP}
+                                    alt={s.title} 
+                                />
+                                {/* <div className="viewport-author-logo"><Logo single={true}/></div> */}
+                                {/* <div className="viewport-author"><Logo/></div> */}
+                                <div className='entry-point-card-content'>
+                                    <h2 className="entry-point-card-title" style={{fontSize:"1.2rem",lineHeight:"1.5"}}>{s.title}</h2>
                                 </div>
-                                <div className={styles.publisherTP}>
-                                    <div className={styles.postTitle}>
-                                        {s.title}
-                                    </div>
-                                    <div className={styles.publisherName}>
-                                        w4coder
-                                    </div>
-                                </div> 
-                            </Link>
+                            </div>
+                            </a>
                         </div>
+                        // <div className={styles.cat} key={i}>
+                        //     <Image
+                        //         src={s.posterP}
+                        //         layout="fill"
+                        //         className={styles.img}
+                        //         alt={s.title}
+                        //     />
+                        //     <Link  className={styles.poster} href={`/blog/web-story/${s._id}/${s.slug}`}>
+                        //         <div className={styles.publisherLogo}>
+
+                        //         </div>
+                        //         <div className={styles.publisherTP}>
+                        //             <div className={styles.postTitle}>
+                        //                 {s.title}
+                        //             </div>
+                        //             <div className={styles.publisherName}>
+                        //                 w4coder
+                        //             </div>
+                        //         </div> 
+                        //     </Link>
+                        // </div>
                     )
                 })}
             </div>

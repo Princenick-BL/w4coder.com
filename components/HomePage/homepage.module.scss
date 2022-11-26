@@ -160,11 +160,11 @@
     .listOne{
         display: grid;
         grid-template-columns: repeat(2,minmax(0,1fr));
-        gap: 2.5rem;
+        gap: 1rem;
     }
     .listTwo{
         display: grid;
-        gap: 2.5rem;
+        gap: 1rem;
         overflow-y: hidden !important;
         @media (min-width: 768px){
             grid-template-columns: repeat(2,minmax(0,1fr));
@@ -175,7 +175,7 @@
 
         }
         @media (min-width: 980px){
-            gap: 1.5rem;
+            gap: 1rem;
 
         }
     }
