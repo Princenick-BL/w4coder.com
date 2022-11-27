@@ -59,8 +59,8 @@ export default async function handler(req, res) {
         <link rel="apple-touch-icon" href="/favicon.ico">
         <link rel="canonical" href="https://w4coder.com/blog/article/${article?._id}/${article?.slug}" />
         <link href=https://fonts.gstatic.com rel="dns-prefetch preconnect" crossorigin>
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional" as="style">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=optional">      
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Monoton&display=optional" as="style">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&display=optional">      
         <link rel="preload" href="${article?.poster}" as="image"/>
         <script type="application/ld+json">
         {
@@ -194,31 +194,34 @@ export default async function handler(req, res) {
         </script>
       </head>
       <body>
+        <div>
+          <ul class="menu">
+            <li><a href="/">Acceuil</a></li>
+            <li><a href="/web-stories">Web Stories </a></li>
+            <li class="article-head"> <a href="/"> w4coder</a></li>
+            <li><a href="/about">A propos</a></li>
+            <li><a href="/contact">Contact</a></li>
+            
+          </ul>
+          <div class="menuMobile">
+            <div class="menuView">
+              <div class="article-head"> <a href="/"> w4coder</a></div>
+              <svg id="opened"  onclick="openeMenu()"  class='hamburger show' style="width:1.5rem;height:1.5rem;cursor:pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
+              <svg id="closed" onclick="openeMenu()"  class='hamburger close' style="width:1.5rem;height:1.5rem;cursor:pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
+            </div>
+            <ul id="submenu" class=" submenu close">
+              <li><a href="/">. Acceuil .</a></li>
+              <li><a href="/web-stories">. Web Stories .</a></li>
+              <li><a href="/about">. A propos .</a></li>
+              <li><a href="/contact">. Contact .</a></li>
+            </ul>
+          </div>
+        </div>
         ${injectAnalytics(article?.domainInfo?.ga)}
         <main id="content" role="main" >
           <div class="main">
             <article class="recipe-article">
-              <ul class="menu">
-                <li><a href="/">Acceuil</a></li>
-                <li><a href="/web-stories">Web Stories </a></li>
-                <li class="article-head"> <a href="/"> w4coder</a></li>
-                <li><a href="/about">A propos</a></li>
-                <li><a href="/contact">Contact</a></li>
-                
-              </ul>
-              <div class="menuMobile">
-                <div class="menuView">
-                  <div class="article-head"> <a href="/"> w4coder</a></div>
-                  <svg id="opened"  onclick="openeMenu()"  class='hamburger show' style="width:1.5rem;height:1.5rem;cursor:pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
-                  <svg id="closed" onclick="openeMenu()"  class='hamburger close' style="width:1.5rem;height:1.5rem;cursor:pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
-                </div>
-                <ul id="submenu" class=" submenu close">
-                  <li><a href="/">. Acceuil .</a></li>
-                  <li><a href="/web-stories">. Web Stories .</a></li>
-                  <li><a href="/about">. A propos .</a></li>
-                  <li><a href="/contact">. Contact .</a></li>
-                </ul>
-              </div>
+             
               <header>
                 <span class="ampstart-subtitle block px3 pt2 mb2">${article?.categoryInfo?.name || 'A LA UNE'}</span>
                 <h1 class="mb1 px3">${article?.title}</h1>
@@ -231,12 +234,21 @@ export default async function handler(req, res) {
                     >${new Date(article?.updatedAt).toDateString()}</time
                   >
                 </address>
-                
+                <!-- End byline -->
+              <amp-img
+                src="${article?.poster}"
+                width="${article?.meta?.width || 16}"
+                height="${article?.meta?.height || 9}"
+                layout="responsive"
+                alt="The final spritzer"
+                class="mb4 mx3 br3"
+              ></amp-img>
               </header>
               ${getSections(article?.sections)}
             </article>
           </div>
           <aside>
+            <br></br>
             <div class="sider-search" >
               <input type="search"/>
               <input type="submit" value="Search"/>

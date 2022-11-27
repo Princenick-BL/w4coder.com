@@ -90,7 +90,7 @@ export function getStyles(){
     p{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        font-size : 1.1rem;
+        font-size : 1.2rem;
         line-height : 1.5;
     }
 
@@ -131,7 +131,7 @@ export function getStyles(){
     }
     
     h1 {
-      font-size: 1.5em;
+      font-size: 1.6em;
       margin: 0.67em 0;
     }
     figcaption,
@@ -295,6 +295,11 @@ export function getStyles(){
     details,
     menu {
       display: block;
+      
+    }
+    .menu{
+      margin-top: 1rem !important;
+      margin-bottom: 2rem !important;
     }
     summary {
       display: list-item;
@@ -597,6 +602,9 @@ export function getStyles(){
     .mxn4 {
       margin-left: calc(2rem * -1);
       margin-right: calc(2rem * -1);
+    }
+    .br3{
+      border-radius : 5px;
     }
     .m-auto {
       margin: auto;
@@ -1196,6 +1204,7 @@ export function getStyles(){
       display: flex;
       flex-direction: column;
       align-content: center;
+      padding-top: 2rem;
     }
     @media only screen and (max-width: 1100px) {
       aside{
@@ -2329,11 +2338,11 @@ export function getStyles(){
         align-items: center;
         color: var(--text-color);
         padding : 0 .5rem;
-        font-family: "Oswald", sans-serif;
+        font-family: "Monoton", sans-serif;
     }
     .article-head a{
         text-decoration : none;
-        font-family: "Oswald", sans-serif;
+        font-family: "Monoton", sans-serif;
         font-size : 2rem;
         padding : 1rem 0;
     }
