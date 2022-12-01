@@ -17,7 +17,7 @@ export default function WebStories({isBreakpoint,stories}) {
         </Head>
         <Header isBreakpoint={isBreakpoint}/>
         <main className={styles.main}>
-            <h1 style={{marginTop:"1rem"}}>Web Stories</h1>
+            {/* <h1 style={{marginTop:"1rem"}}>Web Stories</h1> */}
             <div className={styles.cats}>
                 {stories.map((s,i)=>{
                     return(

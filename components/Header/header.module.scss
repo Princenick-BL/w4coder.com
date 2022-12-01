@@ -53,6 +53,14 @@
     display: flex;
     align-items: center;
     position: relative;
+    padding: 20px 0;
+    .flexBetween{
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        width: 100%;
+
+    }
     .tab{
         height: 100%;
         width: 100%;
@@ -65,7 +73,7 @@
         width: 100%;
         border-radius: 30px;
         border: 0px solid;
-        padding: 5px 1rem;
+        padding: 5px ;
         font-size: 1.1rem;
         outline: none;
         transition-duration: .5s;
@@ -76,11 +84,8 @@
     .submenu{
         display: flex;
         justify-content: center;
-        width: 100%;
         margin: 0;
         padding: 0;
-        margin-top: 1rem;
-        margin-bottom: 2rem;
         position: relative;
         li{
             text-decoration: none;

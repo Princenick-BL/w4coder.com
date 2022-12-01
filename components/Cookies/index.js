@@ -29,7 +29,10 @@ export default function Cookies() {
         <div className={styles.cookies +  " cookies"}>
             
             <div className={styles.info}>
-                <span className={styles.essentials} onClick={(e)=>{setTheme(false)}}>Accepter uniquement les cookies essentiels</span>
+                <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%"}}>
+                    <h4 style={{width:"max-content",minWidth:"max-content"}}>Mais d’abord, les cookies 🍪</h4>
+                    <span className={styles.essentials} onClick={(e)=>{setTheme(false)}}>Accepter uniquement les cookies essentiels</span>
+                </div>
 
                 <div className={styles.txt}>
                     <span>

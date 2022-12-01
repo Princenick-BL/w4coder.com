@@ -2,8 +2,9 @@ import React from 'react'
 import styles from './index.module.scss'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
-export default function Logo({single,style,head}) {
+export default function Logo({single,style,head,w=100,h=100}) {
   return (
     <>
       <Head>
@@ -15,7 +16,12 @@ export default function Logo({single,style,head}) {
         <div className={styles.logo + " "+styles.bg} style={style}>{`w4c`}</div>
       ) : (
         <Link href={"/"}>
-          <div className={styles.logo+ "  "+(head ? styles.head:"")} style={style}>{`w4coder`}</div>
+          <Image
+            src="/logo.png"
+            width={w}
+            height={h}
+            layout={"raw"}
+            />
         </Link>
       )}
     </>

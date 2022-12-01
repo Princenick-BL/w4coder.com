@@ -1,8 +1,10 @@
 .cookies{
     position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100vw;
+    margin: 0 auto;
+    max-width: 1344px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
     border-top: 2px solid #000;
     background-color: var(--background-primary);
     display: flex;
@@ -14,7 +16,10 @@
     box-sizing: border-box;
     overflow: hidden;
     height: 300px;
+    border-radius: 10px;
     @media (min-width: 1024px){
+        padding: 20px 4rem;
+
     }
     .info{
         margin: auto;
@@ -25,13 +30,12 @@
         -moz-box-pack: justify;
         justify-content: space-between;
         height: 100%;
-        max-width: 1010px;
         box-sizing: border-box;
         padding: 0px 0px 4px;
         color: rgb(0, 0, 0);
         
         @media (min-width: 1024px){
-            flex-direction: row;
+            // flex-direction: row;
         }
     }
    .essentials{
@@ -47,7 +51,6 @@
         overflow-y: auto;
 
         @media (min-width: 1024px){
-            padding: 0 4rem;
             flex-direction: row;
         }
     }

@@ -1,16 +1,23 @@
 .footer {
     display: flex;
-    flex-direction: column;
     flex: 1;
-    padding: 2rem 0;
+    padding: 10px 2rem ;
     border-top: 1px solid #eaeaea;
     justify-content: center;
     align-items: center;
+    *{
+        width: max-content;
+        min-width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+    }
     .cr{
         font-size: .875rem;
         line-height: 1.25rem;
-        margin-bottom: 1rem;
         display: flex;
+        align-items: center;
     }
     .txt{
         display: flex;
