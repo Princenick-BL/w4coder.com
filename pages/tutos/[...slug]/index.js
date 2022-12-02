@@ -6,7 +6,7 @@ import { getTuto, getTutoById } from '../../../services/tutos'
 import axios from 'axios'
 import { config as endpoint } from '../../../constants'
 import { getSection } from '../../../utils/tutuo-utils'
-
+import Prism from 'prismjs';
 export default function index({isBreakpoint,tuto}) {
     console.log(tuto?.sections)
     return (

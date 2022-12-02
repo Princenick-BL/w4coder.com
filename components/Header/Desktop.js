@@ -51,7 +51,7 @@ export default function Desktop() {
   return (
     <div className={styles.deskHead}>
       <div className={styles.flexBetween}>
-        <Logo style={{fontSize:"2rem",marginRight:"2rem"}} w={50} h={50} />
+        <Logo style={{fontSize:"2rem",marginRight:"2rem"}} w={40} h={40} />
         <ul className={styles.submenu}>
           <li><Link href={"/"}>Acceuil</Link></li>
           <li><Link href={"/web-stories"}>Web Stories </Link></li>

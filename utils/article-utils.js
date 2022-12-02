@@ -86,6 +86,8 @@ export function getStyles(){
       line-height: 1.15;
       -ms-text-size-adjust: 100%;
       -webkit-text-size-adjust: 100%;
+      display:flex;
+      justify-content:center;
     }
     p{
         padding-left: 1.5rem;
@@ -95,7 +97,6 @@ export function getStyles(){
     }
 
     body {
-      margin: 0;
       background: #fff;
       color: #4a4a4a;
       font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -105,6 +106,9 @@ export function getStyles(){
       overflow-x: hidden;
       font-smooth: always;
       -webkit-font-smoothing: antialiased;
+      padding: 0;
+      max-width: 1024px;
+      margin: 0 auto !important;
     }
     .hamburger{
       fill: #000;
@@ -297,10 +301,7 @@ export function getStyles(){
       display: block;
       
     }
-    .menu{
-      margin-top: 1rem !important;
-      margin-bottom: 2rem !important;
-    }
+    
     summary {
       display: list-item;
     }
@@ -1198,9 +1199,7 @@ export function getStyles(){
       max-width: 720px;
     }
     aside{
-      width: 22%;
       max-width: 310px;
-      margin-right: 10%;
       display: flex;
       flex-direction: column;
       align-content: center;
@@ -2387,7 +2386,7 @@ export function getStyles(){
       display : flex;
       justify-content: space-between;
       align-items : center;
-      padding: 1rem;
+      padding: 0 1rem;
     }
     .menuView div{
       width : max-width;
@@ -2404,6 +2403,13 @@ export function getStyles(){
     .close{
       display : none;
     }
+    .flexHead{
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 1.5rem;
+    }
 
     @media (min-width: 700px) {
       .menu{
@@ -2414,6 +2420,12 @@ export function getStyles(){
       }
       .menuMobile{
         display : none; 
+      }
+    }
+
+    @media (max-width: 700px) {
+      .flexHead{
+        display:none;
       }
     }
     
