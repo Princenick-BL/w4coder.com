@@ -67,6 +67,10 @@ export default function Mobile({style}) {
       useSearchStop(searchRef);
     return (
       <>
+        <div className={styles.annonce}>
+          <div>{new Date().toLocaleDateString("fr-FR",date_options)}</div>
+          <span><Link href={"/newsletter"}> S'abonner ?</Link></span>
+        </div>
         <div className={styles.mobileHead}  style={{...style}}>
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <div onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
@@ -108,10 +112,7 @@ export default function Mobile({style}) {
               </div>
             )}
         </div>
-        <div className={styles.annonce}>
-          <div>{new Date().toLocaleDateString("fr-FR",date_options)}</div>
-          <span><Link href={"/newsletter"}> S'abonner ?</Link></span>
-        </div>
+       
       </>
     )
 }
