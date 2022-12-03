@@ -1,35 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import Image from 'next/image'
-import { getTopTutos } from '../../../../services/tutos'
-
+import { getTutos } from '../../../../services/tutos'
 export default function TutoReco({page=1,nbrecord=2}) {
 
-  const [tutos,getTopTutos] = useState([
-    {
-      id: 1,
-      title : "Veniam adipisicing commodo cupidatat laborum proident.",
-      description : "Nostrud est Lorem adipisicing consectetur labore proident elit quis. Et laborum proident nostrud eu laborum eiusmod quis fugiat est ullamco consectetur. Fugiat nulla amet sint aliquip nisi aute Lorem aute non cupidatat."
-    },
-    {
-      id: 2,
-      title : "Veniam adipisicing commodo cupidatat laborum proident.",
-      description : "Nostrud est Lorem adipisicing consectetur labore proident elit quis. Et laborum proident nostrud eu laborum eiusmod quis fugiat est ullamco consectetur. Fugiat nulla amet sint aliquip nisi aute Lorem aute non cupidatat."
-    },
-    {
-      id: 3,
-      title : "Veniam adipisicing commodo cupidatat laborum proident.",
-      description : "Nostrud est Lorem adipisicing consectetur labore proident elit quis. Et laborum proident nostrud eu laborum eiusmod quis fugiat est ullamco consectetur. Fugiat nulla amet sint aliquip nisi aute Lorem aute non cupidatat."
-    },
-    {
-      id: 4,
-      title : "Veniam adipisicing commodo cupidatat laborum proident.",
-      description : "Nostrud est Lorem adipisicing consectetur labore proident elit quis. Et laborum proident nostrud eu laborum eiusmod quis fugiat est ullamco consectetur. Fugiat nulla amet sint aliquip nisi aute Lorem aute non cupidatat."
-    }
-  ].slice(4-nbrecord))
+  const [tutos,setTutos] = useState([])
 
   useEffect(()=>{
-
+    (async()=>{
+      const tutos = await getTutos({filter:{
+        page:page,
+        nbrecord : nbrecord
+      }})
+      setTutos(tutos)
+    })();
   },[])
 
   return (

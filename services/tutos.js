@@ -1,7 +1,7 @@
 import { config } from "../constants";
 import axios from 'axios'
 
-export const getTuto = async ({filter})=>{
+export const getTutos = async ({filter})=>{
     const res = await axios.get(`${config.API_ENDPOINT}/tuto?${Object.keys(filter).map(key => key + '=' + filter[key]).join('&')}`)
     if(res.data.success){
         return res.data.data
