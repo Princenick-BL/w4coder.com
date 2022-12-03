@@ -28,14 +28,13 @@ export default function WebStories({isBreakpoint,stories}) {
                         >
                             <a href={`/blog/web-story/${s._id}/${s.slug}`}>
                             <div 
-                                className='img-container' 
+                                className={'img-container ' + styles.singleStory}
                             >
                                 <Image 
                                     className='img' 
-                                    width={300} 
-                                    height={400} 
                                     src={s.posterP}
                                     alt={s.title} 
+                                    layout={"fill"}
                                 />
                                 {/* <div className="viewport-author-logo"><Logo single={true}/></div> */}
                                 {/* <div className="viewport-author"><Logo/></div> */}

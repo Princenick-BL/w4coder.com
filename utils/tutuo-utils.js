@@ -7,7 +7,7 @@ export const getSection = (s) =>{
             return(
             <div className="Code">
                 <pre>
-                    <code className={`language-javascript`} dangerouslySetInnerHTML={{__html: s?.content}}>
+                    <code className={`language-javascript`} dangerouslySetInnerHTML={{__html:s?.content}}>
                        
                     </code>
                 </pre>
