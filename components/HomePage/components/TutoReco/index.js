@@ -22,7 +22,7 @@ export default function TutoReco({page=1,nbrecord=2}) {
       {tutos && tutos?.map((t,i)=>{
         return(
           <div key={i} className={styles.tuto}>
-            <Link href={`/tuto/${t?._id}/${t?.slug}`}>
+            <Link href={`/tutos/${t?._id}/${t?.slug}`}>
               <h2>{t?.title}</h2>
               <span>{t?.description}</span>
               <div className={styles.publisher}>
