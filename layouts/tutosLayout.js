@@ -3,7 +3,7 @@ import styles from './tutosLayout.module.scss'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Link from 'next/link'
-import { getTuto } from '../services/tutos'
+import { getTutos } from '../services/tutos'
 
 const handleDispatchMenu = (data = []) =>{
     return [
@@ -147,7 +147,7 @@ export default function TutuosLayout({isBreakpoint,children}) {
 
     useEffect(()=>{
         (async ()=>{
-            const res = await getTuto({filter:{}});
+            const res = await getTutos({filter:{}});
             setTutos(handleDispatchMenu(res || []))
         })();
         
