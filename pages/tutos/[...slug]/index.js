@@ -18,7 +18,7 @@ const code = `const App = props => {
     );
   };`;
 
-export default function index({isBreakpoint,tuto}) {
+export default function TutosDynamic({isBreakpoint,tuto}) {
 
     useEffect(() => {
         Prism.highlightAll();
