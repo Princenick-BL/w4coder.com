@@ -194,14 +194,14 @@ export default async function handler(req, res) {
             }
         </script>
       </head>
-      <body>
+      <body class="px2">
         <div>
           <div class="flexHead">
             <a href="/"> <img src="/logo.png" width="40"  height="40"/></a>
             <ul class="menu">
               <li><a href="/">Acceuil</a></li>
               <li><a href="/web-stories">Web Stories </a></li>
-              <li><a href="/about">A propos</a></li>
+              <li><a href="/tutos">Tutos</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
             <div style="width:40px;height:40px;" width="40"  height="40"></div>
@@ -215,22 +215,22 @@ export default async function handler(req, res) {
             <ul id="submenu" class=" submenu close">
               <li><a href="/">. Acceuil .</a></li>
               <li><a href="/web-stories">. Web Stories .</a></li>
-              <li><a href="/about">. A propos .</a></li>
+              <li><a href="/tutos">. Tutos .</a></li>
               <li><a href="/contact">. Contact .</a></li>
             </ul>
           </div>
         </div>
         ${injectAnalytics(article?.domainInfo?.ga)}
         <main id="content" role="main" >
-          <div class="main">
+          <div class="main ">
             <article class="recipe-article">
              
               <header>
-                <span class="ampstart-subtitle block px3 pt2 mb2">${article?.categoryInfo?.name || 'A LA UNE'}</span>
-                <h1 class="mb1 px3">${article?.title}</h1>
+                <span class="ampstart-subtitle block pt2 mb2">${article?.categoryInfo?.name || 'A LA UNE'}</span>
+                <h1 class="mb1 ">${article?.title}</h1>
 
                 <!-- Start byline -->
-                <address class="ampstart-byline clearfix mb4 px3 h5">
+                <address class="ampstart-byline clearfix mb4  h5">
                   <time
                     class="ampstart-byline-pubdate block bold my1"
                     datetime="2016-12-13"
@@ -244,7 +244,7 @@ export default async function handler(req, res) {
                 height="${article?.meta?.height || 9}"
                 layout="responsive"
                 alt="The final spritzer"
-                class="mb4 mx3 br3"
+                class="br3"
               ></amp-img>
               </header>
               ${getSections(article?.sections)}

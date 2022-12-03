@@ -90,8 +90,6 @@ export function getStyles(){
       justify-content:center;
     }
     p{
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
         font-size : 1.2rem;
         line-height : 1.5;
     }
@@ -2386,7 +2384,7 @@ export function getStyles(){
       display : flex;
       justify-content: space-between;
       align-items : center;
-      padding: 0 1rem;
+      padding: 0;
     }
     .menuView div{
       width : max-width;
