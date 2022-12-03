@@ -36,7 +36,7 @@ const useMediaQuery = (width) => {
 
 function MyApp({ Component, pageProps }) {
 
-  const isBreakpoint = useMediaQuery(800)
+  const isBreakpoint = useMediaQuery(700)
   const [themeDark,setThemeDark] = useState(null)
 
   // function to set a given theme/color-scheme

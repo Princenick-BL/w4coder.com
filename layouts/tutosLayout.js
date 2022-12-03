@@ -150,12 +150,15 @@ export default function TutuosLayout({isBreakpoint,children}) {
             const res = await getTuto({filter:{}});
             setTutos(handleDispatchMenu(res || []))
         })();
+        
     },[])
 
     return (
         <div className={styles.container}>
-            <div className={styles.headerContainer}>
-                <Header isBreakpoint={isBreakpoint}/>
+            <div className={styles.header}>
+                <div className={styles.headerContainer}>
+                    <Header isBreakpoint={isBreakpoint}/>
+                </div>
             </div>
             <div className={styles.main}>
                 {(isBreakpoint != 1) &&(

@@ -4,6 +4,9 @@ import styles from './homepage.module.scss'
 import Slide from './components/Mobile/Card'
 import { getArticle ,getTopArticles,searchArticle} from '../../services/articles'
 import AmpStoryPlayerComponent from '../AmpStoryPlayer';
+import TutoReco from './components/TutoReco';
+
+
 export default function Desktop({page1,topA,stories}) {
     const [pages,setPages] = useState([...page1.slice(2)])
     const [pageNum,setPageNum] = useState(1)
@@ -32,6 +35,7 @@ export default function Desktop({page1,topA,stories}) {
       </div>
       <AmpStoryPlayerComponent stories={stories}/>
       <br></br>
+      <TutoReco nbrecord={4}/>
       <br></br>
       <InfiniteScroll
         dataLength={pages.length}

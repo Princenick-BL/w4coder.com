@@ -2,6 +2,8 @@ export const SECTION_TYPE = {
     TEXT_BLOCK : "TEXT_BLOCK",
     IMAGE_BLOCK : "IMAGE_BLOCK",
     VIDEO_BLOCK : "VIDEO_BLOCK",
+    CODE_BLOCK : "CODE_BLOCK",
+
 }
 
 export const config ={

@@ -21,6 +21,7 @@ export default function Logo({single,style,head,w=100,h=100}) {
             width={w}
             height={h}
             layout={"raw"}
+            alt={"Logo"}
             />
         </Link>
       )}

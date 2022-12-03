@@ -5,7 +5,7 @@ import {searchArticle} from '../../services/articles'
 import Link from 'next/link'
 const date_options =  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-export default function Mobile() {
+export default function Mobile({style}) {
     const [searchResult,setSearchResult]=useState([])
     const [openedMenu,setOpenedMenu] = useState(false)
     const [openedSearch,setOpenedSearch] = useState(false)
@@ -67,7 +67,7 @@ export default function Mobile() {
       useSearchStop(searchRef);
     return (
       <>
-        <div className={styles.mobileHead}>
+        <div className={styles.mobileHead}  style={{...style}}>
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <div onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
                 {openedMenu ? (

@@ -6,6 +6,7 @@ import styles from './homepage.module.scss'
 import AmpStoryPlayerComponent from '../AmpStoryPlayer';
 import RecommendedTitle from '../RecommendedTitle';
 import Ads300x600 from '../Ads300';
+import TutoReco from './components/TutoReco';
 
 export default function Mobile({page1,topA,stories}) {
     const [pages,setPages] = useState([])
@@ -50,6 +51,7 @@ export default function Mobile({page1,topA,stories}) {
         </div>
         
         {/* <Ads300x600/> */}
+        <TutoReco/>
 
         <InfiniteScroll
           dataLength={pages.length}

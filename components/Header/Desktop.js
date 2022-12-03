@@ -4,7 +4,7 @@ import styles from './header.module.scss'
 import Link from 'next/link'
 import {searchArticle} from '../../services/articles'
 
-export default function Desktop() {
+export default function Desktop({style}) {
     const [searchResult,setSearchResult]=useState([])
     const [openedMenu,setOpenedMenu] = useState(false)
     const searchRef = useRef(null);
@@ -49,7 +49,7 @@ export default function Desktop() {
       // }
       // useSearchStop(searchRef);
   return (
-    <div className={styles.deskHead}>
+    <div className={styles.deskHead} style={{...style}}>
       <div className={styles.flexBetween}>
         <Logo style={{fontSize:"2rem",marginRight:"2rem"}} w={40} h={40} />
         <ul className={styles.submenu}>

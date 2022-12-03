@@ -4,13 +4,8 @@ import { config as endpoint } from '../../../constants'
 import {getStyles,getSections,getRecentArticles,injectAnalytics} from '../../../utils/article-utils'
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const ampOptimizer = AmpOptimizer.create();
-const Prism = require('prismjs');
 
-// The code snippet you want to highlight, as a string
-const code = `var data = 1;`;
 
-// Returns a highlighted HTML string
-const scripthtml = Prism.highlight(code, Prism.languages.javascript, 'javascript');
 export default async function handler(req, res) {
 
     const {query,headers,params} = req;
@@ -253,7 +248,6 @@ export default async function handler(req, res) {
               ></amp-img>
               </header>
               ${getSections(article?.sections)}
-              ${scripthtml}
             </article>
           </div>
           <aside>
