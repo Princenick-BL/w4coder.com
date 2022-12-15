@@ -31,7 +31,6 @@ export default function Cookies() {
             <div className={styles.info}>
                 <div className={styles.cookieHead}>
                     <h4 style={{width:"max-content",minWidth:"max-content"}}>Mais d’abord, les cookies 🍪</h4>
-                    <span className={styles.essentials} onClick={(e)=>{setTheme(false)}}>Accepter uniquement les cookies essentiels</span>
                 </div>
 
                 <div className={styles.txt}>
@@ -46,6 +45,8 @@ export default function Cookies() {
 
                 </div>
                 <div className={styles.buttons}>
+                     <span className={styles.essentials} onClick={(e)=>{setTheme(false)}}>Accepter uniquement les cookies essentiels</span>
+
                     <button onClick={(e)=>{setTheme(true)}}>TOUT ACCEPTER</button>
                 </div>
             </div>

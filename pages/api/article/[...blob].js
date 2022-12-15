@@ -248,6 +248,9 @@ export default async function handler(req, res) {
               ></amp-img>
               </header>
               ${getSections(article?.sections)}
+              <p class="max-w">
+                <script src="https://princenick-bl.github.io/embed-v2.js?target=https://github.com/Princenick-BL/princenickballo/blob/main/GlobalContext.js&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>              
+              </p>
             </article>
           </div>
           <aside>

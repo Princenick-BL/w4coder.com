@@ -35,7 +35,7 @@ export default function Desktop({page1,topA,stories}) {
       </div>
       <AmpStoryPlayerComponent stories={stories}/>
       <br></br>
-      <TutoReco nbrecord={4}/>
+      {/* <TutoReco nbrecord={4}/> */}
       <br></br>
       <InfiniteScroll
         dataLength={pages.length}

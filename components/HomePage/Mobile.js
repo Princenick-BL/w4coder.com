@@ -27,10 +27,8 @@ export default function Mobile({page1,topA,stories}) {
   return (
     <div className={styles.editorial}>
       <div style={{marginTop:"1rem"}}></div>
-      <AmpStoryPlayerComponent stories={stories}/>
       <RecommendedTitle title={"ARTICLES"}/>
       <div className={styles.editorialContent}>
-
         <div
           className={styles.mainSlideShow}
         >
@@ -38,6 +36,13 @@ export default function Mobile({page1,topA,stories}) {
             return(
               <>
               <Slide key={index} article={article} style={{height:"100%"}}/>
+              {index === 1 &&(
+                <>
+                  <AmpStoryPlayerComponent stories={stories}/>
+                  {/* <Ads300x600/> */}
+                </>
+              )}
+              
               </>
             )
           }):(
@@ -46,7 +51,7 @@ export default function Mobile({page1,topA,stories}) {
         </div>
         
         {/* <Ads300x600/> */}
-        <TutoReco/>
+        {/* <TutoReco/> */}
 
         <InfiniteScroll
           dataLength={pages.length}

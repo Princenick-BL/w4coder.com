@@ -7,7 +7,7 @@ export const SECTION_TYPE = {
 }
 
 export const config ={
-    API_ENDPOINT : process.env.NEXT_PUBLIC_APP_API_ENDPOINT|| "https://api.w4coder.com"
+    API_ENDPOINT : process.env.NEXT_PUBLIC_APP_API_ENDPOINT
 }
 
 export const THEME = {

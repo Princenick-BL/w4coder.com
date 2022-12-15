@@ -19,7 +19,8 @@ export default function Contact({isBreakpoint}) {
             <p>Nous sommes à votre écoute</p>
             <div className={styles.contact}>
                 <div>
-                    <h3 style={{display:"flex",alignItems:"center"}}>Service client <Logo style={{marginLeft:"1rem"}}/></h3>
+                    <h3 style={{display:"flex",alignItems:"center"}}>Service client</h3>
+                    <br></br>
                     <p>Vous avez une recommendation pour ou nous ou une requête à nous soumettre ? N'hésitez pas notre service client étudiera votre message avec soin et attention.
                         <br></br>Merci à vous !!!</p>
                     <a href='mailto:contact@w4coder.com'>Email : contact@w4coder.com</a>

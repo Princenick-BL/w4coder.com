@@ -37,6 +37,7 @@ export default function Desktop({style}) {
               <li><Link href={"/"}>Acceuil</Link></li>
               <li><Link href={"/web-stories"}>Web Stories </Link></li>
               <li><Link href={"/tutos"}>Tutos</Link></li>
+              <li><Link href={"/youtube"}>YouTube</Link></li>
               <li><Link href={"/contact"}>Contact</Link></li>
             </ul>
             <svg 

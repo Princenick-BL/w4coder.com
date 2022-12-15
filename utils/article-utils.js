@@ -107,6 +107,8 @@ export function getStyles(){
       padding: 0;
       max-width: 1024px;
       margin: 0 auto !important;
+      width: min-content;
+      min-width: max-content;
     }
     .hamburger{
       fill: #000;
@@ -141,6 +143,8 @@ export function getStyles(){
     main {
       display: flex;
       justify-content: space-between;
+      max-width: 1062px;
+      min-width : 100%;
     }
     figure {
       margin: 1em 40px;
@@ -1189,19 +1193,21 @@ export function getStyles(){
     }
     
     .main{
-      width: calc(100% - 330px);
+      width: max-content;
       display : flex;
       justify-content: center;
     }
     article {
       max-width: 720px;
     }
+
     aside{
       max-width: 310px;
       display: flex;
       flex-direction: column;
       align-content: center;
       padding-top: 2rem;
+      margin-left: 2rem;
     }
     @media only screen and (max-width: 1100px) {
       aside{
@@ -2406,7 +2412,11 @@ export function getStyles(){
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 1.5rem;
+      padding: 10px 0;
+      border-bottom: 1px solid #eeeeee;
+    }
+    .max-w{
+      max-width: calc(720 - 2rem);
     }
 
     @media (min-width: 700px) {
@@ -2425,7 +2435,13 @@ export function getStyles(){
       .flexHead{
         display:none;
       }
+      .max-w{
+        max-width: calc(100vw - 2rem);
+      }
+      article{
+        max-width: calc(100vw - 1rem );
+      }
     }
-    
+   
   </style>`
 }
