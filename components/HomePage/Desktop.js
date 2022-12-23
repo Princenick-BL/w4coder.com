@@ -7,7 +7,7 @@ import AmpStoryPlayerComponent from '../AmpStoryPlayer';
 import TutoReco from './components/TutoReco';
 
 
-export default function Desktop({page1,topA,stories}) {
+export default function Desktop({page1,topA,stories,lang}) {
     const [pages,setPages] = useState([...page1.slice(2)])
     const [pageNum,setPageNum] = useState(1)
     const [hasMore,setHasMore] = useState(true)
@@ -15,7 +15,8 @@ export default function Desktop({page1,topA,stories}) {
     const fetchMoreData = async ()=>{
 
         const res =  await getArticle({filter:{
-          page : pageNum + 1
+          page : pageNum + 1,
+          lang : lang
         }})
         setPageNum(pageNum + 1)
         setPages([...pages,...res])
@@ -47,9 +48,12 @@ export default function Desktop({page1,topA,stories}) {
       >
         {pages ? pages.map((article,index)=>{
           return(
-            <div  key={index}>
+            <>
               <Slide article={article} style={{height:"100%"}} type={2}/>
-            </div>
+              {index ===1  &&(
+                <div className={styles.ads}>orifr</div>
+              )}
+            </>
           )
         }):(
           <></>

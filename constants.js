@@ -3,6 +3,7 @@ export const SECTION_TYPE = {
     IMAGE_BLOCK : "IMAGE_BLOCK",
     VIDEO_BLOCK : "VIDEO_BLOCK",
     CODE_BLOCK : "CODE_BLOCK",
+    GIT_BLOCK : "GIT_BLOCK"
 
 }
 

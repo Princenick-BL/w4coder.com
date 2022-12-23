@@ -282,12 +282,12 @@ amp-story-player.my-player {
 .entry-point-card-container {
 	position: relative;
 	transition: transform 0.3s;
-	margin: 5px;
+	margin: .5rem;
   max-width: min-content;
 }
 
 .entry-point-card-container:nth-child(1){
-  margin-left: 0;
+  // margin-left: 0;
 }
 
 /* Extra stuff that makes sample aesthetic. */

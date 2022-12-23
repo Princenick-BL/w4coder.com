@@ -6,6 +6,90 @@
   }
 }
 
+.search{
+  width: 100%;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #ccc;
+
+}
+
+.apis{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .api{
+    width: 30%;
+    background-color: #eaeaea;
+    height: max-content;
+    margin-top: 2rem;
+    border-radius: 5px;
+    padding: 1rem;
+    .top{
+      display: flex;
+      img{
+        border-radius: 5px;
+      }
+      span{
+        margin-left: 1rem;
+        font-weight: bold;
+      }
+    }
+    .desc{
+      margin: 1rem 0;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      line-height: 1.5 !important;
+    }
+    .keywords{
+      display: flex;
+      flex-wrap: wrap;
+      .word{
+        background-color: #ffffff;
+        font-size: medium;
+        padding: 0 5px;
+        font-size: .8rem;
+        margin-right: 5px;
+      }
+
+    }
+  }
+}
+
+.container2{
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  .head{
+    padding: 0;
+    max-width: 1062px;
+    margin: 0 auto;
+  }
+  .banner{
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    .bannerContent{
+      padding-right: 5%;
+      padding-left: 5%;
+      width: 90%;
+      box-sizing: content-box;
+      height: 100%;
+    }
+  }
+  .main{
+    padding-top: 0;
+  }
+}
+
 .main {
   min-height: 100vh;
   padding:  0;
@@ -189,6 +273,8 @@
   grid-template-columns: repeat(2,minmax(0,1fr));
   grid-auto-rows: max-content;
   gap: 1rem;
+  justify-content: center;
+  padding:  0 ;
   @media (min-width: 668px){
     grid-template-columns: repeat(2,minmax(0,1fr));
   }
@@ -196,9 +282,13 @@
     gap: 1rem;
     grid-template-columns: repeat(3,minmax(0,1fr));
   }
-
+  
   @media (min-width: 1000px){
     grid-template-columns: repeat(4,minmax(0,1fr));
+    justify-content: flex-start;
+    padding: 0 1rem;
+  }
+  @media (min-width: 1000px){
   }
 
   .cat{

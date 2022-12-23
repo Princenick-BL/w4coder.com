@@ -5,7 +5,7 @@ import {searchArticle} from '../../services/articles'
 import Link from 'next/link'
 const date_options =  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-export default function Mobile({style}) {
+export default function Mobile({style,border=true}) {
     const [searchResult,setSearchResult]=useState([])
     const [openedMenu,setOpenedMenu] = useState(false)
     const [openedSearch,setOpenedSearch] = useState(false)
@@ -71,7 +71,7 @@ export default function Mobile({style}) {
           <div>{new Date().toLocaleDateString("fr-FR",date_options)}</div>
           <span><Link href={"/newsletter"}> S'abonner ?</Link></span>
         </div>
-        <div className={styles.mobileHead}  style={{...style}}>
+        <div className={styles.mobileHead}  style={{...style,borderBottom:border?"1px solid #eaeaea":"none"}}>
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <div onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
                 {openedMenu ? (
@@ -91,7 +91,8 @@ export default function Mobile({style}) {
             <ul className={styles.submenu+"  "+(openedMenu?styles.visible:styles.hidden)}>
               <li><Link href={"/"}>. Acceuil .</Link></li>
               <li><Link href={"/web-stories"}>. Web Stories .</Link></li>
-              <li><Link href={"/tutos"}>. Tutos .</Link></li>
+              <li><Link href={"/youtube"}>. YouTube .</Link></li>
+              <li><Link href={"/apps"}>. Apps .</Link></li>
               <li><Link href={"/contact"}>. Contact .</Link></li>
             </ul>
             {openedSearch&&(

@@ -75,11 +75,12 @@ export default function WebStories({isBreakpoint,stories}) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({locale}) {
     // Fetch data from external API
-  
+
     const stories =  await getStories({filter:{
-        page : 1
+        page : 1,
+        lang:locale
     }})
   
     //console.log(res.length)

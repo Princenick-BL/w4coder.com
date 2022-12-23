@@ -8,14 +8,16 @@ import RecommendedTitle from '../RecommendedTitle';
 import Ads300x600 from '../Ads300';
 import TutoReco from './components/TutoReco';
 
-export default function Mobile({page1,topA,stories}) {
+export default function Mobile({page1,topA,stories,lang}) {
     const [pages,setPages] = useState([])
     const [pageNum,setPageNum] = useState(1)
     const [hasMore,setHasMore] = useState(true)
 
     const fetchMoreData = async ()=>{
       const res =  await getArticle({filter:{
-        page : pageNum + 1
+        page : pageNum + 1,
+        lang : lang
+
       }})
       setPageNum(pageNum + 1)
       setPages([...pages,...res])

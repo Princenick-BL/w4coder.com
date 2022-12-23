@@ -1,13 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from './index.module.scss'
-import Header from '../components/Header'
 import HomePage from '../components/HomePage'
 import { getTopArticles,getArticle } from '../services/articles'
 import {getStories} from '../services/stories'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { useRouter } from 'next/router'
+
 
 export default function Home({isBreakpoint,page1,topA,toggleTheme,stories}) {
+
+  const router = useRouter()
+  const lang = router.locale
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,7 +23,7 @@ export default function Home({isBreakpoint,page1,topA,toggleTheme,stories}) {
       </Head>
       <Header isBreakpoint={isBreakpoint} />
       <main className={styles.main}>
-        <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1} stories={stories}/>      
+        <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1} stories={stories} lang={lang}/>      
       </main>
       <Footer toggleTheme={toggleTheme}/>
       
@@ -25,15 +31,17 @@ export default function Home({isBreakpoint,page1,topA,toggleTheme,stories}) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({locale}) {
   // Fetch data from external API
 
   const page1 =  await getArticle({filter:{
-    page : 1
+    page : 1,
+    lang : locale
   }})
 
   const stories =  await getStories({filter:{
-      page : 1
+    page : 1,
+    lang : locale
   }})
   //console.log(res.length)
 

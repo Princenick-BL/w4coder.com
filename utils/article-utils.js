@@ -23,6 +23,14 @@ export function getSections(sections){
                         ></amp-img>
                     `
                     return
+                case SECTION_TYPE.GIT_BLOCK:
+                  htmlSections += `
+                  <p class="max-w">
+                    <script src="https://princenick-bl.github.io/codeprinter/embed-v2.js?target=${section?.content}&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>              
+                  </p>
+                  `
+                  return
+                
                 default :
                     return ""
             }
