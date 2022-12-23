@@ -197,7 +197,7 @@ export default async function handler(req, res) {
       <body class="px2">
         <div>
           <div class="flexHead">
-            <a href="/"> <img src="/logo.png" width="40"  height="40"/></a>
+            <a href="/"> <img src="/logo.png" width="40" alt="logo"  height="40"/></a>
             <ul class="menu">
               <li><a href="/">Acceuil</a></li>
               <li><a href="/web-stories">Web Stories </a></li>

@@ -95,7 +95,9 @@ export default function AmpStoryPlayerComponent({stories}) {
                 <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
                 <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel='stylesheet' type='text/css'/>
             </Head>
+            {stories?.length > 0 && (
             <RecommendedTitle title={"WEB STORIES"}/>
+            )}
             <div className="viewport">
                 <div className="entry-point-container">
                     <div className="circular-entry-point">

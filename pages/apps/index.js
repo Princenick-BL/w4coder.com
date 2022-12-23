@@ -6,10 +6,10 @@ import Footer from '../../components/Footer'
 import styles from '../index.module.scss'
 import { useEffect,useState } from 'react'
 import Link from 'next/link'
-
+import { useTranslation } from "next-i18next";
 
 export default function Apps({isBreakpoint,page1,topA,toggleTheme,stories}) {
-
+    const { t } = useTranslation();
     const [apis,setApis] = useState([
         {
             id:1,

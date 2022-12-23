@@ -80,7 +80,7 @@ export default function Mobile({style,border=true}) {
                   <svg className='hamburger' style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
                 )}
               </div>
-              <Logo style={{fontSize:"1.5rem"}}  w={40} h={40}/>
+              <Logo style={{fontSize:"1.5rem"}}  w={40} h={40} />
               <svg 
                 className='hamburger' 
                 onClick={(e)=>{setOpenedSearch(!openedSearch)}}

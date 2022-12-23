@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './card.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
-
+import moment from 'moment'
 
 export default function Slide({article,style,type=0}){
   return(
@@ -50,7 +50,7 @@ export default function Slide({article,style,type=0}){
                 style={{minWidth:"10px"}}
                   alt={"Publisher logo"}
             />
-            <div className={styles.name}>Published by <strong>{article.author.name}</strong> on {new Date(article.updatedAt).toDateString()}</div>
+            <div className={styles.name}>Published by <strong>{article.author.name}</strong> {moment(article.updatedAt).fromNow()}</div>
           </div>
       </div>
     </section>

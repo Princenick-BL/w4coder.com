@@ -2,11 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['api.w4coder.com','picsum.photos', 'localhost', 'api-nickscorp-app.herokuapp.com','assets.codepen.io','api.lorem.space','random.imagecdn.app']
+    domains: ['api.w4coder.com','picsum.photos', 'localhost', 'api-nickscorp-app.herokuapp.com','assets.codepen.io','api.lorem.space','random.imagecdn.app',"i.ytimg.com"]
   }, 
   i18n: {
     locales: ['en-us', 'fr-fr'],
     defaultLocale: 'en-us',
+    localePath: "./locales",
   },
   async rewrites() {
     return [
