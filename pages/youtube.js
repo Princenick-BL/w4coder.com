@@ -44,7 +44,9 @@ export default function Youtube({isBreakpoint,data}) {
                     <div className={styles.list}>
                         {shorts && shorts.map((sh,i)=>{
                             return(
-                                <YoutubeShort info={sh}/>
+                                <div key={i}>
+                                    <YoutubeShort info={sh}/>
+                                </div>
                             )
                         })}
                     </div>
