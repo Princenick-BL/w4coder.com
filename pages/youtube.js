@@ -7,6 +7,7 @@ import { getStories } from '../services/stories'
 import Image from 'next/image'
 import Link from 'next/link'
 import YoutubeShort from '../components/Youtube'
+import axios from 'axios'
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/playlistItems';
 
 export default function Youtube({isBreakpoint,data,res}) {
@@ -66,8 +67,8 @@ export async function getServerSideProps(context) {
     // Fetch data from external API
   
    
-    const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&playlistId=PLBi1fROKdkWkj_OPLlMsMpnCmK8ZDz0EY`)
-    const data = await res.json();
+    const res = await axios.get(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&playlistId=PLBi1fROKdkWkj_OPLlMsMpnCmK8ZDz0EY`)
+    const data =     res.data;
   
     return { 
         props: {
