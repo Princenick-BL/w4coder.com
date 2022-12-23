@@ -3,68 +3,75 @@ import Logo from '../Logo'
 import styles from './header.module.scss'
 import {searchArticle} from '../../services/articles'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import getUnicodeFlagIcon from 'country-flag-icons/unicode'
+
 const date_options =  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 export default function Mobile({style,border=true}) {
-    const [searchResult,setSearchResult]=useState([])
-    const [openedMenu,setOpenedMenu] = useState(false)
-    const [openedSearch,setOpenedSearch] = useState(false)
 
-    const searchRef = useRef(null);
-    //useAmpStoryPlayer(loadPlayer(playerRef))
-    const stickyHeader = useRef()
+  const router = useRouter()
+  const lang = router.locale
 
-    // useLayoutEffect(() => {
-    //     const mainHeader = document.getElementById('mainHeader')
-    //     let fixedTop = stickyHeader.current.offsetTop
-    //     const fixedHeader = () => {
-    //       if (window.pageYOffset > fixedTop) {
-    //         mainHeader.classList.add('fixedTop')
-    //       } else {
-    //         mainHeader.classList.remove('fixedTop')
-    //       }
-    //     }
-    //     window.addEventListener('scroll', fixedHeader)
-    //   }, [])
-     
+  const [searchResult,setSearchResult]=useState([])
+  const [openedMenu,setOpenedMenu] = useState(false)
+  const [openedSearch,setOpenedSearch] = useState(false)
+
+  const searchRef = useRef(null);
+  //useAmpStoryPlayer(loadPlayer(playerRef))
+  const stickyHeader = useRef()
+
+  // useLayoutEffect(() => {
+  //     const mainHeader = document.getElementById('mainHeader')
+  //     let fixedTop = stickyHeader.current.offsetTop
+  //     const fixedHeader = () => {
+  //       if (window.pageYOffset > fixedTop) {
+  //         mainHeader.classList.add('fixedTop')
+  //       } else {
+  //         mainHeader.classList.remove('fixedTop')
+  //       }
+  //     }
+  //     window.addEventListener('scroll', fixedHeader)
+  //   }, [])
     
-    
-      const searching = async (e)=>{
-        const mainHeaderResult = document.getElementById("mainHeader")
-        if(e?.target?.value?.length > 0){
-          mainHeaderResult.classList.add('searching')
-          const res = await searchArticle(e?.target?.value)
-          console.log(res)
-          setSearchResult(res)
-        }else{
-          mainHeaderResult.classList.remove('searching')
-          setSearchResult([])
-        }
-    
+  
+  
+    const searching = async (e)=>{
+      const mainHeaderResult = document.getElementById("mainHeader")
+      if(e?.target?.value?.length > 0){
+        mainHeaderResult.classList.add('searching')
+        const res = await searchArticle(e?.target?.value)
+        console.log(res)
+        setSearchResult(res)
+      }else{
+        mainHeaderResult.classList.remove('searching')
+        setSearchResult([])
       }
-    
-      function useSearchStop(ref) {
-        useEffect(() => {
-    
-          /**
-           * Alert if clicked on outside of element
-           */
-          function handleClickOutside(event) {
-            if (ref.current && !ref.current.contains(event.target)) {
-              const mainHeaderResult = document.getElementById("mainHeader")
-              mainHeaderResult.classList.remove('searching')
-              setSearchResult([])
-            }
+  
+    }
+  
+    function useSearchStop(ref) {
+      useEffect(() => {
+  
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+          if (ref.current && !ref.current.contains(event.target)) {
+            const mainHeaderResult = document.getElementById("mainHeader")
+            mainHeaderResult.classList.remove('searching')
+            setSearchResult([])
           }
-          // Bind the event listener
-          document.addEventListener("mousedown", handleClickOutside);
-          return () => {
-            // Unbind the event listener on clean up
-            document.removeEventListener("mousedown", handleClickOutside);
-          };
-        }, [ref]);
-      }
-      useSearchStop(searchRef);
+        }
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          // Unbind the event listener on clean up
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, [ref]);
+    }
+    useSearchStop(searchRef);
     return (
       <>
         <div className={styles.annonce}>
@@ -81,12 +88,33 @@ export default function Mobile({style,border=true}) {
                 )}
               </div>
               <Logo style={{fontSize:"1.5rem"}}  w={40} h={40} />
-              <svg 
-                className='hamburger' 
-                onClick={(e)=>{setOpenedSearch(!openedSearch)}}
-                style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}}
-                focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-            </div>
+              <div
+                style={{
+                  display:"flex"
+                }}>
+                  <svg 
+                    style={{
+                      width:"1.5rem",
+                      height:"1.5rem",
+                      cursor:"pointer",
+                      display:"flex",
+                      marginRight:"1rem"
+                    }}
+                    className='hamburger' 
+                    onClick={(e)=>{setOpenedMenu(!openedMenu)}}
+                    focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                  <select defaultValue={lang} defaultChecked={lang} style={{
+                      background:"transparent",
+                      border:"none",
+                      fontSize:"1.1rem"
+                    }}
+                    onChange={(e)=>{handleChangeLang(e.target.value)}}
+                  >
+                    <option value="en-us">{getUnicodeFlagIcon('US')}</option>
+                    <option value="fr-fr">{getUnicodeFlagIcon('FR')}</option>
+                  </select>
+                </div>
+              </div>
             
             <ul className={styles.submenu+"  "+(openedMenu?styles.visible:styles.hidden)}>
               <li><Link href={"/"}>. Acceuil .</Link></li>
