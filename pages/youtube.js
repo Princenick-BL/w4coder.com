@@ -63,17 +63,16 @@ export default function Youtube({isBreakpoint,data,res}) {
     )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
     // Fetch data from external API
   
    
-    const res = await axios.get(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&playlistId=PLBi1fROKdkWkj_OPLlMsMpnCmK8ZDz0EY`)
-    const data =     res.data;
+    const ressult = await axios.get(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&playlistId=PLBi1fROKdkWkj_OPLlMsMpnCmK8ZDz0EY`)
   
     return { 
         props: {
-            data : data?.items || [],
-            res : data
+            data : ressult?.data?.items || [],
+            res : ressult
         } 
     }
   }
