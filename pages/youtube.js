@@ -9,8 +9,9 @@ import Link from 'next/link'
 import YoutubeShort from '../components/Youtube'
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/playlistItems';
 
-export default function Youtube({isBreakpoint,data}) {
+export default function Youtube({isBreakpoint,data,res}) {
 
+    console.log(res)
     const shorts = data
 
     return (
@@ -67,11 +68,11 @@ export async function getServerSideProps(context) {
    
     const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&playlistId=PLBi1fROKdkWkj_OPLlMsMpnCmK8ZDz0EY`)
     const data = await res.json();
-    console.log(data?.items)
   
     return { 
         props: {
             data : data?.items || [],
+            res : data
         } 
     }
   }
