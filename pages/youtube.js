@@ -13,7 +13,6 @@ const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/pl
 export default function Youtube({isBreakpoint,data,res}) {
 
     console.log(res)
-    const shorts = data
 
     return (
         <div className={styles.container}>
@@ -44,7 +43,7 @@ export default function Youtube({isBreakpoint,data,res}) {
                         }}>YouTube</span>
                     </div>
                     <div className={styles.list}>
-                        {shorts && shorts.map((sh,i)=>{
+                        {data && data.map((sh,i)=>{
                             return(
                                 <div key={i}>
                                     <YoutubeShort info={sh}/>

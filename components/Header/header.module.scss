@@ -6,9 +6,11 @@
     justify-content: center;
     // align-items: center;
     padding: .25rem 0 0 0;
-    padding: 0 1rem;
     margin-top: 5px;
     border-bottom: 1px solid #eaeaea;
+    .mobileSubHead{
+        padding: 0 1rem;
+    }
     .hW{
         width: 20%;
     }
@@ -27,6 +29,8 @@
         justify-content: center;
         margin: 0;
         padding: 0;
+        border: 1px solid #ccc;
+        width: 100%;
         li{
             text-decoration: none;
             list-style-type: none;
@@ -35,6 +39,7 @@
             align-items: center;
             margin: 0;
             padding: 1rem 0;
+            border-top:  1px solid #ccc;
         }
         li a{
             text-decoration: underline;
