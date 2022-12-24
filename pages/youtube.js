@@ -10,9 +10,7 @@ import YoutubeShort from '../components/Youtube'
 import axios from 'axios'
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/playlistItems';
 
-export default function Youtube({isBreakpoint,data,res}) {
-
-    console.log(res)
+export default function Youtube({isBreakpoint,data}) {
 
     return (
         <div className={styles.container}>
@@ -71,7 +69,6 @@ export async function getServerSideProps() {
     return { 
         props: {
             data : data?.items || [],
-            res : data || []
         } 
     }
   }

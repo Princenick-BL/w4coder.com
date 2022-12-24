@@ -17,14 +17,14 @@
         overflow: hidden;
         margin-bottom: 20px;
         
-        @media (max-width: 500px){
-            max-width: 400px;
-            max-height: 260px;
-
-        }
         @media (max-width: 768px){
             max-width: 480px;
             max-height: 260px;
+            
+        }
+        @media (max-width: 500px){
+            max-width: 400px;
+            max-height: 230px;
 
         }
         
