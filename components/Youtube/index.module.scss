@@ -45,7 +45,7 @@
         display: block;
         max-height: 4rem;
         -webkit-line-clamp: 2;
-        display: box;
+        display: flex;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;

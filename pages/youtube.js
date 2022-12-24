@@ -72,7 +72,7 @@ export async function getServerSideProps() {
     return { 
         props: {
             data : ressult?.data?.items || [],
-            res : ressult
+            res : ressult?.data || []
         } 
     }
   }
