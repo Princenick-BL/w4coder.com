@@ -7,7 +7,6 @@ const nextConfig = {
   i18n: {
     locales: ['en-us', 'fr-fr'],
     defaultLocale: 'en-us',
-    localePath: "./locales",
   },
   async rewrites() {
     return [

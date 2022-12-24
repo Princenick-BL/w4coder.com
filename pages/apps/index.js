@@ -13,7 +13,7 @@ export default function Apps({isBreakpoint,page1,topA,toggleTheme,stories}) {
     const [apis,setApis] = useState([
         {
             id:1,
-            name: t('app.tts.title'),
+            name: t('app'),
             desc: t("app.tts.desc"),
             keyword : ["IBM WATSON","TEXT TO SPEECH"],
             url:"/apps/text-to-speech-ibm-wattson"
