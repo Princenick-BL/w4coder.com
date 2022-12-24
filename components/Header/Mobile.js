@@ -34,7 +34,10 @@ export default function Mobile({style,border=true}) {
   //     window.addEventListener('scroll', fixedHeader)
   //   }, [])
     
-  
+  const handleChangeLang = (lang) =>{
+    const value = lang;
+    router.push(router.route, router.asPath, {      locale: value,    });
+  }
   
     const searching = async (e)=>{
       const mainHeaderResult = document.getElementById("mainHeader")
@@ -109,7 +112,7 @@ export default function Mobile({style,border=true}) {
                       border:"none",
                       fontSize:"1.1rem"
                     }}
-                    onChange={(e)=>{handleChangeLang(e.target.value);alert("ok")}}
+                    onChange={(e)=>{handleChangeLang(e.target.value)}}
                   >
                     <option value="en-us">{getUnicodeFlagIcon('US')}</option>
                     <option value="fr-fr">{getUnicodeFlagIcon('FR')}</option>
