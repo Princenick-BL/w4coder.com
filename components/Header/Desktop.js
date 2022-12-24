@@ -66,7 +66,8 @@ export default function Desktop({style,border=false}) {
                 <select defaultValue={lang} defaultChecked={lang} style={{
                     background:"transparent",
                     border:"none",
-                    fontSize:"1.1rem"
+                    fontSize:"1.1rem",
+                    cursor:"pointer"
                   }}
                   onChange={(e)=>{handleChangeLang(e.target.value)}}
                 >
