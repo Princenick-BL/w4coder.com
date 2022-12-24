@@ -66,12 +66,12 @@ export async function getServerSideProps() {
     // Fetch data from external API
   
    
-    const ressult = await axios.get(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&playlistId=PLBi1fROKdkWkj_OPLlMsMpnCmK8ZDz0EY`)
-  
+    const ressult = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&playlistId=PLBi1fROKdkWkj_OPLlMsMpnCmK8ZDz0EY`)
+    const data = await ressult.json()
     return { 
         props: {
-            data : ressult?.data?.items || [],
-            res : ressult?.data || []
+            data : data?.items || [],
+            res : data || []
         } 
     }
   }
