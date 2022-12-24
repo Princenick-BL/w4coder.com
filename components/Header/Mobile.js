@@ -109,7 +109,7 @@ export default function Mobile({style,border=true}) {
                       border:"none",
                       fontSize:"1.1rem"
                     }}
-                    onChange={(e)=>{handleChangeLang(e.target.value)}}
+                    onChange={(e)=>{handleChangeLang(e.target.value);alert("ok")}}
                   >
                     <option value="en-us">{getUnicodeFlagIcon('US')}</option>
                     <option value="fr-fr">{getUnicodeFlagIcon('FR')}</option>
