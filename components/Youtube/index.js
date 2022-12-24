@@ -5,7 +5,7 @@ import moment from 'moment'
 
 export default function YoutubeShort({info}) {
   return (
-    <a href={info?.snippet}>
+    <a href={`https://www.youtube.com/watch?v=${info?.snippet?.resourceId?.videoId}`}>
       <div className={styles.container}>
         <div className={styles.img}>
           <Image

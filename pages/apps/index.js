@@ -9,12 +9,12 @@ import Link from 'next/link'
 import { useTranslation } from "next-i18next";
 
 export default function Apps({isBreakpoint,page1,topA,toggleTheme,stories}) {
-    const { t } = useTranslation();
+    const { t } = useTranslation('common');
     const [apis,setApis] = useState([
         {
             id:1,
-            name:"Text To speech IBM Text To speech IBM Text To speech IBM",
-            desc:"Ullamco proident ut in et. Id minim excepteur labore ut. Velit qui commodo amet esse dolore. Mollit non sit dolore aute fugiat nulla ipsum eiusmod nostrud id tempor. Mollit nisi sunt labore est. In aliquip aute dolor irure. Adipisicing sunt velit ut culpa quis nostrud.",
+            name: t('app.tts.title'),
+            desc: t("app.tts.desc"),
             keyword : ["IBM WATSON","TEXT TO SPEECH"],
             url:"/apps/text-to-speech-ibm-wattson"
         }
