@@ -1,4 +1,4 @@
 {
-    "app":"Thsi is a TTS",
-    "app.tts.desc":"This is a TTS des"
+    "app":"Test to speech APP based on the IBM test to speech api",
+    "app.tts.desc":"This application is based on IMB's TTS technology and can transform any test into audio"
 }

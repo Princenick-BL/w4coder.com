@@ -5,7 +5,7 @@ import Link from 'next/link'
 import {searchArticle} from '../../services/articles'
 import { useRouter } from 'next/router'
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
-import i18n from '../../pages/i18n'
+import i18n from '../../i18n'
 export default function Desktop({style,border=false}) {
     const router = useRouter()
     const lang = router.locale

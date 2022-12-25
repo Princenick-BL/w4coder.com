@@ -5,7 +5,7 @@ import {searchArticle} from '../../services/articles'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
-import i18n from '../../pages/i18n'
+import i18n from '../../i18n'
 
 const date_options =  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 

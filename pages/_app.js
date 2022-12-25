@@ -3,7 +3,7 @@ import '../styles/globals.scss'
 import Script from 'next/script';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next'
-import './i18n'
+import '../i18n'
 
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(0);

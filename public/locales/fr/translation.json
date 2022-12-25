@@ -1,4 +1,4 @@
 {
-    "app":"Ceci est le TTS",
-    "app.tts.desc":"Ceci est la desc TTS"
+    "app":"Application test to speech basée sur l'api test to speech d'IBM",
+    "app.tts.desc":"Cette application est basée sur la technologie TTS d'IMB et permet de transformer tout test en audio"
 }
