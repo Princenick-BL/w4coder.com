@@ -5,7 +5,7 @@ import Link from 'next/link'
 import {searchArticle} from '../../services/articles'
 import { useRouter } from 'next/router'
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
-
+import i18n from '../../pages/i18n'
 export default function Desktop({style,border=false}) {
     const router = useRouter()
     const lang = router.locale
@@ -30,6 +30,7 @@ export default function Desktop({style,border=false}) {
     const handleChangeLang = (lang) =>{
       const value = lang;
       router.push(router.route, router.asPath, {      locale: value,    });
+      i18n.changeLanguage(lang)
     }
     
     return (
@@ -71,8 +72,8 @@ export default function Desktop({style,border=false}) {
                   }}
                   onChange={(e)=>{handleChangeLang(e.target.value)}}
                 >
-                  <option value="en-us">{getUnicodeFlagIcon('US')}</option>
-                  <option value="fr-fr">{getUnicodeFlagIcon('FR')}</option>
+                  <option value="en">{getUnicodeFlagIcon('US')}</option>
+                  <option value="fr">{getUnicodeFlagIcon('FR')}</option>
                 </select>
               </div>
             </div>

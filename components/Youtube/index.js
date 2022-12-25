@@ -11,6 +11,7 @@ export default function YoutubeShort({info}) {
           <Image
             src={info?.snippet?.thumbnails?.maxres?.url}
             fill
+            alt={info?.snippet?.resourceId?.videoId}
             />
         </div>
         <div className={styles.infoDesc}>
@@ -20,6 +21,7 @@ export default function YoutubeShort({info}) {
               width={36}
               height={36}
               className={styles.logo}
+              alt={"logo"}
               />
           </div>
           <div>

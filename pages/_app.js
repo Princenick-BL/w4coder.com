@@ -2,7 +2,8 @@ import { useState,useEffect,useCallback } from 'react';
 import '../styles/globals.scss'
 import Script from 'next/script';
 import Head from 'next/head';
-
+import { appWithTranslation } from 'next-i18next'
+import './i18n'
 
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(0);
@@ -68,19 +69,10 @@ function MyApp({ Component, pageProps }) {
   },[])
   return(
     <div id='app'  className={themeDark===false ? "theme-light" :themeDark===true ? "theme-dark" : ""}>
-      <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WV85CLJKTF"></script>
-      </Head>
-      <script dangerouslySetInnerHTML={{__html:`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-WV85CLJKTF');
-      `}}/>
       <Component  {...pageProps} isBreakpoint={isBreakpoint} toggleTheme={(e)=>toggleTheme(e)}/>
     </div>
   )
 }
 
-export default MyApp
+// export default MyApp
+export default appWithTranslation(MyApp)

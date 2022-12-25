@@ -5,6 +5,7 @@ import {searchArticle} from '../../services/articles'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
+import i18n from '../../pages/i18n'
 
 const date_options =  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -37,6 +38,8 @@ export default function Mobile({style,border=true}) {
   const handleChangeLang = (lang) =>{
     const value = lang;
     router.push(router.route, router.asPath, {      locale: value,    });
+    i18n.changeLanguage(lang)
+
   }
   
     const searching = async (e)=>{
@@ -114,8 +117,8 @@ export default function Mobile({style,border=true}) {
                     }}
                     onChange={(e)=>{handleChangeLang(e.target.value)}}
                   >
-                    <option value="en-us">{getUnicodeFlagIcon('US')}</option>
-                    <option value="fr-fr">{getUnicodeFlagIcon('FR')}</option>
+                    <option value="en">{getUnicodeFlagIcon('US')}</option>
+                    <option value="fr">{getUnicodeFlagIcon('FR')}</option>
                   </select>
                 </div>
               </div>

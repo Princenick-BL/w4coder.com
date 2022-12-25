@@ -17,6 +17,8 @@
     "eslint-config-next": "13.0.2",
     "g": "^2.0.1",
     "i18next": "^22.4.6",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.1.1",
     "moment": "^2.29.4",
     "momentjs": "^2.0.0",
     "next": "13.0.2",

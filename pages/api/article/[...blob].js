@@ -5,7 +5,6 @@ import {getStyles,getSections,getRecentArticles,injectAnalytics} from '../../../
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const ampOptimizer = AmpOptimizer.create();
 
-
 export default async function handler(req, res) {
 
     const {query,headers,params} = req;
@@ -201,7 +200,8 @@ export default async function handler(req, res) {
             <ul class="menu">
               <li><a href="/">Acceuil</a></li>
               <li><a href="/web-stories">Web Stories </a></li>
-              <li><a href="/tutos">Tutos</a></li>
+              <li><a href="/youtube">YouTube</a></li>
+              <li><a href="/apps">Apps</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
             <div style="width:40px;height:40px;" width="40"  height="40"></div>
@@ -215,7 +215,8 @@ export default async function handler(req, res) {
             <ul id="submenu" class=" submenu close">
               <li><a href="/">. Acceuil .</a></li>
               <li><a href="/web-stories">. Web Stories .</a></li>
-              <li><a href="/tutos">. Tutos .</a></li>
+              <li><a href="/youtube">. YouTube .</a></li>
+              <li><a href="/apps">. Apps .</a></li>
               <li><a href="/contact">. Contact .</a></li>
             </ul>
           </div>

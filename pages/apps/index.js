@@ -9,11 +9,11 @@ import Link from 'next/link'
 import { useTranslation } from "next-i18next";
 
 export default function Apps({isBreakpoint,page1,topA,toggleTheme,stories}) {
-    const { t } = useTranslation('common');
+    const { t } = useTranslation("translation");
     const [apis,setApis] = useState([
         {
             id:1,
-            name: t('app'),
+            name: t("app"),
             desc: t("app.tts.desc"),
             keyword : ["IBM WATSON","TEXT TO SPEECH"],
             url:"/apps/text-to-speech-ibm-wattson"
@@ -45,7 +45,7 @@ export default function Apps({isBreakpoint,page1,topA,toggleTheme,stories}) {
                                             alt={a?.name}
                                         />
                                         <span>
-                                            {a?.name}
+                                            {t("app")}
                                         </span>
                                     </div>
                                     <div className={styles.desc}>{a?.desc}</div>

@@ -141,11 +141,7 @@ export function getStyles(){
     section {
       display: block;
     }
-    
-    h1 {
-      font-size: 1.6em;
-      margin: 0.67em 0;
-    }
+
     figcaption,
     figure,
     main {
@@ -1321,6 +1317,15 @@ export function getStyles(){
       padding: 0;
       font-weight: 400;
       letter-spacing: 0.06rem;
+    }
+        
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-top: .75rem;
+      word-break: break-word;
+      color: #000;
     }
     a,
     a:active,
