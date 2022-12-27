@@ -1,8 +1,5 @@
 import React from 'react'
-import Head from 'next/head'
-import Header from '../components/Header'
-import styles from './index.module.scss'
-import Footer from '../components/Footer'
+import DefaultLayout from '../layouts/default'
 
 export default function About({isBreakpoint}) {
   return (

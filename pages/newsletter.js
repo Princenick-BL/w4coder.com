@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from './index.module.scss'
+import DefaultLayout from '../layouts/default'
 
 export default function Newsletter({isBreakpoint}) {
 
