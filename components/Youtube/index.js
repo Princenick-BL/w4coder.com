@@ -5,13 +5,13 @@ import moment from 'moment'
 
 export default function YoutubeShort({info}) {
   return (
-    <a href={`https://www.youtube.com/watch?v=${info?.snippet?.resourceId?.videoId}`}>
+    <a target={"_blank"}  href={`https://www.youtube.com/watch?v=${info?.id?.videoId}`}>
       <div className={styles.container}>
         <div className={styles.img}>
           <Image
-            src={info?.snippet?.thumbnails?.maxres?.url}
+            src={info?.snippet?.thumbnails?.high?.url}
             fill
-            alt={info?.snippet?.resourceId?.videoId}
+            alt={info?.id?.videoId}
             />
         </div>
         <div className={styles.infoDesc}>

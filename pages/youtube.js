@@ -8,7 +8,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import YoutubeShort from '../components/Youtube'
 import axios from 'axios'
-const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/playlistItems';
+const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/search';
 
 export default function Youtube({isBreakpoint,data}) {
 
@@ -43,9 +43,13 @@ export default function Youtube({isBreakpoint,data}) {
                     <div className={styles.list}>
                         {data && data.map((sh,i)=>{
                             return(
-                                <div key={i}>
-                                    <YoutubeShort info={sh}/>
-                                </div>
+                                <>
+                                {sh?.id?.videoId && (
+                                    <div key={i}>
+                                        <YoutubeShort info={sh}/>
+                                    </div>
+                                )}
+                                </>
                             )
                         })}
                     </div>
@@ -64,7 +68,7 @@ export async function getServerSideProps() {
     // Fetch data from external API
   
    
-    const ressult = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&playlistId=PLBi1fROKdkWkj_OPLlMsMpnCmK8ZDz0EY`)
+    const ressult = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&channelId=UCENrVFimv0tFrBM9SJqr1Aw`)
     const data = await ressult.json()
     return { 
         props: {

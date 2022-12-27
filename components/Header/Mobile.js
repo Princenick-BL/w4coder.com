@@ -127,7 +127,6 @@ export default function Mobile({style,border=true}) {
               <li><Link href={"/"}>. Acceuil .</Link></li>
               <li><Link href={"/web-stories"}>. Web Stories .</Link></li>
               <li><Link href={"/youtube"}>. YouTube .</Link></li>
-              <li><Link href={"/apps"}>. Apps .</Link></li>
               <li><Link href={"/contact"}>. Contact .</Link></li>
             </ul>
             {openedSearch&&(
