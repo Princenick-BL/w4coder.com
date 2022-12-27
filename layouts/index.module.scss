@@ -1,0 +1,34 @@
+.container {
+    padding: 0;
+    max-width: 1062px;
+    margin: 0 auto;
+    .main {
+      min-height: 100vh;
+      padding:  0;
+      padding-top: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .svg1,.svg2,.svg3{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+      }
+      .svg1{
+        left: 0;
+      }
+      .svg2{
+        bottom: 40vh;
+        right: 0;
+      }
+      .svg3{
+        bottom: 0;
+        left: 50px;
+      }
+      .children{
+        z-index: 2;
+      }
+    }
+}

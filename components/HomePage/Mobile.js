@@ -36,16 +36,15 @@ export default function Mobile({page1,topA,stories,lang}) {
         >
           {page1 ? page1.map((article,index)=>{
             return(
-              <>
-              <Slide key={index} article={article} style={{height:"100%"}}/>
-              {index === 1 &&(
-                <>
-                  <AmpStoryPlayerComponent stories={stories}/>
-                  {/* <Ads300x600/> */}
-                </>
-              )}
-              
-              </>
+              <div key={index} >
+                <Slide article={article} style={{height:"100%"}}/>
+                {index === 1 &&(
+                  <>
+                    <AmpStoryPlayerComponent stories={stories}/>
+                    {/* <Ads300x600/> */}
+                  </>
+                )}
+              </div>
             )
           }):(
             <></>

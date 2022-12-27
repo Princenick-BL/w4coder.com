@@ -9,7 +9,7 @@ export default function YoutubeShort({info}) {
       <div className={styles.container}>
         <div className={styles.img}>
           <Image
-            src={info?.snippet?.thumbnails?.high?.url}
+            src={info?.snippet?.thumbnails?.medium?.url}
             fill
             alt={info?.id?.videoId}
             />
