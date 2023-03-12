@@ -1,7 +1,7 @@
 import React from 'react'
 import Desktop from './Desktop'
 import Mobile from './Mobile'
-import Cookies from '../Cookies'
+import Cookies from '@/components/Cookies'
 import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 

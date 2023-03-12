@@ -6,14 +6,14 @@
     // border-bottom: 0.01rem solid rgb(135, 133, 133);
     margin-bottom: .5rem;
     margin-bottom: 2rem;
+    background-color: #fff;
     @media only screen and (max-width: 600px) {
-       padding: 0 1rem;
+       padding: 0;
     }
     .imgContainer{
         width: 100%;
         position: relative;
         height: 300px;
-     
     }
 
     a{
@@ -34,7 +34,6 @@
     .img{
         width: 100%;
         aspect-ratio: 16/9;
-        border-radius: 10px;
         border: 1px solid #fff;
         @media only screen and (min-width: 600px) {
             min-height: 300px;
@@ -54,12 +53,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding: .5rem;
         padding-top: 0;
         padding-bottom: .5rem !important;    
         position: relative;
+        font-family: 'Oswald';
         @media only screen and (max-width: 600px) {
             margin-bottom: unset;
-            padding: 0;
         }
         h2{
             overflow: hidden;
@@ -78,7 +78,7 @@
             margin: 0 !important;
             font-size: 1.125rem;
             line-height: 1.75rem;
-            font-weight: 600;
+            font-weight: 400;
             @media only screen and (min-width: 600px) {
                 transition-duration: .5s;
                 transition-property: background-size;
@@ -166,32 +166,29 @@
 }
 .publisher{
     max-height: 70px;
-    //padding: .5rem;
+    padding: .5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     display: flex;
     align-items: center;
-    font-size: 14px;
-    margin-bottom: 1rem;
-   
-    
-    // position: absolute;
-    // bottom: 0;
-    
+    font-size: 14px;   
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
     .publisher_logo{
-        width: 15px;
-        height: 15px;
-        min-width: 15px;
-        border-radius: 1px;
+        width: 20px;
+        height: 20px;
+        min-width: 30px;
         overflow: hidden;
         margin-right: 0px;
     }
    
     .name{
-        color: #888;
         font-size: .875rem;
         line-height: 1.25rem;
         height: 100%;
         margin-left: .5rem;
         font-weight: 200;
+        font-family: 'Oswald';
     }
     .read{
         min-width: 80px;

@@ -1,10 +1,8 @@
 import React,{useState} from 'react'
 import InfiniteScroll from "react-infinite-scroll-component";
-import { getArticle ,getTopArticles,searchArticle} from '../../services/articles'
+import { getArticle ,getTopArticles,searchArticle} from '@/services/articles'
 import Slide from './components/Mobile/Card'
 import styles from './homepage.module.scss'
-import AmpStoryPlayerComponent from '../AmpStoryPlayer';
-import RecommendedTitle from '../RecommendedTitle';
 
 export default function Mobile({page1,topA,stories,lang}) {
     const [pages,setPages] = useState([])
@@ -26,8 +24,6 @@ export default function Mobile({page1,topA,stories,lang}) {
 
   return (
     <div className={styles.editorial}>
-      <div style={{marginTop:"1rem"}}></div>
-      <RecommendedTitle title={"ARTICLES"}/>
       <div className={styles.editorialContent}>
         <div
           className={styles.mainSlideShow}
@@ -36,11 +32,6 @@ export default function Mobile({page1,topA,stories,lang}) {
             return(
               <div key={index} >
                 <Slide article={article} style={{height:"100%"}}/>
-                {index === 1 &&(
-                  <>
-                    <AmpStoryPlayerComponent stories={stories}/>
-                  </>
-                )}
               </div>
             )
           }):(
@@ -60,9 +51,6 @@ export default function Mobile({page1,topA,stories,lang}) {
             return(
               <div  key={index}>
               <Slide article={article} style={{height:"100%"}}/>
-              {/* {index%2 === 1 && (
-                <Ads300x600/>
-              )} */}
               </div>
             )
           }):(

@@ -13,7 +13,20 @@ export default function Slide({article,style,type=0}){
         ...style
       }}
       >   
+      
         <div className={styles.slider}>
+          <div className={styles.publisher}>
+            <Image
+                src={article.author.logo || "/logo.png"}
+                width="30"
+                height="30"
+                layout="fixed"
+                className={styles.publisher_logo}
+                style={{minWidth:"10px"}}
+                  alt={"Publisher logo"}
+            />
+            <div className={styles.name}>Published by <strong>{article.author.name}</strong> {moment(article.updatedAt).fromNow()}</div>
+          </div>
           <Link href={`/blog/article/${article._id}/${article.slug}`} className={styles.imgContainer}>
             <Image
                 src={article.poster}
@@ -40,18 +53,7 @@ export default function Slide({article,style,type=0}){
 
               </div>
           </Link>
-          <div className={styles.publisher}>
-            <Image
-                src={article.author.logo || "/logo.png"}
-                width="10"
-                height="10"
-                layout="fixed"
-                className={styles.publisher_logo}
-                style={{minWidth:"10px"}}
-                  alt={"Publisher logo"}
-            />
-            <div className={styles.name}>Published by <strong>{article.author.name}</strong> {moment(article.updatedAt).fromNow()}</div>
-          </div>
+          
       </div>
     </section>
                    

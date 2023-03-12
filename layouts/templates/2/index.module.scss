@@ -5,12 +5,11 @@
     .main {
       min-height: 100vh;
       padding:  0;
-      padding-top: 1rem;
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-height: 100vh;
+      //max-height: 100vh;
       overflow: hidden;
       .svg1,.svg2,.svg3{
         position: absolute;

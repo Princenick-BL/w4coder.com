@@ -2,9 +2,7 @@ import React,{useState} from 'react'
 import InfiniteScroll from "react-infinite-scroll-component";
 import styles from './homepage.module.scss'
 import Slide from './components/Mobile/Card'
-import { getArticle ,getTopArticles,searchArticle} from '../../services/articles'
-import AmpStoryPlayerComponent from '../AmpStoryPlayer';
-import TutoReco from './components/TutoReco';
+import { getArticle ,getTopArticles,searchArticle} from '@/services/articles'
 
 
 export default function Desktop({page1,topA,stories,lang}) {

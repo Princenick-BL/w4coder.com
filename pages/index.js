@@ -1,6 +1,6 @@
 
 import styles from './index.module.scss'
-import HomePage from '@/components/HomePage'
+import HomePage from '@/layouts/templates/2/components/HomePage'
 import { getTopArticles,getArticle } from '../services/articles'
 import {getStories} from '@/services/stories'
 import { useRouter } from 'next/router'
@@ -29,9 +29,10 @@ export default function Home({isBreakpoint,page1,topA,toggleTheme,stories}) {
         description={""}
         isBreakpoint={isBreakpoint}
         stories={stories}
-      >
-        <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1} stories={stories} lang={lang}/>
-      </Template2>
+        topA={topA} 
+        page1={page1} 
+        lang={lang}
+      ></Template2>
     )
   }
 }
