@@ -18,7 +18,7 @@ export function getStorySlides(slides){
             if(index === 0 && section.type === "BACKGROUND"){
                 slideBG = `
                     <amp-story-grid-layer template="fill">
-                        <amp-img src="${section.content}"
+                        <amp-img src="${section.content?.replace("https://api.w4coder.com/read","https://ik.imagekit.io/l93htbc1n")}"
                             width="720" height="1280"
                             layout="responsive">
                         </amp-img>
@@ -74,7 +74,7 @@ export function getStorySlides(slides){
             if(section.type === "IMAGEBLOCK"){
                 booken = booken + `
                 <amp-img 
-                    src="${section.content}"
+                    src="${section.content?.replace("https://api.w4coder.com/read","https://ik.imagekit.io/l93htbc1n")}"
                     width="4" 
                     height="3"
                     layout="responsive"
@@ -85,7 +85,7 @@ export function getStorySlides(slides){
                 </amp-img>`
               return slideContent = slideContent +`
                 <amp-img 
-                    src="${section.content}"
+                    src="${section.content?.replace("https://api.w4coder.com/read","https://ik.imagekit.io/l93htbc1n")}"
                     width="4" 
                     height="3"
                     layout="responsive"

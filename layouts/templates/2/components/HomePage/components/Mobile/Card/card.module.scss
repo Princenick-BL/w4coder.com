@@ -33,7 +33,6 @@
     }
     .img{
         width: 100%;
-        aspect-ratio: 1/1;
         border: 1px solid #fff;
         @media only screen and (min-width: 600px) {
             min-height: 300px;
@@ -43,7 +42,6 @@
         width: 100%;
         border-radius: 10px;
         max-height: calc(300px * 4 / 3) !important;
-        aspect-ratio: 3/4;
     }
    
     @media only screen and (max-width: 600px) {
@@ -155,6 +153,12 @@
     h2{
         font-size: 1.2rem;
         padding-bottom: .5rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-height: 1.5 !important;
+        margin: 0;
     }
     .cat{
         text-decoration: none;

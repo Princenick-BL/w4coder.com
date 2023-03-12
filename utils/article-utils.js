@@ -14,7 +14,7 @@ export function getSections(sections){
                 case SECTION_TYPE.IMAGE_BLOCK :
                   htmlSections+= `
                         <amp-img
-                            src=${section?.content}
+                            src=${section?.content?.replace("https://api.w4coder.com/read","https://ik.imagekit.io/l93htbc1n")}
                             width=${section?.meta?.width}
                             height=${section?.meta?.height}
                             layout="responsive"

@@ -9,6 +9,9 @@
     flex-direction: column;
     border-radius: 20vw !important;
     background: radial-gradient(ellipse at left, #24A148, transparent), radial-gradient(ellipse at right, red, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imgCard{

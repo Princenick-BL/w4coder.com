@@ -5,7 +5,7 @@ import Cookies from '@/components/Cookies'
 import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 
-export default function HomePage({isBreakpoint,page1,topA,stories,lang}) {
+export default function HomePage({page1,topA,stories,lang,isBreakpoint}) {
   return (
     <>
       <NextSeo
@@ -39,9 +39,9 @@ export default function HomePage({isBreakpoint,page1,topA,stories,lang}) {
         
       />
       { isBreakpoint === 2 ? (
-        <Desktop topA={topA} page1={page1} stories={stories}  lang={lang}/>
+        <Desktop topA={topA} page1={page1} stories={stories}  lang={lang} isBreakpoint={isBreakpoint}/>
       ) : isBreakpoint === 1 ?(
-        <Mobile topA={topA} page1={page1} stories={stories}  lang={lang}/>
+        <Mobile topA={topA} page1={page1} stories={stories}  lang={lang} isBreakpoint={isBreakpoint}/>
       ):(
         <></>
       )}

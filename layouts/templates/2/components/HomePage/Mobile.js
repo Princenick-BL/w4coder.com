@@ -4,7 +4,7 @@ import { getArticle ,getTopArticles,searchArticle} from '@/services/articles'
 import Slide from './components/Mobile/Card'
 import styles from './homepage.module.scss'
 
-export default function Mobile({page1,topA,stories,lang}) {
+export default function Mobile({page1,topA,stories,lang,isBreakpoint=1}) {
     const [pages,setPages] = useState([])
     const [pageNum,setPageNum] = useState(1)
     const [hasMore,setHasMore] = useState(true)
@@ -31,7 +31,7 @@ export default function Mobile({page1,topA,stories,lang}) {
           {page1 ? page1.map((article,index)=>{
             return(
               <div key={index} >
-                <Slide article={article} style={{height:"100%"}}/>
+                <Slide article={article} style={{height:"100%"}} isBreakpoint={isBreakpoint}/>
               </div>
             )
           }):(
@@ -50,7 +50,7 @@ export default function Mobile({page1,topA,stories,lang}) {
           {pages ? pages.map((article,index)=>{
             return(
               <div  key={index}>
-              <Slide article={article} style={{height:"100%"}}/>
+              <Slide article={article} style={{height:"100%"}} isBreakpoint={isBreakpoint}/>
               </div>
             )
           }):(

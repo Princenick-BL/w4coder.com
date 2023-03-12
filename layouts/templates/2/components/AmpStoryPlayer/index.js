@@ -14,37 +14,37 @@ async function initializeWidget(idx) {
     // player.play();
 }
   
-const Widget = ({img,pos,color,text,url,onclick}) =>{
+const Widget = ({img,pos,color,text,url,onclick,isBreakpoint=1}) =>{
     return(
-        <div className={styles.entryPoint + " entry-point-card-container" }
+        <div className={isBreakpoint ===1 ?  styles.entryPoint : "" + " entry-point-card-container" }
           onClick={(e)=>{        
             onclick()
             document.getElementById("app").style.overflowY="hidden"
             initializeWidget(pos)
         }}>
             <div 
-                className={styles?.imgContainer + ' img-container' }
+                className={isBreakpoint ===1 ?styles?.imgContainer:"" + ' img-container' }
                 // style={{ 
                 //     borderColor: `${color} !important`,
                 //     border: `2px solid ${color}`,
                 // }}
             >
                 <Image 
-                    className={styles?.imgCard + ' img' }
+                    className={isBreakpoint ===1 ?styles?.imgCard:"" + ' img' }
                     width={300} 
                     height={400} 
                     src={img}
                     alt={text}  
                 />
             </div>
-            <div className={styles.cardContent + ' entry-point-card-content'}>
+            <div className={isBreakpoint ===1 ?styles.cardContent : "" + ' entry-point-card-content'}>
                 <h2 className="entry-point-card-title">{text}</h2>
             </div>
         </div>
     )
 }
 
-export default function AmpStoryPlayerComponent({stories}) {
+export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
 
     const [show,setShow]=useState(false)
     console.log(stories)
@@ -107,6 +107,7 @@ export default function AmpStoryPlayerComponent({stories}) {
                                 color = {index == 0 ? "#466FFF": index == 1 ? "#E6AD1C" : index==2 ? "#FF6F32":"#4CA47C"}
                                 text = {story.title}
                                 url={story.url}
+                                isBreakpoint = {isBreakpoint}
                                 onclick={(e)=>{setShow(!show)}}
                             />
                             )
