@@ -1,4 +1,17 @@
 {
     "app":"Application test to speech basée sur l'api test to speech d'IBM",
-    "app.tts.desc":"Cette application est basée sur la technologie TTS d'IMB et permet de transformer tout test en audio"
+    "app.tts.desc":"Cette application est basée sur la technologie TTS d'IMB et permet de transformer tout test en audio",
+    "header_promo" : "Essayez gratuitement pendant 14 jours",
+    "header_projects" : "Projets",
+    "header_blog" : "Blog",
+    "header_about" : "A propos",
+    "header_login" : "Se connecter",
+    "header_signup" : "S'inscrire",
+    "view_box_1_h1":"Fait par les developpeurs pour aider les developpeurs.",
+    "view_box_1_h2":"Ici vous trouverez un receuil de plusieurs projets open source fait par les developpeurs pour aider leurs semblables à gagner du temps",
+    "view_box_1_search_placeholder" : "Rechercher par mots clés projets, language de programation.",
+    "view_box_1_search_button" : "Rechercher",
+    "view_box_2_nb_open_sources" : "Projets libre de droit",
+    "view_box_2_nb_devs" : "Développeurs",
+    "view_box_2_nb_users" : "Utilisateurs"
 }

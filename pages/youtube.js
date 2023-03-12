@@ -51,8 +51,9 @@ export async function getServerSideProps() {
     // Fetch data from external API
   
    
-    const ressult = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&channelId=UCENrVFimv0tFrBM9SJqr1Aw`)
+    const ressult = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&myRating=true&channelId=UCENrVFimv0tFrBM9SJqr1Aw&maxResults=50`)
     const data = await ressult.json()
+    console.log(data?.items?.[0])
     return { 
         props: {
             data : data?.items || [],

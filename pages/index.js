@@ -1,26 +1,39 @@
 
 import styles from './index.module.scss'
-import HomePage from '../components/HomePage'
+import HomePage from '@/components/HomePage'
 import { getTopArticles,getArticle } from '../services/articles'
-import {getStories} from '../services/stories'
+import {getStories} from '@/services/stories'
 import { useRouter } from 'next/router'
-import DefaultLayout from '../layouts/default'
+import DefaultLayout from '@/layouts/templates/1'
+import Template2 from '@/layouts/templates/2'
 
-
+const theme = 2
 export default function Home({isBreakpoint,page1,topA,toggleTheme,stories}) {
-
+  console.log("Stories",stories)
   const router = useRouter()
   const lang = router.locale
-
-  return (
-    <DefaultLayout
-      title={"w4coder"}
-      description={""}
-      isBreakpoint={isBreakpoint}
-    >
-      <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1} stories={stories} lang={lang}/>      
-    </DefaultLayout>
-  )
+  if(theme===1){
+    return (
+      <DefaultLayout
+        title={"w4coder"}
+        description={""}
+        isBreakpoint={isBreakpoint}
+      >
+        <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1} stories={stories} lang={lang}/>      
+      </DefaultLayout>
+    )
+  }else{
+    return(
+      <Template2
+        title={"w4coder"}
+        description={""}
+        isBreakpoint={isBreakpoint}
+        stories={stories}
+      >
+        <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1} stories={stories} lang={lang}/>
+      </Template2>
+    )
+  }
 }
 
 export async function getServerSideProps({locale}) {

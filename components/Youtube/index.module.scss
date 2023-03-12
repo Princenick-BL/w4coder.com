@@ -16,6 +16,7 @@
         border-radius: 10px;
         overflow: hidden;
         margin-bottom: 20px;
+        aspect-ratio: 16/9;
         
         @media (max-width: 768px){
             max-width: 480px;
@@ -26,6 +27,10 @@
             max-width: 400px;
             max-height: 230px;
 
+        }
+        img{
+            aspect-ratio: 3/2;
+            object-fit: cover;
         }
         
     }

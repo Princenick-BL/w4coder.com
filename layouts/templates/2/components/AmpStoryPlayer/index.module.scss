@@ -1,0 +1,39 @@
+.entryPoint{
+    margin: 0;
+    margin-right: 15px;
+    z-index: 10px;
+}
+
+.imgContainer{
+    flex-direction: column;
+    border-radius: 20vw !important;
+    background: radial-gradient(ellipse at left, #24A148, transparent), radial-gradient(ellipse at right, red, transparent);
+}
+
+.imgCard{
+    width: 20vw !important;
+    height: 20vw !important;
+    min-width: 20vw !important;
+    min-height: 20vw !important;
+    border-radius: 20vw !important;
+    margin: 4px;
+}
+
+.cardContent{
+    position: relative;
+    max-width: 20vw !important;
+    background: none;
+    margin-top: 0;
+    padding: 0;
+    h2{
+        height: 100%;
+        margin: 0 !important;
+        color: #000 !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+                line-clamp: 2; 
+        -webkit-box-orient: vertical;
+    }
+}

@@ -1,11 +1,11 @@
 import React , {useState,useRef,useLayoutEffect,useEffect} from 'react'
-import Logo from '../Logo'
+import Logo from '@/components/Logo'
 import styles from './header.module.scss'
 import Link from 'next/link'
-import {searchArticle} from '../../services/articles'
+import {searchArticle} from '@/services/articles'
 import { useRouter } from 'next/router'
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
-import i18n from '../../i18n'
+import i18n from '@/i18n'
 export default function Desktop({style,border=false}) {
     const router = useRouter()
     const lang = router.locale
