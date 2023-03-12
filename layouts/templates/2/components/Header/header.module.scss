@@ -26,11 +26,30 @@
     .submenu{
         display: flex;
         flex-direction: column;
-        justify-content: center;
         margin: 0;
         padding: 0;
         border-top: 1px solid #eaeaea;
         width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 5;
+        height: 100vh ;
+       
+        background: #fff;
+        width: 0px;
+        top: 0;
+        left: -100vw;
+        transition: width 0.5s ease, min-width 0.5s ease;
+
+        .menuHead{
+            display: flex;
+            padding: .5rem;
+            justify-content: space-between;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
         li{
             text-decoration: none;
             list-style-type: none;
@@ -46,15 +65,21 @@
         }
     }
     .hidden {
-        display: none;
-        opacity: 0;
-        transition: display 0.2s, opacity 0.2s linear;
+        width: 0;
+        min-width: 0;
+        *{
+            display: none;
+        }
     }
       
     .visible {
-        visibility: flex;
-        opacity: 1;
-        transition: display 0.5s, opacity 0.5s linear;
+        left: 0;
+        min-width: 100vw;
+        width: 100vw;
+        *{
+            display: initial;
+
+        }
     }
 }
 
@@ -124,4 +149,5 @@
         font-weight: bold;
     }
 }
+
 

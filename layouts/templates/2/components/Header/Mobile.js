@@ -124,13 +124,18 @@ export default function Mobile({style,border=true,stories}) {
                   </select>
                 </div>
               </div>
-            
-            <ul className={styles.submenu+"  "+(openedMenu?styles.visible:styles.hidden)}>
-              <li><Link href={"/"}>. Acceuil .</Link></li>
-              <li><Link href={"/web-stories"}>. Web Stories .</Link></li>
-              <li><Link href={"/youtube"}>. YouTube .</Link></li>
-              <li><Link href={"/contact"}>. Contact .</Link></li>
-            </ul>
+              <div className={styles.submenu +"  "+(openedMenu?styles.visible:styles.hidden)}>
+                  <div className={styles.menuHead}>
+                    <div></div>
+                    <svg onClick={(e)=>{setOpenedMenu(!openedMenu)}}  className='hamburger' style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
+                  </div>
+                  <ul >
+                    <li><Link href={"/"}>. Acceuil .</Link></li>
+                    <li><Link href={"/web-stories"}>. Web Stories .</Link></li>
+                    <li><Link href={"/youtube"}>. YouTube .</Link></li>
+                    <li><Link href={"/contact"}>. Contact .</Link></li>
+                  </ul>
+              </div>
             {openedSearch&&(
               
               <div  id={"mainHeader"} ref={stickyHeader} className="mainHeader">
