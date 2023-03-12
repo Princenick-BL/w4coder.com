@@ -29,7 +29,7 @@ export default function Slide({article,style,type=0}){
           </div>
           <Link href={`/blog/article/${article._id}/${article.slug}`} className={styles.imgContainer}>
             <Image
-                src={article.poster}
+                src={article.poster?.replace("https://api.w4coder.com/read","https://ik.imagekit.io/l93htbc1n")+"?tr=w-1080,h-1080 ,cm-pad_resize,bg-F3F3F3"}
                 width={article?.meta?.width || 1000}
                 height={250}
                 layout="responsive"
