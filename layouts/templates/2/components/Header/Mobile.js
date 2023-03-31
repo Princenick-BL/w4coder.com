@@ -12,7 +12,6 @@ const date_options =  { weekday: 'long', year: 'numeric', month: 'long', day: 'n
 
 export default function Mobile({style,border=true,stories}) {
 
-  console.log("Stories 2",stories)
   const router = useRouter()
   const lang = router.locale
 
@@ -88,14 +87,17 @@ export default function Mobile({style,border=true,stories}) {
         </div> */}
         <div className={styles.mobileHead}  style={{...style,borderBottom:border?"1px solid #eaeaea":"none"}}>
             <div className={styles.mobileSubHead} style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-              <div className={styles.hW} onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
-                {openedMenu ? (
-                  <svg  className='hamburger' style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
-                ):(
-                  <svg className='hamburger' style={{width:"1.5rem",height:"1.5rem",cursor:"pointer"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
-                )}
+              <div className={styles.fhW}>
+                <div className={styles.hW} onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
+                  {openedMenu ? (
+                    <svg  className='hamburger' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"></path></svg>
+                  ):(
+                    <svg className='hamburger' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
+                  )}
+                </div>
+                <strong>W4CODER</strong>
               </div>
-              <Logo style={{fontSize:"1.5rem"}}  w={40} h={40} />
+              {/* <Logo style={{fontSize:"1.5rem"}}  w={40} h={40} /> */}
               <div
                className={styles.hW} 
                 style={{

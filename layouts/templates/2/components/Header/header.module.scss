@@ -1,18 +1,29 @@
 .mobileHead{
     width: 100%;
-    height: max-content;
+    height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     // align-items: center;
-    padding: .25rem 0 0 0;
-    margin-top: 5px;
     border-bottom: 1px solid #eaeaea;
     .mobileSubHead{
         padding: 0 1rem;
     }
-    .hW{
-        width: 20%;
+    .fhW{
+        display: flex;
+        align-items: center;
+        .hW{
+            width: 20%;
+            display: flex;
+            align-items: center;
+            svg{
+                width: 24px;
+                height: 24px;
+                font-size: 24px;
+                font-weight: bold;
+                margin-right: 5px;
+            }
+        }
     }
     .search{
         width: 100%;
