@@ -7,7 +7,7 @@
 
 .imgContainer{
     flex-direction: column;
-    border-radius: 20vw !important;
+    border-radius: 2vw !important;
     background: radial-gradient(ellipse at left, #24A148, transparent), radial-gradient(ellipse at right, red, transparent);
     display: flex;
     justify-content: center;
@@ -15,11 +15,11 @@
 }
 
 .imgCard{
-    width: 20vw !important;
-    height: 20vw !important;
-    min-width: 20vw !important;
-    min-height: 20vw !important;
-    border-radius: 20vw !important;
+    width: 25vw !important;
+    height: calc(25vw * 5/3 ) !important;
+    min-width: 25vw !important;
+    min-height:  calc(25vw * 5/3 ) !important;
+    border-radius: 1vw !important;
     margin: 4px;
 }
 
