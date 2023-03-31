@@ -43,13 +43,13 @@
         flex-direction: column;
         margin: 0;
         padding: 0;
-        border-top: 1px solid #eaeaea;
+        border: 1px solid #eaeaea;
         width: 100%;
         position: fixed;
-        top: 0;
+        margin-top: 2vh;
         z-index: 5;
-        height: 100vh ;
-       
+        height: 96vh ;
+        border-radius: 15px;
         background: #fff;
         width: 0px;
         top: 0;
@@ -89,8 +89,9 @@
       
     .visible {
         left: 0;
-        min-width: 100vw;
-        width: 100vw;
+        margin-left: 2px;
+        min-width: 60vw;
+        width: 60vw;
         *{
             display: initial;
 
