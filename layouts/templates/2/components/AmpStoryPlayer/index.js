@@ -9,7 +9,7 @@ async function initializeWidget(idx) {
     // var stories = player.getStories();
     // console.log(stories)
     // player.show(stories[idx].href, null, {animate: true});
-    console.log(idx)
+    // console.log(idx)
     player.go(idx )
     // player.play();
 }
@@ -47,7 +47,7 @@ const Widget = ({img,pos,color,text,url,onclick,isBreakpoint=1}) =>{
 export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
 
     const [show,setShow]=useState(false)
-    console.log(stories)
+    // console.log(stories)
 
 
     useEffect(()=>{

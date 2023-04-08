@@ -18,6 +18,8 @@ p{
   --placeholder-color : #F8F8F8;
   --boder-color : rgb(226, 221, 221);
   --background-primary : #fff;
+  --background-secondary : #eee;
+
 }
 a {
   color: inherit;
@@ -95,14 +97,15 @@ h1,h2,h3,h4{
     --color-secondary-1:#95169a;
     --color-secondary-2:#d96fbb;
     --placeholder-color : #4d4d4d;
-    --background-primary : #202029;
+    --background-primary : #161716;
+    --background-secondary : #070705;
   }
   html {
     color-scheme: dark;
   }
   body {
     color: white;
-    background-color: #202029;
+    background-color: var(--background-primary);
   }
 
 

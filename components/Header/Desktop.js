@@ -19,7 +19,7 @@ export default function Desktop({style,border=false}) {
       if(e?.target?.value?.length > 0){
         mainHeaderResult.classList.add('searching')
         const res = await searchArticle(e?.target?.value)
-        console.log(res)
+        // console.log(res)
         setSearchResult(res)
       }else{
         setSearchResult([])

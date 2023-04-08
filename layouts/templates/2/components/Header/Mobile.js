@@ -84,7 +84,7 @@ export default function Mobile({style,border=true,stories}) {
           <div>{new Date().toLocaleDateString("fr-FR",date_options)}</div>
           <span><Link href={"/newsletter"}> S'abonner ?</Link></span>
         </div> */}
-        <div className={styles.mobileHead}  style={{...style,borderBottom:border?"1px solid #eaeaea":"none"}}>
+        <div className={styles.mobileHead}  style={{...style}}>
             <div className={styles.mobileSubHead} style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <div className={styles.fhW}>
                 <div className={styles.hW} onClick={(e)=>{setOpenedMenu(!openedMenu)}}>

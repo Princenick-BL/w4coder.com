@@ -9,7 +9,7 @@ import Template2 from '@/layouts/templates/2'
 
 const theme = 2
 export default function Home({isBreakpoint,page1,topA,toggleTheme,stories}) {
-  console.log("Stories",stories)
+  // console.log("Stories",stories)
   const router = useRouter()
   const lang = router.locale
   if(theme===1){

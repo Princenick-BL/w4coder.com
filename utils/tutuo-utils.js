@@ -3,7 +3,6 @@ import {SECTION_TYPE} from '../constants'
 export const getSection = (s) =>{
     switch(s?.type){
         case SECTION_TYPE.CODE_BLOCK:
-            console.log(s?.content)
             return(
             <div className="Code">
                 <pre>
