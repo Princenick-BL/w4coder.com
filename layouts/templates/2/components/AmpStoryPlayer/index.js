@@ -16,7 +16,7 @@ async function initializeWidget(idx) {
   
 const Widget = ({img,pos,color,text,url,onclick,isBreakpoint=1}) =>{
     return(
-        <div className={isBreakpoint ===1 ?  styles.entryPoint : "" + " entry-point-card-container" }
+        <div className={(isBreakpoint ===1 ?  styles.entryPoint : "" )+ " entry-point-card-container" }
           onClick={(e)=>{        
             onclick()
             document.getElementById("app").style.overflowY="hidden"

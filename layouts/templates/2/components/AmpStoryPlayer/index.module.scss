@@ -1,38 +1,45 @@
 .entryPoint{
-    margin: 0;
-    margin-right: 15px;
-    z-index: 10px;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 269px auto;
+    margin: 0px;
+width: 100%;
 }
 
 .imgContainer{
-    flex-direction: column;
-    border-radius: 2vw !important;
-    background: radial-gradient(ellipse at left, #24A148, transparent), radial-gradient(ellipse at right, red, transparent);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .imgCard{
-    width: 25vw !important;
-    height: calc(25vw * 5/3 ) !important;
-    min-width: 25vw !important;
-    min-height:  calc(25vw * 5/3 ) !important;
-    border-radius: 1vw !important;
-    margin: 4px;
+    height: 100%;
+width: 100%;
+object-fit: cover;
+border-radius: 8px;
+background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+    // width: 35vw !important;
+    // height: calc(35vw * 5/3 ) !important;
+    // min-width: 35vw !important;
+    // min-height:  calc(35vw * 5/3 ) !important;
+    // border-radius: 1vw !important;
+    // margin: 4px;
 }
 
 .cardContent{
-    position: relative;
-    max-width: 25vw !important;
-    background: none;
-    margin-top: 2px;
-    padding: 0;
+    position: absolute;
+    bottom: 0px;
+    height: max-content;
+    padding: 20px 0;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(to top, rgba(33, 33, 33, 0.9), rgba(33, 33, 33, 0));
+    
     h2{
-        height: 100%;
+        padding: 0 20px;
+        height: max-content;
         margin: 0 !important;
-        color: #000 !important;
+        color: #fff !important;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;

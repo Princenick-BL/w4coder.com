@@ -31,6 +31,19 @@ export default function Slide({article,style,type=0,isBreakpoint=1}){
             </div>
             </>
           )}
+           <Link href={`/blog/article/${article._id}/${article.slug}`}>
+              <div className={styles.bonttom}>
+                <span className={styles.cat}>{article?.category?.name}</span>
+
+                <div className={styles.mark_down}>
+                    {/* <h5 className={styles.cat}>Catérorie</h5> */}
+                    <h2 className={styles.h2}><span>{article.title+" : "+article.description}</span></h2>
+                    {/* <span className={styles.desc+" "+(type==1 ?styles.type2:"" )}>{article.description}</span> */}
+
+                </div>
+
+              </div>
+          </Link>
           <Link href={`/blog/article/${article._id}/${article.slug}`} className={styles.imgContainer}>
             <Image
                 src={article.poster?.replace("https://api.w4coder.com/read","https://ik.imagekit.io/l93htbc1n")+ (isBreakpoint===1 ? "?tr=w-1080,h-1080 ,cm-pad_resize,bg-F3F3F3":"")}
@@ -60,19 +73,7 @@ export default function Slide({article,style,type=0,isBreakpoint=1}){
             </div>
             </>
           )}
-          <Link href={`/blog/article/${article._id}/${article.slug}`}>
-              <div className={styles.bonttom}>
-                <span className={styles.cat}>{article?.category?.name}</span>
-
-                <div className={styles.mark_down}>
-                    {/* <h5 className={styles.cat}>Catérorie</h5> */}
-                    <h2 className={styles.h2}><span>{article.title+" : "+article.description}</span></h2>
-                    {/* <span className={styles.desc+" "+(type==1 ?styles.type2:"" )}>{article.description}</span> */}
-
-                </div>
-
-              </div>
-          </Link>
+         
           
       </div>
     </section>

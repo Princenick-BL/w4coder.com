@@ -157,6 +157,11 @@ h1,h2,h3,h4{
 
 
 .entry-point-container {
+  display: grid;
+grid-template-columns: 100%;
+grid-template-rows: 269px auto;
+margin: 0px;
+width: 100%;
 	h1{
 		padding: 0;
 		margin: 0;
@@ -220,6 +225,12 @@ amp-story-player.my-player {
 	overflow-x: scroll;
 	-ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
+  display: grid;
+  width: 100%;
+  gap: 32px 24px;
+  grid-template-columns: repeat(auto-fill, 179.6px);
+  grid-template-rows: minmax(269px, auto);
+  scroll-margin-top: 30vh;
   @media only screen and (max-width: 600px) {
     padding-left: .7rem;
   }
@@ -286,7 +297,6 @@ amp-story-player.my-player {
 	position: relative;
 	transition: transform 0.3s;
 	margin: .5rem;
-  max-width: min-content;
 }
 
 .entry-point-card-container:nth-child(1){
