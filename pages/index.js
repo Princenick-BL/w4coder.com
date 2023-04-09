@@ -50,7 +50,7 @@ export async function getServerSideProps({locale}) {
     lang : locale
   }})
 
-  const ressult = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&myRating=true&channelId=UCENrVFimv0tFrBM9SJqr1Aw&maxResults=5&order=viewCount`)
+  const ressult = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&myRating=true&channelId=UCENrVFimv0tFrBM9SJqr1Aw&maxResults=5&order=viewCount&type=video`)
   const data = await ressult.json()
 
   const finalPage = [...page1,...data?.items]

@@ -41,13 +41,13 @@ export default function Slide({article,style,type=0,isBreakpoint=1}){
                     </svg>
                 )
               }
-              <div className={styles.name}>Published by <strong>{article?.author?.name}</strong> {moment(isVideo ? article?.snippet?.publishedAt : article?.updatedAt).fromNow()}</div>
+              <div className={styles.name}>Published by <strong>{isVideo ?  article?.snippet?.channelTitle : article?.author?.name}</strong> {moment(isVideo ? article?.snippet?.publishedAt : article?.updatedAt).fromNow()}</div>
             </div>
             </>
           )}
            <Link href={`/blog/article/${article._id}/${article.slug}`}>
               <div className={styles.bonttom}>
-                <span className={styles.cat}>{ isVideo? "Youtube":article?.category?.name}</span>
+                <span className={styles.cat}>{ isVideo? "Youtube":(article?.category?.name||"Article")}</span>
 
                 <div className={styles.mark_down}>
                     {/* <h5 className={styles.cat}>Catérorie</h5> */}
