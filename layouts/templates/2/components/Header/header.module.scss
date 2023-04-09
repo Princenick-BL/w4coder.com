@@ -43,19 +43,20 @@
         flex-direction: column;
         margin: 0;
         padding: 0;
-        border: 1px solid #eaeaea;
+        border: 1px solid var(--background-secondary);
         width: 100%;
         position: fixed;
-        margin-top: 2vh;
         z-index: 5;
-        height: 96vh ;
-        border-radius: 15px;
-        background: #fff;
+        height: 100vh ;
+        //border-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background: var(--background-primary);
         width: 0px;
         top: 0;
         left: -100vw;
         transition: width 0.5s ease, min-width 0.5s ease;
-
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         .menuHead{
             display: flex;
             padding: .5rem;
