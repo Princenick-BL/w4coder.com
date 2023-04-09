@@ -16,28 +16,28 @@ async function initializeWidget(idx) {
   
 const Widget = ({img,pos,color,text,url,onclick,isBreakpoint=1}) =>{
     return(
-        <div className={(isBreakpoint ===1 ?  styles.entryPoint : "" )+ " entry-point-card-container" }
+        <div className={ styles.entryPoint+ " entry-point-card-container" }
           onClick={(e)=>{        
             onclick()
             document.getElementById("app").style.overflowY="hidden"
             initializeWidget(pos)
         }}>
             <div 
-                className={isBreakpoint ===1 ?styles?.imgContainer:"" + ' img-container' }
+                className={styles?.imgContainer }
                 // style={{ 
                 //     borderColor: `${color} !important`,
                 //     border: `2px solid ${color}`,
                 // }}
             >
                 <Image 
-                    className={isBreakpoint ===1 ?styles?.imgCard:"" + ' img' }
+                    className={styles?.imgCard}
                     width={300} 
                     height={400} 
                     src={img}
                     alt={text}  
                 />
             </div>
-            <div className={isBreakpoint ===1 ?styles.cardContent : "" + ' entry-point-card-content'}>
+            <div className={styles.cardContent  + ' entry-point-card-content'}>
                 <h2 className="entry-point-card-title">{text}</h2>
             </div>
         </div>

@@ -26,6 +26,7 @@ export default function Desktop({page1,topA,stories,lang,isBreakpoint=1}) {
   return (
     <div className={styles.homeDesktop}>
       
+      <AmpStoryPlayerComponent stories={stories} isBreakpoint={isBreakpoint}/>
       <div className={styles.listOne}>
         { page1.slice(0, 2).map((article,index)=>{
           return(
@@ -33,8 +34,7 @@ export default function Desktop({page1,topA,stories,lang,isBreakpoint=1}) {
           )
         })}
       </div>
-      <AmpStoryPlayerComponent stories={stories} isBreakpoint={isBreakpoint}/>
-      <br></br>
+     
       {/* <TutoReco nbrecord={4}/> */}
       <br></br>
       <InfiniteScroll
@@ -50,7 +50,7 @@ export default function Desktop({page1,topA,stories,lang,isBreakpoint=1}) {
             <>
               <Slide article={article} style={{height:"100%"}} type={2} isBreakpoint={isBreakpoint}/>
               {index ===1  &&(
-                <div className={styles.ads}>orifr</div>
+                <div className={styles.ads}></div>
               )}
             </>
           )

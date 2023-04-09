@@ -51,7 +51,7 @@ export default function Desktop({page1,topA,stories,lang}) {
             <>
               <Slide article={article} style={{height:"100%"}} type={2}/>
               {index ===1  &&(
-                <div className={styles.ads}>orifr</div>
+                <div className={styles.ads}></div>
               )}
             </>
           )

@@ -11,13 +11,14 @@ export default function Slide({article,style,type=0,isBreakpoint=1}){
       className={styles.slide} 
       style={{
         textAlign:"unset",
-        ...style
+        ...style,
+        borderTop:isBreakpoint === 1 ? ".5rem solid var(--background-secondary)" : ""
       }}
       >   
       
         <div className={styles.slider}>
-          {isBreakpoint === 1&&(
-            <>
+          {isBreakpoint === 1 &&(
+
             <div className={styles.publisher}>
               {!isVideo? (
                   <Image
@@ -43,7 +44,6 @@ export default function Slide({article,style,type=0,isBreakpoint=1}){
               }
               <div className={styles.name}>Published by <strong>{isVideo ?  article?.snippet?.channelTitle : article?.author?.name}</strong> {moment(isVideo ? article?.snippet?.publishedAt : article?.updatedAt).fromNow()}</div>
             </div>
-            </>
           )}
            <Link href={`/blog/article/${article._id}/${article.slug}`}>
               <div className={styles.bonttom}>
@@ -71,8 +71,7 @@ export default function Slide({article,style,type=0,isBreakpoint=1}){
                 blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM0/89QDwAEYgG3DMBzIAAAAABJRU5ErkJggg=="
             />
           </Link>
-          {isBreakpoint != 1&&(
-            <>
+          {/* {isBreakpoint != 1&&(
             <div className={styles.publisher}>
               
               {!isVideo? (
@@ -99,8 +98,7 @@ export default function Slide({article,style,type=0,isBreakpoint=1}){
               }
               <div className={styles.name}>Published by <strong>{isVideo ?  article?.snippet?.channelTitle : article?.author?.name}</strong> {moment(isVideo ? article?.snippet?.publishedAt : article?.updatedAt).fromNow()}</div>
             </div>
-            </>
-          )}
+          )} */}
          
           
       </div>

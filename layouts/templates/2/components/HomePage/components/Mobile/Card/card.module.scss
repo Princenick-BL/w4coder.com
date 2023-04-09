@@ -7,10 +7,14 @@
     margin-bottom: .5rem;
     margin-bottom: 2rem;
     background: var(--background-primary);
-    border-top: .5rem solid var(--background-secondary);
-
+    overflow: hidden;
     @media only screen and (max-width: 600px) {
        padding: 0;
+    }
+    @media only screen and (min-width: 600px) {
+        box-shadow: 0px 1.6px 3.6px rgba(0,0,0,0.13), 0px 0px 2.9px rgba(0,0,0,0.11);
+        margin: 0;
+        border-radius: 5px;
     }
     .imgContainer{
         width: 100%;
@@ -37,7 +41,8 @@
         width: 100%;
         border: 1px solid #fff;
         @media only screen and (min-width: 600px) {
-            min-height: 300px;
+            aspect-ratio: 16/9;
+            object-fit:cover;
         }
     }
     .img2{
@@ -55,11 +60,15 @@
         justify-content: space-between;
         padding: .5rem;
         padding-top: 0;
-        padding-bottom: .5rem !important;    
         position: relative;
         font-family: 'Oswald';
+        background-color: #fff;
         @media only screen and (max-width: 600px) {
-            margin-bottom: unset;
+        }
+        @media only screen and (min-width: 600px) {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
         }
         h2{
             overflow: hidden;

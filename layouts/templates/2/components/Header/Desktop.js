@@ -41,7 +41,7 @@ export default function Desktop({style,border=false}) {
         </div> */}
         <div className={styles.deskHead} >
           <div className={styles.flexBetween} style={{...style,borderBottom:border?"1px solid #eaeaea":"none"}}>
-            <Logo style={{fontSize:"2rem",marginRight:"2rem"}} w={40} h={40} />
+            <Logo style={{fontSize:"2rem",marginRight:"2rem",marginTop:"1rem"}} w={20} h={20} />
             <ul className={styles.submenu}>
               <li><Link href={"/"}>Acceuil</Link></li>
               <li><Link href={"/web-stories"}>Web Stories </Link></li>
