@@ -38,13 +38,17 @@ h1,h2,h3,h4{
 }
 .sticky-menu,.mainHeader{
   background-color: #fff;
-  width: 100%;
-  margin: 2rem 0;
 }
 
 .mainHeader{
-  margin: 1.25rem 0;
+  position: fixed;
+  margin: 0 auto;
+  width: 98%;
   padding-top: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  top: 50px;
+  z-index: 10;
+  left: 1%;
 }
 
 .searchBar{
@@ -58,7 +62,7 @@ h1,h2,h3,h4{
 .searching{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 2px;
 
   input{
     border-radius: 2px !important;

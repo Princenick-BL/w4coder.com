@@ -102,27 +102,33 @@ export default function Mobile({style,border=true,stories}) {
                 style={{
                   display:"flex"
                 }}>
-                  <svg 
-                    style={{
-                      width:"1.5rem",
-                      height:"1.5rem",
-                      cursor:"pointer",
-                      display:"flex",
-                      marginRight:"1rem"
-                    }}
-                    className='hamburger' 
-                    onClick={(e)=>{setOpenedSearch(!openedMenu)}}
-                    focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-                  <select defaultValue={lang} defaultChecked={lang} style={{
-                      background:"transparent",
-                      border:"none",
-                      fontSize:"1.1rem"
-                    }}
-                    onChange={(e)=>{handleChangeLang(e.target.value)}}
-                  >
-                    <option value="en">{getUnicodeFlagIcon('US')}</option>
-                    <option value="fr">{getUnicodeFlagIcon('FR')}</option>
-                  </select>
+                  
+                    {openedSearch ? (
+                      <svg className='hamburger' xmlns="http://www.w3.org/2000/svg" viewBox="0 2 20 20"><path fillRule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path></svg>
+                      ):(
+                      <svg 
+                        style={{
+                          width:"1.5rem",
+                          height:"1.5rem",
+                          cursor:"pointer",
+                          display:"flex",
+                          marginRight:"1rem"
+                        }}
+                        className='hamburger' 
+                        onClick={(e)=>{setOpenedSearch(!openedMenu)}}
+                        focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                      </svg>
+                    )}
+                    <select defaultValue={lang} defaultChecked={lang} style={{
+                        background:"transparent",
+                        border:"none",
+                        fontSize:"1.1rem"
+                      }}
+                      onChange={(e)=>{handleChangeLang(e.target.value)}}
+                    >
+                      <option value="en">{getUnicodeFlagIcon('US')}</option>
+                      <option value="fr">{getUnicodeFlagIcon('FR')}</option>
+                    </select>
                 </div>
               </div>
               <div className={styles.submenu +"  "+(openedMenu?styles.visible:styles.hidden)}>
