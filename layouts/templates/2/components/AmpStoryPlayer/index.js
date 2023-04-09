@@ -89,47 +89,55 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
     
     return (
         <>
-            <Head>
-                <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
-                <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel='stylesheet' type='text/css'/>
-            </Head>
-           
-            <div className="viewport">
-                <div className="entry-point-container">
-                    <div className="circular-entry-point">
-                        <div className="entry-points">
-                        {stories.map((story,index)=>{
-                            return(
-                            <Widget
-                                key={index}
-                                pos={index}
-                                img={story.posterP}
-                                color = {index == 0 ? "#466FFF": index == 1 ? "#E6AD1C" : index==2 ? "#FF6F32":"#4CA47C"}
-                                text = {story.title}
-                                url={story.url}
-                                isBreakpoint = {isBreakpoint}
-                                onclick={(e)=>{setShow(!show)}}
-                            />
-                            )
-                        })}
-                        </div>
-                    </div>
-                </div>
-                <br></br>
-                {stories?.length>0 && (
+            {stories?.length > 0 ? (
+                <>
+                    <Head>
+                        <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
+                        <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel='stylesheet' type='text/css'/>
+                    </Head>
 
-                    <div id='lightbox' className={`lightbox ${show?"show":""}`}>
-                        <amp-story-player 
-                            id="player2"
-                            style={{width:"100vw",height:"100%"}}
-                        >
-                            {stories.map(((st,idx)=>{
-                                return <a key={idx} href={`/blog/web-story/${st._id}/${st.slug}`}></a>
-                            }))}
-                        </amp-story-player>
-                    </div>
-                )}
-            </div>   
+                    <div className="viewport">
+                        <div className="entry-point-container">
+                            <div className="circular-entry-point">
+                                <div className="entry-points" style={{  gridTemplateColumns: `repeat(${stories?.length}, 179.6px)`}}>
+                                {stories.map((story,index)=>{
+                                    return(
+                                    <Widget
+                                        key={index}
+                                        pos={index}
+                                        img={story.posterP}
+                                        color = {index == 0 ? "#466FFF": index == 1 ? "#E6AD1C" : index==2 ? "#FF6F32":"#4CA47C"}
+                                        text = {story.title}
+                                        url={story.url}
+                                        isBreakpoint = {isBreakpoint}
+                                        onclick={(e)=>{setShow(!show)}}
+                                    />
+                                    )
+                                })}
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <br></br>
+                        {stories?.length>0 && (
+
+                            <div id='lightbox' className={`lightbox ${show?"show":""}`}>
+                                <amp-story-player 
+                                    id="player2"
+                                    style={{width:"100vw",height:"100%"}}
+                                >
+                                    {stories.map(((st,idx)=>{
+                                        return <a key={idx} href={`/blog/web-story/${st._id}/${st.slug}`}></a>
+                                    }))}
+                                </amp-story-player>
+                            </div>
+                        )}
+                    </div>   
+                </>
+            ):(
+                <>
+                </>
+            )}
         </>
     )
 }

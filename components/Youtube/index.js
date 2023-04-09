@@ -11,7 +11,7 @@ export default function YoutubeShort({info}) {
     htmlStr = htmlStr.replace(/&#39;/g , "\'");   
     htmlStr = htmlStr.replace(/&amp;/g , "&");
     return htmlStr;
-}
+  }
   return (
     <a target={"_blank"} rel={"noreferrer"}  href={`https://www.youtube.com/watch?v=${info?.id?.videoId}`}>
       <div className={styles.container}>

@@ -223,13 +223,13 @@ amp-story-player.my-player {
 .entry-points {
 	display: flex;
 	overflow-x: scroll;
+  overflow-y: hidden;
 	-ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
   display: grid;
   width: 100%;
-  gap: 32px 24px;
-  grid-template-columns: repeat(auto-fill, 179.6px);
-  grid-template-rows: minmax(269px, auto);
+  gap: 0 24px;
+  grid-template-rows:269px;
   scroll-margin-top: 30vh;
   @media only screen and (max-width: 600px) {
     padding-left: .7rem;

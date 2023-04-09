@@ -6,7 +6,7 @@ import {getStories} from '@/services/stories'
 import { useRouter } from 'next/router'
 import DefaultLayout from '@/layouts/templates/1'
 import Template2 from '@/layouts/templates/2'
-
+const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/search';
 const theme = 2
 export default function Home({isBreakpoint,page1,topA,toggleTheme,stories}) {
   // console.log("Stories",stories)
@@ -49,11 +49,17 @@ export async function getServerSideProps({locale}) {
     page : 1,
     lang : locale
   }})
-  //console.log(res.length)
+
+  const ressult = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?key=${process.env.NEXT_PUBLIC_APP_YOUTUBE_API_KEY}&part=snippet&myRating=true&channelId=UCENrVFimv0tFrBM9SJqr1Aw&maxResults=5&order=viewCount`)
+  const data = await ressult.json()
+
+  const finalPage = [...page1,...data?.items]
+  finalPage.sort(() => Math.random() - 0.5);
+  //console.log(finalPage)
 
   return { 
       props: {
-        page1 : page1 || [],
+        page1 : finalPage || [],
         stories : stories || [],
         topA :  []
       } 
