@@ -56,7 +56,7 @@ export async function getServerSideProps({locale}) {
 
   const finalPage = [...page1,...ytVideos]
   finalPage.sort(() => Math.random() - 0.5);
-  //console.log(finalPage)
+  console.log(data)
 
   return { 
       props: {
