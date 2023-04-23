@@ -1,6 +1,6 @@
 
 import styles from './index.module.scss'
-import HomePage from '@/layouts/templates/2/components/HomePage'
+import HomePage from '@/layouts/templates/2/HomePage'
 import { getTopArticles,getArticle } from '../services/articles'
 import {getStories} from '@/services/stories'
 import { useRouter } from 'next/router'
@@ -32,7 +32,9 @@ export default function Home({isBreakpoint,page1,topA,toggleTheme,stories}) {
         topA={topA} 
         page1={page1} 
         lang={lang}
-      ></Template2>
+      >
+        <HomePage isBreakpoint={isBreakpoint} topA={topA} page1={page1} stories={stories} lang={lang}/>      
+      </Template2>
     )
   }
 }
@@ -60,7 +62,7 @@ export async function getServerSideProps({locale}) {
 
   return { 
       props: {
-        page1 : finalPage || [],
+        page1 : [...finalPage,...finalPage,...finalPage,...finalPage,...finalPage] || [],
         stories : stories || [],
         topA :  []
       } 

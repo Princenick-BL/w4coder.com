@@ -3,28 +3,61 @@
     grid-template-columns: 100%;
     grid-template-rows: 269px ;
     margin: 0px;
-width: 100%;
-z-index: 2;
+    width: 100%;
+    z-index: 2;
+    //border: 1px solid var(--background-secondary);
+    border-radius: 10px;
 }
 
 .imgContainer{
     position: absolute;
     height: 100%;
     width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    @media only screen and (min-width: 700px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
-.imgCard{
+.imgCard,.imgCard2{
     height: 100%;
-width: 100%;
-object-fit: cover;
-border-radius: 8px;
-background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
-    // width: 35vw !important;
-    // height: calc(35vw * 5/3 ) !important;
-    // min-width: 35vw !important;
-    // min-height:  calc(35vw * 5/3 ) !important;
-    // border-radius: 1vw !important;
-    // margin: 4px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    //background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
+}
+
+.entryPoint2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    position: relative;
+    margin-left: 1rem;
+}
+
+.imgCard2{
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.mws{
+    padding: 1rem;
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--background-secondary);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    text-decoration: underline;
+    border-radius: 100px;
 }
 
 .cardContent{
@@ -34,7 +67,7 @@ background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.8));
     padding: 20px 0;
     width: 100%;
     border-radius: 8px;
-    background: linear-gradient(to top, rgba(33, 33, 33, 0.9), rgba(33, 33, 33, 0));
+    //background: linear-gradient(to top, rgba(33, 33, 33, 0.9), rgba(33, 33, 33, 0));
     
     h2{
         padding: 0 20px;

@@ -17,7 +17,7 @@ p{
   --placeholder-color : #F8F8F8;
   --boder-color : rgb(226, 221, 221);
   --background-primary : #fff;
-  --background-secondary : #eee;
+  --background-secondary : #ebebf0;
 
 }
 a {
@@ -87,7 +87,7 @@ h1,h2,h3,h4{
   padding: 5px .5rem ;
 }
 
-@media only screen and (min-width: 600px) {		// display: none;
+@media only screen and (min-width: 700px) {		// display: none;
   .topic-slider-container{
     border : 0.01rem solid rgba(0, 0, 0, 0.05);
   }
@@ -162,16 +162,18 @@ h1,h2,h3,h4{
 
 
 .entry-point-container {
-  display: grid;
-grid-template-columns: 100%;
-grid-template-rows: 269px auto;
-margin: 0px;
-width: 100%;
-	h1{
-		padding: 0;
-		margin: 0;
-		margin-bottom: 2rem;
-	}
+  @media only screen and (max-width: 700px) {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 269px auto;
+    margin: 0px;
+    width: 100%;
+    h1{
+      padding: 0;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 .entry-point-card-title {
@@ -231,13 +233,14 @@ amp-story-player.my-player {
   overflow-y: hidden;
 	-ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
-  display: grid;
-  width: 100%;
-  gap: 0 24px;
-  grid-template-rows:269px;
-  scroll-margin-top: 30vh;
-  padding-left: 0.7rem;
-  @media only screen and (max-width: 600px) {
+  flex-wrap: wrap ;
+  
+  @media only screen and (max-width: 700px) {
+    display: grid;
+    width: 100%;
+    gap: 0 24px;
+    grid-template-rows:269px;
+    scroll-margin-top: 30vh;
     padding-left: .7rem;
   }
 }
@@ -303,10 +306,19 @@ amp-story-player.my-player {
 	position: relative;
 	transition: transform 0.3s;
 	margin: .5rem;
+  @media only screen and (min-width: 700px) {
+    max-width: 30%;
+    min-width: 190px;
+    margin: 0 .5rem !important;
+  }
 }
 
-.entry-point-card-container:nth-child(1){
-  // margin-left: 0;
+.entry-point-card-container:first-of-type{
+  margin-left: 0 !important;
+}
+
+.entry-point-card-container:last-of-type{
+  margin-right: 0 !important;
 }
 
 /* Extra stuff that makes sample aesthetic. */
@@ -337,7 +349,6 @@ amp-story-player.my-player {
 	/*   border-radius: 10px; */
 	height: max-content;
 	//background-color: #202029;
-	overflow: hidden;
 	width: 100%;
 	margin: .5rem auto;
 }

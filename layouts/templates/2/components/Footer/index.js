@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './footer.module.scss'
 import Image from 'next/image'
-import Logo from '../Logo'
+import Logo from '../../../../../components/Logo'
 
 export default function Footer({toggleTheme}) {
 

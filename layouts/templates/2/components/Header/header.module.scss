@@ -102,15 +102,47 @@
 
 .deskHead{
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     position: relative;
-    padding:  0 1rem;
-    border-bottom: .5rem solid var(--background-secondary);
-
+    margin-bottom: 40px;
+    padding: 40px 40px 0;
+    box-shadow: 0 1px 0 0 #ebebf0;
+    width: 100%;
     .flexBetween{
         display: flex;
         align-items: center;
         justify-content:space-between;
+        width: 100%;
+
+    }
+    .armure{
+        width: 10%;
+        display: flex;
+        align-items: center;
+        .svg{
+            border: 1px solid var(--background-secondary);
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            min-height: 30px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+        }
+    }
+    .flexC{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .flexCenter{
+        display: flex;
+        justify-content: center;
+        align-content: center;
         width: 100%;
 
     }
@@ -137,7 +169,7 @@
     .submenu{
         display: flex;
         justify-content: left;
-        width: 100%;
+        width: max-content;
         margin: 0;
         padding: 0;
         position: relative;
@@ -148,7 +180,10 @@
             justify-content: center;
             align-items: center;
             margin: 0 1rem;
-            padding: 1rem 0;
+            padding: 2rem 0;
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: bold;
         }
     }
 }

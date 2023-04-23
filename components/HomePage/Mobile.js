@@ -4,7 +4,7 @@ import { getArticle ,getTopArticles,searchArticle} from '../../services/articles
 import Slide from './components/Mobile/Card'
 import styles from './homepage.module.scss'
 import AmpStoryPlayerComponent from '../AmpStoryPlayer';
-import RecommendedTitle from '../RecommendedTitle';
+import RecommendedTitle from '../../layouts/templates/2/components/RecommendedTitle';
 import Ads300x600 from '../Ads300';
 import TutoReco from './components/TutoReco';
 

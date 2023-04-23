@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getArticle ,getTopArticles,searchArticle} from '@/services/articles'
-import Slide from './components/Mobile/Card'
+import Slide from '@/layouts/templates/2/components/Card'
 import styles from './homepage.module.scss'
 
 export default function Mobile({page1,topA,stories,lang,isBreakpoint=1}) {

@@ -3,10 +3,11 @@ import styles from './index.module.scss'
 import { getStories } from '../services/stories'
 import Image from 'next/image'
 import DefaultLayout from '../layouts/default'
+import Template2 from '@/layouts/templates/2'
 
 export default function WebStories({isBreakpoint,stories}) {
   return (
-    <DefaultLayout
+    <Template2
         title={"w4coder"}
         description={""}
         isBreakpoint={isBreakpoint}
@@ -38,7 +39,7 @@ export default function WebStories({isBreakpoint,stories}) {
                 )
             })}
         </div>      
-    </DefaultLayout>
+    </Template2>
   )
 }
 

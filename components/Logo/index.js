@@ -10,7 +10,7 @@ export default function Logo({single,style,head,w=100,h=100}) {
       {single ? (
         <div className={styles.logo + " "+styles.bg} style={style}>{`w4c`}</div>
       ) : (
-        <Link href={"/"}>
+        <Link href={"/"} style={{width:"max-content"}}>
           <Image
             src="/logo.png"
             width={w}

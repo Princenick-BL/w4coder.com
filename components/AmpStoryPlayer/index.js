@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Head from 'next/head';
 import Image from 'next/image';
 import Logo from '../Logo'
-import RecommendedTitle from '../RecommendedTitle'
+import RecommendedTitle from '../../layouts/templates/2/components/RecommendedTitle'
 
 async function initializeWidget(idx) {
     const player = document.getElementById("player2");

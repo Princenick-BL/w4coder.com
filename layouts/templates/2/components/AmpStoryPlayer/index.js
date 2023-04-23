@@ -3,6 +3,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Logo from '@/components/Logo'
 import styles from './index.module.scss'
+import wslogo from '@/public/images/ws-logo.png'
+import { Link } from 'wouter';
+import RecommendedTitle from '@/layouts/templates/2/components/RecommendedTitle';
 
 async function initializeWidget(idx) {
     const player = document.getElementById("player2");
@@ -47,7 +50,7 @@ const Widget = ({img,pos,color,text,url,onclick,isBreakpoint=1}) =>{
 export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
 
     const [show,setShow]=useState(false)
-    // console.log(stories)
+    console.log(stories)
 
 
     useEffect(()=>{
@@ -95,31 +98,36 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
                         <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
                         <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel='stylesheet' type='text/css'/>
                     </Head>
-
                     <div className="viewport">
+                        <RecommendedTitle title={"Web stories"} style={{marginTop:"0"}}/>
                         <div className="entry-point-container">
                             <div className="circular-entry-point">
                                 <div className="entry-points" style={{  gridTemplateColumns: `repeat(${stories?.length}, 179.6px)`}}>
-                                {stories.map((story,index)=>{
-                                    return(
-                                    <Widget
-                                        key={index}
-                                        pos={index}
-                                        img={story.posterP}
-                                        color = {index == 0 ? "#466FFF": index == 1 ? "#E6AD1C" : index==2 ? "#FF6F32":"#4CA47C"}
-                                        text = {story.title}
-                                        url={story.url}
-                                        isBreakpoint = {isBreakpoint}
-                                        onclick={(e)=>{setShow(!show)}}
-                                    />
-                                    )
-                                })}
+                                    {stories.map((story,index)=>{
+                                        return(
+                                        <Widget
+                                            key={index}
+                                            pos={index}
+                                            img={story.posterP}
+                                            color = {index == 0 ? "#466FFF": index == 1 ? "#E6AD1C" : index==2 ? "#FF6F32":"#4CA47C"}
+                                            text = {story.title}
+                                            url={story.url}
+                                            isBreakpoint = {isBreakpoint}
+                                            onclick={(e)=>{setShow(!show)}}
+                                        />
+                                        )
+                                    })}
+                                    <Link href='/web-stories'>
+                                        <div className={ styles.entryPoint2 }>
+                                            <div className={styles.mws}>{"More Story →"}</div>
+                                        </div>
+                                    </Link>
                                 
                                 </div>
                             </div>
                         </div>
                         <br></br>
-                        {stories?.length>0 && (
+                        {/* {stories?.length>0 && (
 
                             <div id='lightbox' className={`lightbox ${show?"show":""}`}>
                                 <amp-story-player 
@@ -131,7 +139,7 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
                                     }))}
                                 </amp-story-player>
                             </div>
-                        )}
+                        )} */}
                     </div>   
                 </>
             ):(
