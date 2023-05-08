@@ -2,6 +2,8 @@ import React from 'react'
 import Logo from '../Logo'
 import styles from './index.module.scss'
 import Link from 'next/link'
+import adPlaceholder from '@/public/adPlaceholder.png'
+import Image from 'next/legacy/image'
 
 
 export default function Ads300x600({children}) {
@@ -20,10 +22,16 @@ export default function Ads300x600({children}) {
 
 export function AD_PLACEHOLDER() {
   return (
-    <div className={styles.adPlaceholder} style={{backgroundImage:`url("/adPlaceholder.png")`}}>
-        <Logo/>
-        <div className={styles.content}>Ne ratez rien de nos info et de nos tutos. Grandissez en expérience avec nous.</div>
-        <div className={styles.button}><Link href={"/newsletter"}>S'abonner</Link></div>
+    <div className={styles.adPlaceholder}>
+      <Image
+        src={adPlaceholder}
+        width={300}
+        height={600}
+        alt='ad placeholder'
+        />
+      <div className={styles.indicator}>
+
+      </div>
     </div>
   )
 }

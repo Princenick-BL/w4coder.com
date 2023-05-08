@@ -13,7 +13,7 @@ async function initializeWidget(idx) {
     // console.log(stories)
     // player.show(stories[idx].href, null, {animate: true});
     // console.log(idx)
-    player.go(idx )
+    //player.go(idx )
     // player.play();
 }
   
@@ -50,40 +50,41 @@ const Widget = ({img,pos,color,text,url,onclick,isBreakpoint=1}) =>{
 export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
 
     const [show,setShow]=useState(false)
+    const [currentStory,setCurrentStory] = useState(false)
     console.log(stories)
 
 
     useEffect(()=>{
         try{
 
-            const existed  = document.getElementById("playerConfig");
-            if(!existed){
-                const player = document.getElementById("player2");
-                player.load();
-                var script = document.createElement("script")
-                script.id = "playerConfig"
-                script.type="application/json"
-                script.innerHTML=`
-                {
-                    "behavior": {
-                        "autoplay": false,
-                        "pageScroll": false
-                    },
-                    "controls": [{
-                        "name": "close",
-                        "position": "start"
-                    }],
-                    {
-                        "behavior": {
-                            "pageScroll": false
-                        }
-                    }
-                }
-                `
-                player.appendChild(script)
+            // const existed  = document.getElementById("playerConfig");
+            // if(!existed){
+            //     const player = document.getElementById("player2");
+            //     player.load();
+            //     var script = document.createElement("script")
+            //     script.id = "playerConfig"
+            //     script.type="application/json"
+            //     script.innerHTML=`
+            //     {
+            //         "behavior": {
+            //             "autoplay": false,
+            //             "pageScroll": false
+            //         },
+            //         "controls": [{
+            //             "name": "close",
+            //             "position": "start"
+            //         }],
+            //         {
+            //             "behavior": {
+            //                 "pageScroll": false
+            //             }
+            //         }
+            //     }
+            //     `
+            //     player.appendChild(script)
                 // playerEl.pause()
         
-            }
+            //}
         }catch(e){
 
         }
@@ -99,7 +100,7 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
                         <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel='stylesheet' type='text/css'/>
                     </Head>
                     <div className="viewport">
-                        <RecommendedTitle title={"Web stories"} style={{marginTop:"0"}}/>
+                        <RecommendedTitle title={"Web stories"} style={{marginTop:"0",marginBottom:"10px"}}/>
                         <div className="entry-point-container">
                             <div className="circular-entry-point">
                                 <div className="entry-points" style={{  gridTemplateColumns: `repeat(${stories?.length}, 179.6px)`}}>
@@ -113,7 +114,7 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
                                             text = {story.title}
                                             url={story.url}
                                             isBreakpoint = {isBreakpoint}
-                                            onclick={(e)=>{setShow(!show)}}
+                                            onclick={(e)=>{setShow(!show);setCurrentStory(story)}}
                                         />
                                         )
                                     })}
@@ -127,19 +128,17 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
                             </div>
                         </div>
                         <br></br>
-                        {/* {stories?.length>0 && (
-
+                        {show && stories?.length>0 && (
                             <div id='lightbox' className={`lightbox ${show?"show":""}`}>
                                 <amp-story-player 
                                     id="player2"
                                     style={{width:"100vw",height:"100%"}}
+                                    src={`/blog/web-story/${currentStory._id}/${currentStory.slug}`}
                                 >
-                                    {stories.map(((st,idx)=>{
-                                        return <a key={idx} href={`/blog/web-story/${st._id}/${st.slug}`}></a>
-                                    }))}
+                                   
                                 </amp-story-player>
                             </div>
-                        )} */}
+                        )}
                     </div>   
                 </>
             ):(

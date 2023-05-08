@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import moment from 'moment';
 import RecommendedTitle from '@/layouts/templates/2/components/RecommendedTitle';
-
+import { AD_PLACEHOLDER } from '@/components/Ads';
 
 export default function Desktop({page1,topA,stories,lang,isBreakpoint=1}) {
   const [pages,setPages] = useState([...page1.slice(3)])
@@ -129,15 +129,17 @@ export default function Desktop({page1,topA,stories,lang,isBreakpoint=1}) {
                   </Link>
               )
             }):(
-              <></>
+              <>
+              </>
             )}
           </InfiniteScroll>
         </div>
         <div className={styles.recZone}>
           <div className={styles.stickyRec}>
-
+            <div className={styles.recTitle}>Advertizement</div>
+              <AD_PLACEHOLDER/>
+            </div>
           </div>
-        </div>
       </section>
     </div>
   )

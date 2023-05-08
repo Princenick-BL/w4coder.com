@@ -5,7 +5,7 @@ import Slide from './components/Mobile/Card'
 import styles from './homepage.module.scss'
 import AmpStoryPlayerComponent from '../AmpStoryPlayer';
 import RecommendedTitle from '../../layouts/templates/2/components/RecommendedTitle';
-import Ads300x600 from '../Ads300';
+import Ads300x600 from '../Ads';
 import TutoReco from './components/TutoReco';
 
 export default function Mobile({page1,topA,stories,lang}) {

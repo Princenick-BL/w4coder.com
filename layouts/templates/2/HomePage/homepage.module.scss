@@ -296,11 +296,14 @@
         position: relative;
         .stickyRec{
             width: 302px;
-            height: 622px;
-            background-color: aquamarine;
+            height: 652px;
             position: -webkit-sticky; /* Safari */
             position: sticky;
-            top: 10px;  
+            top: 10px;
+            border: 1px solid var(--background-secondary);  
+            .recTitle{
+                padding: .5rem;
+            }
         }
     }
 }

@@ -1,0 +1,83 @@
+.article{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //max-height: 100vh;
+    width: 100%;
+    max-width: 65.26316em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    position: relative;
+    h1{
+        margin: 24px 0 16px;
+        word-wrap: break-word;
+        font-size: 3.35169rem;
+        line-height: 1.1;
+        text-align: center;
+    }
+    strong{
+        color: var(--color-primary);
+    }
+    .section{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin: 3rem 0;
+        .content{
+            margin-right: 40px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 733px;
+            line-height: 1.473;
+            max-width: 100%;
+            height: 100%;
+            position: relative;
+            padding: 0 24px;
+          
+            figure{
+                margin: 0;
+                position: relative;
+                figcaption{
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                    font-size: 10px;
+                    font-style: italic;
+                }
+            }
+            div{
+                margin: 1rem 0;
+                p{
+                    font-weight: 500;
+                    line-height: 1.6;
+                    font-size: 1.3rem;
+                }
+                a{
+                    color: var(--color-primary);
+                    text-decoration: underline;
+                }
+            }
+            .img{
+                aspect-ratio: 1/1;
+                width: 100%;
+                height: auto;
+                border: 1px solid var(--background-secondary) !important;
+            }
+        }
+        aside{
+            flex: 0 0 300px;
+            order: 2;
+            align-self: stretch;
+            max-width: 300px;
+            display: block;
+            background-color:aquamarine;
+            height: 100%;
+            position: relative;
+        }
+    }
+}

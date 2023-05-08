@@ -1,6 +1,15 @@
 import { config } from "../constants";
 import axios from 'axios'
 
+
+export const getSingleArticleById = async (id)=>{
+    const res = await axios.get(`${config.API_ENDPOINT}/article/${id}`)
+    if(res.data.success){
+        return res.data.data
+    }
+    return null
+}
+
 export const getArticle = async ({filter})=>{
     const res = await axios.get(`${config.API_ENDPOINT}/article?${Object.keys(filter).map(key => key + '=' + filter[key]).join('&')}`)
     if(res.data.success){

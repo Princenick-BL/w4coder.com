@@ -4,7 +4,7 @@ import Script from 'next/script';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next'
 import '../i18n'
-
+import { ThemeProvider } from 'next-themes';
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(0);
 
@@ -67,9 +67,22 @@ function MyApp({ Component, pageProps }) {
     }
 
   },[])
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('Service worker registered')
+        }).catch(error => {
+          console.warn('Service worker failed to register', error.message)
+        })
+      })
+    }
+  }, [])
   return(
     <div id='app'  className={themeDark===false ? "theme-light" :themeDark===true ? "theme-dark" : ""}>
-      <Component  {...pageProps} isBreakpoint={isBreakpoint} toggleTheme={(e)=>toggleTheme(e)}/>
+          <ThemeProvider>
+            <Component  {...pageProps} isBreakpoint={isBreakpoint} toggleTheme={(e)=>toggleTheme(e)}/>
+          </ThemeProvider>
     </div>
   )
 }

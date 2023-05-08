@@ -18,7 +18,7 @@ export default function Slide({article,style,type=0,isBreakpoint=1}){
         borderTop:isBreakpoint === 1 ? ".5rem solid var(--background-secondary)" : ""
       }}
       >   
-        <Link href={`/blog/article/${article._id}/${article.slug}`}>
+        <Link href={`/articles/${article._id}/${article.slug}`}>
           <div className={styles.slider}>
             { isBreakpoint === 1 &&(
 

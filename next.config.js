@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
+const withSourceMaps = require('@zeit/next-source-maps');
+const withOffline = require('next-offline');
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -26,9 +28,13 @@ const nextConfig = {
     ];
   },
   i18n: {
-    locales: ['en', 'fr'],
+    locales: ['en'],
     defaultLocale: 'en',
   },
-}
+  publicRuntimeConfig: {
+    // Will be available on both server and client
+    apiUrl: 'https://api.w4coder.com',
+  },
+};
 
-module.exports = nextConfig
+module.exports = withSourceMaps(nextConfig);
