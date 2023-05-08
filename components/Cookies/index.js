@@ -30,24 +30,24 @@ export default function Cookies() {
             
             <div className={styles.info}>
                 <div className={styles.cookieHead}>
-                    <h4 style={{width:"max-content",minWidth:"max-content"}}>Mais d’abord, les cookies 🍪</h4>
+                    <h4 style={{width:"max-content",minWidth:"max-content"}}>{"Mais d’abord, les cookies 🍪"}</h4>
                 </div>
 
                 <div className={styles.txt}>
                     <span>
-                        Nous utilisons des cookies et des méthodes similaires pour reconnaître les visiteurs et mémoriser leurs préférences. Nous les utilisons également pour mesurer l'efficacité des campagnes publicitaires, cibler les annonces et analyser le trafic du site. Pour en savoir plus sur ces méthodes, y compris sur la manière de les désactiver, consultez notre politique en matière de cookies.                
+                        {"Nous utilisons des cookies et des méthodes similaires pour reconnaître les visiteurs et mémoriser leurs préférences. Nous les utilisons également pour mesurer l'efficacité des campagnes publicitaires, cibler les annonces et analyser le trafic du site. Pour en savoir plus sur ces méthodes, y compris sur la manière de les désactiver, consultez notre politique en matière de cookies.   "}             
                     </span>
                     
                     <br></br>
                     <span>
-                        En cliquant sur "accepter", vous consentez à l'utilisation de ces méthodes par nous et par des tiers. Vous pouvez toujours modifier vos préférences en matière de suivi en consultant notre politique en matière de cookies.                
+                       {" En cliquant sur \"accepter\", vous consentez à l'utilisation de ces méthodes par nous et par des tiers. Vous pouvez toujours modifier vos préférences en matière de suivi en consultant notre politique en matière de cookies."}                
                     </span>
 
                 </div>
                 <div className={styles.buttons}>
-                     <span className={styles.essentials} onClick={(e)=>{setTheme(false)}}>Accepter uniquement les cookies essentiels</span>
+                     <span className={styles.essentials} onClick={(e)=>{setTheme(false)}}>{"Accepter uniquement les cookies essentiels"}</span>
 
-                    <button onClick={(e)=>{setTheme(true)}}>TOUT ACCEPTER</button>
+                    <button onClick={(e)=>{setTheme(true)}}>{"TOUT ACCEPTER"}</button>
                 </div>
             </div>
         </div>

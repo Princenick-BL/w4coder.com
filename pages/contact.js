@@ -9,15 +9,15 @@ export default function Contact({isBreakpoint}) {
       description={""}
       isBreakpoint={isBreakpoint}
     >
-        <h1 style={{marginTop:"1rem"}}>Contactez nous</h1>
-        <p>Nous sommes à votre écoute</p>
+        <h1 style={{marginTop:"1rem"}}>{"Contactez nous"}</h1>
+        <p>{"Nous sommes à votre écout"}e</p>
         <div className={styles.contact}>
             <div>
-                <h3 style={{display:"flex",alignItems:"center"}}>Service client</h3>
+                <h3 style={{display:"flex",alignItems:"center"}}>{"Service client"}</h3>
                 <br></br>
-                <p>Vous avez une recommendation pour ou nous ou une requête à nous soumettre ? N'hésitez pas notre service client étudiera votre message avec soin et attention.
-                    <br></br>Merci à vous !!!</p>
-                <a href='mailto:contact@w4coder.com'>Email : contact@w4coder.com</a>
+                <p>{"Vous avez une recommendation pour ou nous ou une requête à nous soumettre ? N'hésitez pas notre service client étudiera votre message avec soin et attention."}
+                    <br></br>{"Merci à vous !!!"}</p>
+                <a href='mailto:contact@w4coder.com'>{"Email : contact@w4coder.com"}</a>
             </div>
             <form className={styles.contactForm}>
                 <input type={"text"} name="name" placeholder="Full Name"/>
