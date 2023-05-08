@@ -9,13 +9,6 @@
     "plugin:react/recommended",
     "plugin:@next/next/recommended"
   ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
   "plugins": [
     "react",
     "@next/next"
