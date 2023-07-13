@@ -99,8 +99,8 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
                         <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
                         <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel='stylesheet' type='text/css'/>
                     </Head>
+                    <RecommendedTitle title={"Web stories"} style={{marginTop:"0",marginBottom:"0"}}/>
                     <div className="viewport">
-                        <RecommendedTitle title={"Web stories"} style={{marginTop:"0",marginBottom:"10px"}}/>
                         <div className="entry-point-container">
                             <div className="circular-entry-point">
                                 <div className="entry-points" style={{  gridTemplateColumns: `repeat(${stories?.length}, 179.6px)`}}>
@@ -118,11 +118,11 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
                                         />
                                         )
                                     })}
-                                    <Link href='/web-stories'>
+                                    {/* <Link href='/web-stories'>
                                         <div className={ styles.entryPoint2 }>
                                             <div className={styles.mws}>{"More Story →"}</div>
                                         </div>
-                                    </Link>
+                                    </Link> */}
                                 
                                 </div>
                             </div>
@@ -139,7 +139,9 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
                                 </amp-story-player>
                             </div>
                         )}
-                    </div>   
+                    </div>  
+                    <RecommendedTitle title={"POSTS"} style={{marginTop:"0",marginBottom:"0",borderBottom:"none"}}/>
+ 
                 </>
             ):(
                 <>

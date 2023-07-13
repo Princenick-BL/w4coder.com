@@ -8,6 +8,10 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: .1rem;
+    border-bottom: .5rem solid var(--background-secondary);
+    border-top: .5rem solid var(--background-secondary);
+
+    width: 100%;
     span{
         position: relative;
         display: inline-block;

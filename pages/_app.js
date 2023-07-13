@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next'
 import '../i18n'
 import { ThemeProvider } from 'next-themes';
+
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(0);
 
