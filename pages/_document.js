@@ -12,7 +12,7 @@ export default function Document() {
 
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-WV85CLJKTF"></script>
             
-            <Script dangerouslySetInnerHTML={{__html:`
+            <Script id='ananlytics' dangerouslySetInnerHTML={{__html:`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
