@@ -144,17 +144,20 @@
             max-height: 40px;
             width: 100%;
             svg{
-                width: 20px;
-                height: 20px;
+                width: 25px;
+                height: 25px;
                 cursor: pointer;
             }
         }
         ul{
             margin: 0;
             padding: 0;
+            padding-top: 1rem;
             li{
                 list-style-type: none;
                 margin-bottom: 1rem;
+                font-size: 1.1rem;
+                margin-bottom: 1.1rem;
                 input{
                     width: 100%;
                     margin-top: 1rem;

@@ -7,6 +7,7 @@
     z-index: 2;
     //border: 1px solid var(--background-secondary);
     border-radius: 10px;
+    min-width: 170px;
 }
 
 .imgContainer{
@@ -64,13 +65,13 @@
     position: absolute;
     bottom: 0px;
     height: max-content;
-    padding: 20px 0;
+    padding: 10px 0;
     width: 100%;
     border-radius: 8px;
     //background: linear-gradient(to top, rgba(33, 33, 33, 0.9), rgba(33, 33, 33, 0));
     
     h2{
-        padding: 0 20px;
+        padding: 0 10px;
         height: max-content;
         margin: 0 !important;
         color: #fff !important;

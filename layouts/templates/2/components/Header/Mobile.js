@@ -173,7 +173,7 @@ export default function Mobile({ style, border = true, stories }) {
         {openedMenu && (
           <div className={styles.settings}>
             <div className={styles.closing}>
-              <FontAwesomeIcon onClick={(e) => { setOpenedMenu(false) }} className={styles.search} size='24' icon={faClose} />
+              <FontAwesomeIcon onClick={(e) => { setOpenedMenu(false) }} className={styles.search} size='30' icon={faClose} />
             </div>
             <ul>
               <li>Login</li>
@@ -187,7 +187,7 @@ export default function Mobile({ style, border = true, stories }) {
         {openedSearch && (
           <div className={styles.searchBox}>
             <div className={styles.closing}>
-              <FontAwesomeIcon onClick={(e) => { setOpenedSearch(false) }} className={styles.search} size='24' icon={faClose} />
+              <FontAwesomeIcon onClick={(e) => { setOpenedSearch(false) }} className={styles.search} size='30' icon={faClose} />
             </div>
             <ul>
               <li><input type='search' placeholder='Search ...'/></li>

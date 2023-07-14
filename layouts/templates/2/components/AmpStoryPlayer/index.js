@@ -50,7 +50,6 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
 
     const [show,setShow]=useState(false)
     const [currentStory,setCurrentStory] = useState(false)
-    console.log(stories)
 
 
     useEffect(()=>{
@@ -103,7 +102,7 @@ export default function AmpStoryPlayerComponent({stories,isBreakpoint=1}) {
                         <div className="entry-point-container">
                             <div className="circular-entry-point">
                                 <div className="entry-points" style={{  gridTemplateColumns: `repeat(${stories?.length}, 179.6px)`}}>
-                                    {stories.map((story,index)=>{
+                                    {[...stories,...stories].map((story,index)=>{
                                         return(
                                         <Widget
                                             key={index}

@@ -239,7 +239,7 @@ amp-story-player.my-player {
   overflow-y: hidden;
 	-ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
-  flex-wrap: wrap ;
+  // flex-wrap: wrap ;
   
   @media only screen and (max-width: 700px) {
     display: flex;
