@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import Head from 'next/head';
 import Image from 'next/image';
-import Logo from '@/components/Logo'
 import styles from './index.module.scss'
 import wslogo from '@/public/images/ws-logo.png'
 import { Link } from 'wouter';

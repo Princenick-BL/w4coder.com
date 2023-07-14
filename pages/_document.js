@@ -6,9 +6,9 @@ export default function Document() {
       <Html>
         <Head>
           <link rel="manifest" href="/manifest.json" defer />
-          {/* <link rel="preconnect" href="https://fonts.googleapis.com" defer />
+          <link rel="preconnect" href="https://fonts.googleapis.com" defer />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="crossorigin" defer />
-          <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet" defer /> */}
+          <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet" defer />
 
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-WV85CLJKTF"></script>
             

@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './footer.module.scss'
 import Image from 'next/image'
-import Logo from '../../../../../components/Logo'
 import { menu } from '@/constants'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
@@ -14,7 +13,7 @@ export default function Footer({toggleTheme}) {
             <div className={styles.content}>
                 <div className={styles.left}>
                     <div>
-                        <Logo style={{margin:"0 .2rem",marginTop:"4px"}} w={25} h={25} />
+                        {/* <Logo style={{margin:"0 .2rem",marginTop:"4px"}} w={25} h={25} /> */}
                     </div>
                    
                 </div>

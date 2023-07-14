@@ -3,6 +3,7 @@ import styles from './card.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import moment from 'moment'
+import { SmallLogo } from '@/components/Logo'
 
 export default function Slide({article,style,type=0,isBreakpoint=1}){
   
@@ -24,15 +25,16 @@ export default function Slide({article,style,type=0,isBreakpoint=1}){
 
               <div className={styles.publisher}>
                 {!isVideo? (
-                    <Image
-                        src={article?.author?.logo || "/logo.png"}
-                        width="30"
-                        height="30"
-                        layout="fixed"
-                        className={styles.publisher_logo}
-                        style={{minWidth:"10px"}}
-                          alt={"Publisher logo"}
-                    />
+                    // <Image
+                    //     src={article?.author?.logo || "/logo.png"}
+                    //     width="30"
+                    //     height="30"
+                    //     layout="fixed"
+                    //     className={styles.publisher_logo}
+                    //     style={{minWidth:"10px"}}
+                    //       alt={"Publisher logo"}
+                    // />
+                    <SmallLogo/>
 
                   ) : (
                     <svg className={styles.publisher_logo} viewBox="0 0 40 24" preserveAspectRatio="xMidYMid meet" focusable="false" style={{pointerEvents: "none", display: "block", height: "20px"}} >

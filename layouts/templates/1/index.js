@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from './index.module.scss'
-import Header from '@/components/Header'
+import Header from '@/layouts/templates/2/components/Header'
 import Footer from '@/layouts/templates/2/components/Footer'
 
 

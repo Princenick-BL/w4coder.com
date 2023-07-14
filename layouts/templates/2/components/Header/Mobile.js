@@ -1,5 +1,5 @@
 import React ,{useEffect,useLayoutEffect,useState,useRef} from 'react'
-import Logo from '@/components/Logo'
+// import Logo from '@/components/Logo'
 import styles from './header.module.scss'
 import {searchArticle} from '@/services/articles'
 import Link from 'next/link'
@@ -7,6 +7,9 @@ import { useRouter } from 'next/router'
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 import i18n from '@/i18n'
 import AmpStoryPlayerComponent from '../AmpStoryPlayer'
+import Logo from '@/components/Logo'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser ,faSearch} from '@fortawesome/free-solid-svg-icons'
 
 const date_options =  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -84,7 +87,7 @@ export default function Mobile({style,border=true,stories}) {
           <div>{new Date().toLocaleDateString("fr-FR",date_options)}</div>
           <span><Link href={"/newsletter"}> S'abonner ?</Link></span>
         </div> */}
-        <div className={styles.mobileHead}  style={{...style}}>
+        {/* <div className={styles.mobileHead}  style={{...style}}>
             <div className={styles.mobileSubHead} style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <div className={styles.fhW}>
                 <div className={styles.hW} onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
@@ -96,7 +99,6 @@ export default function Mobile({style,border=true,stories}) {
                 </div>
                 <h2>W4CODER</h2>
               </div>
-              {/* <Logo style={{fontSize:"1.5rem"}}  w={40} h={40} /> */}
               <div
                className={styles.hW} 
                 style={{
@@ -160,7 +162,16 @@ export default function Mobile({style,border=true,stories}) {
                 </div>
               </div>
             )}
-        </div>
+        </div> */}
+
+        <header className={`${styles.headerMobile}`}>
+            <Logo/>
+            <div className={`${styles.headerRight}`}>
+              <FontAwesomeIcon className={styles.search} size='24' icon={faSearch}/>
+              <FontAwesomeIcon className={styles.user} size='24' icon={faUser}/>
+            </div>
+        </header>
+
         <AmpStoryPlayerComponent  stories={stories}/>
        
       </>

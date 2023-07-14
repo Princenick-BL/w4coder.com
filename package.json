@@ -11,6 +11,9 @@
   "dependencies": {
     "-": "^0.0.1",
     "@ampproject/toolbox-optimizer": "^2.9.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-three/drei": "^9.66.4",
     "@react-three/fiber": "^8.13.0",
     "@zeit/next-source-maps": "^0.0.3",

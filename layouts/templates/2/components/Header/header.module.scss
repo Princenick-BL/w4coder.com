@@ -100,6 +100,34 @@
     }
 }
 
+.headerMobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 .7rem;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    .headerRight{
+        height: 100%;
+        display: flex;
+        svg{
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+        .search{
+            margin-right: .7rem;
+            padding: 2px;
+        }
+        .user{
+            border: 2px solid;
+            border-radius: 25px;
+            padding: 2px;
+        }
+    }
+}
+
 .deskHead{
     display: flex;
     flex-direction: column;

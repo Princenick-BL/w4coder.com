@@ -1,5 +1,5 @@
 import React , {useState,useRef,useLayoutEffect,useEffect} from 'react'
-import Logo from '@/components/Logo'
+// import Logo from '@/components/Logo'
 import styles from './header.module.scss'
 import Link from 'next/link'
 import {searchArticle} from '@/services/articles'
@@ -51,7 +51,7 @@ export default function Desktop({style,border=false}) {
 
           </div>
           <div>
-            <Logo style={{fontSize:"2rem"}} w={20} h={20} />
+            {/* <Logo style={{fontSize:"2rem"}} w={20} h={20} /> */}
           </div>
           <div
             className={styles.armure}
