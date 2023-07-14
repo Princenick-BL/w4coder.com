@@ -126,6 +126,51 @@
             padding: 2px;
         }
     }
+    .searchBox,.settings{
+        background-color: var(--background-primary);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 4;
+        animation: show-up 0.5s forwards;
+        padding: 1rem;
+        .closing{
+            display: flex;
+            flex-direction: row-reverse;
+            max-height: 40px;
+            width: 100%;
+            svg{
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style-type: none;
+                margin-bottom: 1rem;
+                input{
+                    width: 100%;
+                    margin-top: 1rem;
+                    padding: .5rem 1rem;
+                    font-size: 1.1rem;
+                    border-radius: 30px;
+                    border: 1px solid var(--background-secondary);
+                }
+            }
+        }
+    }
+}
+
+@keyframes show-up {
+    0% { top: 100vh; }
+    100% { top: 0; }
 }
 
 .deskHead{

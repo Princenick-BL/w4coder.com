@@ -1,7 +1,7 @@
-import React ,{useEffect,useLayoutEffect,useState,useRef} from 'react'
+import React, { useEffect, useLayoutEffect, useState, useRef } from 'react'
 // import Logo from '@/components/Logo'
 import styles from './header.module.scss'
-import {searchArticle} from '@/services/articles'
+import { searchArticle } from '@/services/articles'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import getUnicodeFlagIcon from 'country-flag-icons/unicode'
@@ -9,18 +9,18 @@ import i18n from '@/i18n'
 import AmpStoryPlayerComponent from '../AmpStoryPlayer'
 import Logo from '@/components/Logo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser ,faSearch} from '@fortawesome/free-solid-svg-icons'
+import { faUser, faSearch, faClose } from '@fortawesome/free-solid-svg-icons'
 
-const date_options =  { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const date_options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-export default function Mobile({style,border=true,stories}) {
+export default function Mobile({ style, border = true, stories }) {
 
   const router = useRouter()
   const lang = router.locale
 
-  const [searchResult,setSearchResult]=useState([])
-  const [openedMenu,setOpenedMenu] = useState(false)
-  const [openedSearch,setOpenedSearch] = useState(false)
+  const [searchResult, setSearchResult] = useState([])
+  const [openedMenu, setOpenedMenu] = useState(false)
+  const [openedSearch, setOpenedSearch] = useState(false)
 
   const searchRef = useRef(null);
   //useAmpStoryPlayer(loadPlayer(playerRef))
@@ -38,56 +38,56 @@ export default function Mobile({style,border=true,stories}) {
   //     }
   //     window.addEventListener('scroll', fixedHeader)
   //   }, [])
-    
-  const handleChangeLang = (lang) =>{
+
+  const handleChangeLang = (lang) => {
     const value = lang;
-    router.push(router.route, router.asPath, {      locale: value,    });
+    router.push(router.route, router.asPath, { locale: value, });
     i18n.changeLanguage(lang)
 
   }
-  
-    const searching = async (e)=>{
-      const mainHeaderResult = document.getElementById("mainHeader")
-      if(e?.target?.value?.length > 0){
-        mainHeaderResult.classList.add('searching')
-        const res = await searchArticle(e?.target?.value)
-        setSearchResult(res)
-      }else{
-        mainHeaderResult.classList.remove('searching')
-        setSearchResult([])
-      }
-  
+
+  const searching = async (e) => {
+    const mainHeaderResult = document.getElementById("mainHeader")
+    if (e?.target?.value?.length > 0) {
+      mainHeaderResult.classList.add('searching')
+      const res = await searchArticle(e?.target?.value)
+      setSearchResult(res)
+    } else {
+      mainHeaderResult.classList.remove('searching')
+      setSearchResult([])
     }
-  
-    function useSearchStop(ref) {
-      useEffect(() => {
-  
-        /**
-         * Alert if clicked on outside of element
-         */
-        function handleClickOutside(event) {
-          if (ref.current && !ref.current.contains(event.target)) {
-            const mainHeaderResult = document.getElementById("mainHeader")
-            mainHeaderResult.classList.remove('searching')
-            setSearchResult([])
-          }
+
+  }
+
+  function useSearchStop(ref) {
+    useEffect(() => {
+
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          const mainHeaderResult = document.getElementById("mainHeader")
+          mainHeaderResult.classList.remove('searching')
+          setSearchResult([])
         }
-        // Bind the event listener
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-          // Unbind the event listener on clean up
-          document.removeEventListener("mousedown", handleClickOutside);
-        };
-      }, [ref]);
-    }
-    useSearchStop(searchRef);
-    return (
-      <>
-        {/* <div className={styles.annonce}>
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+  useSearchStop(searchRef);
+  return (
+    <>
+      {/* <div className={styles.annonce}>
           <div>{new Date().toLocaleDateString("fr-FR",date_options)}</div>
           <span><Link href={"/newsletter"}> S'abonner ?</Link></span>
         </div> */}
-        {/* <div className={styles.mobileHead}  style={{...style}}>
+      {/* <div className={styles.mobileHead}  style={{...style}}>
             <div className={styles.mobileSubHead} style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <div className={styles.fhW}>
                 <div className={styles.hW} onClick={(e)=>{setOpenedMenu(!openedMenu)}}>
@@ -164,16 +164,41 @@ export default function Mobile({style,border=true,stories}) {
             )}
         </div> */}
 
-        <header className={`${styles.headerMobile}`}>
-            <Logo/>
-            <div className={`${styles.headerRight}`}>
-              <FontAwesomeIcon className={styles.search} size='24' icon={faSearch}/>
-              <FontAwesomeIcon className={styles.user} size='24' icon={faUser}/>
+      <header className={`${styles.headerMobile}`}>
+        <Logo />
+        <div className={`${styles.headerRight}`}>
+          <FontAwesomeIcon onClick={(e) => { setOpenedSearch(true) }} className={styles.search} size='24' icon={faSearch} />
+          <FontAwesomeIcon onClick={(e) => { setOpenedMenu(true) }} className={styles.user} size='24' icon={faUser} />
+        </div>
+        {openedMenu && (
+          <div className={styles.settings}>
+            <div className={styles.closing}>
+              <FontAwesomeIcon onClick={(e) => { setOpenedMenu(false) }} className={styles.search} size='24' icon={faClose} />
             </div>
-        </header>
+            <ul>
+              <li>Login</li>
+              <li>About us</li>
+              <li>Newsletter</li>
+            </ul>
 
-        <AmpStoryPlayerComponent  stories={stories}/>
-       
-      </>
-    )
+          </div>
+        )}
+
+        {openedSearch && (
+          <div className={styles.searchBox}>
+            <div className={styles.closing}>
+              <FontAwesomeIcon onClick={(e) => { setOpenedSearch(false) }} className={styles.search} size='24' icon={faClose} />
+            </div>
+            <ul>
+              <li><input type='search' placeholder='Search ...'/></li>
+            </ul>
+          </div>
+
+        )}
+      </header>
+
+      <AmpStoryPlayerComponent stories={stories} />
+
+    </>
+  )
 }
