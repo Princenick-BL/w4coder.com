@@ -5,7 +5,7 @@ import Header from '@/layouts/templates/2/components/Header'
 import styles from './index.module.scss'
 import moment from 'moment'
 import Image from 'next/legacy/image'
-import CodeHighlighter from '@/components/Highligter'
+// import CodeHighlighter from '@/components/Highligter'
 import Footer from '@/layouts/templates/2/components/Footer'
 import { config } from '@/constants'
 import { useTheme } from 'next-themes';
