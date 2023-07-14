@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './index.module.scss'
-import Header from '../components/Header'
+import Header from './templates/2/components/Header'
 import Footer from './templates/2/components/Footer'
 import Head from 'next/head'
 import Image from 'next/image'

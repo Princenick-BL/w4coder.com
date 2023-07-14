@@ -1,5 +1,5 @@
 import styles from './index.module.scss'
-import YoutubeShort from '../components/Youtube'
+// import YoutubeShort from '../components/Youtube'
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://youtube.googleapis.com/youtube/v3/search';
 import DefaultLayout from '../layouts/default'
 import Template2 from '@/layouts/templates/2'
@@ -28,7 +28,7 @@ export default function Youtube({isBreakpoint,data}) {
                         fontWeight: 400,
                     }}>YouTube</span>
                 </div>
-                <div className={styles.list}>
+                {/* <div className={styles.list}>
                     {data && data.map((sh,i)=>{
                         if(sh?.id?.videoId){
                             return(
@@ -39,7 +39,7 @@ export default function Youtube({isBreakpoint,data}) {
 
                         }
                     })}
-                </div>
+                </div> */}
             </div>
             <div>
 

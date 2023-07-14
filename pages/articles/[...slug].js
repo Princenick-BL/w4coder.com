@@ -78,9 +78,9 @@ export default function Article({isBreakpoint,article}) {
                 />
                 <figcaption>Hello</figcaption>
               </figure> */}
-              {article?.sections?.map(({ content },id) => (
+              {/* {article?.sections?.map(({ content },id) => (
                 <CodeHighlighter key={id} text={content} language="javascript"/>
-              ))}
+              ))} */}
             </section>
             <aside>
 
