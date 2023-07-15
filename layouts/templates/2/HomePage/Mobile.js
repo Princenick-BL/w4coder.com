@@ -20,6 +20,7 @@ export default function Mobile({page1,topA,stories,lang,isBreakpoint=1}) {
       if(res.length === 0){
         setHasMore(false)
       }
+      console.log("Helooo")
     }
 
   return (
